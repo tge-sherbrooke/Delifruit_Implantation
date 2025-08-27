@@ -31,4 +31,4 @@ jobs:
       # 5️⃣ Copier les fichiers du dépôt vers le serveur Apache
       - name: Deploy website to Apache
         run: |
-          rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ debiansamba@4.239.253.190:/var/www/html/
+          rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ AOJBRBK@4.239.253.190:/var/www/html/
