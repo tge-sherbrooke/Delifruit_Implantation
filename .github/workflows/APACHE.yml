@@ -27,7 +27,7 @@ jobs:
 
       # 4️⃣ Ajouter l’hôte de la VM à known_hosts
       - name: Add Azure VM to known_hosts
-        run: ssh-keyscan -H 4.239.253.190 >> ~/.ssh/known_hosts
+        run: ssh-keyscan -H 4.239.253.190 >> /home/AOJBRBKDB/.ssh/known_hosts
 
       # 5️⃣ Copier les fichiers du dépôt vers le serveur Apache
       - name: Deploy website to Apache
