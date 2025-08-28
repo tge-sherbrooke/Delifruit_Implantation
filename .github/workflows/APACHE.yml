@@ -34,5 +34,5 @@ jobs:
       - name: Deploy website to Apache
         run: |
           rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ adminweb@4.239.253.190:/var/www/html/
-          rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ AOJBRBKDB@4.239.253.190:/var/www/html/
+      # rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ AOJBRBKDB@4.239.253.190:/var/www/html/
 
