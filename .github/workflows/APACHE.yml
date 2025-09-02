@@ -25,11 +25,11 @@ jobs:
           #sudo apt-get install -y rsync libacl1
 
       # 3️⃣ Setup de la clé SSH depuis le secret GitHub
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.AZURE_VM_KEY }}" > ./azure_vm_key.pem
-          chmod 600 ./azure_vm_key.pem
+      #- name: Setup SSH key
+        #run: |
+          #mkdir -p ~/.ssh
+          #echo "${{ secrets.AZURE_VM_KEY }}" > ./azure_vm_key.pem
+          #chmod 600 ./azure_vm_key.pem
 
       # 4️⃣ Ajouter l’hôte de la VM à known_hosts
       #- name: Add Azure VM to known_hosts
