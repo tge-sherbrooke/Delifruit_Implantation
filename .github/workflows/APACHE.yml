@@ -15,14 +15,14 @@ jobs:
         uses: actions/checkout@v4
 
       # 2️⃣ Installer rsync (pour copier les fichiers rapidement)
-      - name: Install rsync
-        run: |
-          sudo apt-get update
-          sudo apt-get update && sudo apt-get install -y rsync
+      #- name: Install rsync
+        #run: |
+          #sudo apt-get update
+         # sudo apt-get update && sudo apt-get install -y rsync
           
-      - name: Fix rsync dependency
-        run: |
-          sudo apt-get install -y rsync libacl1
+      #- name: Fix rsync dependency
+        #run: |
+          #sudo apt-get install -y rsync libacl1
 
       # 3️⃣ Setup de la clé SSH depuis le secret GitHub
       - name: Setup SSH key
