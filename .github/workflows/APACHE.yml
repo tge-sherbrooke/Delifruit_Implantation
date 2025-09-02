@@ -28,7 +28,7 @@ jobs:
       - name: Setup SSH key
         run: |
           echo "${{ secrets.AZURE_VM_KEY }}" > ./azure_vm_key.pem
-          ssh -i ./azure_vm_key.pem adminweb@4.239.253.190 "ls"
+          ssh -i ${{ secrets.AZURE_VM_KEY }} adminweb@4.239.253.190 "ls"
         #mkdir -p ~/.ssh
         #chmod 600 ./azure_vm_key.pem
 
@@ -47,6 +47,6 @@ jobs:
         with:
           host: 4.239.253.190
           username: adminweb
-          key: ./azure_vm_key.pem
+          key: ${{ secrets.AZURE_VM_KEY }}
           source: "."
           target: "/var/www/html"
