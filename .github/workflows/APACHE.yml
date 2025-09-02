@@ -32,13 +32,20 @@ jobs:
           chmod 600 ./azure_vm_key.pem
 
       # 4️⃣ Ajouter l’hôte de la VM à known_hosts
-      - name: Add Azure VM to known_hosts
-        run: 
-          ssh-keyscan -H 4.239.253.190 >> ~/.ssh/known_hosts
+      #- name: Add Azure VM to known_hosts
+        #run: 
+          #ssh-keyscan -H 4.239.253.190 >> ~/.ssh/known_hosts
 
       # 5️⃣ Copier les fichiers du dépôt vers le serveur Apache
-      - name: Deploy website to Apache
-        run: |
-          rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ adminweb@4.239.253.190:/var/www/html/
+      #- name: Deploy website to Apache
+        #run: |
+          #rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ adminweb@4.239.253.190:/var/www/html/
       # rsync -avz -e "ssh -i ./azure_vm_key.pem" ./ AOJBRBKDB@4.239.253.190:/var/www/html/
-
+      - name: Deploy files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 4.239.253.190
+          username: adminweb
+          key: ${{ secrets.AZURE_VM_KEY }}
+          source: "."
+          target: "/var/www/html"
