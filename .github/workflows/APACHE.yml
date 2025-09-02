@@ -28,6 +28,7 @@ jobs:
       - name: Setup SSH key
         run: |
           echo "${{ secrets.AZURE_VM_KEY }}" > ./azure_vm_key.pem
+          ssh -i ./azure_vm_key.pem adminweb@4.239.253.190 "ls"
         #mkdir -p ~/.ssh
         #chmod 600 ./azure_vm_key.pem
 
