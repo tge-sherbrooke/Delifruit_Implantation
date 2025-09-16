@@ -1,32 +1,42 @@
-name: Deploy to Azure VM
+# .github/workflows/deploy-sftp.yml
+name: Deploy via SFTP
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches:
+      - main # Déclenche le déploiement quand tu pushes sur main
 
 jobs:
-  deploy:
+  sftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout du dépôt
+      # 1️⃣ Checkout du repo
       - name: Checkout repository
-        uses: actions/checkout@v4
-          
-      - name: Deploy files
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-        with:
-          username: webadmin
-          server: 4.239.253.190
-          port: 22 # default is 22
-          ssh_private_key: ${{ secrets.AZURE_VM_KEY }}
+        uses: actions/checkout@v3
 
-          # will put all file under this path
-          local_path: ./* # default is ./*
-          # files will copy to under remote_path
-          remote_path: /var/www/html/web
+      # 2️⃣ Installer l’outil lftp (SFTP client)
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
 
-          # sftp args
-          args: '-o ConnectTimeout=5'
+      # 3️⃣ Configurer la clé SSH
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AZURE_VM_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+        shell: bash
 
+      # 4️⃣ Optionnel : ajouter le serveur aux known_hosts
+      - name: Add server to known_hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.IP_AZURE }} >> ~/.ssh/known_hosts
+        shell: bash
+
+      # 5️⃣ Déployer via SFTP
+      - name: Deploy files via SFTP
+        run: |
+          lftp -u "${{ secrets.HOST_AZURE_SFTP }}","" sftp://${{ secrets.IP_AZURE }} <<EOF
+          mirror -R ./ /web
+          quit
+          EOF
