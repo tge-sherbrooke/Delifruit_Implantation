@@ -23,15 +23,15 @@ jobs:
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.AZURE_VM_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
         shell: bash
 
       # 4️⃣ Optionnel : ajouter le serveur aux known_hosts
-      # - name: Add server to known_hosts
-      #   run: |
-      #     ssh-keyscan -H ${{ secrets.HOST_AZURE_SFTP }} >> ~/.ssh/known_hosts
-      #   shell: bash
+      - name: Add server to known_hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.AZURE_VM_KEY }} >> ~/.ssh/known_hosts
+        shell: bash
 
       # 5️⃣ Déployer via SFTP
       - name: Deploy files via SFTP
