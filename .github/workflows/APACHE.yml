@@ -17,7 +17,7 @@ jobs:
       - name: Deploy files
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: AOJBRBKDB
+          username: webadmin
           server: 4.239.253.190
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.AZURE_VM_KEY }}
