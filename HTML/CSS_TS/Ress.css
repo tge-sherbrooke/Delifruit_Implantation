@@ -63,26 +63,27 @@ a {color: white;}
 
 #backgroundReference
 {
-    background-image: url("../Images_LOL/LOL_assembly_\(2\).jpg");
+    background-image: url("../Images_TS/LOL_assembly_\(2\).jpg");
     opacity: 0.8;
 }
 
 #backgroundMentionsLegales
 {
-    background-image:  url("../Images_LOL/Ahri-and-Morgana-Battle-Girl-Magic-Wings-League-of-Legends-Fan-Art-HD-Wallpaper-2560x1600.jpg");
+    background-image:  url("../Images_TS/Ahri-and-Morgana-Battle-Girl-Magic-Wings-League-of-Legends-Fan-Art-HD-Wallpaper-2560x1600.jpg");
     opacity: 0.5;
     
 }
 
 #backgroundFAQ
 {
-    background-image: url("../Images_LOL/irelia-league-of-legends-1e.jpg");
+    background-image: url("../Images_TS/irelia-league-of-legends-1e.jpg");
     opacity: 0.5;
 }
 
 #backgroundContact
 {
-    background-image: url("../Images_LOL/sona-league-of-legends-8k-sv.jpg");
+    background-image: url("../Images_TS/_128170122-hi-tech-computer-interface-4k-wallpaperbat.jpg");
+    /*https://wallpaperbat.com/img/128170122-hi-tech-computer-interface-4k-wallpaper.jpg*/
     opacity: 0.5;
 }
 
@@ -158,7 +159,7 @@ a {color: white;}
 {
     display: grid;
     grid-template-areas:  "A B C";
-    background: url("../Images_LOL/ArrowDown.png") center; 
+    background: url("../Images_TS/ArrowDown.png") center; 
     background-repeat: no-repeat;
     background-position: top;
     background-size: 1400px 2000px;
@@ -513,7 +514,7 @@ footer p:first-child
 
                             #formulaireContact
                             {
-                                background-image: url("../Images_LOL/darius-league-of-legends-4k-ky-1366x768.jpg");
+                                background-image: url("../Images_TS/darius-league-of-legends-4k-ky-1366x768.jpg");
                                 background-size: cover;
                                 margin: 20px 0vw 10px 0vw;
                             }
