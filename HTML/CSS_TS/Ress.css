@@ -421,6 +421,25 @@ footer p:first-child
                     text-align: center;
                 }
 
+                #GitHub_VS_Apache_Nginx div
+                {
+                    display: flex;
+                    margin-bottom: 50px;
+                  justify-content: center;
+
+                }
+
+                #GitHub_VS_Apache_Nginx div article
+                {
+                    margin: 0px 10px 0px 0px;
+                    object-fit: contain;
+                }
+
+                #GitHub_VS_Apache_Nginx
+                {
+
+                }
+
                 #multimediaContact
                 {
                     display: flex;
