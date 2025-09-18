@@ -33,7 +33,7 @@ main
     width: 80%;
 }
 
-#multimediaContact, #formulaireContact, #multimediaContact div article:nth-child(2)
+#multimediaContact, #GitHub_VS_Apache_Nginx, #formulaireContact, #multimediaContact div article:nth-child(2)
 {
     box-shadow: 0px 0px 15px 1px black;
     border-radius: 10px;
@@ -240,7 +240,7 @@ a {color: white;}
                         border-radius: 150px;
                     }
 
-/*04 ------- SECTION 02 F.A.Q : derniere image, bouton Affichez plus  --------- */
+/*03 ------- SECTION 02 F.A.Q : derniere image, bouton Affichez plus  --------- */
 
 #textIndependant{text-align: center; margin: 100px 3% 100px 3%;}
 
@@ -412,9 +412,9 @@ footer p:first-child
                         color: blueviolet;
                    }                   
 
-/*00 ------- PAGE : CONTACT --------- */
+/*04 ------- PAGE : CONTACT --------- */
 
-/*03 ------- SECTION 02 :  Google Maps + Video  --------- */
+/*04 ------- SECTION 02 :  Google Maps + Video  --------- */
 
                 #mainContact 
                 {
@@ -423,30 +423,31 @@ footer p:first-child
 
                 #GitHub_VS_Apache_Nginx div
                 {
-                    display: flex;
+                    display: grid;
+                    grid-template-areas:  "A B";
+                    gap: 20px;
                     margin-bottom: 50px;
-                  justify-content: center;
-
+                    justify-content: center;
+                    padding: 50px;
                 }
 
                 #GitHub_VS_Apache_Nginx div article
                 {
-                    margin: 0px 10px 0px 0px;
+                    margin: 0px 20px 0px 0px;
                     object-fit: contain;
+                    text-align: left;
                 }
 
-                #GitHub_VS_Apache_Nginx
-                {
-
+                .fit-content .art_bienvenue p {
+                    margin: 100px;
                 }
 
                 #multimediaContact
                 {
-                    display: flex;
-                    
-                background-color: rgba(0, 0, 0, 0.406);
-                  justify-content: center;
-                  overflow: hidden;
+                    display: flex;                    
+                    background-color: rgba(0, 0, 0, 0.406);
+                    justify-content: center;
+                    overflow: hidden;
                   
                 }
 
