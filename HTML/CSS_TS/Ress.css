@@ -9,21 +9,18 @@ PRESENTATION
 {list-style-type: none;
 text-decoration:none;
 text-decoration-color:white;
-color: white;
-
+color: black;
 }
 
 html
-{background-color: rgba(0, 0, 0, 0.76);
-color: white;
-
+{background-color: 'white'; /*rgba(0, 0, 0, 0.76);*/
 }
 
 main
 {margin: auto;
     width: fit-content;
     font-size: 1.5em;
-    
+
 }
 
 .fit-content
@@ -33,10 +30,21 @@ main
     width: 80%;
 }
 
-#multimediaContact, #GitHub_VS_Apache_Nginx, #formulaireContact, #multimediaContact div article:nth-child(2)
+#multimediaContact, #art_bienvenue, #GitHub_VS_Apache_Nginx, #formulaireContact, #multimediaContact div article:nth-child(2)
 {
-    box-shadow: 0px 0px 15px 1px black;
+    opacity: 0;
+    box-shadow: 0px 0px 15px 1px rgb(155, 6, 201);
     border-radius: 10px;
+    transform: translateY(100px);
+    /* caché en bas */
+    transition: all 0.8s ease-out;
+}
+
+#multimediaContact.afficher, #art_bienvenue, #GitHub_VS_Apache_Nginx.afficher, #formulaireContact.afficher, #multimediaContact div article:nth-child(2).afficher
+{
+    opacity: 1;
+    transform: translateY(0);
+    /* remonte en place */ 
 }
 
 a {color: white;}
@@ -121,7 +129,7 @@ a {color: white;}
 .div #navHidden ul li:nth-child(1) 
 {
     background-color: black;
-    color: rgb(197, 35, 35);
+    color: rgb(184, 35, 197);
     border-radius: 0px 55px 12px 42px;
     
 }
@@ -132,20 +140,26 @@ a {color: white;}
     background-color: rgba(0, 0, 0, 0.362);
 }
 
-                /*      Couleur du NAVIGATEUR en JAVASCRIPT       ---------------------------------- */
+        /*      Couleur du NAVIGATEUR en JAVASCRIPT       ---------------------------------- */
 
-                .navShow
-                {
-                    background-color : rgb(62, 8, 62);
-                    border-radius: 30px 30px 150px 150px;
-                    transition: all 1s;
-                    color: white;
-                }
-                .div .navShow ul li:hover
-                {
-                    background-color: rgba(131, 40, 173, 0.858);
-                    cursor: pointer;
-                }
+        .navShow
+        {
+            background-color : rgba(105, 27, 105, 0.897);
+            border-radius: 30px 30px 150px 150px;
+            transition: all 1s;
+            color: white;
+        }
+        .div .navShow ul li:hover
+        {
+            background-color: rgba(158, 23, 221, 0.979);
+            cursor: pointer;
+        }
+
+        .div .navShow ul li:nth-child(1) 
+        {
+            background-color: rgb(211, 19, 19);
+            color: white;
+        }
 
 /*03 ------- SECTION 01 F.A.Q : Questions internes, questions externes--------- */
 
@@ -307,15 +321,22 @@ a {color: white;}
 
 /*05 ------- SECTION 03 : navbar finale avec Mentions legales, Gaming, etc. --------- */
 
+#navbarInferieur{
+    background-color: black;
+}
+
 #navbarInferieur ul
 {
     display: flex;
     justify-content: space-around;
     margin: 4% 5%;
+    background-color: black;
+
 }
 
 #navbarInferieur ul li
 {
+    color: black;
     width: 290px;
     text-align: center;
     border-left: 1px solid white ;
@@ -337,7 +358,6 @@ a {color: white;}
 footer 
 {
     padding-top: 2%;
-    
 }
 
 footer p
@@ -416,9 +436,31 @@ footer p:first-child
 
 /*04 ------- SECTION 02 :  Google Maps + Video  --------- */
 
+                #formulaireContact p, 
+                #textAvantFormulaire p, 
+                #textAvantFormulaire h1, 
+                #textForApplication h1, 
+                #textForApplication p,
+                #formulaire button
+                {
+                    color: white;
+                }
+
                 #mainContact 
                 {
                     text-align: center;
+                }
+
+                #mainContact article .titre:first-line
+                {
+                    font-size: 6rem;
+                    color: rgb(129, 30, 223);
+                }
+
+                #mainContact #art_bienvenue {
+                    display: block;
+                    padding: 5px;
+                    margin: 20px 0px 20px 0px;
                 }
 
                 #GitHub_VS_Apache_Nginx div
@@ -438,17 +480,16 @@ footer p:first-child
                     text-align: left;
                 }
 
-                .fit-content .art_bienvenue p {
-                    margin: 100px;
+                .fit-content #art_bienvenue p {
+                    margin: 0px 0px 50px 0px;
+                    padding: 0px 50px 50px 50px;
                 }
 
                 #multimediaContact
                 {
                     display: flex;                    
-                    background-color: rgba(0, 0, 0, 0.406);
                     justify-content: center;
                     overflow: hidden;
-                  
                 }
 
                 #multimediaContact div
@@ -463,6 +504,7 @@ footer p:first-child
                             {
                              margin: 0px 0px 20px 0px;
                              border-radius: 50px;
+                             color: white;
                             }
          
                             #multimediaContact div article:nth-child(1)
@@ -480,7 +522,7 @@ footer p:first-child
                 
                             #multimediaContact div:last-child
                             {
-                                 width: 560px;
+                                width: 560px;
                             }
          
                             #multimediaContact div article:nth-child(2)
@@ -534,7 +576,8 @@ footer p:first-child
 
                             #formulaireContact
                             {
-                                background-image: url("../Images_TS/darius-league-of-legends-4k-ky-1366x768.jpg");
+                                color: white;
+                                background-image: url("https://github.com/tge-sherbrooke/Delifruit_Implantation/blob/main/HTML/Images_TS/128170148-technology-wallpaper-for-desktop.jpg?raw=true");
                                 background-size: cover;
                                 margin: 20px 0vw 10px 0vw;
                             }
@@ -562,6 +605,7 @@ footer p:first-child
                             
                             #formulaireContact #divUNContact  p
                             {
+                                color: white;
                                 width: 450px;
                                 padding-top: 2.7vw;
                             }
