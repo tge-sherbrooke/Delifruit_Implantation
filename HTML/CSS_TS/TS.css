@@ -671,6 +671,16 @@
               }
           }
 
+          .values-list a {
+            text-decoration: none;
+            color: white;
+          }
+
+          .values-list a:active {
+            text-decoration: none;
+            color: white;
+          }
+
 .nav-link {
     color: #fff;
     text-decoration: none;

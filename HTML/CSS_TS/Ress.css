@@ -440,10 +440,12 @@ footer p:first-child
                 #textAvantFormulaire p, 
                 #textAvantFormulaire h1, 
                 #textForApplication h1, 
-                #textForApplication p,
-                #formulaire button
+                #textForApplication p
                 {
                     color: white;
+                    padding: 5px;
+                    border-radius: 2%;
+                    background-color: rgba(66, 14, 163, 0.616);
                 }
 
                 #mainContact 
@@ -460,7 +462,7 @@ footer p:first-child
                 #mainContact #art_bienvenue {
                     display: block;
                     padding: 5px;
-                    margin: 20px 0px 20px 0px;
+                    margin: 20px 0px 50px 0px;
                 }
 
                 #GitHub_VS_Apache_Nginx div
@@ -487,57 +489,28 @@ footer p:first-child
 
                 #multimediaContact
                 {
-                    display: flex;                    
+                    display: block;                    
                     justify-content: center;
                     overflow: hidden;
+                    margin-bottom: 50px;
                 }
 
                 #multimediaContact div
                 {
-                    margin: 50px;
+                    margin: 20px;
                 }
 
                 /*03.0 ------- ARTICLE 00 :  Google Maps -------- */
 
 
-                            #googleMaps 
-                            {
-                             margin: 0px 0px 20px 0px;
-                             border-radius: 50px;
-                             color: white;
-                            }
-         
-                            #multimediaContact div article:nth-child(1)
-                            {
-                             
-                             height:250px;
-                             
-                            }
          
                             #videoUNContact
                             {
-                             margin: 38px 80px 0px 0px;
-                             border-radius: 5%; 
+                                margin: 38px 80px 0px 0px;
+                                border-radius: 5%; 
                             }
                 
-                            #multimediaContact div:last-child
-                            {
-                                width: 560px;
-                            }
-         
-                            #multimediaContact div article:nth-child(2)
-                                 {
-                                     text-align: justify;
-                                     background-color: yellowgreen;
-                                     padding: 0px 20px 0px 20px;
-                                     margin: 40px 0px 0px 0px;
-                                 }
-         
-                        
-
-
-               
-
+  
                         /*      REDIMENSIONNEMENT       */
 
                     @media screen and (max-width:1502px)
@@ -588,32 +561,17 @@ footer p:first-child
                                 justify-content: center; 
                             }
 
-                            #asideLeftContact
-                            {
-                               padding: 0px 30px 0px 0px;
-                            }
-                            #asideRightContact
-                            {
-                               padding: 0px 10px 0px 0px;
-                            }
-
-                            #svgRightContact
-                            {
-                                width: 50px;
-
-                            }
-                            
-                            #formulaireContact #divUNContact  p
+                            #formulaireContact #divUNContact aside p
                             {
                                 color: white;
-                                width: 450px;
-                                padding-top: 2.7vw;
+                                width: 1000px;
+                                padding: 20px;
+                                background-color: rgba(66, 14, 163, 0.616);
                             }
 
                             #imgDIVContact
                             {
-                                margin: 2vw 0vw 2vw 0vw;
-                               
+                                margin: 2vw 0vw 2vw 0vw;                               
                             }
 
                             .zoom
@@ -623,7 +581,14 @@ footer p:first-child
                                 border-radius: 50px;
                                 cursor: pointer;
                             }
-                            
+
+                            #textForApplication h1 {
+                                background-color: white;
+                            }
+
+                            #formulaire button{
+                                color: white;
+                            }
 
         /*DIVISION IMAGE AGRANDIE*/
 

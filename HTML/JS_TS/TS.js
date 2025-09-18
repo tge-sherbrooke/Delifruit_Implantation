@@ -15,23 +15,23 @@ window.addEventListener('scroll', changerCouleurNav);
 
 //Deuxieme fonction Image
 
-// function afficherImage()
-// {
-//     var imgZoom = document.querySelector('.modal');
-//     var modalImage = document.querySelector('.modalImage');
+function afficherImage()
+{
+    var imgZoom = document.querySelector('.modal');
+    var modalImage = document.querySelector('.modalImage');
 
-//     Array.from(document.querySelectorAll('.zoom')).forEach(
-//       item => {item.addEventListener("click", event =>{
-//         imgZoom.style.display="block";
-//       modalImage.src=event.target.src
-//     } );
-//   });
+    Array.from(document.querySelectorAll('.zoom')).forEach(
+      item => {item.addEventListener("click", event =>{
+        imgZoom.style.display="block";
+      modalImage.src=event.target.src
+    } );
+  });
 
-//   document.querySelector(".close").addEventListener("click", () => {
-// imgZoom.style.display="none";
-//   });
+  document.querySelector(".close").addEventListener("click", () => {
+imgZoom.style.display="none";
+  });
 
-// }
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
