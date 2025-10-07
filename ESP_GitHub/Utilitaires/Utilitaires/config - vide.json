@@ -1,0 +1,37 @@
+{
+    "SITEWEB_GITHUB_LEARN": "https://github.com/adafruit/Adafruit_CircuitPython_AdafruitIO/",
+    "ADAFRUIT_OVERVIEW": "https://io.adafruit.com/>>>>>>>>/overview",
+    "ADAFRUIT_AIO_USERNAME": ">>>>>>>>",
+    "ADAFRUIT_AIO_KEY": "",
+    "export_IO_USERNAME": ">>>>>>>>",
+    "export_IO_KEY": "",
+    "ADAFRUIT_IO_USERNAME": ">>>>>>>>",
+    "ADAFRUIT_IO_KEY": "",
+
+
+    "WEB_ADAFRUIT_PERSONNEL": ">>>>>>>>",
+    "WEB_ADAFRUIT.COM": "https://io.adafruit.com/>>>>>>>>/feeds",
+    "FEED_SPECIAL": "mode",
+
+    "WiFiSSID": "CEGEP IdO",
+    "PASSWORDCegep": "!nt$l??!g$nt*",
+    "THING_NAME": "ESP32_S3",
+    "port": 1883,
+
+    "PERSONAL_SSID": "",
+    "WIFI_PASSWORD": "",
+    "PASSWORD": "",
+    "IP_PERSO": "",
+
+    "ORDI_1": "",
+    "WPASS": "",
+    "CLUE": "",    
+
+    "ORDI_2": "",
+    "WDPASS": "",
+    "CLUES": "",
+
+    "cell": "",
+    "CPASS": "",
+    "Mosquitto": ""
+}
