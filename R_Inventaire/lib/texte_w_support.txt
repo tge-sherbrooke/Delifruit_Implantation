@@ -1,0 +1,32 @@
+Le __DATE__
+
+__MMEMR__
+
+A la direction des ressources humaines
+
+__ENTREPRISE__
+
+__BUREAU__
+
+__ADRESSEII__
+
+
+Objet : Poste de __POSTE__
+
+__MMEMR__,
+
+Je souhaite vous exprimer mon vif intérêt pour le poste de __POSTE__ auprès de votre société. Après avoir lu votre proposition d'emploi sur le site __SITE__ mentionnant l’assistance informatique et l’implantation, j'ai tenu à vous présenter clairement mes compétences ainsi que mon enthousiasme afin d’intégrer votre équipe.
+
+__PLUS__
+
+Les clients me reconnaissent comme un interlocuteur clair, empathique et recommandable, lors de mon service, en centre d’appel. Désirant donner le meilleur de ma personne, je développe sans cesse une écoute attentive, un discours soutenu et empathique dans le but de guider la clientèle.
+
+L’usage des systèmes de gestion (__RESEAU__), de traitement de données (__DATA__) et de virtualisation (__VIRTUEL__) et les outils d’automatisation des tâches (__SCRIPTS__) font partie de mon quotidien. Je teste, j’argumente, je valide, j’optimise et je note mes changements. Dans cette optique, j'ai reçu une formation durant mon DEC afin de respecter les normes actuelles en matière de sécurité réseau (__FIREWALL__).
+
+J’aime expérimenter de nouvelles pratiques technologiques et cherche différentes méthodes pour les intégrer à mes tâches usuelles. 50% de mes actions en tant que soutien technique auprès de Telus étaient d’apprendre aux utilisateurs le fonctionnement de leur routeur et de les guider dans la configuration d’amplificateurs (Wi-Fi 5-6). Je devais les conseiller sur les meilleures méthodes d’optimisation de leur connexion. Le reste du temps était consacré à rédiger des rapports et générer/actualiser les comptes clients tout en maintenant un service à la clientèle adéquat. Il m’est arrivé de promouvoir certaines méthodes de sécurité en soutien technique. Je suis prompt aux changements, autonome, bon vivant et fiable. Mon horaire peut être défini selon vos besoins.
+
+J’ose espérer que ma demande retiendra votre attention. Je reste disponible pour une rencontre à votre convenance. Dans l’attente d’une réponse favorable, je vous prie d’accepter, Madame, Monsieur, l’expression de mes sentiments distingués.
+
+__SIGNATURE__
+
+Étudiant Techniques de l’informatique
