@@ -1,0 +1,15 @@
+CIRCUITPY_WIFI_SSID="CEGEP IdO"
+CIRCUITPY_WIFI_PASSWORD="!nt$l??!g$nt*"
+
+SITEWEB_GITHUB_LEARN=https://github.com/adafruit/Adafruit_CircuitPython_AdafruitIO/
+ADAFRUIT_OVERVIEW=https://io.adafruit.com/>>>>>>>/overview
+AIO_USERNAME=">>>>>>>"
+AIO_KEY=""
+export_IO_USERNAME=>>>>>>>
+export_IO_KEY=
+ADAFRUIT_IO_USERNAME=>>>>>>>
+ADAFRUIT_IO_KEY=
+
+
+WEB_ADAFRUIT_PERSONNEL=>>>>>>>
+WEB_ADAFRUIT.COM=https://io.adafruit.com/>>>>>>>/feeds
