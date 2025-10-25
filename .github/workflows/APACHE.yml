@@ -36,9 +36,10 @@ jobs:
       # 5️⃣ Déployer via SFTP
       - name: Deploy files via SFTP
         run: |
-          lftp -u "${{ secrets.USER_SFTP }}","" sftp://[${{ secrets.IP_UBUNTU }}]:${{ secrets.PORT_SSH }} <<EOF
+          lftp -u "${{ secrets.USER_SFTP }}","" sftp://${{ secrets.IP_UBUNTU }}:${{ secrets.PORT_SSH }} <<EOF
           set sftp:auto-confirm yes
           mirror -R --verbose --continue --parallel=2 ./ /delifruit
           quit
           EOF
         shell: bash
+      
