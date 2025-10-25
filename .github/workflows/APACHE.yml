@@ -16,10 +16,10 @@ jobs:
         uses: actions/checkout@v3
 
       # 2️⃣ Installer l’outil lftp (SFTP client)
-      - name: Check lftp installation
-        run: lftp --version
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Check lftp installation
+        run: lftp --version
 
       # 3️⃣ Configurer la clé SSH
       - name: Setup SSH key
