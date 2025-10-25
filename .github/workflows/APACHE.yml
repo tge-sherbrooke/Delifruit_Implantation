@@ -1,25 +1,20 @@
-# .github/workflows/deploy-sftp.yml
 name: Deploy via SFTP
 
 on:
   push:
     branches:
-      - main # Déclenche le déploiement quand tu pushes sur main
-
+      - main
 jobs:
   sftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Checkout du repo
+      # 1️⃣ Récupérer le code du dépôt
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Installer l’outil lftp (SFTP client)
+      # 2️⃣ Installer lftp
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
-      - name: Check lftp installation
-        run: lftp --version
 
       # 3️⃣ Configurer la clé SSH
       - name: Setup SSH key
@@ -29,13 +24,13 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
         shell: bash
 
-      # 4️⃣ Optionnel : ajouter le serveur aux known_hosts
+      # 4️⃣ Ajouter le serveur distant aux known_hosts
       - name: Add server to known_hosts
         run: |
-          ssh-keyscan -H 70.82.44.15 >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.IP_UBUNTU }} >> ~/.ssh/known_hosts
         shell: bash
 
-      # 5️⃣ Déployer via SFTP
+      # 5️⃣ Déployer les fichiers via SFTP
       - name: Deploy files via SFTP
         run: |
           lftp -u "${{ secrets.USER_SFTP }}","" sftp://${{ secrets.IP_UBUNTU }}:${{ secrets.PORT_SSH }} <<EOF
