@@ -79,10 +79,10 @@ fichier_configuration = initM.fichier_configuration
 # ___________________________________________________________________________________________________________________
 
 markdownobject = 'mark_cv'
-json_file_new = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
+INITfile = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
 date_archivable = initM.date('archive')
 date_formatee = initM.date('date_pour_cv')
-INITfile = f"{json_file_new}.json"
+INITfile 
 texteWord = initM.texte_support
 ARCHIVES = initM.ARCHIVES
 file_git_send = f"{Repertoire}\\lib\\git_send.bat" 

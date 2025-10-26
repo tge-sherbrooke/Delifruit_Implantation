@@ -31,8 +31,10 @@ credential = "__initial_fonctions__.txt"
 fichier_configuration = f"{Repertoire}\\option.json"
 dictio = ry.lireJSON(fichier=fichier_configuration)
 fichier_initial = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
+fichier_initial = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
+
 _init = ry.lireJSON(fichier_initial)
-formulaire = ry.rajouter_ds_json(fichier=fichier_configuration, dictionnaire=_init, sett=4)
+formulaire = ry.rajouter_ds_json(fichier=fichier_initial, dictionnaire=_init, sett=4)
 #
 DossierInterfaceApp = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", cle2='CONSOLE', sett='valeurcles')
 ARCHIVES = f"{Repertoire}/archives"

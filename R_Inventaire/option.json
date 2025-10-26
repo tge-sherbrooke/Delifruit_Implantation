@@ -49,10 +49,10 @@
             "Cache": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/cache.txt"
         },
         {
-            "INIT": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/_init_"
+            "INIT": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/_init_.json"
         },
         {
-            "Formulaire": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/formulaire"
+            "Formulaire": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/formulaire.json"
         },
         {
             "texte_support": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/texte_support.txt"
