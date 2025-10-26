@@ -1,0 +1,165 @@
+﻿/* Liens */
+/* Liens */
+
+
+* {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+html {
+    font-family: 'Tangerine', cursive;
+    font-style: normal;
+    background-color: rgb(5, 79, 148);
+    color: white;
+}
+
+/* N A V I G A T I O N */
+
+h2 {
+    font-size: 5em;
+}
+
+p {
+    font-size: 2em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav_haut {
+    display: flex;
+    position: sticky;
+    top: 0.1px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    font-size: 0.8em;
+}
+
+.nav_second {
+    display: flex;
+    position: sticky;
+    top: 40px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(3, 48, 91);
+    padding: 6px 0;
+}
+
+.nav_haut ul  {
+    display: flex;
+    gap: 30px;
+}
+
+.nav_second ul  {
+    display: flex;
+    gap: 30px;
+}
+
+#image_entree img {
+    width: 100%;
+    margin: 0;
+    height: auto;
+}
+
+
+/* Liens */
+
+main {
+    margin: 40px 0px 40px 0px;
+}
+
+#section_1 {
+    background-color: rgb(24, 22, 22);
+    padding: 90px 0px 150px 0px;
+}
+
+main #section_1 article {
+    display: flex;
+    justify-content: center;
+}
+
+#section_1 div {
+    padding: 0px 160px 100px 160px;
+}
+
+.image_section_1 {
+    padding: 20px;
+    width: 300px;
+    border-radius: 60px;
+}
+
+/* Liens */
+#section_2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(21, 29, 48);
+    padding: 150px 160px 150px 160px;
+}
+
+#section_2 article {
+    display: block;
+}
+
+.image_section_2 {
+    width: 200px;
+    border-radius: 60px;
+}
+
+#section_3 {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(25, 21, 63);
+
+}
+
+#section_3 { 
+    padding: 150px 160px 150px 160px;
+}
+
+#section_3 article {
+    display: block;
+}
+
+.image_section_3 {
+    width: 500px;
+    height: 400px;
+    border-radius: 60px;
+}
+
+/* Liens */
+
+
+
+/* Liens */
+
+
+
+/* Liens */
+
+.image_fin_article {
+    justify-self: center;
+    padding: 150px 0px 90px 0px;
+}
+
+.image_fin_body {
+    width: 600px;
+    border-radius: 60px;
+}
+
+/* Liens */
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em;
+}
+
+#copyright {
+    font-size: 0.8em;
+}
