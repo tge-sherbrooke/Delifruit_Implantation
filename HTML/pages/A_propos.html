@@ -12,66 +12,168 @@
     <title>Document</title>
 </head>
 
-<body>
+<body id="a_propos">
     <nav class="nav_haut">
         <ul>
             <li><a href="">Utilites</a></li>
-            <li><a href="">Magasinnez</a></li>
+            <li><a href="">Magasinez</a></li>
             <li><a href="">Soutien technique</a></li>
             <li><a href="">A propos</a></li>
             <li><a href="">Carrieres</a></li>
         </ul>
     </nav>
-    <div id="image_entree">
-        <img src="./img/Affichage_accueil/0_1.jpeg" alt="">
+    <div class="image_entree">
+        <img src="../img/Affichage_a_propos/01.jpeg" alt="">
     </div>
     <nav class="nav_second">
+        <a href="../index.html"><img id="logo" src="../img/logo/delifruit_logo.JPG" alt="logo"></a>
         <ul>
             <li><a href="../index.html">Accueil</a></li>
-            <li><a href="Magasinnez.html">Magasinnez</a></li>
+            <li><a href="Magasinez.html">Magasinez</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="A_propos.html">A propos</a></li>
-            <li><a href="Maintenance.html">Maintenance</a></li>
         </ul>
+        <!-- f o r m u l a i r e -->
+        <li id="formDevSearch">
+                <form action="../NepasFaire/pages/FAQ.html" method="GET" class="enterDev">
+                <input type="text" name="query" placeholder="Rechercher..." required="" spellcheck="false" data-ms-editor="true">
+                <img type="submit" src="https://images.icon-icons.com/849/PNG/512/search_locate_find_icon-icons.com_67287.png" alt="Search Icon">
+        </li>
     </nav>
     <main>
-        <section id="section_1">
+        <section id="section_1" class="fade-in-up">
             <div>
-                <h2>Bienvenue sur Delifruit</h2>
+                <h2>A propos de Delifruit</h2>
                 <p>Delifruit est une entreprise familiale spécialisée dans la production et la vente de confitures artisanales depuis plus de 20 ans. Nous nous engageons à utiliser des ingrédients naturels et locaux pour créer des saveurs uniques qui raviront vos papilles. Que vous soyez un amateur de fruits classiques ou à la recherche de combinaisons audacieuses, Delifruit a quelque chose à offrir à chacun.</p>
             </div>
             <article>
-                <img class="image_section_1" src="./img/Affichage_accueil/1.jpg" alt="image_confiture">
-                <img class="image_section_1" src="./img/Affichage_accueil/1.jpg" alt="image_confiture">
-                <img class="image_section_1" src="./img/Affichage_accueil/1.jpg" alt="image_confiture">
+                <div class="div_section_1">
+                    <img class="image_section_1" src="../img/Affichage_accueil/1.jpg" alt="image_confiture">
+                    <h4>Sarah Marquis</h4>
+                    <h3>Responsable de departement de production</h3>
+                    <p>
+                        <b>Description</b> : Tablette de chocolat noir 70% cacao <br>
+                        <b>Experiences</b> : 100 g <br>
+                        <b>Etudes</b> : Fèves de cacao, sucre, beurre de cacao <br>
+                        <b>Personnalites</b> : Un chocolat intense et fondant, parfait pour les amateurs de saveurs riches et authentiques.
+                    </p>
+                </div>
+                <div class="div_section_1">
+                    <img class="image_section_1" src="../img/Affichage_accueil/1.jpg" alt="image_confiture">
+                    <h4>Ryan Moise Badye K.</h4>
+                    <h3>Responsable de departement de developpement</h3>
+                    <p>
+                        <b>Description</b> : Tablette de chocolat noir 70% cacao <br>
+                        <b>Experiences</b> : 100 g <br>
+                        <b>Etudes</b> : Fèves de cacao, sucre, beurre de cacao <br>
+                        <b>Personnalites</b> : Un chocolat intense et fondant, parfait pour les amateurs de saveurs riches et authentiques.
+                    </p>
+                </div>
+                <div class="div_section_1">
+                    <img class="image_section_1" src="../img/Affichage_accueil/1.jpg" alt="image_confiture">
+                    <h4>Jonathan Brunet</h4>
+                    <h3>Responsable de departement <br>informatique</h3>
+                    <p>
+                        <b>Description</b> : Tablette de chocolat noir 70% cacao <br>
+                        <b>Experiences</b> : 100 g <br>
+                        <b>Etudes</b> : Fèves de cacao, sucre, beurre de cacao <br>
+                        <b>Personnalites</b> : Un chocolat intense et fondant, parfait pour les amateurs de saveurs riches et authentiques.
+                    </p>
+                </div>
+                <div class="div_section_1">
+                    <img class="image_section_1" src="../img/Affichage_accueil/1.jpg" alt="image_confiture">
+                    <h4>Brahim Dahou</h4>
+                    <h3>Responsable de departement de <br>reseau</h3>
+                    <p>
+                        <b>Description</b> : Tablette de chocolat noir 70% cacao <br>
+                        <b>Experiences</b> : 100 g <br>
+                        <b>Etudes</b> : Fèves de cacao, sucre, beurre de cacao <br>
+                        <b>Personnalites</b> : Un chocolat intense et fondant, parfait pour les amateurs de saveurs riches et authentiques.
+                    </p>
+                </div>
             </article>
         </section>
 
-        <section id="section_2">
+        <section id="a_section_2" class="fade-in-up">
             <div>
-                <h2>Bienvenue sur Delifruit</h2>
-                <p>Une gamme de produit a couper le souffle.</p>
+                <h2>Notre histoire de fruit</h2>
+                <p>Dans nos champs, chaque sillon raconte une histoire de respect et de patience. Le labourage prépare la terre, la nature offre ses fruits, et l’homme orchestre cette rencontre avec soin. C’est dans cette alliance que naît notre confiture : un produit authentique, issu d’un dialogue entre le vivant et le savoir-faire industriel. Les fruits sont cueillis à maturité, puis transformés avec précision, sans jamais trahir leur origine. Chaque pot reflète cette synergie : la générosité du sol, la rigueur du geste, et l’engagement pour une qualité durable. Investir ici, c’est soutenir une vision où tradition et innovation avancent main dans la main.</p>
             </div>
-            <article>
-                <img class="image_section_2" src="./img/Affichage_accueil/1.jpg" alt="image_confiture">
-                <img class="image_section_2" src="./img/Affichage_accueil/1.jpg" alt="image_confiture">
-            </article>
+
         </section>
 
-        <section id="section_3">
-            <img class="image_section_3" src="./img/Affichage_accueil/1.jpg" alt="image_confiture">
-            <article>
-                <h2>Astuces</h2>
-                <p>Decorer sa table des recettes de familles</p>
-            </article>
-        </section>
-
-        <div class="image_fin_article"> 
-            <img class="image_fin_body" src="./img/Affichage_accueil/3.jpeg" alt="">
+        <div id="image_fin_article" class="fade-in-up"> 
+            <img class="image_fin_body" src="../img/Affichage_a_propos/01_.jpeg" alt="">
+            <img class="image_fin_body" src="../img/Affichage_a_propos/02.jpeg" alt="">
+            <img class="image_fin_body" src="../img/Affichage_a_propos/03.jpeg" alt="">
         </div>
     </main>
 </body>
 <footer>
-    <p id="copyright">Copyright © 2024 Delifruit. Tous droits réservés.</p>
+    <section>
+        <div class="contact_footer">
+            <ul>
+                <li>Tél. 819-564-6350</li>
+                <li>delifruit_user@gmail.com</li>
+                <li>475, rue du Cégep
+                    Sherbrooke (Québec)
+                    J1E 4K1</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href="../index.html">À propos</a></li>
+                <li><a href="../index.html">Nouvelles</a></li>
+                <li><a href="../index.html">Annoncer: Web et Magazine</a></li>
+                <li><a href="../index.html">Concours</a></li>
+                <li><a href="../index.html">Équivalences</a></li>
+                <li><a href="../index.html">Téléchargements</a></li>
+                <li><a href="../index.html">Radio-Canada.ca</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href="../index.html">Mon profil</a></li>
+                <li><a href="../index.html">Mes recettes</a></li>
+                <li><a href="../index.html">Gammes</a></li>
+                <li><a href="../index.html">Stock</a></li>
+                <li><a href="../index.html">Influences</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href="../index.html">FAQ</a></li>
+                <li><a href="../index.html">Cuisine</a></li>
+                <li><a href="../index.html">Recettes</a></li>
+                <li><a href="../index.html">Astuces</a></li>
+                <li><a href="../index.html">Rubriques</a></li>
+                <li><a href="../index.html">Infolettre</a></li>
+                <li><a href="../index.html">Soutien technique</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href="../index.html">Nous contacter</a></li>
+                <li><a href="../index.html">Boutiques</a></li>
+                <li><a href="../index.html">Abonnements</a></li>
+                <li><a href="../index.html">En épicerie</a></li>
+                <li><a href="../index.html">Offres</a></li>
+                <li><a href="../index.html">Carrieres</a></li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <div class="reseaux_sociaux">
+        <ul>
+            <li><img class="reseau_sociaux_img" src="https://images.icon-icons.com/2699/PNG/512/instagram_logo_icon_168715.png" alt="Visitez notre Instagram"></li>
+            <li><img class="reseau_sociaux_img" src="https://images.icon-icons.com/2429/PNG/512/facebook_logo_icon_147291.png" alt="Visitez notre Facebook"></li>
+            <li><img class="reseau_sociaux_img" src="https://images.icon-icons.com/2699/PNG/512/twitch_logo_icon_170383.png" alt="Visitez notre Twitch"></li>
+            <li><img class="reseau_sociaux_img" src="https://images.icon-icons.com/2699/PNG/512/telegram_tile_logo_icon_169640.png" alt="Visitez notre Telegram"></li>
+            <li><img class="reseau_sociaux_img" src="https://images.icon-icons.com/2699/PNG/512/whatsapp_logo_icon_170905.png" alt="Visitez notre Whatsapp"></li>
+
+        </ul>
+    </div>
+    <p id="copyright">Copyright © 2025 Delifruit. Tous droits réservés. | 
+        Politique de confidentialité | Conditions générales</p>
 </footer>
 </html>
