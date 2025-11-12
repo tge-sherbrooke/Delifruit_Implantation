@@ -1,0 +1,35 @@
+name: Upload via VPN
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up OpenVPN
+        run: |
+          sudo apt update
+          sudo apt install -y openvpn
+          echo "$OPENVPN_CONFIG" > config.ovpn
+          sudo openvpn --config config.ovpn --daemon
+          sleep 10  # attends que le tunnel monte
+        env:
+          OPENVPN_CONFIG: ${{ secrets.GITHUBACTIONS_VPN_CREDENTIALS }}
+
+      - name: Test VPN connectivity
+        run: |
+          ip a
+          ping -c 3 100.10.1.1  # exemple: pfSense LAN gateway
+
+      - name: Upload via SFTP
+        run: |
+          sudo apt install -y lftp
+          lftp -u "$SFTP_USER","$SFTP_PASS" sftp://100.10.1.50 -e "mput *; bye"
+        env:
+          SFTP_USER: ${{ secrets.USER_DELIFRUIT_SFTP }}
+          SFTP_PASS: ${{ secrets.PASSWORD_SFTP }}
