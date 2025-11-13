@@ -23,6 +23,7 @@ main {
 
 h3:hover, h4:hover, p:hover {
     background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 12px;
 }
 
 /* 01 -- N A V I G A T I O N */
@@ -260,15 +261,7 @@ main #section_1 article {
 }
 
 #section_2 article {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0px 0px 0px 50px;
-}
-
-.image_section_2 {
-    width: 200px;
-    border-radius: 60px;
-    margin: 10px;
+    margin: 30px 0px 0px 50px;
 }
 
 #index #section_2 div h2 {
@@ -283,13 +276,34 @@ main #section_1 article {
     text-align: center;
 }
 
+#index .div_section_2 {
+    margin: 0px 0px 0px 60px;
+    padding: 20px;
+    width: 300px;
+    border-radius: 60px;
+    text-align: center;
+    border: 1px solid;
+    background-color: white;
+    color: black;
+}
+
+#index .div_section_2 h3 {
+    justify-self: center;
+    background-color: #2dcc3abe;
+    width: 250px;
+}
+
+#index .div_section_2 p {
+    font-size: 1em;
+}
+
 /* SECTION 3 -------------------------------------------- */
 
 #index #section_3 {
     display: flex;
     justify-content: space-between;
     background-color: rgba(126, 6, 150, 0.774);
-    padding: 150px 160px 150px 160px;
+    padding: 100px 80px 100px 80px;
 }
 
 #index #section_3 h2 {
@@ -301,9 +315,10 @@ main #section_1 article {
 }
 
 #index #section_3 .image_section_3 {
-    width: 1000px;
-    height: 500px;
-    border-radius: 60px;
+    width: 600px;
+    height: 350px;
+    border-radius: 30px;
+    margin: 50px 0px 0px 0px;
 }
 
 #index #section_3 article p {
