@@ -3,6 +3,8 @@ import lib._Functions as ry
 import subprocess as psh
 import importlib.util
 import traceback
+import difflib
+import json
 import time
 if platform.system() == 'Linux' :
     psh.check_call(['sudo', 'bash', '/d/Stockage/Scripts/venv/bin/activate'])
@@ -12,7 +14,11 @@ except ModuleNotFoundError as m:
     import traceback
     print("\033[1;31m", traceback.extract_tb(sys.exc_info()[2]), 'FileNotFoundError', m, "\033[0m")
     
-   
+def resoudre_chemins(chemin_I, chemin_II):
+    if os.path.exists(chemin_I) :
+        return chemin_I
+    else : 
+        return chemin_II
     
 WHITE = (1, 1, 1, 1)
 BLEUPALE = (0.68, 0.85, 0.90, 1)
@@ -30,11 +36,36 @@ Repertoire = os.path.dirname(os.path.abspath(__file__))
 credential = "__initial_fonctions__.txt"
 fichier_configuration = f"{Repertoire}\\option.json"
 dictio = ry.lireJSON(fichier=fichier_configuration)
-fichier_initial = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
-fichier_initial = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
+fichier_sauvegarde_json = f"{Repertoire}\\sauvegarde.json"
+librairie = resoudre_chemins(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", cle2='librairie_A', sett='valeurcles'),
+                             ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", cle2='librairie_D', sett='valeurcles'))
+                             
+# ______________I_N_I_T_______________________________________________
+fichier_initial = resoudre_chemins(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT_A', sett='valeurcles'), 
+                                   ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT_D', sett='valeurcles'))
+contenu_init = ry.lireJSON(fichier_initial)
+DossierSORTIE = resoudre_chemins(
+    ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='DossierSortie_A', sett='valeurcles'),
+    ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='DossierSortie_D', sett='valeurcles')
+)
+# ______________F_O_R_M_U_L_A_I_R_E_________________________________________
+fichier_form = resoudre_chemins(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='Formulaire_A', sett='valeurcles'), 
+                                   ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='Formulaire_D', sett='valeurcles'))
+#
+contenu_formulaire = ry.lireJSON(fichier_form)
+reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial, fichier2=fichier_form,
+                             sett='json', option='return')
 
-_init = ry.lireJSON(fichier_initial)
-formulaire = ry.rajouter_ds_json(fichier=fichier_initial, dictionnaire=_init, sett=4)
+#
+# ______________S_A_U_V_E_G_A_R_D_E_________________________________________
+if reponse == True:   
+    lecture_validante = ry.lireJSON(fichier_sauvegarde_json)
+    if lecture_validante is not None and lecture_validante != '':
+        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json, dictionnaire=f",{contenu_init}", sett=4)
+    else :
+        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json, dictionnaire=f"{contenu_init}", sett=4)
+
+ry.ecrire_ds_json(fichier=fichier_form, dictionnaire=contenu_init, sett=4)
 #
 DossierInterfaceApp = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", cle2='CONSOLE', sett='valeurcles')
 ARCHIVES = f"{Repertoire}/archives"
@@ -45,7 +76,7 @@ def date(sett='') :
     date_ajourdhui = datetime.datetime.now()
     if sett == 'archive':
         return date_ajourdhui.strftime("%Y-%m-%d-%H-%M-%S")
-    elif sett == 'date_pour_cv':
+    elif sett == 'date_pour_BD':
         date_formatee = date_ajourdhui.strftime("%d %B %Y")
         return date_formatee.lower()
     elif sett == '':
@@ -169,5 +200,9 @@ def verificateur_module(m):
         check_install({"pypandoc":"pypandoc"}, var_app_pandoc)
     if "wkhtmltopdf" in f"{m}":
         check_install({"wkhtmltopdf":"wkhtmltopdf"}, var_app_wkhtmltopdf)
+
+# _____________________________________________________________________________________________________________________________
+# _____________________________________________________________________________________________________________________________
+# _____________________________________________________________________________________________________________________________
 
 

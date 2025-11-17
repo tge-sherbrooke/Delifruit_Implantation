@@ -1,14 +1,14 @@
 {
     "largeur": 200,
-    "hauteur": 1000,
-    "x": 0,
-    "y": 23,
-    "Postulation": [
+    "hauteur": 1800,
+    "x": 511,
+    "y": 228,
+    "Nombres_Utilisateurs": [
         {
-            "nbreEntreeTotal": 31
+            "nbreEntreeTotal": 33
         },
         {
-            "nbreEntreeJour": 0
+            "nbreEntreeJour": 31
         }
     ],
     "all_check": null,
@@ -29,7 +29,13 @@
             "CONSOLE": "D:/Stockage/Scripts/__Python__/__Interfaces/The_Beginning"
         },
         {
-            "DossierSortie": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie"
+            "DossierSortie_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie"
+        },
+        {
+            "DossierSortie_D": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/Sortie"
+        },
+        {
+            "DossierDoc": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/DOC"
         },
         {
             "DossierRH": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/RH"
@@ -38,7 +44,13 @@
             "DossierProd": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/Production"
         },
         {
-            "librairie": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib"
+            "librairie_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib"
+        },
+        {
+            "librairie_D": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib"
+        },
+        {
+            "BlocNotesLib": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/Blocnotes"
         },
         {
             "DossierESP": "E:"
@@ -46,16 +58,28 @@
     ],
     "Fichiers_Configurations": [
         {
-            "Cache": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/cache.txt"
+            "Cache_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/cache.txt"
         },
         {
-            "INIT": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/_init_.json"
+            "Cache_D": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/cache.txt"
         },
         {
-            "Formulaire": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/formulaire.json"
+            "INIT_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/_init_.json"
         },
         {
-            "texte_support": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/texte_support.txt"
+            "INIT_D": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/_init_.json"
+        },
+        {
+            "Formulaire_A": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/Sortie/formulaire.json"
+        },
+        {
+            "Formulaire_D": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/formulaire.json"
+        },
+        {
+            "texte_support_A": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/texte_support.txt"
+        },
+        {
+            "texte_support_D": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/texte_support.txt"
         }
     ],
     "variables": [

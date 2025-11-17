@@ -1,5 +1,10 @@
 import os, sys
 import platform, importlib
+# ________________COMPARER
+import json
+import difflib
+import pprint
+# ________________
 import math
 import random
 import json
@@ -501,24 +506,37 @@ def chercher_ds_JSON(dictionnaire, cle1=None, cle2=None, cle3=None, contenu=None
                             # cle2 -> doit etre une variable dans la valeur a chercher. Pas la cle
                             if cle2 in val or val == cle2 :
                                 return val
-
+    elif sett == '[]-{-valeur':
+        for element in dictionnaire[cle1]:
+            if element == cle2:
+                return element[cle2]
 
     elif sett == 'tableau' or sett == 'liste': # si le conteneur est un tableau qui contient un dictionnaire, retourne le tableau
         # Dictionnaire
         for key in dictionnaire :
-            for cle, val in key.items():
-                if cle == cle1 :
-                    tableau_valideur_action.append(cle)
-                    data[cle1] = tableau_valideur_action
-        return data
+                for cle, val in key.items():
+                    if cle == cle1 :
+                        tableau_valideur_action.append(cle)
+                        data[cle1] = tableau_valideur_action
+                return data               
     
     elif sett == '{[]}-valeur' :
-        for key, tableau in dictionnaire:
+        for key, tableau in dictionnaire.items():
             if key == cle1:
                 for tab in dictionnaire[cle1]:
                     for titre, valeur in tab.items():
                         return valeur
                     
+    elif sett == '{-[]-{}-[]' or sett == 'tableau-dictio' :
+        for key, valeurs in dictionnaire.items():
+            if key == cle1:
+                for tab in valeurs:
+                    for tableau in tab :
+                        try :
+                                return tableau
+                        except Exception as e:
+                            colorPrint_(Violet, f"{e}: -> {tableau}"); exit()
+                        
     elif sett == '{[]}-dictionnaires' :
         for key, tableau in dictionnaire.items():
             if key == cle1:
@@ -534,6 +552,7 @@ def chercher_ds_JSON(dictionnaire, cle1=None, cle2=None, cle3=None, contenu=None
                 if cle == cle1 :
                     tableau_valideur_action.append(cle)
         return tableau_valideur_action
+
 
     else :
         errorPrint(f'chercher_ds_JSON 1=>{cle1}, 2=>{cle2}, 3=>{cle3}', "fonction", "une des cles manque...")
@@ -1295,8 +1314,57 @@ def colorer_fin_ligne(self, obj='', tag='all', cible='#', color_titre='yellow',
 
 
 #   -----------------------------------------------------------------------------------------------
-#   ---------------------------------- CHECK HEXADECIMAL -----------------------------------------
+#   ---------------------------------- DIFFLIB COMPARAISON FICHIERS -----------------------------------------
 #   -----------------------------------------------------------------------------------------------
+
+def comparer_contenu_fichiers(fichier1, fichier2, sett='txt', option='return'):
+    
+    if sett == 'txt':
+        # Charger le contenu de deux fichiers JSON
+        with open(fichier1, 'r', encoding='utf-8') as f1, open(fichier2, 'r', encoding='utf-8') as f2:
+            fichier1_lignes = f1.readlines()
+            fichier2_lignes = f2.readlines()
+
+        # Créer un objet Differ
+        diff = difflib.unified_diff(
+            fichier1_lignes,
+            fichier2_lignes,
+            fromfile=fichier1,
+            tofile=fichier2,
+            lineterm=''
+        )
+
+    elif sett == 'json':
+        # Charger les fichiers comme objets Python
+        with open(fichier1, 'r', encoding='utf-8') as f1, open(fichier2, 'r', encoding='utf-8') as f2:
+            data1 = json.load(f1)
+            data2 = json.load(f2)
+
+        # Convertir en texte formaté identique
+        data1_str = pprint.pformat(data1, indent=2).splitlines()
+        data2_str = pprint.pformat(data2, indent=2).splitlines()
+
+        # Comparer avec difflib
+        diff = difflib.unified_diff(
+            data1_str, data2_str,
+            fromfile=fichier1,
+            tofile=fichier2,
+            lineterm=''
+        )
+        
+    if option == 'return' :
+        if not list(diff):
+            return False
+        else :
+            True
+                
+    if option == 'test' or option == 'afficher' :
+        if not list(diff):
+            print('\n', '-' * 20,'\n Vide\n', '-' * 20, '\n')
+        else:
+            for ligne in diff:
+                print(ligne)
+            
 
 
 #   -----------------------------------------------------------------------------------------------

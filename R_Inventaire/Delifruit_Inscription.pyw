@@ -1,4 +1,4 @@
-﻿import subprocess as psh
+import subprocess as psh
 import os, sys, platform
 import datetime, locale, calendar
 import __initial_INSCRIPTION as initM
@@ -59,6 +59,7 @@ from kivy.uix.label import Label
 from functools import partial
 from kivy.uix.checkbox import CheckBox
 from kivy.uix.scrollview import ScrollView
+from kivy.graphics import Color, Rectangle
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.animation import Animation
@@ -70,26 +71,30 @@ import csv
 
 # Définir la locale en français (valable sur systèmes compatibles)
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+# Commande provnant de Functions.py
 ry = initM.ry
 rcp = initM.rcp
 err = initM.err
 dictio = initM.dictio
 Repertoire = initM.Repertoire
+APP = f"{Repertoire}\\Delifruit_Inscription.pyw"
 fichier_configuration = initM.fichier_configuration
 # ___________________________________________________________________________________________________________________
 
 markdownobject = 'mark_cv'
-INITfile = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles')
+INITfile = initM.fichier_initial
 date_archivable = initM.date('archive')
-date_formatee = initM.date('date_pour_cv')
-INITfile 
+date_formatee = initM.date('date_pour_BD')
 texteWord = initM.texte_support
+LETTREFichier = initM.fichier_form
+LETTRE = initM.contenu_formulaire
+
 ARCHIVES = initM.ARCHIVES
 file_git_send = f"{Repertoire}\\lib\\git_send.bat" 
-DOSSIER = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Liste_Dossiers", cle2='Liste_ouverture', sett='liste')
+DOSSIER = ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Liste_Dossiers", cle2='Liste_ouverture', sett='{-[]-{}-[]')
 # ___________________________________________________________________________________________________________________
 
-BLEUFONCE = initM.BLEUFONCE ; GRISFONCE = initM.GRISFONCE ; GRISCLAIR = initM.GRISCLAIR
+BLEUFONCE = initM.BLEUFONCE ; BLEUPALE = initM.BLEUPALE ; GRISCLAIR = initM.GRISCLAIR
 NOIR = initM.NOIR; WHITE = initM.WHITE
 VERT = initM.VERT
 ROUGE = initM.ROUGE
@@ -102,17 +107,16 @@ def generer_fichier(fichierentree, fichiersortie):
     with open(fichiersortie, 'w') as write :
         write.write(f"{recup_content}\n")
         
-generer_fichier(texteWord, INITfile)
+generer_fichier(INITfile, LETTREFichier)
 
 dictio = ry.lireJSON(fichier=fichier_configuration)
 
 blocnotes_dossier = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='BlocNotesLib', sett='valeurcles')
-DossierSORTIE = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='DossierSORTIE', sett='valeurcles')
+DossierSORTIE = initM.DossierSORTIE
 DossierDOC = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='DossierDoc', sett='valeurcles')
 
-LETTRE = initM.formulaire
 checker = 'checkbox'
-rcp(ry.Violet, LETTRE)
+# rcp(ry.Violet, LETTRE)
 
 _DATE = LETTRE['Date_de_creation']
 _PRENOM = LETTRE['Prenom']
@@ -122,9 +126,41 @@ _PHONE = LETTRE['Telephone']
 _COURRIEL = LETTRE['Courriel']
 _ENTREPRISE = LETTRE['Entreprise']
 _EDITEUR = LETTRE['Editeur']
-_DEPARTEMENTS = ry.chercher_ds_JSON(dictionnaire=LETTRE, cle1='Departements', cle2='1', sett='valeurcles')
-_FONCTIONS = ry.chercher_ds_JSON(dictionnaire=LETTRE, cle1='Fonctions', cle2='1', sett='valeurcles')
-_PRIVILEGES = ry.chercher_ds_JSON(dictionnaire=LETTRE, cle1='Privileges', cle2='1', sett='valeurcles')
+_DEPARTEMENTS = LETTRE['Departements']
+_FONCTIONS = LETTRE['Fonctions']
+_PRIVILEGES = LETTRE['Privileges']
+_LIEN = LETTRE['Lien']
+_ADRESSE = LETTRE['Adresse']
+_JOUR = LETTRE['Jour']
+
+print(ry.Violet,
+    _DATE,
+_PRENOM,
+_NOM,
+_AGE,
+_PHONE,
+_COURRIEL,
+_ENTREPRISE,
+_EDITEUR, 
+_DEPARTEMENTS,
+_FONCTIONS,
+_PRIVILEGES, "Para"
+)
+
+cle_DATE = 'Date_de_creation'
+cle_PRENOM = 'Prenom'
+cle_NOM = 'Nom'
+cle_AGE = 'Age'
+cle_PHONE = 'Telephone'
+cle_COURRIEL = 'Courriel'
+cle_ENTREPRISE = 'Entreprise'
+cle_EDITEUR = 'Editeur'
+cle_DEPARTEMENTS = 'Departements'
+cle_FONCTIONS = 'Fonctions'
+cle_PRIVILEGES = 'Privileges'
+cle_LIEN = 'Lien'
+cle_ADRESSE = 'Adresse'
+cle_JOUR = 'Jour'
 
 def recuperateur_poste(tableau, contenu):
     if f'{tableau}' in contenu:
@@ -152,7 +188,7 @@ _fonctions_ = "Fonctions"
 _privileges_ = "Privileges"
 _departements_ = "Departements"
 _editeur_ = "Editeur"
-_linkedln_ = "Linkedln"
+_utilitaires_ = "Distribution"
 
 x = dictio['x']
 y = dictio['y']
@@ -167,7 +203,7 @@ def colorer(self, bouton, couleur):
     bouton.background_color = couleur  # vert foncé (R, G, B, Alpha)
     return bouton
 
-def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f=None, col_f=None, sett='normal', cadrage=None, forme=None):
+def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f=None, col_f=None, sett='normal', cadrage=None, forme=None, couleur=NOIR):
         """_summary_
 
         Args:
@@ -205,7 +241,7 @@ def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f
                     
                     gchecadre = GridLayout(size_hint_y=None, row_force_default=False, row_default_height=row_f)
                     gchecadre.cols = col2
-                    gchecadre = colorer(self, gchecadre, GRISFONCE)  # gris clair, valeurs entre 0 et 1 RGBA
+                    gchecadre = colorer(self, gchecadre, BLEUPALE)  # gris clair, valeurs entre 0 et 1 RGBA
                     dtecadre = GridLayout(size_hint_y=None, row_force_default=False, row_default_height=row_f)
                     dtecadre.cols = col3
                     dtecadre = colorer(self, dtecadre, VERT)
@@ -242,7 +278,7 @@ def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f
                     # Layout qui contiendra les widgets et sera défilable
                     cadre = GridLayout(size_hint_y=None, row_force_default=False, row_default_height=row_f)
                     cadre.cols = col1
-                    # gauche
+                    # gauche ____________________________________________________
                     self.scroll_viewgche = ScrollView(size_hint=(1, 1))
                     self.scroll_viewdte = ScrollView(size_hint=(1, 1))
                     gchecadre = GridLayout(
@@ -251,9 +287,9 @@ def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f
                     )
                     gchecadre.bind(minimum_height=gchecadre.setter('height'))
                     gchecadre.cols = col2                    
-                    gchecadre = colorer(self, gchecadre, GRISFONCE)  # gris clair, valeurs entre 0 et 1 RGBA
+                    gchecadre = colorer(self, gchecadre, BLEUPALE)  # gris clair, valeurs entre 0 et 1 RGBA
                     self.scroll_viewgche.add_widget(gchecadre)
-                    # droite
+                    # droite ____________________________________________________
                     dtecadre = GridLayout(
                         size_hint_y=None,   # ← important pour permettre le scroll vertical
                         size_hint_x=1       # ← occupe toute la largeur
@@ -287,7 +323,7 @@ def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f
                         )
                     gchecadre.bind(minimum_height=gchecadre.setter('height'))
                     gchecadre.cols = col2
-                    gchecadre = colorer(self, gchecadre, GRISFONCE)  # gris clair, valeurs entre 0 et 1 RGBA
+                    gchecadre = colorer(self, gchecadre, BLEUPALE)  # gris clair, valeurs entre 0 et 1 RGBA
                     # droite
                     dtecadre = GridLayout(
                         spacing=1,
@@ -317,6 +353,19 @@ def add_object(self, cols=None, col1=2, col2=None, col3=None, sticky=None, row_f
                     size_hint_y=None,   # ← important pour permettre le scroll vertical
                     size_hint_x=1       # ← occupe toute la largeur
                 )
+                
+                with cadre.canvas.before :
+                    Color(*couleur)
+                    cadre.bg_rect = Rectangle(size=cadre.size, pos=cadre.pos)
+
+                # Mise à jour automatique de la taille/position du rectangle
+                def update_rect(*args):
+                    cadre.bg_rect.size = cadre.size
+                    cadre.bg_rect.pos = cadre.pos
+
+                cadre.bind(size=update_rect, pos=update_rect)
+                # ------------------------------------
+                                    
                 cadre.bind(minimum_height=cadre.setter('height'))
                 # On place le layout dans le ScrollView
                 cadre.cols = cols
@@ -430,7 +479,7 @@ def commandes_bouton(self, text, commande=None, objet=None, police=11,
     return self.submit
           
 
-def remplisseur(self, texte, objet=None, multiline=False, couleur=None, width=80, height=None, sett='default') :     
+def remplisseur(self, texte, objet=None, multiline=False, couleur=None, width=100, height=None, sett='default') :     
     if couleur and sett == 'default':   
         self.name = TextInput(multiline=multiline, background_color=couleur)
         self.name.bind(text=self.on_text_change)
@@ -503,14 +552,15 @@ class Home(GridLayout):
     def __init__(self, **kwargs):
         # Appel du constructeur de grille
         super(Home, self).__init__(**kwargs)
-        self.nombre_postulee = self.afficher_nbre_postulee('nbrePostulee')
-        self.nbrePostuleeJour = self.afficher_nbre_postulee('nbrePostuleeJour')
+        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
+        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
         self.colorationunique = False
         self.nom_sans_ext = None
         self.tableau_insertion = None
         self.csv_cv = None
         self.pdf = self.doc = self.soum = None
         self.INITfile = INITfile
+        self.LETTRE = LETTRE
         self.valideur_insert = self.valideur_nbre_jr = False
         self.dict_boutonvalideur = {}
         self.dictionnaire_bouton_menu = {} 
@@ -518,9 +568,9 @@ class Home(GridLayout):
         self.fichier_csv = f'{Repertoire}\\lib\\csv_cv_motivation.csv'
         # self.Jour = self.Entreprise = self.Poste = self.Site = self.Scripts = self.Signature = self.NomD = self.NomDII = None
         
-        self.jobsite = dictio['Jobsites']
+        self.liste_rapide = dictio['Liste_Rapide']
         self.Cadres()
-
+        #   M E N U 
         self.menu_options = {
             "Log": lambda *args: self.__ouvrir__(fichierdossier=Repertoire),
             "Save": self.save,
@@ -534,7 +584,7 @@ class Home(GridLayout):
             "Notes": None,
             "Texte": lambda instance, file=texteWord: self.__ouvrir__(fichierdossier=file),
             f"{self.nombre_postulee}": None,
-            f"{self.nbrePostuleeJour}":lambda instance, val=0: self.set_nbre_Postulee_jour(val),
+            f"{self.nbreEntreeTotal}":lambda instance, val=0: self.set_nbre_Postulee_jour(val),
         }
 
         self.dictionnaire_bouton_menu = Menu(self=self, cadre=self.cadreI, tableau=self.menu_options, dictio=self.dictionnaire_bouton_menu,
@@ -563,21 +613,21 @@ class Home(GridLayout):
         self.dictionnaire_bouton_menu['Save'].text = f"{len(self.tableau_insertion)}"
         # COULEUR d'ecran
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nombre_postulee}"], couleur=NOIR)
-        colorer(self, self.dictionnaire_bouton_menu[f"{self.nbrePostuleeJour}"], couleur=NOIR)
+        colorer(self, self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], couleur=NOIR)
 
     def Cadres(self) :
         # Colonnes
         self.cols = 1
         # Menu
         self.cadreI = add_object(self=self, cols=6, row_f=5)
-        # Cadre interne - JOBNAMES
-        self.cadreIII = add_object(self, row_f=5, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
-        # Cadre interne - COCHEUR
-        self.cadreII = add_object(self, row_f=5, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
         # FORMULAIRE
-        self.cadreIV = add_object(self, cols=3, sett='scroll')
+        self.cadreIV = add_object(self, cols=6, sett='scroll', couleur=ORANGE)
+        # Cadre interne - JOBNAMES
+        self.cadreIII = add_object(self, row_f=2, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
+        # Cadre interne - COCHEUR
+        self.cadreII = add_object(self, row_f=2, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
         # Renommer
-        self.cadreV = add_object(self, cols=3, row_f=10, col_f=50, sticky=None)
+        # self.cadreV = add_object(self, cols=3, row_f=10, col_f=50, sticky=None)
         
         # FICHIER EN COURS
         # self.cadreIV_I = add_object(self, cols=3, sett='scroll')
@@ -585,26 +635,17 @@ class Home(GridLayout):
     def affichage_special_boutons(self, sett='action'):
 
         if sett == 'auto':
-               
-            self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=_PRENOM, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=_NOM, sett='all')      
-            self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=_AGE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=_FONCTIONS, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Jour.text}", tag=_DATE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=_ENTREPRISE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=_PHONE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=_COURRIEL, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=_PRIVILEGES, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=_DEPARTEMENTS, sett='all')
-
-            
-        elif sett == 'action':
-            self.Adresse = remplisseur(self, objet=self.cadreIV, texte=_adresse_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=_DEPARTEMENTS, 
-                                                                        tagII=_FONCTIONS, a_changer='QC', avec='(Québec)', sett='adresse'))
-            
-        
+            self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=cle_PRENOM,  sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=cle_NOM, sett='all')      
+            self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Jour.text}", tag=cle_DATE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, sett='all')
+                        
         elif sett == 'others':
             # CSV _______________________________________________________________________________
             self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_)
@@ -613,63 +654,68 @@ class Home(GridLayout):
             
             self.AutreLien = remplisseur(self, objet=self.cadreIV, texte=autre_lien_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.csv())
-            # LETTRE _________________________________________________________________________________________
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all'))
+            # LETTRE ________________________________________________________________________________________
+            
+            self.Adresse = remplisseur(self, objet=self.cadreIV, texte=_adresse_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
+                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all'))
+            
             self.Prenom = remplisseur(self, objet=self.cadreIV, texte=_prenom_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=_PRENOM, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=cle_PRENOM, tagII=cle_PRENOM, sett='all'))
             
             self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=_ENTREPRISE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, tagII=_ENTREPRISE, sett='all'))
             
             self.Nom = remplisseur(self, objet=self.cadreIV, texte=_nom_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=_NOM, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=cle_NOM, tagII=_NOM, sett='all'))
             
             self.Age = remplisseur(self, objet=self.cadreIV, texte=_age_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=_AGE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, tagII=_AGE, sett='all'))
 
             self.Phone = remplisseur(self, objet=self.cadreIV, texte=_phone_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=_PHONE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, tagII=_PHONE, sett='all'))
             # CSV : numero de phone____________________________________________________________________
             self.Courriel = remplisseur(self, objet=self.cadreIV, texte=_courriel_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=_COURRIEL, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, tagII=_COURRIEL, sett='all'))
             # CSV : adresse courriel
             self.Departements = remplisseur(self, objet=self.cadreIV, texte=_departements_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=_DEPARTEMENTS, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, tagII=_DEPARTEMENTS, sett='all'))
             # AUTOMATIQUE ______________________________________________________________________________________
             self.Fonctions = remplisseur(self, objet=self.cadreIV, texte=_fonctions_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=_FONCTIONS, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS, tagII=_FONCTIONS, sett='all'))
 
             self.Jour = remplisseur(self, objet=self.cadreIV, texte=_jour_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(tag=_DATE, cible=f"{self.Jour.text}", sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(tag=cle_DATE, tagII=cle_DATE, cible=f"{self.Jour.text}", sett='all'))
 
             self.Privileges = remplisseur(self, objet=self.cadreIV, texte=_privileges_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=_PRIVILEGES, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, tagII=_PRIVILEGES, sett='all'))
             
             self.Editeur = remplisseur(self, objet=self.cadreIV, texte=_editeur_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=_EDITEUR, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, tagII=_EDITEUR, sett='all'))
 
-            self.Notes = remplisseur(self, objet=self.cadreV, texte=_linkedln_,
-                                              couleur=GRISCLAIR, height=2, sett='hauteur')
-            self.Notes.text = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Linkedln', sett='valeurcles')
+            # self.Notes = remplisseur(self, objet=self.cadreV, texte=_utilitaires_, width=len(_utilitaires_*10),
+            #                                   couleur=GRISCLAIR, height=1, sett='hauteur')
+            # self.Notes.text = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien important', sett='valeurcles')
 
             self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE, sett='manuel')
             self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR, sett='manuel')
             self.affichage_boutons(tagger=self.Entreprise, text=_entreprise_, tag=_ENTREPRISE, sett='manuel')
 
-            for jobssite_ in self.jobsite:
-                commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
-                                    commande=lambda instance, jobssite_=jobssite_, objet=self.Site: self.remplir_input(text=jobssite_, objet=objet))
+            # for jobssite_ in self.liste_rapide:
+            #     commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
+            #                         commande=lambda instance, jobssite_=jobssite_, objet=self.Site: self.remplir_input(text=jobssite_, objet=objet))
 
     def affichage_boutons(self, tagger=None, text='vide', tag='', sett='default'):
         
@@ -763,27 +809,37 @@ class Home(GridLayout):
             self.name = None
 
     def afficher_nbre_postulee(self, valeur=None) :
-        if valeur == 'nbrePostulee':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Postulation', 
-                                                         cle2='nbrePostulee', sett='valeurcles')
-        elif valeur == 'nbrePostuleeJour':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Postulation', 
-                                                          cle2='nbrePostuleeJour', sett='valeurcles')
+        if valeur == 'nbreEntreeJour':
+            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
+                                                         cle2='nbreEntreeJour', sett='valeurcles')
+        elif valeur == 'nbreEntreeTotal':
+            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
+                                                          cle2='nbreEntreeTotal', sett='valeurcles')
 
     def save(self, instance, sett='all'):
         envoi = []
-        self.nombre_postulee = self.afficher_nbre_postulee('nbrePostulee')
-        self.nbrePostuleeJour = self.afficher_nbre_postulee('nbrePostuleeJour')
+        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
+        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
         
         if sett == 'all' :
             if self.csv_cv is not None :
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
-                    self.ouvrir_fichier(self.INITfile, sett='lire')
-                    self.renommer_fichier(fichier=self.INITfile, objet=self.cadreV)
-                except AttributeError as arr:
-                    err("RemplirCV", "save", arr)
+                    # self.ouvrir_fichier(self.INITfile, sett='lire')
+                    # self.renommer_fichier(fichier=self.INITfile, objet=self.cadreV)
+
+                    psh.run([
+                        "powershell.exe",
+                        "-NoLogo",
+                        "-NoProfile",
+                        "-ExecutionPolicy", "Bypass",
+                        "-File", rf"{initM.librairie}/envoi_vers_BD.ps1"
+                    ])
+
+                    
+                except Exception as arr:
+                    err(tabErreur=initM.traceback.extract_tb(initM.sys.exc_info()[2]), NomErreur='save', ValeurErreur=arr)
             
             else :
                 colorer(self, bouton=self.Lien, couleur=ROUGE)
@@ -809,7 +865,7 @@ class Home(GridLayout):
         
         date_archivable = initM.date('archive')
         self.INITfile = f"{INITfile}_{date_archivable}.md"
-        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, val=self.INITfile, cle1='markdown', sett='remplacer')
+        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, val=initM.fichier_form, cle1='markdown', sett='remplacer')
         generer_fichier(texteWord, self.INITfile)
         self.csv_cv =  None
         self.valideur_nbre_jr = True
@@ -857,8 +913,8 @@ class Home(GridLayout):
                 "Adresse de l'entreprise": self.Adresse.text,
                 "Lien d'affichage du stage/poste": self.Lien.text,
                 "CV et lettre remis en main propre": self.nom_sans_ext,
-                "Titre du poste": self.Poste.text,
-                "Nom du contact": self.NomD.text,
+                # "Titre du poste": self.Poste.text,
+                # "Nom du contact": self.NomD.text,
                 "Numéro de téléphone": self.Phone.text,
                 "Adresse courriel": self.Courriel.text,
                 "Réponse/Relance/informations supplémentaires": "En attente",
@@ -879,20 +935,20 @@ class Home(GridLayout):
 
     def nbre_changee_a_l_affichage(self):
         self.valideur_nbre_jr = False
-        add_post_simple = self.nbrePostuleeJour + 1
+        add_post_simple = self.nbreEntreeTotal + 1
         add_post_global = self.nombre_postulee + 1
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=add_post_simple, 
-                            cle1='Postulation', cle2='nbrePostuleeJour', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=add_post_global, 
-                            cle1='Postulation', cle2='nbrePostulee', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
         
         try :
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbrePostuleeJour}"], 
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
                                 valeur=add_post_simple, sett='message')
             self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nombre_postulee}"], 
                                 valeur=add_post_global, sett='message')
         except KeyError as krr:
-            err("NbrePostulee", "nbre_changee_a_l_affichage", krr)
+            err("nbreEntreeJour", "nbre_changee_a_l_affichage", krr)
 
     def autredossier(self, instance):
         for dossier in DOSSIER:
@@ -955,17 +1011,12 @@ class Home(GridLayout):
 
     def ciblerEnvoyer(self, instance=None, tag=None, tagII=None, cible=None, a_changer=None, avec=None, sett='all'):
         envoi = []
-
-        LETTRE = ry.lireFile(LETTRE, set=2)
         if cible is not None:
             if sett == 'all':
-                envoi = LETTRE.replace(f"{tag}", f"{cible}")
-                with open(self.INITfile, 'w', encoding='utf-8') as write :
-                    if cible != '' and cible is not None:
-                        write.write(f"{envoi}")
-                    else:
-                        write.write(f"{LETTRE}")
-
+                print
+                rcp(ry.Green, f"{self.Prenom.text}", f"{_PRENOM}")
+                # ry.ecrire_ds_json(initM.fichier_form, self.LETTRE, cle1=tag, cle2=tagII, contenu=cible, sett='remplacer')
+                ry.ecrire_ds_json(fichier=initM.fichier_form, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
             elif sett == 'adresse':
                 
                 adresse_complete = cible.split()
@@ -980,9 +1031,9 @@ class Home(GridLayout):
                 envoi = envoi.replace(f"{tagII}", f"{adresseII}")
                 with open(self.INITfile, 'w', encoding='utf-8') as write :
                     if cible != '' and cible is not None:
-                        write.write(f"{envoi}")
+                        initM.json.dump(envoi, write, indent=4, ensure_ascii=False)
                     else:
-                        write.write(f"{LETTRE}")
+                        initM.json.dump(LETTRE, write, indent=4, ensure_ascii=False)
 
             elif sett == 'espace' :
                 self.espacer(5)
@@ -1008,7 +1059,7 @@ class Home(GridLayout):
             
     def supprimerUn(self, instance):
         if os.path.exists(INITfile):
-            chemin = os.path.join(initM.DossierMarkdown, INITfile)
+            chemin = os.path.join(initM.DossierMarkdown, LETTRE)
             os.remove(chemin)
         if not os.path.exists(INITfile):
             print('supprimee')
@@ -1057,7 +1108,7 @@ class Home(GridLayout):
                     chemin = os.path.join(initM.DossierMarkdown, fichier)
                     os.remove(chemin)
                     if self.colorationunique == False:                
-                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=GRISFONCE) 
+                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
                         self.colorationunique = True
         if fichier_restants != []:
             for fichier in fichier_restants:
@@ -1098,7 +1149,7 @@ class Home(GridLayout):
         except (psh.CalledProcessError, Exception) as cpe:
             err('Exception', 'git_push', cpe)                  
     
-    def __ouvrir__(self, fichierdossier, valeur=None, color=GRISFONCE, sett=0): # color orange
+    def __ouvrir__(self, fichierdossier, valeur=None, color=BLEUPALE, sett=0): # color orange
         if sett == 0 :
             os.startfile(fichierdossier)
         if sett == 1 :
@@ -1112,12 +1163,13 @@ class Home(GridLayout):
         self.envoi_donnees_ds_JSON()
 
         USER = os.getlogin()
-        programme = f"{initM.DossierRemplissage}\\RemplirCV.pyw"
+        programme = f"{APP}"
         print(programme)
         python3_13 = f"C:/Users/{USER}/AppData/Local/Microsoft/WindowsApps/python3.13.exe"
         python3_12 = f"C:/Users/{USER}/AppData/Local/Microsoft/WindowsApps/python3.12.5.exe"
         psh.Popen([ sys.executable, f"{programme}" ])
-        sys.exit()
+        # Fermer proprement la fenêtre après 1 seconde
+        self.after(1000, self.parent.destroy)
         
     def quitter(self, instance):
         App.get_running_app().stop()
@@ -1153,13 +1205,13 @@ class Home(GridLayout):
 
     def set_nbre_Postulee_jour(self, nbre):
         if self.valideur_nbre_jr == False :
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbrePostuleeJour}"], 
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
                                 valeur=nbre, sett='message')
-            self.nbrePostuleeJour = nbre
+            self.nbreEntreeTotal = nbre
             self.valideur_nbre_jr = True
 
     def get_nbre_Postulee_jour(self):
-        return self.nbrePostuleeJour
+        return self.nbreEntreeTotal
     
     def changer_valeur_a_l_ecran(self, cible, nbre=0):
         cible = nbre
@@ -1167,9 +1219,9 @@ class Home(GridLayout):
     
     def envoi_donnees_ds_JSON(self):
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.get_nbre_Postulee_jour(), 
-                            cle1='Postulation', cle2='nbrePostuleeJour', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.nombre_postulee, 
-                            cle1='Postulation', cle2='nbrePostulee', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
 
 
 # --- Première page (menu principal) ---
@@ -1186,8 +1238,8 @@ class Lettre(Screen):
     # def __init__(self, page, instance, **kwargs):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.nombre_postulee = self.afficher_nbre_postulee('nbrePostulee')
-        self.nbrePostuleeJour = self.afficher_nbre_postulee('nbrePostuleeJour')
+        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
+        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
         GRILLE = GridLayout()
         # colorer
         self.INITfile = INITfile
@@ -1211,7 +1263,7 @@ class Lettre(Screen):
         self.dictionnaire_bouton_menu['=>'].bind(on_press=lambda x: setattr(self.manager, 'current', 'BlocNotes'))
         
         contenu = self.lire_ecrire_markdown(fichier=self.INITfile)
-        self.markdowninput = entry(self=GRILLE, texte=contenu, objet=self.cadreII, couleur=NOIR, multiline=True,
+        self.markdowninput = entry(self=GRILLE, texte=contenu, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=625, height=10, sett='hauteur')
 
         self.add_widget(GRILLE)
@@ -1237,17 +1289,17 @@ class Lettre(Screen):
 
     def envoi_donnees_ds_JSON(self):
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.get_nbre_Postulee_jour(), 
-                            cle1='Postulation', cle2='nbrePostuleeJour', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.nombre_postulee, 
-                            cle1='Postulation', cle2='nbrePostulee', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
         
     def afficher_nbre_postulee(self, valeur=None) :
-        if valeur == 'nbrePostulee':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Postulation', 
-                                                         cle2='nbrePostulee', sett='valeurcles')
-        elif valeur == 'nbrePostuleeJour':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Postulation', 
-                                                          cle2='nbrePostuleeJour', sett='valeurcles')
+        if valeur == 'nbreEntreeJour':
+            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
+                                                         cle2='nbreEntreeJour', sett='valeurcles')
+        elif valeur == 'nbreEntreeTotal':
+            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
+                                                          cle2='nbreEntreeTotal', sett='valeurcles')
 
     def refresh(self):
         self.markdowninput.text = ry.lireFile(self.INITfile, set=2)
@@ -1266,7 +1318,7 @@ class Lettre(Screen):
         except (psh.CalledProcessError, Exception) as cpe:
             err('Exception', 'git_push', cpe)                  
     
-    def __ouvrir__(self, fichierdossier, valeur=None, color=GRISFONCE, sett=0): # color orange
+    def __ouvrir__(self, fichierdossier, valeur=None, color=BLEUPALE, sett=0): # color orange
         if sett == 0 :
             os.startfile(fichierdossier)
         if sett == 1 :
@@ -1288,13 +1340,13 @@ class Lettre(Screen):
 
     def set_nbre_Postulee_jour(self, nbre):
         if self.valideur_nbre_jr == False :
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbrePostuleeJour}"], 
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
                                 valeur=nbre, sett='message')
-            self.nbrePostuleeJour = nbre
+            self.nbreEntreeTotal = nbre
             self.valideur_nbre_jr = True
 
     def get_nbre_Postulee_jour(self):
-        return self.nbrePostuleeJour
+        return self.nbreEntreeTotal
     
     def changer_valeur_a_l_ecran(self, cible, nbre=0):
         cible = nbre
@@ -1308,12 +1360,13 @@ class Lettre(Screen):
         self.envoi_donnees_ds_JSON()
 
         USER = os.getlogin()
-        programme = f"{initM.DossierRemplissage}\\RemplirCV.pyw"
+        programme = f"{APP}"
         print(programme)
         python3_13 = f"C:/Users/{USER}/AppData/Local/Microsoft/WindowsApps/python3.13.exe"
         python3_12 = f"C:/Users/{USER}/AppData/Local/Microsoft/WindowsApps/python3.12.5.exe"
         psh.Popen([ sys.executable, f"{programme}" ])
-        sys.exit()
+        # Fermer proprement la fenêtre après 1 seconde
+        self.after(1000, self.parent.destroy)
 
     def autredossier(self, instance):
         for dossier in DOSSIER:
@@ -1324,8 +1377,8 @@ class BlocNotes(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        self.nombre_postulee = self.afficher_nbre_postulee('nbrePostulee')
-        self.nbrePostuleeJour = self.afficher_nbre_postulee('nbrePostuleeJour')
+        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
+        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
         self.plan = f"{blocnotes_dossier}/Plan.txt"
         self.liensUtiles = f"{blocnotes_dossier}/LiensUtiles.txt"
         self.infos = f"{blocnotes_dossier}/Infos.txt"
@@ -1380,34 +1433,34 @@ class BlocNotes(Screen):
     def createur_de_blocs(self, GRILLE):
         largeur = 320; longueur = 50
         contenu_plan = self.lire_ecrire_markdown(fichier=self.plan)
-        self.plan_input = entry(self=GRILLE, texte=contenu_plan, objet=self.cadreII, couleur=GRISFONCE, multiline=True,
+        self.plan_input = entry(self=GRILLE, texte=contenu_plan, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
         
         contenu_liens = self.lire_ecrire_markdown(fichier=self.liensUtiles)
-        self.liens_input = entry(self=GRILLE, texte=contenu_liens, objet=self.cadreII, couleur=GRISFONCE, multiline=True,
+        self.liens_input = entry(self=GRILLE, texte=contenu_liens, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
         
         contenu_infos = self.lire_ecrire_markdown(fichier=self.infos)
-        self.infos_input = entry(self=GRILLE, texte=contenu_infos, objet=self.cadreIII, couleur=GRISFONCE, multiline=True,
+        self.infos_input = entry(self=GRILLE, texte=contenu_infos, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
         
         contenu_dates = self.lire_ecrire_markdown(fichier=self.dates)
-        self.dates_input = entry(self=GRILLE, texte=contenu_dates, objet=self.cadreIII, couleur=GRISFONCE, multiline=True,
+        self.dates_input = entry(self=GRILLE, texte=contenu_dates, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
 
     def envoi_donnees_ds_JSON(self):
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.get_nbre_Postulee_jour(), 
-                            cle1='Postulation', cle2='nbrePostuleeJour', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.nombre_postulee, 
-                            cle1='Postulation', cle2='nbrePostulee', sett='remplacer')
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
         
     def afficher_nbre_postulee(self, valeur=None) :
-        if valeur == 'nbrePostulee':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Postulation', 
-                                                         cle2='nbrePostulee', sett='valeurcles')
-        elif valeur == 'nbrePostuleeJour':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Postulation', 
-                                                          cle2='nbrePostuleeJour', sett='valeurcles')
+        if valeur == 'nbreEntreeJour':
+            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
+                                                         cle2='nbreEntreeJour', sett='valeurcles')
+        elif valeur == 'nbreEntreeTotal':
+            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
+                                                          cle2='nbreEntreeTotal', sett='valeurcles')
 
     def Save(self):    
         dict_input = {self.plan: self.plan_input.text, self.liensUtiles: self.liens_input.text, 
@@ -1427,7 +1480,7 @@ class BlocNotes(Screen):
         except (psh.CalledProcessError, Exception) as cpe:
             err('Exception', 'git_push', cpe)                  
     
-    def __ouvrir__(self, fichierdossier, valeur=None, color=GRISFONCE, sett=0): # color orange
+    def __ouvrir__(self, fichierdossier, valeur=None, color=BLEUPALE, sett=0): # color orange
         if sett == 0 :
             os.startfile(fichierdossier)
         if sett == 1 :
@@ -1449,13 +1502,13 @@ class BlocNotes(Screen):
 
     def set_nbre_Postulee_jour(self, nbre):
         if self.valideur_nbre_jr == False :
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbrePostuleeJour}"], 
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
                                 valeur=nbre, sett='message')
-            self.nbrePostuleeJour = nbre
+            self.nbreEntreeTotal = nbre
             self.valideur_nbre_jr = True
 
     def get_nbre_Postulee_jour(self):
-        return self.nbrePostuleeJour
+        return self.nbreEntreeTotal
     
     def changer_valeur_a_l_ecran(self, cible, nbre=0):
         cible = nbre
@@ -1469,12 +1522,13 @@ class BlocNotes(Screen):
         self.envoi_donnees_ds_JSON()
 
         USER = os.getlogin()
-        programme = f"{initM.DossierRemplissage}\\RemplirCV.pyw"
+        programme = f"{APP}"
         print(programme)
         python3_13 = f"C:/Users/{USER}/AppData/Local/Microsoft/WindowsApps/python3.13.exe"
         python3_12 = f"C:/Users/{USER}/AppData/Local/Microsoft/WindowsApps/python3.12.5.exe"
         psh.Popen([ sys.executable, f"{programme}" ])
-        sys.exit()
+        # Fermer proprement la fenêtre après 1 seconde
+        self.after(1000, self.parent.destroy)
 
     def autredossier(self, instance):
         for dossier in DOSSIER:
