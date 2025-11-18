@@ -78,9 +78,12 @@ err = initM.err
 dictio = initM.dictio
 Repertoire = initM.Repertoire
 APP = f"{Repertoire}\\Delifruit_Inscription.pyw"
+# ry.load_dotenv(dotenv_path=f"{initM.librairie}/credentials.env")
 fichier_configuration = initM.fichier_configuration
 # ___________________________________________________________________________________________________________________
 
+credential = initM.credentials
+fichier_credentials = initM.fichier_credentials
 markdownobject = 'mark_cv'
 INITfile = initM.fichier_initial
 date_archivable = initM.date('archive')
@@ -131,21 +134,6 @@ _FONCTIONS = LETTRE['Fonctions']
 _PRIVILEGES = LETTRE['Privileges']
 _LIEN = LETTRE['Lien']
 _ADRESSE = LETTRE['Adresse']
-_JOUR = LETTRE['Jour']
-
-print(ry.Violet,
-    _DATE,
-_PRENOM,
-_NOM,
-_AGE,
-_PHONE,
-_COURRIEL,
-_ENTREPRISE,
-_EDITEUR, 
-_DEPARTEMENTS,
-_FONCTIONS,
-_PRIVILEGES, "Para"
-)
 
 cle_DATE = 'Date_de_creation'
 cle_PRENOM = 'Prenom'
@@ -174,8 +162,8 @@ valideur_cocheur = None
 # valideur_cocheur = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='checkbox', cle2='Jour', sett='valeurcles')
 # valideur_cocheur = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='checkbox', cle2='Signature', sett='valeurcles')
 
-_lien_ = "Lien "
-autre_lien_ = "Autre liens"
+_lien_ = "CSV "
+autre_lien_ = "Liens"
 _jour_ = "Date "
 _prenom_ = "Prenom "
 _nom_ = "Nom "
@@ -188,7 +176,7 @@ _fonctions_ = "Fonctions"
 _privileges_ = "Privileges"
 _departements_ = "Departements"
 _editeur_ = "Editeur"
-_utilitaires_ = "Distribution"
+_utilitaires_ = "Important :"
 
 x = dictio['x']
 y = dictio['y']
@@ -198,6 +186,7 @@ Config.set('graphics', 'height', '300')
 Window.left = x
 Window.top = y
 
+# V A R I A B L E S   G L O B A L E S __________________________________________________
 def colorer(self, bouton, couleur):
     bouton.background_normal = ''   # désactive l'image par défaut du bouton
     bouton.background_color = couleur  # vert foncé (R, G, B, Alpha)
@@ -513,20 +502,6 @@ def remplisseur(self, texte, objet=None, multiline=False, couleur=None, width=10
     return self.name  
 
 def entry(self, texte, objet=None, multiline=False, couleur=None, txtColor=None, width=80, height=None, sett='default'):
-    
-    # if couleur and sett == 'default' and txtColor is None:   
-    #     self.name = TextInput(multiline=multiline, background_color=couleur)
-    #     self.name.bind(text=self.on_text_change)
-    # elif couleur is None and sett == 'default' and txtColor is None: 
-    #     self.name = TextInput(multiline=multiline)
-    # elif sett == 'hauteur' and height is not None and couleur is None and txtColor is None: 
-    #     self.name = TextInput(multiline=multiline, size_hint_y=None, height=height)
-    #     self.name.bind(minimum_height=self.name.setter("height"))
-    # elif sett == 'hauteur' and height is not None and couleur is not None and txtColor is None: 
-    #     self.name = TextInput(multiline=multiline, size_hint_y=None, height=height, background_color=couleur)
-    # elif sett == 'hauteur' and height is not None and couleur is not None and txtColor is not None: 
-    #     self.name = TextInput(multiline=multiline, size_hint_y=None, height=height, background_color=couleur, foreground_color=txtColor)
-    #     self.name.bind(minimum_height=self.name.setter("height"))
     if sett == 'hauteur' and height is not None and couleur is not None and txtColor is not None: 
         self.name = TextInput(multiline=multiline, size_hint=(None, None), height=dp(height), width=dp(width), background_color=couleur, foreground_color=txtColor)
         self.name.bind(minimum_height=self.name.setter("height"))
@@ -547,6 +522,7 @@ def entry(self, texte, objet=None, multiline=False, couleur=None, txtColor=None,
     
     return self.name  
 
+#   C L A S S E S ______________________________________________________________________
 class Home(GridLayout):
     
     def __init__(self, **kwargs):
@@ -573,14 +549,13 @@ class Home(GridLayout):
         #   M E N U 
         self.menu_options = {
             "Log": lambda *args: self.__ouvrir__(fichierdossier=Repertoire),
+            "Other": self.autredossier,
             "Save": self.save,
             "Clear": self.clear,
             "Restart": self.__restart__,
             "Quitter": self.quitter,
-            "Other": self.autredossier,
-            "Supprfile": self.supprimerUn,
             "Clean": self.supprimerTout,
-            "Vue": '',
+            "Aperçu ": '',
             "Notes": None,
             "Texte": lambda instance, file=texteWord: self.__ouvrir__(fichierdossier=file),
             f"{self.nombre_postulee}": None,
@@ -597,16 +572,18 @@ class Home(GridLayout):
         self.affichage_special_boutons('others')
     
         self.tableau_insertion = [
-            self.Prenom,
-            self.Nom,
-            self.Age,
-            self.Jour,
-            self.Entreprise,
-            self.Privileges,
-            self.Departements,
-            self.Fonctions,
-            self.Phone,
-            self.Courriel
+                self.Jour,
+                self.Entreprise,
+                self.Adresse,
+                self.Lien,
+                self.AutreLien,
+                self.Prenom,
+                self.Nom,
+                self.Phone,
+                self.Courriel,
+                self.Departements,
+                self.Fonctions,
+                self.Age,
         ]
         
         self.cellules_non_remplies = len(self.tableau_insertion)
@@ -615,19 +592,23 @@ class Home(GridLayout):
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nombre_postulee}"], couleur=NOIR)
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], couleur=NOIR)
 
+        # Detection des entrees 
+        self.initiateur_compteur()
+        
     def Cadres(self) :
         # Colonnes
         self.cols = 1
         # Menu
         self.cadreI = add_object(self=self, cols=6, row_f=5)
         # FORMULAIRE
-        self.cadreIV = add_object(self, cols=6, sett='scroll', couleur=ORANGE)
+        self.cadreIV = add_object(self, cols=6, sett='scroll', couleur=ORANGE, sticky=None)
         # Cadre interne - JOBNAMES
-        self.cadreIII = add_object(self, row_f=2, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
+        # self.cadreIII = add_object(self, row_f=2, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
         # Cadre interne - COCHEUR
-        self.cadreII = add_object(self, row_f=2, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
+        # self.cadreII = add_object(self, row_f=1, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
+        self.cadreII = add_object(self, row_f=1, cols=2)
         # Renommer
-        # self.cadreV = add_object(self, cols=3, row_f=10, col_f=50, sticky=None)
+        self.cadreV = add_object(self, cols=1, row_f=1, col_f=10, sticky=None)
         
         # FICHIER EN COURS
         # self.cadreIV_I = add_object(self, cols=3, sett='scroll')
@@ -640,58 +621,64 @@ class Home(GridLayout):
             self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Jour.text}", tag=cle_DATE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all')
                         
         elif sett == 'others':
-            # CSV _______________________________________________________________________________
-            self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_)
-            self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.csv())
-            
-            self.AutreLien = remplisseur(self, objet=self.cadreIV, texte=autre_lien_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all'))
-            # LETTRE ________________________________________________________________________________________
-            
-            self.Adresse = remplisseur(self, objet=self.cadreIV, texte=_adresse_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all'))
-            
             self.Prenom = remplisseur(self, objet=self.cadreIV, texte=_prenom_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=cle_PRENOM, tagII=cle_PRENOM, sett='all'))
             
-            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, tagII=_ENTREPRISE, sett='all'))
+            self.Age = remplisseur(self, objet=self.cadreIV, texte=_age_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, sett='all'))
             
             self.Nom = remplisseur(self, objet=self.cadreIV, texte=_nom_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=cle_NOM, tagII=_NOM, sett='all'))
-            
-            self.Age = remplisseur(self, objet=self.cadreIV, texte=_age_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, tagII=_AGE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=cle_NOM,  sett='all'))
 
             self.Phone = remplisseur(self, objet=self.cadreIV, texte=_phone_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, tagII=_PHONE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, sett='all'))
+            
             # CSV : numero de phone____________________________________________________________________
             self.Courriel = remplisseur(self, objet=self.cadreIV, texte=_courriel_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, tagII=_COURRIEL, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, sett='all'))
             # CSV : adresse courriel
             self.Departements = remplisseur(self, objet=self.cadreIV, texte=_departements_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, tagII=_DEPARTEMENTS, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, sett='all'))
+    
+            self.Adresse = remplisseur(self, objet=self.cadreIV, texte=_adresse_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
+                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all')) 
+            
+            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all'))  
+            
+            self.AutreLien = remplisseur(self, objet=self.cadreIV, texte=autre_lien_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all'))
+            
+            # CSV _______________________________________________________________________________
+            self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_)
+            self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
+                                commande=lambda *args: self.csv())
+            # LETTRE ________________________________________________________________________________________
+            
+            
             # AUTOMATIQUE ______________________________________________________________________________________
             self.Fonctions = remplisseur(self, objet=self.cadreIV, texte=_fonctions_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS, tagII=_FONCTIONS, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS,  sett='all'))
 
             self.Jour = remplisseur(self, objet=self.cadreIV, texte=_jour_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
@@ -699,19 +686,21 @@ class Home(GridLayout):
 
             self.Privileges = remplisseur(self, objet=self.cadreIV, texte=_privileges_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, tagII=_PRIVILEGES, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all'))
             
             self.Editeur = remplisseur(self, objet=self.cadreIV, texte=_editeur_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, tagII=_EDITEUR, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, sett='all'))
 
-            # self.Notes = remplisseur(self, objet=self.cadreV, texte=_utilitaires_, width=len(_utilitaires_*10),
-            #                                   couleur=GRISCLAIR, height=1, sett='hauteur')
-            # self.Notes.text = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien important', sett='valeurcles')
+            self.Notes = remplisseur(self, objet=self.cadreV, texte=_utilitaires_, width=len(_utilitaires_*10),
+                                              couleur=GRISCLAIR, height=20, sett='hauteur')
+            self.Notes.text = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien important', sett='valeurcles')
 
             self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE, sett='manuel')
             self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR, sett='manuel')
+            self.affichage_boutons(tagger=self.Fonctions, text=_fonctions_, tag=_FONCTIONS, sett='manuel')
             self.affichage_boutons(tagger=self.Entreprise, text=_entreprise_, tag=_ENTREPRISE, sett='manuel')
+            self.affichage_boutons(tagger=self.Departements, text=_departements_, tag=_DEPARTEMENTS, sett='manuel')
 
             # for jobssite_ in self.liste_rapide:
             #     commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
@@ -738,8 +727,14 @@ class Home(GridLayout):
         elif sett == 'manuel':
             if text == _jour_ :
                 self.cocheur_bouton(objet=self.cadreII, text=date_formatee, cadrant=tagger, auto=auto)
+            if text == _editeur_ :
+                self.cocheur_bouton(objet=self.cadreII, text='Ryan', cadrant=tagger, auto=auto)
+            if text == _fonctions_ :
+                self.cocheur_bouton(objet=self.cadreII, text='Administrateur', cadrant=tagger, auto=auto)
             if text == _entreprise_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Ryan Moise Badye Kayamba', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='Delifruit', cadrant=tagger, auto=auto)
+            if text == _departements_ :
+                self.cocheur_bouton(objet=self.cadreII, text='Direction', cadrant=tagger, auto=auto)
             
     def pageMD(self):
         texte = "Texte déroulant"
@@ -789,24 +784,11 @@ class Home(GridLayout):
             objet.text = text            
             self.on_text_change(objet, objet.text, sett='cocher')
 
-    def New_page(self):
-        pass
-
     def binder(self, obj, text):
-        if text == "Vue" :
+        if text == "Aperçu " :
             self.submit.bind(on_release=self.toggle)
             self.pageMD()
             # obj.add_widget(self.submit)
-
-    def soumission(self, instance):
-        jour = self.Jour.text
-        NomD = self.NomD.text
-        Adresse = self.Adresse.text
-        if jour != '' or NomD != '' or Adresse != '' :
-            self.add_widget(Label(text=f"{jour} + {NomD} + {Adresse}"))
-        else :
-            self.add_widget(Label(text="Vide !"))
-            self.name = None
 
     def afficher_nbre_postulee(self, valeur=None) :
         if valeur == 'nbreEntreeJour':
@@ -816,7 +798,7 @@ class Home(GridLayout):
             return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
                                                           cle2='nbreEntreeTotal', sett='valeurcles')
 
-    def save(self, instance, sett='all'):
+    def save(self, instance, sett='all', option_envoi='py'):
         envoi = []
         self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
         self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
@@ -828,16 +810,24 @@ class Home(GridLayout):
                     self.affichage_special_boutons(sett='auto')
                     # self.ouvrir_fichier(self.INITfile, sett='lire')
                     # self.renommer_fichier(fichier=self.INITfile, objet=self.cadreV)
-
-                    psh.run([
-                        "powershell.exe",
-                        "-NoLogo",
-                        "-NoProfile",
-                        "-ExecutionPolicy", "Bypass",
-                        "-File", rf"{initM.librairie}/envoi_vers_BD.ps1"
-                    ])
-
-                    
+                    if option_envoi == 'py' or option_envoi == 'python':                        
+                        mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
+                        DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
+                        DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
+                        mongoEND = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='API_KEY', sett='valeurcles')
+                        mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_RH', sett='valeurcles')
+                        mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL', sett='valeurcles')
+                        
+                        mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
+                        ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
+                                          fichier=LETTREFichier)
+                    elif option_envoi == 'psh' or option_envoi.lower() == 'powershell':
+                        psh.run([
+                            "Powershell.exe",
+                            "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass",
+                            "-File", rf"{initM.librairie}/envoi_vers_BD.ps1"
+                        ])
+                                            
                 except Exception as arr:
                     err(tabErreur=initM.traceback.extract_tb(initM.sys.exc_info()[2]), NomErreur='save', ValeurErreur=arr)
             
@@ -851,32 +841,9 @@ class Home(GridLayout):
             self.add_widget(Label(text="Vide !"))
             self.name = None
 
-    def clear(self, instance):
-        
-        if self.pdf is not None and self.doc is not None : 
-            tableau_btn_a_supprimer = [
-                self.pdf,
-                self.doc,
-                self.soum
-            ]
-        
-        colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=BLEUFONCE)
-        colorer(self, bouton=self.Lien, couleur=GRISCLAIR)
-        
-        date_archivable = initM.date('archive')
-        self.INITfile = f"{INITfile}_{date_archivable}.md"
-        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, val=initM.fichier_form, cle1='markdown', sett='remplacer')
-        generer_fichier(texteWord, self.INITfile)
-        self.csv_cv =  None
-        self.valideur_nbre_jr = True
-        # 2
-        if self.tableau_insertion is not None :
-            for pe in self.tableau_insertion:
-                pe.text = ''
-        # 3
-        for widget in tableau_btn_a_supprimer:
-            if widget in self.cadreV.children :
-                self.cadreV.remove_widget(widget)
+    def clear(self, instance):        
+        for element in self.tableau_insertion:
+            element.text = ""
 
     def apresclicmessage(self, bouton, valeur=None, sett=None):
         if sett == 'messageautotaille':
@@ -1006,7 +973,7 @@ class Home(GridLayout):
             objet.text = ''
             dictio[checker] = None
             ry.ecrire_ds_json(fichier=fichier_configuration, contenu=dictio)
-        # self.dict_boutonvalideur[titre] = None
+            
         self.on_text_change(objet, objet.text, sett='cocher')
 
     def ciblerEnvoyer(self, instance=None, tag=None, tagII=None, cible=None, a_changer=None, avec=None, sett='all'):
@@ -1015,8 +982,8 @@ class Home(GridLayout):
             if sett == 'all':
                 print
                 rcp(ry.Green, f"{self.Prenom.text}", f"{_PRENOM}")
-                # ry.ecrire_ds_json(initM.fichier_form, self.LETTRE, cle1=tag, cle2=tagII, contenu=cible, sett='remplacer')
-                ry.ecrire_ds_json(fichier=initM.fichier_form, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
+                # ry.ecrire_ds_json(LETTREFichier, self.LETTRE, cle1=tag, cle2=tagII, contenu=cible, sett='remplacer')
+                ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
             elif sett == 'adresse':
                 
                 adresse_complete = cible.split()
@@ -1056,16 +1023,7 @@ class Home(GridLayout):
     def espacer(self, nombre): # 
         with open(self.INITfile, 'a') as write :
             write.write("\n" * nombre)
-            
-    def supprimerUn(self, instance):
-        if os.path.exists(INITfile):
-            chemin = os.path.join(initM.DossierMarkdown, LETTRE)
-            os.remove(chemin)
-        if not os.path.exists(INITfile):
-            print('supprimee')
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu['Supprfile'], 
-                                  valeur='Supprfile', sett='message')           
-              
+                   
     def supprimerTout(self, instance):
         def recycler_word(self, source, destination, extension) :
             if os.path.exists(source):
@@ -1137,7 +1095,64 @@ class Home(GridLayout):
             anim = Animation(height=0, d=0.5)  # replie
             anim.start(self.scroll)
         self.ouvert = not self.ouvert
+   
+    def quitter(self, instance):
+        App.get_running_app().stop()
+    # Compteur d'entrees ________________________________________________________
+    def initiateur_compteur(self):       
+        for element in self.tableau_insertion:
+            self.on_text_change(element, element.text, sett='accumulation')
 
+    def on_text_change(self, instance, valeur, sett='accumulation'):
+        if sett == 'accumulation':
+            mots = valeur.split()
+            
+            # On garde une liste des mots déjà comptés
+            if not hasattr(self, '_mots_comptes'):
+                self._mots_comptes = set()
+            
+            for mot in mots:
+                if len(mot) == 3 and mot not in self._mots_comptes:
+                    self.cellules_non_remplies -= 1
+                    self._mots_comptes.add(mot)
+                elif '=' in mot and mot not in self._mots_comptes:
+                    self.cellules_non_remplies -= 1
+                    self._mots_comptes.add(mot)
+
+        elif sett == 'cocher':
+            if valeur:
+                self.cellules_non_remplies -= 1
+
+        # Mise à jour du bouton Save
+        if self.cellules_non_remplies <= len(self.tableau_insertion) - 2:
+            self.dictionnaire_bouton_menu['Save'].text = 'Save'
+            colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=VERT)
+            self.csv_bouton.text = '>'
+            colorer(self, self.csv_bouton, couleur=ORANGE)
+            colorer(self, self.Lien, couleur=ORANGE)
+        else:
+            self.dictionnaire_bouton_menu['Save'].text = str(self.cellules_non_remplies)
+
+    def set_nbre_Postulee_jour(self, nbre):
+        if self.valideur_nbre_jr == False :
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
+                                valeur=nbre, sett='message')
+            self.nbreEntreeTotal = nbre
+            self.valideur_nbre_jr = True
+
+    def get_nbre_Postulee_jour(self):
+        return self.nbreEntreeTotal
+    
+    def changer_valeur_a_l_ecran(self, cible, nbre=0):
+        cible = nbre
+        return cible
+    # Methode universelle _______________________________________________________
+    def envoi_donnees_ds_JSON(self):
+        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.get_nbre_Postulee_jour(), 
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
+        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.nombre_postulee, 
+                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
+    
     def git_push(self, git=None, f_git=None, instance=None):
         
         try :
@@ -1170,66 +1185,14 @@ class Home(GridLayout):
         psh.Popen([ sys.executable, f"{programme}" ])
         # Fermer proprement la fenêtre après 1 seconde
         self.after(1000, self.parent.destroy)
-        
-    def quitter(self, instance):
-        App.get_running_app().stop()
-
-    def on_text_change(self, instance, valeur, sett='accumulation'):#tabelement, sett='accumulation'):
-        # Détecter quand un mot complet a été formé
-        if sett == 'accumulation':
-            mots = valeur.split()  # sépare le texte par espaces
-            if mots and len(mots[-1]) == 3 :  # par exemple 3 lettres
-                self.cellules_non_remplies -= 1
-            # elif mots and len(mots[-1]) <= 1 :
-            #     self.cellules_non_remplies += 1
-                
-            if '=' in mots :
-                self.cellules_non_remplies -= 1
-            
-        elif sett == 'cocher':
-            if valeur is not None and valeur != [] : 
-                # if tabelement and self.dict_boutonvalideur[tabelement] == None :
-                    self.cellules_non_remplies -= 1
-                    # self.dict_boutonvalideur[tabelement] = self.cellules_non_remplies
-                
-        self.dictionnaire_bouton_menu['Save'].text = f"{self.cellules_non_remplies}"
-                        
-        if self.cellules_non_remplies <= 0:
-            # LETTRE : Save
-            self.dictionnaire_bouton_menu['Save'].text = 'Save'
-            colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=VERT)
-            # CSV : Lien Orange
-            self.csv_bouton.text = '>'
-            colorer(self, self.csv_bouton, couleur=ORANGE)
-            colorer(self, self.Lien, couleur=ORANGE)
-
-    def set_nbre_Postulee_jour(self, nbre):
-        if self.valideur_nbre_jr == False :
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
-                                valeur=nbre, sett='message')
-            self.nbreEntreeTotal = nbre
-            self.valideur_nbre_jr = True
-
-    def get_nbre_Postulee_jour(self):
-        return self.nbreEntreeTotal
-    
-    def changer_valeur_a_l_ecran(self, cible, nbre=0):
-        cible = nbre
-        return cible
-    
-    def envoi_donnees_ds_JSON(self):
-        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.get_nbre_Postulee_jour(), 
-                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
-        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.nombre_postulee, 
-                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
-
+     
 
 # --- Première page (menu principal) ---
 class HomeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         accueil = Home()
-        accueil.dictionnaire_bouton_menu['Vue'].bind(on_press=lambda x: setattr(self.manager, 'current', 'Lettre'))
+        accueil.dictionnaire_bouton_menu['Aperçu '].bind(on_press=lambda x: setattr(self.manager, 'current', 'Lettre'))
         accueil.dictionnaire_bouton_menu['Notes'].bind(on_press=lambda x: setattr(self.manager, 'current', 'BlocNotes'))
         self.add_widget(accueil)
 
@@ -1262,7 +1225,7 @@ class Lettre(Screen):
         self.dictionnaire_bouton_menu['Accueil'].bind(on_press=lambda x: setattr(self.manager, 'current', 'Accueil'))
         self.dictionnaire_bouton_menu['=>'].bind(on_press=lambda x: setattr(self.manager, 'current', 'BlocNotes'))
         
-        contenu = self.lire_ecrire_markdown(fichier=self.INITfile)
+        contenu = self.lire_ecrire_markdown(fichier=LETTREFichier)
         self.markdowninput = entry(self=GRILLE, texte=contenu, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=625, height=10, sett='hauteur')
 
@@ -1273,17 +1236,9 @@ class Lettre(Screen):
         GRILLE.cols = 1
         # Menu
         GRILLE.cadreI = add_object(self=GRILLE, cols=6, row_f=5)
-        # # Cadre interne - JOBNAMES
-        # self.cadreIII = add_object(self, row_f=5, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
-        # # Cadre interne - COCHEUR
-        # self.cadreII = add_object(self, row_f=5, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
         # FORMULAIRE
         GRILLE.cadreII = add_object(self=GRILLE, cols=1, sett='scroll')
-        # # Renommer
-        # self.cadreIII = add_object(self, cols=3, row_f=10, col_f=50, sticky=None)
-        
         # FICHIER EN COURS
-        # self.cadreIV_I = add_object(self, cols=3, sett='scroll')
         self.cadreI = GRILLE.cadreI
         self.cadreII = GRILLE.cadreII
 
@@ -1302,7 +1257,7 @@ class Lettre(Screen):
                                                           cle2='nbreEntreeTotal', sett='valeurcles')
 
     def refresh(self):
-        self.markdowninput.text = ry.lireFile(self.INITfile, set=2)
+        self.markdowninput.text = ry.lireFile(LETTREFichier, set=2)
 
     def Save(self):        
         ry.ecrire_ds_fichier(self.INITfile, self.markdowninput.text)
@@ -1533,7 +1488,6 @@ class BlocNotes(Screen):
     def autredossier(self, instance):
         for dossier in DOSSIER:
             os.startfile(dossier)
-
 
 class InputDialog(Popup):
     def __init__(self, **kwargs):

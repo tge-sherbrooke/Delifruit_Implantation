@@ -13,49 +13,67 @@ import ctypes
 import  datetime
 import subprocess as psh
 import traceback
+
+def resoudre_chemins(chemin_I, chemin_II):
+   if os.path.exists(chemin_I) :
+       return chemin_I
+   else : 
+       return chemin_II
 try :
+    from dotenv import load_dotenv
+    from pymongo import MongoClient   
+    import logging 
     import psutil
 except ModuleNotFoundError as m :
     print ('Pas de module associee')
     import traceback
     print("\033[1;31m", traceback.extract_tb(sys.exc_info()[2]), 'FileNotFoundError', m, "\033[0m")
-    cible = 'kivy'
-    if cible in f"{m}":
         
-        print("----------->", f"{cible} en manque...")
-        
-        packages = {
-            "psutil": "psutil"
-        }
-        
-        DossierPrincipal = "D:\\_A\\GitHub\\Delifruit_Implantation\\R_Inventaire"
-        
-        _venvI = f'{DossierPrincipal}\\.venv\\Scripts\\activate'
-        _venvII = '.\\.venv\\Scripts\\activate'
+    cibles = [ 'kivy', "pymongo", "python-dotenv" ]
+    
+    for cible in cibles:
+        if cible in f"{m}":
+            
+            print("----------->", f"{cible} en manque...")
+            
+            packages = {
+                "psutil": "psutil",
+                "pymongo": "pymongo",
+                "dotenv": "python-dotenv"
+            }
+            
+            DossierPrincipal = resoudre_chemins("D:\\_A\\GitHub\\Delifruit_Implantation\\R_Inventaire",
+                                                "D:\\UCDownloads\\OneDrive\\A2025\\Implantation_reseau\\ESP\\Delifruit_Implantation\\R_Inventaire")
+            
+            _venvI = f'{DossierPrincipal}\\.venv\\Scripts\\activate'
+            _venvII = '.\\.venv\\Scripts\\activate'
 
-        for module, package in packages.items():
-            try:
-                importlib.import_module(package)
-                print(f"{package} est déjà installé.")
-            except ImportError:
-                print(f"{package} manquant. Installation...")
+            for module, package in packages.items():
                 try:
-                    systeme = platform.system() 
-                    if systeme == "Linux" :
-                        psh.check_call(['python3', "-m", "pip", "install", "--upgrade", package], stdout=psh.DEVNULL, stderr=psh.STDOUT,)
-                        
-                    elif systeme == "Windows" :
-                        psh.check_call([sys.executable, "-m", "pip", "install", "--upgrade", package])
-                        psh.check_call([sys.executable, "-m", "pip", "install", "--upgrade", 'pip', 'setuptools', 'venv'])
-                        if os.path.exists(_venvI):
-                            psh.check_call([sys.executable, "-m", _venvI])
-                        elif os.path.exists(_venvII):
-                            psh.check_call([sys.executable, "-m", _venvII])
-                    print(f"{package} installé avec succès.")
-                except psh.CalledProcessError as e:
-                    print(f"Échec de l'installation de {package}.")
-                    print("Erreur :", e)
-                    exit(1)
+                    importlib.import_module(package)
+                    print(f"{package} est déjà installé.")
+                except ImportError:
+                    print(f"{package} manquant. Installation...")
+                    try:
+                        systeme = platform.system() 
+                        if systeme == "Linux" :
+                            psh.check_call(['python3', "-m", "pip", "install", "--upgrade", package], stdout=psh.DEVNULL, stderr=psh.STDOUT,)
+                            
+                        elif systeme == "Windows" :
+                            psh.check_call([sys.executable, "-m", "pip", "install", "--upgrade", package])
+                            try: 
+                                psh.check_call([sys.executable, "-m", "pip", "install", "--upgrade", 'pip', 'setuptools', 'venv'])
+                            except psh.CalledProcessError as p :
+                                print('Functions', '-> subprocess.CalledProcessError ->', p)
+                            if os.path.exists(_venvI):
+                                psh.check_call([sys.executable, "-m", _venvI])
+                            elif os.path.exists(_venvII):
+                                psh.check_call([sys.executable, "-m", _venvII])
+                        print(f"{package} installé avec succès.")
+                    except psh.CalledProcessError as e:
+                        print(f"Échec de l'installation de {package}.")
+                        print("Erreur :", e)
+                        exit(1)
 #   -----------------------------------------------------------------------------------------------
 #   ---------------------------------- CHECK HEXADECIMAL -----------------------------------------
 #   -----------------------------------------------------------------------------------------------
@@ -1100,10 +1118,44 @@ def ouvrir_fichier(fichier, alternative='') :
         errorPrint(tabErreur=traceback.extract_tb(sys.exc_info()[2]), NomErreur='FileNotFoundError', ValeurErreur=f)
 
 #   -----------------------------------------------------------------------------------------------
-#   ---------------------------------- CHECK HEXADECIMAL -----------------------------------------
+#   ---------------------------------- MONGODB ENVOI -----------------------------------------
 #   -----------------------------------------------------------------------------------------------
 
-
+def envoi_BD_MONGO(lien:str, BD, collection=None, fichier=None, message='Insertion terminée.', verbose=None):
+    
+    if verbose is None:
+        logging.getLogger("pymongo").setLevel(logging.WARNING)
+    
+    # Connexion à MongoDB
+    if verbose is not None:
+        print(lien, BD, collection, fichier)
+        
+    client = MongoClient(lien, serverSelectionTimeoutMS=5000)
+    db = client[BD]
+    if collection is not None :
+        collection = db[collection]
+    # # Charger le fichier JSON
+    with open(fichier, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        
+    if verbose is not None :
+        try :
+            dbs = client.list_database_names()
+            print(dbs)
+            client.admin.command("ping")
+        except Exception as e :
+            print("-> ", e)
+    
+    # # Insérer dans la collection
+    if isinstance(data, list):
+        collection.insert_many(data)
+    else :
+        collection.insert_one(data)
+        
+    if verbose is not None:
+        for collect in collection.find():
+            print(collect)
+            
 #   -----------------------------------------------------------------------------------------------
 #   ---------------------------------- CHECK HEXADECIMAL -----------------------------------------
 #   -----------------------------------------------------------------------------------------------

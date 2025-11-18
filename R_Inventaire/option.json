@@ -1,14 +1,14 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 511,
-    "y": 228,
+    "x": 1987,
+    "y": 63,
     "Nombres_Utilisateurs": [
         {
-            "nbreEntreeTotal": 33
+            "nbreEntreeTotal": 15
         },
         {
-            "nbreEntreeJour": 31
+            "nbreEntreeJour": 50
         }
     ],
     "all_check": null,
@@ -138,6 +138,26 @@
             "pourquoi": "__PLUS__"
         }
     ],
+    "Credentials": [
+        {
+            "SRV": "mongodb+srv://"
+        },
+        {
+            "API_KEY": "cluster0.1z5z20t.mongodb.net"
+        },
+        {
+            "DB_USER": "dbtytren"
+        },
+        {
+            "DB_PASSWORD": "Glev&di4su$A"
+        },
+        {
+            "DB_RH": "Base_De_Donnees_RH"
+        },
+        {
+            "COL": "Utilisateurs"
+        }
+    ],
     "Liste_Rapide": [
         "Jobillico",
         "LinkedIn",
@@ -152,7 +172,7 @@
     ],
     "Profil": [
         {
-            "Lien important": "Python"
+            "Lien important": "La date et le nom d'utilisateur sont essentiels. Pour les remplir automatiquement, \nprière de cocher les cases ci-haut"
         }
     ],
     "Liste_Dossiers": [

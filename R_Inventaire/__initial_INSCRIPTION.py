@@ -33,9 +33,11 @@ NOIR = (0, 0 , 0, 1)
 rcp = ry.colorPrint
 err = ry.errorPrint
 Repertoire = os.path.dirname(os.path.abspath(__file__))
-credential = "__initial_fonctions__.txt"
+fichier_credentials = f"{Repertoire}\\lib\\cred.json"
+fichier_credentials_env = f"{Repertoire}\\lib\\credentials.env"
 fichier_configuration = f"{Repertoire}\\option.json"
 dictio = ry.lireJSON(fichier=fichier_configuration)
+credentials = ry.lireJSON(fichier=fichier_credentials)
 fichier_sauvegarde_json = f"{Repertoire}\\sauvegarde.json"
 librairie = resoudre_chemins(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", cle2='librairie_A', sett='valeurcles'),
                              ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", cle2='librairie_D', sett='valeurcles'))
