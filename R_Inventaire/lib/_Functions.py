@@ -91,8 +91,8 @@ except ModuleNotFoundError as m :
 # ##################################################### D E F I N I T I O N S ######################################################################################
 DossierPARENT = os.environ.get('PYTHR')
 DossierInterfaceApp = os.environ.get('CONSOLE')
-DossierLOGPY = f"{DossierInterfaceApp}\\The_Beginning\\log"
-LOGERREUR = f"{DossierLOGPY}\\erreurs.txt"
+DossierLOGPY = f"lib"
+LOGERREUR = f"{DossierLOGPY}/erreurs.txt"
 fichier_conf = "conf.txt"
 fichier_configuration = f"{DossierLOGPY}\\{fichier_conf}"
 
@@ -762,7 +762,7 @@ def lireFile(fichier, comment='', set=0, code='utf-8') : # Fichier en format d'e
         lireFichier(fichier=fichier, comment=comment, set=set, code=code)
 
 def lireFichier(fichier) : # Fichier en format d'encodage UTF 8. Lecture efficace Récupère les lignes de fichiers les unes après les autres en effaçant les espaces et les sauts de ligne. Options secondaires pour laisser les sauts de ligne
-    with open(fichier, 'r') as read :
+    with open(fichier, 'r', encoding='utf-8') as read :
         return read.read()
     
 

@@ -1,1 +1,2 @@
-﻿
+﻿La date et le nom d'utilisateur sont essentiels. Pour les remplir automatiquement, prière de cocher les cases ci-haut.
+Avis : appuyer sur <Save> afin d'envoyer vos données. Appuyer sur <Go> pour les conserver avant envoi.

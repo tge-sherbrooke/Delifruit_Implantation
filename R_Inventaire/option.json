@@ -1,8 +1,8 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 1987,
-    "y": 63,
+    "x": 987,
+    "y": 203,
     "Nombres_Utilisateurs": [
         {
             "nbreEntreeTotal": 15
@@ -13,44 +13,24 @@
     ],
     "all_check": null,
     "checkbox": "cochee",
-    "text": [
-        {
-            "texte_support": "D:/Stockage/Scripts/__Python__/__Interfaces/Kivy/remplisseur_I/texte_w_support.txt"
-        }
-    ],
     "Repertoires": [
         {
-            "PYTHR": "D:/Stockage/Scripts/__Python__"
+            "DossierSortie": "Sortie"
         },
         {
-            "WORKREPO": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire"
+            "DossierDoc": "lib/DOC"
         },
         {
-            "CONSOLE": "D:/Stockage/Scripts/__Python__/__Interfaces/The_Beginning"
+            "DossierRH": "Sortie/RH"
         },
         {
-            "DossierSortie_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie"
+            "DossierProd": "Sortie/Production"
         },
         {
-            "DossierSortie_D": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/Sortie"
+            "librairie": "lib"
         },
         {
-            "DossierDoc": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/DOC"
-        },
-        {
-            "DossierRH": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/RH"
-        },
-        {
-            "DossierProd": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/Production"
-        },
-        {
-            "librairie_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib"
-        },
-        {
-            "librairie_D": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib"
-        },
-        {
-            "BlocNotesLib": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/Blocnotes"
+            "BlocNotesLib": "lib/Blocnotes"
         },
         {
             "DossierESP": "E:"
@@ -58,28 +38,27 @@
     ],
     "Fichiers_Configurations": [
         {
-            "Cache_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/cache.txt"
+            "Cache_A": "lib/cache.txt"
         },
         {
-            "Cache_D": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/cache.txt"
+            "Cache_D": "lib/cache.txt"
         },
         {
-            "INIT_A": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/_init_.json"
+            "INIT": "lib/_init_.json"
         },
         {
-            "INIT_D": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/_init_.json"
+            "Formulaire": "Sortie/formulaire.json"
         },
         {
-            "Formulaire_A": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/Sortie/formulaire.json"
+            "Sauvegarde": "lib/sauvegarde.json"
         },
         {
-            "Formulaire_D": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/Sortie/formulaire.json"
-        },
+            "texte_support_D": "lib/texte_support.txt"
+        }
+    ],
+    "images": [
         {
-            "texte_support_A": "D:/UCDownloads/OneDrive/A2025/Implantation_reseau/ESP/Delifruit_Implantation/R_Inventaire/lib/texte_support.txt"
-        },
-        {
-            "texte_support_D": "D:/_A/GitHub/Delifruit_Implantation/R_Inventaire/lib/texte_support.txt"
+            "image_1": "assets/balise.ico"
         }
     ],
     "variables": [
@@ -138,26 +117,6 @@
             "pourquoi": "__PLUS__"
         }
     ],
-    "Credentials": [
-        {
-            "SRV": "mongodb+srv://"
-        },
-        {
-            "API_KEY": "cluster0.1z5z20t.mongodb.net"
-        },
-        {
-            "DB_USER": "dbtytren"
-        },
-        {
-            "DB_PASSWORD": "Glev&di4su$A"
-        },
-        {
-            "DB_RH": "Base_De_Donnees_RH"
-        },
-        {
-            "COL": "Utilisateurs"
-        }
-    ],
     "Liste_Rapide": [
         "Jobillico",
         "LinkedIn",
@@ -172,14 +131,14 @@
     ],
     "Profil": [
         {
-            "Lien important": "La date et le nom d'utilisateur sont essentiels. Pour les remplir automatiquement, \nprière de cocher les cases ci-haut"
+            "Lien important": "lib/Blocnotes/Infos.txt"
         }
     ],
     "Liste_Dossiers": [
         {
             "Liste_ouverture": [
-                "D:/Stockage/Scripts/__Python__/__Interfaces/Kivy/remplisseur_I",
-                "D:/Stockage/Scripts/"
+                "lib",
+                "Blocnotes"
             ]
         }
     ]
