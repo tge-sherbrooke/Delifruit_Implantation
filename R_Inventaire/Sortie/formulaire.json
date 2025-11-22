@@ -1,15 +1,16 @@
 {
-    "Prenom": "Esteban",
-    "Nom": "Sanroman",
-    "Age": "67",
-    "Telephone": "5148779900",
-    "Courriel": "san@roman.com",
-    "Adresse": "555, rue belle-vue, Pletoya QC G3G 5T6",
-    "Date_de_creation": "18-11-2025",
-    "Lien": "https://vehicule.ca",
-    "Entreprise": "Delifruit",
-    "Departements": "Présidence",
-    "Fonctions": "Administrateur",
-    "Privileges": "Administrateur",
-    "Editeur": "Ryan"
+    "Prenom": "__PRENOM__", 
+    "Nom": "__NOM__",
+    "Age": "__AGE__",
+    "Telephone": "__PHONE__",
+    "Courriel": "__COURRIEL__",
+    "Adresse": "__ADRESSE__",
+    "Date_de_creation": "__DATE__",
+    "Lien": "__LIEN__",
+    "Entreprise": "__ENTREPRISE__",
+    "Departements": "__DEPARTEMENT__",
+    "Fonctions": "__FONCTIONS__",
+    "Privileges": "__PRIVILEGES__",
+    "Editeur": "__EDITEUR__"
 }
+

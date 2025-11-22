@@ -1,8 +1,8 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 987,
-    "y": 203,
+    "x": 827,
+    "y": 200,
     "Nombres_Utilisateurs": [
         {
             "nbreEntreeTotal": 15
@@ -38,10 +38,7 @@
     ],
     "Fichiers_Configurations": [
         {
-            "Cache_A": "lib/cache.txt"
-        },
-        {
-            "Cache_D": "lib/cache.txt"
+            "Cache": "lib/cache.txt"
         },
         {
             "INIT": "lib/_init_.json"
@@ -53,7 +50,7 @@
             "Sauvegarde": "lib/sauvegarde.json"
         },
         {
-            "texte_support_D": "lib/texte_support.txt"
+            "texte_support": "lib/Aide.txt"
         }
     ],
     "images": [

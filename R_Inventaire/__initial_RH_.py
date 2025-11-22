@@ -26,7 +26,10 @@ def chemin_ressource(chemin=None):
             if hasattr(sys, "_MEIPASS"):
                 # On est dans un executable
                 Repertoire = sys._MEIPASS
-                return os.path.join(Repertoire, chemin)                
+                return os.path.join(Repertoire, chemin)  
+            else :
+                Repertoire = os.path.abspath(".")   
+                return os.path.join(Repertoire, chemin)
         except AttributeError:
             Repertoire = os.path.abspath(".")
     if chemin is None:
@@ -37,6 +40,7 @@ BLEUPALE = (0.68, 0.85, 0.90, 1)
 BLEUFONCE = (0.0, 0.0, 0.55, 1)
 ORANGE = (1, 0.65, 0, 1)
 ROUGE = (1, 0, 0, 1)
+VIOLET = (0.5, 0.0, 0.5, 1)
 VERT = (0, 0.5, 0, 1)
 GRISCLAIR = (0.7, 0.7, 0.7, 1)
 GRISFONCE = (0.25,0.25,0.25,1)
