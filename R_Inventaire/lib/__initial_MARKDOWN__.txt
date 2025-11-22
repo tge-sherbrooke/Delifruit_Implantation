@@ -1,0 +1,7 @@
+dossier_universel==C:
+dossier_personnalisee==D:
+dossier_stockage==E:
+dossier_lenovo==D:\\_A
+dossier_dell==D:\\Stockage\\Scripts
+
+dossierWord==D:\\Stockage\\Scripts\\Word\\Gmail
