@@ -1,9 +1,9 @@
- # pyinstaller --noconsole --onefile RH_Billeterie.pyw --add-data "option.json;." --add-data "lib/_init_.json;lib" --add-data "lib/cred.json;lib"  --add-data "lib/csv_cv_motivation.csv;lib" --add-data "lib/envoi_vers_BD.ps1;lib" --add-data "lib/git_send.bat;lib" --add-data "lib/requirements.txt;lib" --add-data "lib/credentials.env;lib" --add-data "lib/Blocnotes/Dates.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos.txt;lib/Blocnotes" --add-data "lib/Blocnotes/LiensUtiles.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Plan.txt;lib/Blocnotes"  --add-data "lib;lib" --add-data "assets;assets" --add-data "lib/sauvegarde.json;lib" --add-data "Sortie/formulaire.json;Sortie" --add-data "lib/Blocnotes;lib/Blocnotes" --add-data "lib/erreurs.txt;lib"
+# pyinstaller --noconsole --onefile RH_Billeterie_IN.pyw --add-data "option.json;." --add-data "lib/_init_IN.json;lib" --add-data "lib/cred.json;lib"  --add-data "lib/csv_cv_rh.csv;lib" --add-data "lib/envoi_vers_BD.ps1;lib" --add-data "lib/git_send.bat;lib" --add-data "lib/requirements.txt;lib" --add-data "lib/credentials.env;lib" --add-data "lib/Blocnotes/Dates.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos_RH.txt;lib/Blocnotes" --add-data "lib/Blocnotes/LiensUtiles.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Plan.txt;lib/Blocnotes"  --add-data "lib;lib" --add-data "assets;assets" --add-data "Sortie/formulaireIN.json;Sortie" --add-data "Sortie/formulaireRH.json;Sortie" --add-data "lib/Blocnotes;lib/Blocnotes" --add-data "lib/erreurs.txt;lib" --add-data "archives;archives" --add-data "archives/sauvegardeIN.json;archives" --add-data "archives/sauvegardeRH.json;archives" --add-data "lib/_init_RH.json;lib" --add-data "lib/csv_cv_inventaire.csv;lib" --add-data "lib/Blocnotes/Infos_RH.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos_inventaire.txt;lib/Blocnotes" --add-data "Sortie;Sortie" --add-data "lib/Aide.txt;lib" 
 
 import subprocess as psh
 import os, sys, platform
 import datetime, locale, calendar
-import __initial_RH_ as initM
+import __initial_RH_IN as initM
 if platform.system() == 'Linux' :
     psh.check_call(['sudo', 'bash', '/d/Stockage/Scripts/venv/bin/activate'])
 try :
@@ -80,7 +80,8 @@ rcp = initM.rcp
 err = initM.err
 dictio = initM.dictio
 Repertoire = initM.Repertoire
-APP = f"{Repertoire}/RH_Billeterie.pyw"
+Window.title = "RH - Billeterie - Inventaire"
+APP = f"{Repertoire}/RH_Billeterie_IN.pyw"
 # ry.load_dotenv(dotenv_path=f"{initM.librairie}/credentials.env")
 fichier_configuration = initM.fichier_configuration
 # ___________________________________________________________________________________________________________________
@@ -88,12 +89,15 @@ fichier_configuration = initM.fichier_configuration
 credential = initM.credentials
 fichier_credentials = initM.fichier_credentials
 markdownobject = 'mark_cv'
-INITfile = initM.fichier_initial
+INITfileRH = initM.fichier_initial_RH
+INITfileIN = initM.fichier_initial_IN
 date_archivable = initM.date('archive')
 date_formatee = initM.date('date_pour_BD')
 texteWord = initM.texte_support
-LETTREFichier = initM.fichier_form
-LETTRE = initM.contenu_formulaire
+LETTREFichierRH = initM.fichier_form_RH
+LETTREFichierIN = initM.fichier_form_IN
+LETTRE_RH = initM.contenu_formulaireRH
+LETTRE_IN = initM.contenu_formulaireIN
 
 ARCHIVES = initM.ARCHIVES
 file_git_send = f"{Repertoire}/lib/git_send.bat" 
@@ -114,9 +118,10 @@ def generer_fichier(fichierentree, fichiersortie):
     with open(fichiersortie, 'w') as write :
         write.write(f"{recup_content}\n")
         
-generer_fichier(INITfile, LETTREFichier)
+generer_fichier(INITfileRH, LETTREFichierRH)
+generer_fichier(INITfileIN, LETTREFichierIN)
 
-dictio = ry.lireJSON(fichier=initM.chemin_ressource(fichier_configuration))
+dictio = ry.lireJSON(fichier=fichier_configuration)
 
 blocnotes_dossier = initM.chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='BlocNotesLib', sett='valeurcles'))
 DossierSORTIE = initM.DossierSORTIE
@@ -124,34 +129,35 @@ DossierDOC = initM.chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle
 
 checker = 'checkbox'
 # rcp(ry.Violet, LETTRE)
+# _____________R_H___V_A_R_I_A_B_L_E_S______________________________
+_DATE_RH = LETTRE_RH['Date_de_creation']
+_PRENOM = LETTRE_RH['Prenom']
+_NOM = LETTRE_RH['Nom']
+_AGE = LETTRE_RH['Age']
+_PHONE = LETTRE_RH['Telephone']
+_COURRIEL = LETTRE_RH['Courriel']
+_ENTREPRISE = LETTRE_RH['Entreprise']
+_EDITEUR_RH = LETTRE_RH['Editeur']
+_DEPARTEMENTS = LETTRE_RH['Departements']
+_FONCTIONS = LETTRE_RH['Fonctions']
+_PRIVILEGES = LETTRE_RH['Privileges']
+_LIEN = LETTRE_RH['Lien']
+_ADRESSE = LETTRE_RH['Adresse']
 
-_DATE = LETTRE['Date_de_creation']
-_PRENOM = LETTRE['Prenom']
-_NOM = LETTRE['Nom']
-_AGE = LETTRE['Age']
-_PHONE = LETTRE['Telephone']
-_COURRIEL = LETTRE['Courriel']
-_ENTREPRISE = LETTRE['Entreprise']
-_EDITEUR = LETTRE['Editeur']
-_DEPARTEMENTS = LETTRE['Departements']
-_FONCTIONS = LETTRE['Fonctions']
-_PRIVILEGES = LETTRE['Privileges']
-_LIEN = LETTRE['Lien']
-_ADRESSE = LETTRE['Adresse']
-# _____________________________
-_DATE = LETTRE['Date_de_creation']
-_PRENOM = LETTRE['Prenom']
-_NOM = LETTRE['Nom']
-_AGE = LETTRE['Age']
-_PHONE = LETTRE['Telephone']
-_COURRIEL = LETTRE['Courriel']
-_ENTREPRISE = LETTRE['Entreprise']
-_EDITEUR = LETTRE['Editeur']
-_DEPARTEMENTS = LETTRE['Departements']
-_FONCTIONS = LETTRE['Fonctions']
-_PRIVILEGES = LETTRE['Privileges']
-_LIEN = LETTRE['Lien']
-_ADRESSE = LETTRE['Adresse']
+# _____________I_N___V_A_R_I_A_B_L_E_S______________________________
+_DATE_IN = LETTRE_IN['Date_de_creation']
+_PRODUIT = LETTRE_IN['Produit']
+_TYPE = LETTRE_IN['Type']
+_ANNEE = LETTRE_IN['Annee']
+_FABRICANT = LETTRE_IN['Fabricant']
+_PROVENANCE = LETTRE_IN['Provenance']
+_PRIX = LETTRE_IN['Prix']
+_EDITEUR_IN = LETTRE_IN['Editeur']
+_DESTINATION = LETTRE_IN['Destination']
+_SIMILAIRES = LETTRE_IN['Similaires']
+_SPECIFICITES = LETTRE_IN['Spécificités']
+_LIEN = LETTRE_IN['Lien']
+_APPROBATIONS = LETTRE_IN['Approbations']
 
 cle_DATE = 'Date_de_creation'
 cle_PRENOM = 'Prenom'
@@ -167,6 +173,18 @@ cle_PRIVILEGES = 'Privileges'
 cle_LIEN = 'Lien'
 cle_ADRESSE = 'Adresse'
 cle_JOUR = 'Jour'
+
+cle_PRODUIT = 'Produit'
+cle_TYPE = 'Type'
+cle_ANNEE = 'Année'
+cle_FABRICANT = 'Fabricant'
+cle_PROVENANCE = 'Provenance'
+cle_EDITEUR = 'Editeur'
+cle_DESTINATION = 'Destination'
+cle_SIMILAIRES = 'Similaires'
+cle_SPECIFICITES = 'Spécificités'
+cle_APPROBATIONS = 'Approbations'
+cle_PRIX = 'Prix'
 
 def recuperateur_poste(tableau, contenu):
     if f'{tableau}' in contenu:
@@ -561,8 +579,8 @@ class Home(GridLayout):
         self.tableau_insertion = None
         self.csv_cv = None
         self.pdf = self.doc = self.soum = None
-        self.INITfile = INITfile
-        self.LETTRE = LETTRE
+        self.INITfileRH = INITfileRH
+        self.LETTRE = LETTRE_RH
         self.valideur_insert = self.valideur_nbre_jr = False
         self.dict_boutonvalideur = {}
         self.dictionnaire_bouton_menu = {} 
@@ -576,7 +594,7 @@ class Home(GridLayout):
         self.menu_options = {
             "Log": lambda *args: self.__ouvrir__(fichierdossier=Repertoire),
             "Inventaire": '',
-            "Save": self.save,
+            "Save": lambda instance, val1='all', val2=None: self.save(instance=instance, sett=val1, option_envoi=val2),
             "Clear": self.clear,
             "Restart": self.__restart__,
             "Quitter": self.quitter,
@@ -686,9 +704,6 @@ class Home(GridLayout):
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                               commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all')) 
             
-            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all'))  
             
             self.AutreLien = remplisseur(self, objet=self.cadreIV, texte=autre_lien_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
@@ -699,6 +714,10 @@ class Home(GridLayout):
             self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.csv())
             # LETTRE ________________________________________________________________________________________
+            
+            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all'))  
             
             
             # AUTOMATIQUE ______________________________________________________________________________________
@@ -721,12 +740,12 @@ class Home(GridLayout):
             self.Notes = remplisseur(self, objet=self.cadreV, texte=_utilitaires_, width=len(_utilitaires_*10),
                                               couleur=GRISCLAIR, height=20, sett='hauteur')
             
-            notess = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien important', sett='valeurcles')
+            notess = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien RH', sett='valeurcles')
             
             self.Notes.text = ry.lireFichier(initM.chemin_ressource(notess))
 
-            self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE, sett='manuel')
-            self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR, sett='manuel')
+            self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE_RH, sett='manuel')
+            self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR_RH, sett='manuel')
             self.affichage_boutons(tagger=self.Fonctions, text=_fonctions_, tag=_FONCTIONS, sett='manuel')
             self.affichage_boutons(tagger=self.Entreprise, text=_entreprise_, tag=_ENTREPRISE, sett='manuel')
             self.affichage_boutons(tagger=self.Departements, text=_departements_, tag=_DEPARTEMENTS, sett='manuel')
@@ -827,19 +846,23 @@ class Home(GridLayout):
             return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
                                         cle2='nbreEntreeTotal', sett='valeurcles')
 
-    def save(self, instance, sett='all', option_envoi='py'):
+    def save(self, instance, sett='all', option_envoi=None):
         envoi = []
         self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
         self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
+        dictio = ry.lireJSON(fichier=fichier_configuration)
+        if option_envoi is None :
+            option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
         
         if sett == 'all' :
             if self.csv_cv is not None :
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
-                    # self.ouvrir_fichier(self.INITfile, sett='lire')
-                    # self.renommer_fichier(fichier=self.INITfile, objet=self.cadreV)
-                    if option_envoi == 'py' or option_envoi == 'python':                        
+                    # self.ouvrir_fichier(self.INITfileRH, sett='lire')
+                    # self.renommer_fichier(fichier=self.INITfileRH, objet=self.cadreV)
+                    if option_envoi == 'py' or option_envoi == 'python':      
+                        rcp(ry.Magenta, f"Envoi des données vers la base de données via {option_envoi}...")                  
                         mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
                         DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
                         DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
@@ -849,7 +872,7 @@ class Home(GridLayout):
                         
                         mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
                         ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
-                                          fichier=LETTREFichier)
+                                          fichier=LETTREFichierRH)
                     elif option_envoi == 'psh' or option_envoi.lower() == 'powershell':
                         psh.run([
                             "Powershell.exe",
@@ -869,10 +892,6 @@ class Home(GridLayout):
         else :
             self.add_widget(Label(text="Vide !"))
             self.name = None
-
-    def clear(self, instance):        
-        for element in self.tableau_insertion:
-            element.text = ""
 
     def apresclicmessage(self, bouton, valeur=None, sett=None):
         if sett == 'messageautotaille':
@@ -968,16 +987,16 @@ class Home(GridLayout):
                 newname = newname
                 self.nom_sans_ext = os.path.splitext(newname)[0]
                 
-                self.INITfile = os.path.join(os.path.dirname(fichier), newname)
-                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfile, '-o', f"{DossierSORTIE}/{self.nom_sans_ext}.pdf"])
+                self.INITfileRH = os.path.join(os.path.dirname(fichier), newname)
+                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfileRH, '-o', f"{DossierSORTIE}/{self.nom_sans_ext}.pdf"])
 
             def doc_convert(newname) :
                 newname = newname
                 self.nom_sans_ext = os.path.splitext(newname)[0]
                 
-                self.INITfile = os.path.join(os.path.dirname(fichier), newname)
+                self.INITfileRH = os.path.join(os.path.dirname(fichier), newname)
                 fichierDOC = f"{DossierSORTIE}/{self.nom_sans_ext}.docx"
-                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfile, '-o', fichierDOC])
+                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfileRH, '-o', fichierDOC])
                 os.startfile(DossierSORTIE)
                 
                 # Appeler le fichier word
@@ -1014,8 +1033,7 @@ class Home(GridLayout):
             if sett == 'all':
                 print
                 rcp(ry.Green, f"{self.Prenom.text}", f"{_PRENOM}")
-                # ry.ecrire_ds_json(LETTREFichier, self.LETTRE, cle1=tag, cle2=tagII, contenu=cible, sett='remplacer')
-                ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
+                ry.ecrire_ds_json(fichier=LETTREFichierRH, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
             elif sett == 'adresse':
                 
                 adresse_complete = cible.split()
@@ -1026,13 +1044,13 @@ class Home(GridLayout):
                 adresseI = adresse_complete[:-4]
                 adresseI = " ".join(adresseI)
                 
-                envoi = LETTRE.replace(f"{tag}", f"{adresseI}")
+                envoi = LETTRE_RH.replace(f"{tag}", f"{adresseI}")
                 envoi = envoi.replace(f"{tagII}", f"{adresseII}")
-                with open(self.INITfile, 'w', encoding='utf-8') as write :
+                with open(self.INITfileRH, 'w', encoding='utf-8') as write :
                     if cible != '' and cible is not None:
                         initM.json.dump(envoi, write, indent=4, ensure_ascii=False)
                     else:
-                        initM.json.dump(LETTRE, write, indent=4, ensure_ascii=False)
+                        initM.json.dump(LETTRE_RH, write, indent=4, ensure_ascii=False)
 
             elif sett == 'espace' :
                 self.espacer(5)
@@ -1053,9 +1071,14 @@ class Home(GridLayout):
             print(f"Valeur stockée : {self.valeur_stockee}")
             
     def espacer(self, nombre): # 
-        with open(self.INITfile, 'a') as write :
+        with open(self.INITfileRH, 'a') as write :
             write.write("\n" * nombre)
-                   
+
+    def clear(self, instance):        
+        for element in self.tableau_insertion:
+            element.text = ""            
+        generer_fichier(INITfileRH, LETTREFichierRH)
+          
     def supprimerTout(self, instance):
         def recycler_word(self, source, destination, extension) :
             if os.path.exists(source):
@@ -1092,7 +1115,7 @@ class Home(GridLayout):
         fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
         fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
         if fichier_inutiles != []:
-            dossier_exclus, fichier_exclus = os.path.split(INITfile)
+            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
             for fichier in fichier_inutiles:
                 if fichier != fichier_exclus:
                     chemin = os.path.join(initM.DossierMarkdown, fichier)
@@ -1129,7 +1152,8 @@ class Home(GridLayout):
         self.ouvert = not self.ouvert
    
     def quitter(self, instance):
-        ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=initM.contenu_init, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierRH, dictionnaire=initM.contenu_init_RH, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierIN, dictionnaire=initM.contenu_init_IN, sett=4)
         App.get_running_app().stop()
     # Compteur d'entrees ________________________________________________________
     def initiateur_compteur(self):       
@@ -1229,8 +1253,7 @@ class HomeScreen(Screen):
         self.add_widget(accueil) 
         
 # --- Deuxième page ---
-class InventaireScreen(Screen):
-    
+class InventaireScreen(Screen):    
     def __init__(self, **kwargs):
         # Appel du constructeur de grille
         super().__init__(**kwargs)
@@ -1253,8 +1276,8 @@ class Inventaire(GridLayout):
         self.tableau_insertion = None
         self.csv_cv = None
         self.pdf = self.doc = self.soum = None
-        self.INITfile = INITfile
-        self.LETTRE = LETTRE
+        self.INITfileRH = INITfileRH
+        self.LETTRE = LETTRE_IN
         self.valideur_insert = self.valideur_nbre_jr = False
         self.dict_boutonvalideur = {}
         self.dictionnaire_bouton_menu = {} 
@@ -1268,7 +1291,7 @@ class Inventaire(GridLayout):
         self.menu_options = {
             "Accueil": '',
             "Log": lambda *args: self.__ouvrir__(fichierdossier=Repertoire),
-            "Save": self.save,
+            "Save": lambda instance, val1='all', val2=None: self.save(instance=instance, sett=val1, option_envoi=val2),
             "Clear": self.clear,
             "Restart": self.__restart__,
             "Quitter": self.quitter,
@@ -1291,17 +1314,17 @@ class Inventaire(GridLayout):
     
         self.tableau_insertion = [
                 self.Jour,
-                self.Entreprise,
-                self.Adresse,
+                self.Prix,
+                self.Produit,
                 self.Lien,
-                self.AutreLien,
-                self.Prenom,
-                self.Nom,
-                self.Phone,
-                self.Courriel,
-                self.Departements,
-                self.Fonctions,
-                self.Age,
+                self.Type,
+                self.Annee,
+                self.Fabricant,
+                self.Destination,
+                self.Provenance,
+                self.Similaires,
+                self.Specificites,
+                self.Editeur,
         ]
         
         self.cellules_non_remplies = len(self.tableau_insertion)
@@ -1334,58 +1357,53 @@ class Inventaire(GridLayout):
     def affichage_special_boutons(self, sett='action'):
 
         if sett == 'auto':
-            self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=cle_PRENOM,  sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=cle_NOM, sett='all')      
-            self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Produit.text}", tag=cle_PRODUIT,  sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Type.text}", tag=cle_TYPE, sett='all')      
+            self.ciblerEnvoyer(cible=f"{self.Annee.text}", tag=cle_ANNEE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Fabricant.text}", tag=cle_FABRICANT, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Jour.text}", tag=cle_DATE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Prix.text}", tag=cle_PRIX, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Destination.text}", tag=cle_DESTINATION, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Similaires.text}", tag=cle_SIMILAIRES, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Provenance.text}", tag=cle_PROVENANCE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Lien.text}", tag=cle_LIEN, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_SPECIFICITES, sett='all')
                         
         elif sett == 'others':
-            self.Prenom = remplisseur(self, objet=self.cadreIV, texte=_produit_)
+            self.Produit = remplisseur(self, objet=self.cadreIV, texte=_produit_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Prenom.text}", tag=cle_PRENOM, tagII=cle_PRENOM, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Produit.text}", tag=cle_PRODUIT, sett='all'))
             
-            self.Age = remplisseur(self, objet=self.cadreIV, texte=_annee_)
+            self.Annee = remplisseur(self, objet=self.cadreIV, texte=_annee_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Age.text}", tag=cle_AGE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Annee.text}", tag=cle_ANNEE, sett='all'))
             
-            self.Nom = remplisseur(self, objet=self.cadreIV, texte=_type_)
+            self.Type = remplisseur(self, objet=self.cadreIV, texte=_type_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Nom.text}", tag=cle_NOM,  sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Type.text}", tag=cle_TYPE, sett='all'))
 
-            self.Phone = remplisseur(self, objet=self.cadreIV, texte=_fabricant_)
+            self.Fabricant = remplisseur(self, objet=self.cadreIV, texte=_fabricant_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Phone.text}", tag=cle_PHONE, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fabricant.text}", tag=cle_FABRICANT, sett='all'))
             
             # CSV : numero de phone____________________________________________________________________
-            self.Courriel = remplisseur(self, objet=self.cadreIV, texte=_provenance_)
+            self.Provenance = remplisseur(self, objet=self.cadreIV, texte=_provenance_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Provenance.text}", tag=cle_PROVENANCE, sett='all'))
             # CSV : adresse courriel
-            self.Departements = remplisseur(self, objet=self.cadreIV, texte=_destination_)
+            self.Destination = remplisseur(self, objet=self.cadreIV, texte=_destination_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Destination.text}", tag=cle_DESTINATION, sett='all'))
     
-            self.Adresse = remplisseur(self, objet=self.cadreIV, texte=_similaires_)
+            self.Similaires = remplisseur(self, objet=self.cadreIV, texte=_similaires_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Adresse.text}", tag=cle_ADRESSE, sett='all')) 
+                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Similaires.text}", tag=cle_SIMILAIRES, sett='all')) 
             
-            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_specificites_)
+            self.Prix = remplisseur(self, objet=self.cadreIV, texte=_prix_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all'))  
-            
-            self.AutreLien = remplisseur(self, objet=self.cadreIV, texte=autre_lien_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all'))
-            
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Prix.text}", tag=cle_PRIX, sett='all')) 
+
             # CSV _______________________________________________________________________________
             self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_)
             self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
@@ -1394,17 +1412,13 @@ class Inventaire(GridLayout):
             
             
             # AUTOMATIQUE ______________________________________________________________________________________
-            self.Fonctions = remplisseur(self, objet=self.cadreIV, texte=_prix_, couleur=GRISCLAIR)
+            self.Specificites = remplisseur(self, objet=self.cadreIV, texte=_specificites_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS,  sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_SPECIFICITES,  sett='all'))
 
             self.Jour = remplisseur(self, objet=self.cadreIV, texte=_jour_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
-                                commande=lambda *args: self.ciblerEnvoyer(tag=cle_DATE, tagII=cle_DATE, cible=f"{self.Jour.text}", sett='all'))
-
-            self.Privileges = remplisseur(self, objet=self.cadreIV, texte=_approbation_, couleur=GRISCLAIR)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(tag=cle_DATE, cible=f"{self.Jour.text}", sett='all'))
             
             self.Editeur = remplisseur(self, objet=self.cadreIV, texte=_editeur_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
@@ -1413,15 +1427,15 @@ class Inventaire(GridLayout):
             self.Notes = remplisseur(self, objet=self.cadreV, texte=_utilitaires_, width=len(_utilitaires_*10),
                                               couleur=GRISCLAIR, height=20, sett='hauteur')
             
-            notess = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien important', sett='valeurcles')
+            notess = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='Lien Inventaire', sett='valeurcles')
             
             self.Notes.text = ry.lireFichier(initM.chemin_ressource(notess))
 
-            self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE, sett='manuel')
-            self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR, sett='manuel')
-            self.affichage_boutons(tagger=self.Fonctions, text=_fonctions_, tag=_FONCTIONS, sett='manuel')
-            self.affichage_boutons(tagger=self.Entreprise, text=_entreprise_, tag=_ENTREPRISE, sett='manuel')
-            self.affichage_boutons(tagger=self.Departements, text=_departements_, tag=_DEPARTEMENTS, sett='manuel')
+            self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE_IN, sett='manuel')
+            self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR_IN, sett='manuel')
+            self.affichage_boutons(tagger=self.Fabricant, text=_fabricant_, tag=_FABRICANT, sett='manuel')
+            self.affichage_boutons(tagger=self.Prix, text=_prix_, tag=_PRIX, sett='manuel')
+            self.affichage_boutons(tagger=self.Similaires, text=_similaires_, tag=_SIMILAIRES, sett='manuel')
 
             # for jobssite_ in self.liste_rapide:
             #     commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
@@ -1452,7 +1466,7 @@ class Inventaire(GridLayout):
                 self.cocheur_bouton(objet=self.cadreII, text='Ryan', cadrant=tagger, auto=auto)
             if text == _fonctions_ :
                 self.cocheur_bouton(objet=self.cadreII, text='Administrateur', cadrant=tagger, auto=auto)
-            if text == _entreprise_ :
+            if text == _prix_ :
                 self.cocheur_bouton(objet=self.cadreII, text='Delifruit', cadrant=tagger, auto=auto)
             if text == _departements_ :
                 self.cocheur_bouton(objet=self.cadreII, text='Direction', cadrant=tagger, auto=auto)
@@ -1523,25 +1537,27 @@ class Inventaire(GridLayout):
         envoi = []
         self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
         self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
+
+        dictio = ry.lireJSON(fichier=fichier_configuration)
+        if option_envoi is None :
+            option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
         
         if sett == 'all' :
             if self.csv_cv is not None :
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
-                    # self.ouvrir_fichier(self.INITfile, sett='lire')
-                    # self.renommer_fichier(fichier=self.INITfile, objet=self.cadreV)
                     if option_envoi == 'py' or option_envoi == 'python':                        
                         mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
                         DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
                         DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
                         mongoEND = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='API_KEY', sett='valeurcles')
-                        mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_RH', sett='valeurcles')
-                        mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL', sett='valeurcles')
+                        mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_IN', sett='valeurcles')
+                        mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL_IN', sett='valeurcles')
                         
                         mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
                         ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
-                                          fichier=LETTREFichier)
+                                          fichier=LETTREFichierIN)
                     elif option_envoi == 'psh' or option_envoi.lower() == 'powershell':
                         psh.run([
                             "Powershell.exe",
@@ -1558,13 +1574,10 @@ class Inventaire(GridLayout):
             
         elif sett == 'espace' :
                 self.espacer(5)
+        
         else :
             self.add_widget(Label(text="Vide !"))
             self.name = None
-
-    def clear(self, instance):        
-        for element in self.tableau_insertion:
-            element.text = ""
 
     def apresclicmessage(self, bouton, valeur=None, sett=None):
         if sett == 'messageautotaille':
@@ -1597,16 +1610,16 @@ class Inventaire(GridLayout):
         donnees = [
             {
                 "Date d'envoi du CV et de la lettre": self.Jour.text,
-                "Nom de l'entreprise": self.Entreprise.text,
-                "Adresse de l'entreprise": self.Adresse.text,
+                "Nom de l'entreprise": self.Prix.text,
+                "Adresse de l'entreprise": self.Provenance.text,
                 "Lien d'affichage du stage/poste": self.Lien.text,
-                "CV et lettre remis en main propre": self.nom_sans_ext,
+                "CV et lettre remis en main propre": self.Produit.text,
                 # "Titre du poste": self.Poste.text,
                 # "Nom du contact": self.NomD.text,
-                "Numéro de téléphone": self.Phone.text,
-                "Adresse courriel": self.Courriel.text,
-                "Réponse/Relance/informations supplémentaires": "En attente",
-                "Autres liens sites": self.AutreLien.text
+                "Numéro de téléphone": self.Destination.text,
+                "Adresse courriel": self.Type.text,
+                "Réponse/Relance/informations supplémentaires": self.Similaires.text,
+                "Autres liens sites": self.Fabricant.text
             }
         ]
 
@@ -1660,16 +1673,16 @@ class Inventaire(GridLayout):
                 newname = newname
                 self.nom_sans_ext = os.path.splitext(newname)[0]
                 
-                self.INITfile = os.path.join(os.path.dirname(fichier), newname)
-                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfile, '-o', f"{DossierSORTIE}/{self.nom_sans_ext}.pdf"])
+                self.INITfileRH = os.path.join(os.path.dirname(fichier), newname)
+                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfileRH, '-o', f"{DossierSORTIE}/{self.nom_sans_ext}.pdf"])
 
             def doc_convert(newname) :
                 newname = newname
                 self.nom_sans_ext = os.path.splitext(newname)[0]
                 
-                self.INITfile = os.path.join(os.path.dirname(fichier), newname)
+                self.INITfileRH = os.path.join(os.path.dirname(fichier), newname)
                 fichierDOC = f"{DossierSORTIE}/{self.nom_sans_ext}.docx"
-                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfile, '-o', fichierDOC])
+                psh.Popen(['Powershell.exe', '-Command', 'pandoc', self.INITfileRH, '-o', fichierDOC])
                 os.startfile(DossierSORTIE)
                 
                 # Appeler le fichier word
@@ -1704,10 +1717,8 @@ class Inventaire(GridLayout):
         envoi = []
         if cible is not None:
             if sett == 'all':
-                print
-                rcp(ry.Green, f"{self.Prenom.text}", f"{_PRENOM}")
-                # ry.ecrire_ds_json(LETTREFichier, self.LETTRE, cle1=tag, cle2=tagII, contenu=cible, sett='remplacer')
-                ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
+                rcp(ry.Green, f"{cible}", f"{tag} : ")
+                ry.ecrire_ds_json(fichier=LETTREFichierIN, dictionnaire=self.LETTRE, cle1=tag, val=cible, sett='remplacer')
             elif sett == 'adresse':
                 
                 adresse_complete = cible.split()
@@ -1718,13 +1729,13 @@ class Inventaire(GridLayout):
                 adresseI = adresse_complete[:-4]
                 adresseI = " ".join(adresseI)
                 
-                envoi = LETTRE.replace(f"{tag}", f"{adresseI}")
+                envoi = LETTRE_IN.replace(f"{tag}", f"{adresseI}")
                 envoi = envoi.replace(f"{tagII}", f"{adresseII}")
-                with open(self.INITfile, 'w', encoding='utf-8') as write :
+                with open(self.INITfileIN, 'w', encoding='utf-8') as write :
                     if cible != '' and cible is not None:
                         initM.json.dump(envoi, write, indent=4, ensure_ascii=False)
                     else:
-                        initM.json.dump(LETTRE, write, indent=4, ensure_ascii=False)
+                        initM.json.dump(LETTRE_IN, write, indent=4, ensure_ascii=False)
 
             elif sett == 'espace' :
                 self.espacer(5)
@@ -1745,9 +1756,15 @@ class Inventaire(GridLayout):
             print(f"Valeur stockée : {self.valeur_stockee}")
             
     def espacer(self, nombre): # 
-        with open(self.INITfile, 'a') as write :
+        with open(self.INITfileRH, 'a') as write :
             write.write("\n" * nombre)
-                   
+
+    def clear(self, instance):        
+        for element in self.tableau_insertion:
+            element.text = ""
+        generer_fichier(self.INITfileIN, self.LETTREFichierIN)
+
+                
     def supprimerTout(self, instance):
         def recycler_word(self, source, destination, extension) :
             if os.path.exists(source):
@@ -1784,7 +1801,7 @@ class Inventaire(GridLayout):
         fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
         fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
         if fichier_inutiles != []:
-            dossier_exclus, fichier_exclus = os.path.split(INITfile)
+            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
             for fichier in fichier_inutiles:
                 if fichier != fichier_exclus:
                     chemin = os.path.join(initM.DossierMarkdown, fichier)
@@ -1821,7 +1838,8 @@ class Inventaire(GridLayout):
         self.ouvert = not self.ouvert
    
     def quitter(self, instance):
-        ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=initM.contenu_init, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierRH, dictionnaire=initM.contenu_init_RH, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierIN, dictionnaire=initM.contenu_init_IN, sett=4)
         App.get_running_app().stop()
     # Compteur d'entrees ________________________________________________________
     def initiateur_compteur(self):       
@@ -1919,16 +1937,20 @@ class Lettre(Screen):
         self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
         GRILLE = GridLayout()
         # colorer
-        self.INITfile = INITfile
+        self.INITfileRH = INITfileRH
         self.dictionnaire_bouton_menu = {} 
         self.Cadres(GRILLE)
         self.menu_options = {
             "Accueil": None,
-            "=>": None,
-            "Save": lambda instance: self.Save(),
-            "Refresh": lambda instance: self.refresh(),
+            "<=": None,
+            "=>": None,            
+            "Archives": lambda *args: os.startfile(ARCHIVES),
             "Restart": self.__restart__,
             "Quitter": self.quitter,
+            "Refresh RH": lambda instance: self.refresh_RH(),
+            "Refresh IN": lambda instance: self.refresh_IN(),
+            "Save RH": lambda instance: self.Save_RH(),
+            "Save IN": lambda instance: self.Save_IN(),
             "Other": self.autredossier,
             "Log": lambda *args: self.__ouvrir__(fichierdossier=Repertoire),
         }
@@ -1937,11 +1959,17 @@ class Lettre(Screen):
                                              haut=30, police=20, largeur=None, color=VERT, x=0.2, y=None, color2=ROUGE)
 
         self.dictionnaire_bouton_menu['Accueil'].bind(on_press=lambda x: setattr(self.manager, 'current', 'Accueil'))
+        self.dictionnaire_bouton_menu['<='].bind(on_press=lambda x: setattr(self.manager, 'current', 'Inventaire'))
         self.dictionnaire_bouton_menu['=>'].bind(on_press=lambda x: setattr(self.manager, 'current', 'BlocNotes'))
         
-        contenu = self.lire_ecrire_json(fichier=LETTREFichier)
-        self.json_input = entry(self=GRILLE, texte=contenu, objet=self.cadreII, couleur=NOIR, multiline=True,
-              txtColor=WHITE, width=825, height=20, sett='hauteur')
+        fichiers_json = [ self.lire_ecrire_json(fichier=LETTREFichierRH),
+                        self.lire_ecrire_json(fichier=LETTREFichierIN),
+                        self.lire_ecrire_json(fichier=initM.fichier_sauvegarde_json_IN),
+                        self.lire_ecrire_json(fichier=initM.fichier_sauvegarde_json_RH) ]
+        
+        for contenu in fichiers_json :
+            self.json_input = entry(self=GRILLE, texte=contenu, objet=self.cadreII, couleur=GRISCLAIR, multiline=True,
+                txtColor=WHITE, width=400, height=20, sett='hauteur')
 
         self.add_widget(GRILLE)
 
@@ -1951,7 +1979,7 @@ class Lettre(Screen):
         # Menu
         GRILLE.cadreI = add_object(self=GRILLE, cols=6, row_f=5)
         # FORMULAIRE
-        GRILLE.cadreII = add_object(self=GRILLE, cols=1, sett='scroll')
+        GRILLE.cadreII = add_object(self=GRILLE, cols=2, sett='scroll')
         # FICHIER EN COURS
         self.cadreI = GRILLE.cadreI
         self.cadreII = GRILLE.cadreII
@@ -1970,11 +1998,17 @@ class Lettre(Screen):
             return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
                                         cle2='nbreEntreeTotal', sett='valeurcles')
 
-    def refresh(self):
-        self.json_input.text = ry.lireFile(LETTREFichier, set=2)
+    def refresh_RH(self):
+        self.json_input.text = ry.lireFile(LETTREFichierRH, set=2)
 
-    def Save(self):        
-        ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=self.json_input.text, sett=4)
+    def Save_RH(self):        
+        ry.ecrire_ds_json(fichier=LETTREFichierRH, dictionnaire=self.json_input.text, sett=4)
+        
+    def refresh_IN(self):
+        self.json_input.text = ry.lireFile(LETTREFichierIN, set=2)
+
+    def Save_IN(self):        
+        ry.ecrire_ds_json(fichier=LETTREFichierIN, dictionnaire=self.json_input.text, sett=4)
 
     def git_push(self, git=None, f_git=None, instance=None):
         
@@ -2022,7 +2056,8 @@ class Lettre(Screen):
         return cible
     
     def quitter(self, instance):
-        ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=initM.contenu_init, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierRH, dictionnaire=initM.contenu_init_RH, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierIN, dictionnaire=initM.contenu_init_IN, sett=4)
         App.get_running_app().stop()
 
     def __restart__(self, instance):
@@ -2049,15 +2084,17 @@ class BlocNotes(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
-        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
+        
+        self.dictio = ry.lireJSON(fichier=fichier_configuration)
+        self.option_envoi = ry.chercher_ds_JSON(dictionnaire=self.dictio, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
+            
         self.plan = f"{blocnotes_dossier}/Plan.txt"
-        self.liensUtiles = f"{blocnotes_dossier}/LiensUtiles.txt"
-        self.infos = f"{blocnotes_dossier}/Infos.txt"
+        self.liensUtiles = f"{blocnotes_dossier}/Infos_inventaire.txt"
+        self.infos = f"{blocnotes_dossier}/Infos_RH.txt"
         self.dates = f"{blocnotes_dossier}/Dates.txt"
         GRILLE = GridLayout()
         # colorer
-        self.INITfile = INITfile
+        self.INITfileRH = INITfileRH
         self.dictionnaire_bouton_menu = {} 
         self.Cadres(GRILLE)
         self.menu_options = {
@@ -2069,6 +2106,7 @@ class BlocNotes(Screen):
             "Quitter": self.quitter,
             "Other": self.autredossier,
             "Log": lambda *args: self.__ouvrir__(fichierdossier=Repertoire),
+            f"{self.get_methode_envoi()}":lambda instance, val=str("py"), val2=str("psh"): self.set_methode_envoi(instance, val, val2),
             }
 
         self.dictionnaire_bouton_menu = Menu(self=self, cadre=GRILLE.cadreI, tableau=self.menu_options, dictio=self.dictionnaire_bouton_menu,
@@ -2121,18 +2159,20 @@ class BlocNotes(Screen):
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
 
     def envoi_donnees_ds_JSON(self):
-        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.get_nbre_Postulee_jour(), 
-                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeTotal', sett='remplacer')
-        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=dictio, contenu=self.nombre_postulee, 
-                            cle1='Nombres_Utilisateurs', cle2='nbreEntreeJour', sett='remplacer')
-        
-    def afficher_nbre_postulee(self, valeur=None) :
-        if valeur == 'nbreEntreeJour':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
-                                        cle2='nbreEntreeJour', sett='valeurcles')
-        elif valeur == 'nbreEntreeTotal':
-            return ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Nombres_Utilisateurs', 
-                                        cle2='nbreEntreeTotal', sett='valeurcles')
+        ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=self.dictio, contenu=self.get_methode_envoi(), 
+                            cle1='Methode_D_Envoi', cle2='langage', sett='remplacer')
+
+    def set_methode_envoi(self, instance, val, val2):        
+        print(self.get_methode_envoi(), val, val2)
+        if self.get_methode_envoi() != val :            
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[str(val2)], 
+                                valeur=val, sett='message')
+        else:
+            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[str(val2)], 
+                                valeur=val2, sett='message')
+                
+    def get_methode_envoi(self):
+        return self.option_envoi
 
     def Save(self):    
         dict_input = {self.plan: self.plan_input.text, self.liensUtiles: self.liens_input.text, 
@@ -2171,23 +2211,27 @@ class BlocNotes(Screen):
             ry.ecrire_ds_fichier(fichier, contenu)
         
         return contenu
+                
+    def apresclicmessage(self, bouton, valeur=None, sett=None):
+        if sett == 'messageavecbouton':
+            bouton.bind(on_release=lambda btn, valeur=valeur: self.apresclic(btn, f"{valeur}"))
+        elif sett == 'message':
+            bouton.text = str(valeur)
+            self.option_envoi = valeur
+            self.envoi_donnees_ds_JSON()            
 
-    def set_nbre_Postulee_jour(self, nbre):
-        if self.valideur_nbre_jr == False :
-            self.apresclicmessage(bouton=self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], 
-                                valeur=nbre, sett='message')
-            self.nbreEntreeTotal = nbre
-            self.valideur_nbre_jr = True
+    def apresclic(self, bouton, valeur=None, couleur=VERT):
+        bouton.text = valeur
+        colorer(self, bouton, couleur)
 
-    def get_nbre_Postulee_jour(self):
-        return self.nbreEntreeTotal
     
     def changer_valeur_a_l_ecran(self, cible, nbre=0):
         cible = nbre
         return cible
     
     def quitter(self, instance):
-        ry.ecrire_ds_json(fichier=LETTREFichier, dictionnaire=initM.contenu_init, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierRH, dictionnaire=initM.contenu_init_RH, sett=4)
+        ry.ecrire_ds_json(fichier=LETTREFichierIN, dictionnaire=initM.contenu_init_IN, sett=4)
         App.get_running_app().stop()
 
     def __restart__(self, instance):

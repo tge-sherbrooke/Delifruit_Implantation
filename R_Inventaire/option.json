@@ -1,14 +1,19 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 827,
-    "y": 200,
+    "x": 360,
+    "y": 187,
     "Nombres_Utilisateurs": [
         {
-            "nbreEntreeTotal": 15
+            "nbreEntreeTotal": 32
         },
         {
-            "nbreEntreeJour": 50
+            "nbreEntreeJour": 33
+        }
+    ],
+    "Methode_D_Envoi": [
+        {
+            "langage": "psh"
         }
     ],
     "all_check": null,
@@ -41,13 +46,22 @@
             "Cache": "lib/cache.txt"
         },
         {
-            "INIT": "lib/_init_.json"
+            "INIT_RH": "lib/_init_RH.json"
         },
         {
-            "Formulaire": "Sortie/formulaire.json"
+            "INIT_IN": "lib/_init_IN.json"
         },
         {
-            "Sauvegarde": "lib/sauvegarde.json"
+            "FormulaireRH": "Sortie/formulaireRH.json"
+        },
+        {
+            "FormulaireIN": "Sortie/formulaireIN.json"
+        },
+        {
+            "SauvegardeRH": "archives/sauvegardeRH.json"
+        },
+        {
+            "SauvegardeIN": "archives/sauvegardeIN.json"
         },
         {
             "texte_support": "lib/Aide.txt"
@@ -128,7 +142,10 @@
     ],
     "Profil": [
         {
-            "Lien important": "lib/Blocnotes/Infos.txt"
+            "Lien RH": "lib/Blocnotes/Infos_RH.txt"
+        },
+        {
+            "Lien Inventaire": "lib/Blocnotes/Infos_inventaire.txt"
         }
     ],
     "Liste_Dossiers": [

@@ -1,0 +1,16 @@
+{
+    "Produit": "__PRODUIT__", 
+    "Type": "__TYPE__",
+    "Annee": "__ANNEE__",
+    "Fabricant": "__FABRICANT__",
+    "Provenance": "__PROVENANCE__",
+    "Destination": "__DESTINATION__",
+    "Date_de_creation": "__DATE__",
+    "Lien": "__LIEN__",
+    "Spécificités": "__SPECIFICITES__",
+    "Prix": "__PRIX__",
+    "Approbations": "__APPROBATIONS__",
+    "Similaires": "__SIMILAIRES__",
+    "Editeur": "__EDITEUR__"
+}
+

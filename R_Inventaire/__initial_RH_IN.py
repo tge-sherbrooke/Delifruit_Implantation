@@ -25,7 +25,7 @@ def chemin_ressource(chemin=None):
         try:
             if hasattr(sys, "_MEIPASS"):
                 # On est dans un executable
-                Repertoire = sys._MEIPASS
+                Repertoire = getattr(sys, "_MEIPASS", os.path.dirname(__file__))
                 return os.path.join(Repertoire, chemin)  
             else :
                 Repertoire = os.path.abspath(".")   
@@ -33,7 +33,7 @@ def chemin_ressource(chemin=None):
         except AttributeError:
             Repertoire = os.path.abspath(".")
     if chemin is None:
-        return sys._MEIPASS
+        return getattr(sys, "_MEIPASS", os.path.dirname(__file__))
     
 WHITE = (1, 1, 1, 1)
 BLEUPALE = (0.68, 0.85, 0.90, 1)
@@ -63,32 +63,63 @@ fichier_credentials_env = chemin_ressource("lib/credentials.env")
 fichier_configuration = chemin_ressource("option.json")
 dictio = ry.lireJSON(fichier=fichier_configuration)
 credentials = ry.lireJSON(fichier=fichier_credentials)
-fichier_sauvegarde_json = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
-                                                               cle2='Sauvegarde', sett='valeurcles'))
+fichier_sauvegarde_json_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
+                                                               cle2='SauvegardeRH', sett='valeurcles'))
+fichier_sauvegarde_json_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
+                                                               cle2='SauvegardeIN', sett='valeurcles'))
+
+# ______________D_O_S_S_I_E_R___S_O_R_T_I_E_____________________________________
+DossierSORTIE = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', 
+                                                     cle2='DossierSortie', sett='valeurcles'))
+# ______________D_O_S_S_I_E_R___L_I_B_R_A_I_R_I_E_____________________________________
 librairie = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Repertoires", 
                                                  cle2='librairie', sett='valeurcles'))
                              
-# ______________I_N_I_T_______________________________________________
-fichier_initial = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT', sett='valeurcles'))
-contenu_init = ry.lireJSON(fichier_initial)
-DossierSORTIE = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', cle2='DossierSortie', sett='valeurcles'))
-# ______________F_O_R_M_U_L_A_I_R_E_________________________________________
-fichier_form = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='Formulaire', sett='valeurcles')    )
-#
-contenu_formulaire = ry.lireJSON(fichier_form)
-reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial, fichier2=fichier_form,
+# ______________I_N_I_T___R_H___________________________________________
+fichier_initial_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT_RH', sett='valeurcles'))
+contenu_init_RH = ry.lireJSON(fichier_initial_RH)
+# ______________I_N_I_T___I_N___________________________________________
+fichier_initial_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT_IN', sett='valeurcles'))
+contenu_init_IN = ry.lireJSON(fichier_initial_IN)
+
+
+
+# ______________F_O_R_M_U_L_A_I_R_E___R_H_____________________________________
+fichier_form_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='FormulaireRH', sett='valeurcles')    )
+# ______________F_O_R_M_U_L_A_I_R_E___I_N_____________________________________
+fichier_form_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='FormulaireIN', sett='valeurcles')    )
+
+# _________________C_O_M_P_A_R_A_I_S_O_N___F_I_C_H_I_E_R_S______________________________
+# RH  
+contenu_formulaireRH = ry.lireJSON(fichier_form_RH)
+reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_RH, fichier2=fichier_form_RH,
+                             sett='json', option='return')
+# IN
+contenu_formulaireIN = ry.lireJSON(fichier_form_IN)
+reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_IN, fichier2=fichier_form_IN,
                              sett='json', option='return')
 
 #
-# ______________S_A_U_V_E_G_A_R_D_E_________________________________________
+# ______________S_A_U_V_E_G_A_R_D_E___R_H_____________________________________
 if reponse == True:   
-    lecture_validante = ry.lireJSON(fichier_sauvegarde_json)
+    lecture_validante = ry.lireJSON(fichier_sauvegarde_json_RH)
     if lecture_validante is not None and lecture_validante != '':
-        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json, dictionnaire=f",{contenu_init}, {contenu_formulaire}", sett=4)
+        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_RH, dictionnaire=f",{contenu_init_RH}, {contenu_formulaireRH}", sett=4)
     else :
-        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json, dictionnaire=f"{contenu_init}, {contenu_formulaire}", sett=4)
+        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_RH, dictionnaire=f"{contenu_init_RH}, {contenu_formulaireRH}", sett=4)
 
-ry.ecrire_ds_json(fichier=fichier_form, dictionnaire=contenu_init, sett=4)
+ry.ecrire_ds_json(fichier=fichier_form_RH, dictionnaire=contenu_init_RH, sett=4)
+# ______________S_A_U_V_E_G_A_R_D_E___I_N_____________________________________
+if reponse == True:   
+    lecture_validante = ry.lireJSON(fichier_sauvegarde_json_IN)
+    if lecture_validante is not None and lecture_validante != '':
+        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_IN, dictionnaire=f",{contenu_init_IN}, {contenu_formulaireIN}", sett=4)
+    else :
+        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_IN, dictionnaire=f"{contenu_init_IN}, {contenu_formulaireIN}", sett=4)
+
+ry.ecrire_ds_json(fichier=fichier_form_IN, dictionnaire=contenu_init_IN, sett=4)
+
+
 #
 ARCHIVES = f"{Repertoire}/archives"
 CACHE = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='Cache', sett='valeurcles'))
