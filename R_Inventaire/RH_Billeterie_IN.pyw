@@ -89,15 +89,26 @@ fichier_configuration = initM.fichier_configuration
 credential = initM.credentials
 fichier_credentials = initM.fichier_credentials
 markdownobject = 'mark_cv'
+            # Fichiers initiales
 INITfileRH = initM.fichier_initial_RH
 INITfileIN = initM.fichier_initial_IN
+
+INITfile_sqlRH = initM.fichier_initial_sqlRH
+INITfile_sqlIN = initM.fichier_initial_sqlIN
+
 date_archivable = initM.date('archive')
 date_formatee = initM.date('date_pour_BD')
 texteWord = initM.texte_support
+                # Fichiers de formulaire
 LETTREFichierRH = initM.fichier_form_RH
 LETTREFichierIN = initM.fichier_form_IN
 LETTRE_RH = initM.contenu_formulaireRH
 LETTRE_IN = initM.contenu_formulaireIN
+                # Fichiers de sql
+LETTREFichier_sqlRH = initM.fichier_form_sqlRH
+LETTREFichier_sqlIN = initM.fichier_form_sqlIN
+LETTRE_SQL_RH = initM.contenu_formulaire_sqlRH
+LETTRE_SQL_IN = initM.contenu_formulaire_sqlIN
 
 ARCHIVES = initM.ARCHIVES
 file_git_send = f"{Repertoire}/lib/git_send.bat" 
@@ -120,6 +131,8 @@ def generer_fichier(fichierentree, fichiersortie):
         
 generer_fichier(INITfileRH, LETTREFichierRH)
 generer_fichier(INITfileIN, LETTREFichierIN)
+generer_fichier(INITfile_sqlRH, LETTREFichier_sqlRH)
+generer_fichier(INITfile_sqlIN, LETTREFichier_sqlIN)
 
 dictio = ry.lireJSON(fichier=fichier_configuration)
 
@@ -147,7 +160,7 @@ _ADRESSE = LETTRE_RH['Adresse']
 # _____________I_N___V_A_R_I_A_B_L_E_S______________________________
 _DATE_IN = LETTRE_IN['Date_de_creation']
 _PRODUIT = LETTRE_IN['Produit']
-_TYPE = LETTRE_IN['Type']
+_TYPE = LETTRE_IN['Types']
 _ANNEE = LETTRE_IN['Annee']
 _FABRICANT = LETTRE_IN['Fabricant']
 _PROVENANCE = LETTRE_IN['Provenance']
@@ -155,7 +168,7 @@ _PRIX = LETTRE_IN['Prix']
 _EDITEUR_IN = LETTRE_IN['Editeur']
 _DESTINATION = LETTRE_IN['Destination']
 _SIMILAIRES = LETTRE_IN['Similaires']
-_SPECIFICITES = LETTRE_IN['Spécificités']
+_QUANTITE = LETTRE_IN['Quantite']
 _LIEN = LETTRE_IN['Lien']
 _APPROBATIONS = LETTRE_IN['Approbations']
 
@@ -175,14 +188,14 @@ cle_ADRESSE = 'Adresse'
 cle_JOUR = 'Jour'
 
 cle_PRODUIT = 'Produit'
-cle_TYPE = 'Type'
+cle_TYPE = 'Types'
 cle_ANNEE = 'Année'
 cle_FABRICANT = 'Fabricant'
 cle_PROVENANCE = 'Provenance'
 cle_EDITEUR = 'Editeur'
 cle_DESTINATION = 'Destination'
 cle_SIMILAIRES = 'Similaires'
-cle_SPECIFICITES = 'Spécificités'
+cle_QUANTITE = 'Quantité'
 cle_APPROBATIONS = 'Approbations'
 cle_PRIX = 'Prix'
 
@@ -218,7 +231,7 @@ _fabricant_ = "Fabricant "
 _provenance_ = "Provenance"
 _destination_ = "Destination "
 _similaires_ = "Similaires"
-_specificites_ = "Spécificités"
+_quantite_ = "Quantité"
 _prix_ = "Prix"
 _approbation_ = "Approbations"
 
@@ -650,7 +663,7 @@ class Home(GridLayout):
         # self.cadreIII = add_object(self, row_f=2, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
         # Cadre interne - COCHEUR
         # self.cadreII = add_object(self, row_f=1, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
-        self.cadreII = add_object(self, row_f=1, cols=2)
+        self.cadreII = add_object(self, row_f=1, cols=8)
         # Renommer
         self.cadreV = add_object(self, cols=1, row_f=1, col_f=10, sticky=None)
         
@@ -774,15 +787,15 @@ class Home(GridLayout):
             
         elif sett == 'manuel':
             if text == _jour_ :
-                self.cocheur_bouton(objet=self.cadreII, text=date_formatee, cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text=date_formatee, titre=text, cadrant=tagger, auto=auto)
             if text == _editeur_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Ryan', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='Ryan', titre=text, cadrant=tagger, auto=auto)
             if text == _fonctions_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Administrateur', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='Administrateur', titre=text, cadrant=tagger, auto=auto)
             if text == _entreprise_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Delifruit', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='Delifruit', titre=text, cadrant=tagger, auto=auto)
             if text == _departements_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Direction', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='Direction', titre=text, cadrant=tagger, auto=auto)
             
     def pageMD(self):
         texte = "Texte déroulant"
@@ -799,22 +812,25 @@ class Home(GridLayout):
         self.scroll.add_widget(self.label)
         self.add_widget(self.scroll)
        
-    def cocheur_bouton(self, text=None, objet=None, cadrant=None, auto=False):
+    def cocheur_bouton(self, text=None, objet=None, titre=None, cadrant=None, auto=False):
         self.cocheur = CheckBox(size_hint_y=None, height=20)
         if objet is None :
             self.cocheur.bind(active=lambda instance, value, checkbox=text: self.autoremplir(checkbox, cadrant, value))
             self.add_widget(self.cocheur)
+            self.add_widget(Label(text=text))
             
         if objet and auto == False :
             dictio[checker] = 'cochee'
             ry.ecrire_ds_json(fichier=fichier_configuration, contenu=dictio)
             self.cocheur.bind(active=lambda instance, value, checkbox=text: self.autoremplir(checkbox, cadrant, value))
             objet.add_widget(self.cocheur)
+            objet.add_widget(Label(text=titre))
             
         if objet and auto == True :
             self.cocheur.active = auto
             self.cocheur.bind(active=partial(self.autoremplir, checkbox=text, objet=cadrant))
             objet.add_widget(self.cocheur)
+            objet.add_widget(Label(text=titre))
         
         return self.cocheur
   
@@ -859,6 +875,7 @@ class Home(GridLayout):
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
+                    self.save(instance=instance, sett='sql', option_envoi=option_envoi)
                     # self.ouvrir_fichier(self.INITfileRH, sett='lire')
                     # self.renommer_fichier(fichier=self.INITfileRH, objet=self.cadreV)
                     if option_envoi == 'py' or option_envoi == 'python':      
@@ -886,6 +903,39 @@ class Home(GridLayout):
             else :
                 colorer(self, bouton=self.Lien, couleur=ROUGE)
                 colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=ROUGE)
+                
+        elif sett == 'sql':
+            dictio_form_RH = ry.lireJSON(fichier=LETTREFichierRH)
+            if option_envoi is None :
+                option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio_form_RH, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
+            if dictio_form_RH is not None :
+                _DATE_IN = LETTRE_IN['Date_de_creation']
+                _PRODUIT = LETTRE_IN['Produit']
+                _TYPE = LETTRE_IN['Types']
+                _ANNEE = LETTRE_IN['Annee']
+                _FABRICANT = LETTRE_IN['Fabricant']
+                _PROVENANCE = LETTRE_IN['Provenance']
+                _PRIX = LETTRE_IN['Prix']
+                _EDITEUR_IN = LETTRE_IN['Editeur']
+                _DESTINATION = LETTRE_IN['Destination']
+                _SIMILAIRES = LETTRE_IN['Similaires']
+                _QUANTITE = LETTRE_IN['Spécificités']
+                _LIEN = LETTRE_IN['Lien']
+                _APPROBATIONS = LETTRE_IN['Approbations']
+                
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Date_de_creation (date_production) VALUES\n('{_DATE_IN}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Produit (nom) VALUES\n('{_PRODUIT}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Type (nom) VALUES\n('{_TYPE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Annee (valeur) VALUES\n('{_ANNEE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Fabricant (nom) VALUES\n('{_FABRICANT}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Provenance (pays) VALUES\n('{_PROVENANCE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Prix (montant, devise) VALUES\n('{_PRIX}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Editeur (nom) VALUES\n('{_EDITEUR_IN}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Destination (pays) VALUES\n('{_DESTINATION}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Similaires (produit_id, similaire_id) VALUES\n('{_SIMILAIRES}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Specificites (description) VALUES\n('{_QUANTITE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Lien (url) VALUES\n('{_LIEN}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Approbations (produit_id, organisme, date_approbation) VALUES\n('{_APPROBATIONS}')")
             
         elif sett == 'espace' :
                 self.espacer(5)
@@ -1347,7 +1397,7 @@ class Inventaire(GridLayout):
         # self.cadreIII = add_object(self, row_f=2, col1=2, col2=3, sett='doublecadre', cadrage='gche', forme='scroll')
         # Cadre interne - COCHEUR
         # self.cadreII = add_object(self, row_f=1, col1=2, col3=4, sett='doublecadre', cadrage='dte', forme='scroll')
-        self.cadreII = add_object(self, row_f=1, cols=2)
+        self.cadreII = add_object(self, row_f=1, cols=8)
         # Renommer
         self.cadreV = add_object(self, cols=1, row_f=1, col_f=10, sticky=None)
         
@@ -1368,7 +1418,7 @@ class Inventaire(GridLayout):
             self.ciblerEnvoyer(cible=f"{self.Provenance.text}", tag=cle_PROVENANCE, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Lien.text}", tag=cle_LIEN, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_SPECIFICITES, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_QUANTITE, sett='all')
                         
         elif sett == 'others':
             self.Produit = remplisseur(self, objet=self.cadreIV, texte=_produit_)
@@ -1383,10 +1433,6 @@ class Inventaire(GridLayout):
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Type.text}", tag=cle_TYPE, sett='all'))
 
-            self.Fabricant = remplisseur(self, objet=self.cadreIV, texte=_fabricant_)
-            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fabricant.text}", tag=cle_FABRICANT, sett='all'))
-            
             # CSV : numero de phone____________________________________________________________________
             self.Provenance = remplisseur(self, objet=self.cadreIV, texte=_provenance_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
@@ -1409,13 +1455,16 @@ class Inventaire(GridLayout):
             self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.csv())
             # LETTRE ________________________________________________________________________________________
+            self.Specificites = remplisseur(self, objet=self.cadreIV, texte=_quantite_)
+            commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_QUANTITE,  sett='all'))
             
             
             # AUTOMATIQUE ______________________________________________________________________________________
-            self.Specificites = remplisseur(self, objet=self.cadreIV, texte=_specificites_, couleur=GRISCLAIR)
+            self.Fabricant = remplisseur(self, objet=self.cadreIV, texte=_fabricant_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_SPECIFICITES,  sett='all'))
-
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fabricant.text}", tag=cle_FABRICANT, sett='all'))
+            
             self.Jour = remplisseur(self, objet=self.cadreIV, texte=_jour_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.ciblerEnvoyer(tag=cle_DATE, cible=f"{self.Jour.text}", sett='all'))
@@ -1431,11 +1480,12 @@ class Inventaire(GridLayout):
             
             self.Notes.text = ry.lireFichier(initM.chemin_ressource(notess))
 
+            self.affichage_boutons(tagger=self.Provenance, text=_provenance_, tag=_PROVENANCE, sett='manuel')
             self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE_IN, sett='manuel')
             self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR_IN, sett='manuel')
             self.affichage_boutons(tagger=self.Fabricant, text=_fabricant_, tag=_FABRICANT, sett='manuel')
-            self.affichage_boutons(tagger=self.Prix, text=_prix_, tag=_PRIX, sett='manuel')
             self.affichage_boutons(tagger=self.Similaires, text=_similaires_, tag=_SIMILAIRES, sett='manuel')
+            self.affichage_boutons(tagger=self.Destination, text=_destination_, tag=_DESTINATION, sett='manuel')
 
             # for jobssite_ in self.liste_rapide:
             #     commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
@@ -1461,15 +1511,17 @@ class Inventaire(GridLayout):
             
         elif sett == 'manuel':
             if text == _jour_ :
-                self.cocheur_bouton(objet=self.cadreII, text=date_formatee, cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text=date_formatee, titre=text, cadrant=tagger, auto=auto)
             if text == _editeur_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Ryan', cadrant=tagger, auto=auto)
-            if text == _fonctions_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Administrateur', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='Ryan', titre=text, cadrant=tagger, auto=auto)
+            if text == _provenance_ :
+                self.cocheur_bouton(objet=self.cadreII, text='Sherbrooke', titre=text, cadrant=tagger, auto=auto)
+            if text == _destination_ :
+                self.cocheur_bouton(objet=self.cadreII, text='Montreal', titre=text, cadrant=tagger, auto=auto)
             if text == _prix_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Delifruit', cadrant=tagger, auto=auto)
-            if text == _departements_ :
-                self.cocheur_bouton(objet=self.cadreII, text='Direction', cadrant=tagger, auto=auto)
+                self.cocheur_bouton(objet=self.cadreII, text='"250", "CAD"', titre=text,  cadrant=tagger, auto=auto)
+            if text == _fabricant_ :
+                self.cocheur_bouton(objet=self.cadreII, text='Delifruit Enterprise', titre=text,  cadrant=tagger, auto=auto)
             
     def pageMD(self):
         texte = "Texte déroulant"
@@ -1486,22 +1538,25 @@ class Inventaire(GridLayout):
         self.scroll.add_widget(self.label)
         self.add_widget(self.scroll)
        
-    def cocheur_bouton(self, text=None, objet=None, cadrant=None, auto=False):
+    def cocheur_bouton(self, text=None, objet=None, titre=None, cadrant=None, auto=False):
         self.cocheur = CheckBox(size_hint_y=None, height=20)
         if objet is None :
             self.cocheur.bind(active=lambda instance, value, checkbox=text: self.autoremplir(checkbox, cadrant, value))
             self.add_widget(self.cocheur)
+            self.add_widget(Label(text=titre))
             
         if objet and auto == False :
             dictio[checker] = 'cochee'
             ry.ecrire_ds_json(fichier=fichier_configuration, contenu=dictio)
             self.cocheur.bind(active=lambda instance, value, checkbox=text: self.autoremplir(checkbox, cadrant, value))
             objet.add_widget(self.cocheur)
+            objet.add_widget(Label(text=titre))
             
         if objet and auto == True :
             self.cocheur.active = auto
             self.cocheur.bind(active=partial(self.autoremplir, checkbox=text, objet=cadrant))
             objet.add_widget(self.cocheur)
+            objet.add_widget(Label(text=titre))
         
         return self.cocheur
   
@@ -1547,6 +1602,8 @@ class Inventaire(GridLayout):
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
+                    self.save(instance=instance, sett='sql', option_envoi=option_envoi)
+                    
                     if option_envoi == 'py' or option_envoi == 'python':                        
                         mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
                         DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
@@ -1571,7 +1628,41 @@ class Inventaire(GridLayout):
             else :
                 colorer(self, bouton=self.Lien, couleur=ROUGE)
                 colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=ROUGE)
+
+        elif sett == 'sql':
+            dictio_form_RH = ry.lireJSON(fichier=LETTREFichierRH)
+            if option_envoi is None :
+                option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio_form_RH, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
+            if dictio_form_RH is not None :
+                _DATE_IN = LETTRE_IN['Date_de_creation']
+                _PRODUIT = LETTRE_IN['Produit']
+                _TYPE = LETTRE_IN['Types']
+                _ANNEE = LETTRE_IN['Annee']
+                _FABRICANT = LETTRE_IN['Fabricant']
+                _PROVENANCE = LETTRE_IN['Provenance']
+                _PRIX = LETTRE_IN['Prix']
+                _EDITEUR_IN = LETTRE_IN['Editeur']
+                _DESTINATION = LETTRE_IN['Destination']
+                _SIMILAIRES = LETTRE_IN['Similaires']
+                _QUANTITE = LETTRE_IN['Spécificités']
+                _LIEN = LETTRE_IN['Lien']
+                _APPROBATIONS = LETTRE_IN['Approbations']
+                print(_APPROBATIONS)
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Date_de_creation (date_production) VALUES\n('{_DATE_IN}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Produit (nom) VALUES\n('{_PRODUIT}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Type (nom) VALUES\n('{_TYPE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Annee (valeur) VALUES\n('{_ANNEE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Fabricant (nom) VALUES\n('{_FABRICANT}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Provenance (pays) VALUES\n('{_PROVENANCE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Prix (montant, devise) VALUES\n('{_PRIX}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Editeur (nom) VALUES\n('{_EDITEUR_IN}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Destination (pays) VALUES\n('{_DESTINATION}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Similaires (produit_id, similaire_id) VALUES\n('{_SIMILAIRES}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Specificites (description) VALUES\n('{_QUANTITE}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Lien (url) VALUES\n('{_LIEN}')")
+                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Approbations (produit_id, organisme, date_approbation) VALUES\n('{_APPROBATIONS}')")
             
+
         elif sett == 'espace' :
                 self.espacer(5)
         
@@ -1763,8 +1854,7 @@ class Inventaire(GridLayout):
         for element in self.tableau_insertion:
             element.text = ""
         generer_fichier(self.INITfileIN, self.LETTREFichierIN)
-
-                
+            
     def supprimerTout(self, instance):
         def recycler_word(self, source, destination, extension) :
             if os.path.exists(source):

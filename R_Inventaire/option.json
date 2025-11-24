@@ -1,14 +1,14 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 360,
-    "y": 187,
+    "x": 427,
+    "y": 194,
     "Nombres_Utilisateurs": [
         {
-            "nbreEntreeTotal": 32
+            "nbreEntreeTotal": 36
         },
         {
-            "nbreEntreeJour": 33
+            "nbreEntreeJour": 37
         }
     ],
     "Methode_D_Envoi": [
@@ -64,7 +64,25 @@
             "SauvegardeIN": "archives/sauvegardeIN.json"
         },
         {
+            "Sauvegarde_sqlRH": "archives/sauvegarde_sqlRH.json"
+        },
+        {
+            "Sauvegarde_sqlIN": "archives/sauvegarde_sqlIN.json"
+        },
+        {
             "texte_support": "lib/Aide.txt"
+        },
+        {
+            "_INIT_SQL_RH": "lib/DOC/_init_bd_RH.sql"
+        },
+        {
+            "_INIT_SQL_IN": "lib/DOC/_init_bd_IN.sql"
+        },
+        {
+            "SQL_RH": "Sortie/bd_RH.sql"
+        },
+        {
+            "SQL_IN": "Sortie/bd_IN.sql"
         }
     ],
     "images": [

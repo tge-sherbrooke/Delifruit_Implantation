@@ -1,16 +1,17 @@
 {
-    "Produit": "__PRODUIT__", 
-    "Type": "__TYPE__",
+    "Produit": "n m,bmm,",
+    "Types": "fruit",
     "Annee": "__ANNEE__",
-    "Fabricant": "__FABRICANT__",
-    "Provenance": "__PROVENANCE__",
-    "Destination": "__DESTINATION__",
-    "Date_de_creation": "__DATE__",
-    "Lien": "__LIEN__",
-    "Spécificités": "__SPECIFICITES__",
-    "Prix": "__PRIX__",
+    "Fabricant": "Delifruit Enterprise",
+    "Provenance": "Sherbrooke",
+    "Destination": "Montreal",
+    "Date_de_creation": "24 novembre 2025",
+    "Lien": "",
+    "Quantite": "__QUANTITE__",
+    "Prix": "34",
     "Approbations": "__APPROBATIONS__",
-    "Similaires": "__SIMILAIRES__",
-    "Editeur": "__EDITEUR__"
+    "Similaires": "1, 1",
+    "Editeur": "Ryan",
+    "Année": "201",
+    "Quantité": "1342"
 }
-

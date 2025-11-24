@@ -67,6 +67,10 @@ fichier_sauvegarde_json_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=d
                                                                cle2='SauvegardeRH', sett='valeurcles'))
 fichier_sauvegarde_json_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
                                                                cle2='SauvegardeIN', sett='valeurcles'))
+fichier_sauvegarde_sql_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
+                                                               cle2='Sauvegarde_sqlRH', sett='valeurcles'))
+fichier_sauvegarde_sql_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
+                                                               cle2='Sauvegarde_sqlIN', sett='valeurcles'))
 
 # ______________D_O_S_S_I_E_R___S_O_R_T_I_E_____________________________________
 DossierSORTIE = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Repertoires', 
@@ -81,6 +85,12 @@ contenu_init_RH = ry.lireJSON(fichier_initial_RH)
 # ______________I_N_I_T___I_N___________________________________________
 fichier_initial_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='INIT_IN', sett='valeurcles'))
 contenu_init_IN = ry.lireJSON(fichier_initial_IN)
+# ______________I_N_I_T___R_H__S_Q_L_______________________________________
+fichier_initial_sqlRH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='_INIT_SQL_RH', sett='valeurcles'))
+contenu_init_sqlRH = ry.lireFichier(fichier_initial_sqlRH)
+# ______________I_N_I_T___I_N__S_Q_L_______________________________________
+fichier_initial_sqlIN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='_INIT_SQL_IN', sett='valeurcles'))
+contenu_init_sqlIN = ry.lireFichier(fichier_initial_sqlIN)
 
 
 
@@ -88,6 +98,10 @@ contenu_init_IN = ry.lireJSON(fichier_initial_IN)
 fichier_form_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='FormulaireRH', sett='valeurcles')    )
 # ______________F_O_R_M_U_L_A_I_R_E___I_N_____________________________________
 fichier_form_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='FormulaireIN', sett='valeurcles')    )
+# ______________F_O_R_M_U_L_A_I_R_E___R_H_____________________________________
+fichier_form_sqlRH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='SQL_RH', sett='valeurcles')    )
+# ______________F_O_R_M_U_L_A_I_R_E___I_N_____________________________________
+fichier_form_sqlIN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", cle2='SQL_IN', sett='valeurcles')    )
 
 # _________________C_O_M_P_A_R_A_I_S_O_N___F_I_C_H_I_E_R_S______________________________
 # RH  
@@ -98,6 +112,14 @@ reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_RH, fichier2=fic
 contenu_formulaireIN = ry.lireJSON(fichier_form_IN)
 reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_IN, fichier2=fichier_form_IN,
                              sett='json', option='return')
+# SQL RH  
+contenu_formulaire_sqlRH = ry.lireFichier(fichier_form_sqlRH)
+reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlRH, fichier2=fichier_form_sqlRH,
+                             sett='txt', option='return')
+# SQL IN
+contenu_formulaire_sqlIN = ry.lireFichier(fichier_form_sqlIN)
+reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlIN, fichier2=fichier_form_sqlIN,
+                             sett='txt', option='return')
 
 #
 # ______________S_A_U_V_E_G_A_R_D_E___R_H_____________________________________
@@ -118,7 +140,25 @@ if reponse == True:
         ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_IN, dictionnaire=f"{contenu_init_IN}, {contenu_formulaireIN}", sett=4)
 
 ry.ecrire_ds_json(fichier=fichier_form_IN, dictionnaire=contenu_init_IN, sett=4)
+#       S Q L
+# ______________S_A_U_V_E_G_A_R_D_E___R_H____S_Q_L_______________________________
+if reponse == True:   
+    lecture_validante = ry.lireFichier(fichier_sauvegarde_sql_RH)
+    if lecture_validante is not None and lecture_validante != '':
+        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_RH, contenu=f"{contenu_formulaire_sqlRH}")
+    else :
+        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_RH, contenu=f"{contenu_formulaire_sqlRH}")
 
+ry.ecrire_ds_fichier(fichier=fichier_form_sqlRH, contenu=contenu_init_sqlRH)
+# ______________S_A_U_V_E_G_A_R_D_E___I_N____S_Q_L_______________________________
+if reponse == True:   
+    lecture_validante = ry.lireFichier(fichier_sauvegarde_sql_IN)
+    if lecture_validante is not None and lecture_validante != '':
+        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_IN, contenu=f"{contenu_formulaire_sqlIN}")
+    else :
+        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_IN, contenu=f"{contenu_formulaire_sqlIN}")
+
+ry.ecrire_ds_fichier(fichier=fichier_form_sqlIN, contenu=contenu_init_sqlIN)
 
 #
 ARCHIVES = f"{Repertoire}/archives"
