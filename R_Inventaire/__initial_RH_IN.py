@@ -62,7 +62,10 @@ fichier_credentials = chemin_ressource("lib/cred.json")
 fichier_credentials_env = chemin_ressource("lib/credentials.env")
 fichier_configuration = chemin_ressource("option.json")
 dictio = ry.lireJSON(fichier=fichier_configuration)
-credentials = ry.lireJSON(fichier=fichier_credentials)
+try: 
+    credentials = ry.lireJSON(fichier=fichier_credentials)
+except Exception as e:
+    pass
 fichier_sauvegarde_json_RH = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 
                                                                cle2='SauvegardeRH', sett='valeurcles'))
 fichier_sauvegarde_json_IN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Fichiers_Configurations", 

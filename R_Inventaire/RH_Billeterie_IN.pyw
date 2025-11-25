@@ -86,8 +86,12 @@ APP = f"{Repertoire}/RH_Billeterie_IN.pyw"
 fichier_configuration = initM.fichier_configuration
 # ___________________________________________________________________________________________________________________
 
-credential = initM.credentials
-fichier_credentials = initM.fichier_credentials
+try:
+    credential = initM.credentials
+    fichier_credentials = initM.fichier_credentials
+except Exception as e:
+    pass
+
 markdownobject = 'mark_cv'
             # Fichiers initiales
 INITfileRH = initM.fichier_initial_RH
@@ -879,17 +883,18 @@ class Home(GridLayout):
                     # self.ouvrir_fichier(self.INITfileRH, sett='lire')
                     # self.renommer_fichier(fichier=self.INITfileRH, objet=self.cadreV)
                     if option_envoi == 'py' or option_envoi == 'python':      
-                        rcp(ry.Magenta, f"Envoi des données vers la base de données via {option_envoi}...")                  
-                        mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
-                        DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
-                        DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
-                        mongoEND = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='API_KEY', sett='valeurcles')
-                        mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_RH', sett='valeurcles')
-                        mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL', sett='valeurcles')
+                        rcp(ry.Magenta, f"Envoi des données vers la base de données via {option_envoi}...")   
+                        if initM.os.path.exists(fichier_credentials):               
+                            mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
+                            DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
+                            DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
+                            mongoEND = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='API_KEY', sett='valeurcles')
+                            mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_RH', sett='valeurcles')
+                            mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL', sett='valeurcles')
                         
-                        mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
-                        ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
-                                          fichier=LETTREFichierRH)
+                            mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
+                            ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
+                                            fichier=LETTREFichierRH)
                     elif option_envoi == 'psh' or option_envoi.lower() == 'powershell':
                         psh.run([
                             "Powershell.exe",
@@ -1589,64 +1594,25 @@ class Inventaire(GridLayout):
                                         cle2='nbreEntreeTotal', sett='valeurcles')
 
     def save(self, instance, sett='all', option_envoi='py'):
-        envoi = []
-        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
-        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
 
-        dictio = ry.lireJSON(fichier=fichier_configuration)
-        if option_envoi is None :
-            option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
-        
-        if sett == 'all' :
-            if self.csv_cv is not None :
-                try:
-                    self.nbre_changee_a_l_affichage()
-                    self.affichage_special_boutons(sett='auto')
-                    self.save(instance=instance, sett='sql', option_envoi=option_envoi)
-                    
-                    if option_envoi == 'py' or option_envoi == 'python':                        
-                        mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
-                        DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
-                        DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
-                        mongoEND = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='API_KEY', sett='valeurcles')
-                        mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_IN', sett='valeurcles')
-                        mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL_IN', sett='valeurcles')
-                        
-                        mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
-                        ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
-                                          fichier=LETTREFichierIN)
-                    elif option_envoi == 'psh' or option_envoi.lower() == 'powershell':
-                        psh.run([
-                            "Powershell.exe",
-                            "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass",
-                            "-File", rf"{initM.librairie}/envoi_vers_BD.ps1"
-                        ])
-                                            
-                except Exception as arr:
-                    pass; # err(tabErreur=initM.traceback.extract_tb(initM.sys.exc_info()[2]), NomErreur='save', ValeurErreur=arr)
-            
-            else :
-                colorer(self, bouton=self.Lien, couleur=ROUGE)
-                colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=ROUGE)
-
-        elif sett == 'sql':
+        def save_sql():
             dictio_form_RH = ry.lireJSON(fichier=LETTREFichierRH)
             if option_envoi is None :
                 option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio_form_RH, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
             if dictio_form_RH is not None :
-                _DATE_IN = LETTRE_IN['Date_de_creation']
-                _PRODUIT = LETTRE_IN['Produit']
-                _TYPE = LETTRE_IN['Types']
-                _ANNEE = LETTRE_IN['Annee']
-                _FABRICANT = LETTRE_IN['Fabricant']
-                _PROVENANCE = LETTRE_IN['Provenance']
-                _PRIX = LETTRE_IN['Prix']
-                _EDITEUR_IN = LETTRE_IN['Editeur']
-                _DESTINATION = LETTRE_IN['Destination']
-                _SIMILAIRES = LETTRE_IN['Similaires']
-                _QUANTITE = LETTRE_IN['Spécificités']
-                _LIEN = LETTRE_IN['Lien']
-                _APPROBATIONS = LETTRE_IN['Approbations']
+                _DATE_IN = dictio_form_RH['Date_de_creation']
+                _PRODUIT = dictio_form_RH['Produit']
+                _TYPE = dictio_form_RH['Types']
+                _ANNEE = dictio_form_RH['Annee']
+                _FABRICANT = dictio_form_RH['Fabricant']
+                _PROVENANCE = dictio_form_RH['Provenance']
+                _PRIX = dictio_form_RH['Prix']
+                _EDITEUR_IN = dictio_form_RH['Editeur']
+                _DESTINATION = dictio_form_RH['Destination']
+                _SIMILAIRES = dictio_form_RH['Similaires']
+                _QUANTITE = dictio_form_RH['Spécificités']
+                _LIEN = dictio_form_RH['Lien']
+                _APPROBATIONS = dictio_form_RH['Approbations']
                 print(_APPROBATIONS)
                 ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Date_de_creation (date_production) VALUES\n('{_DATE_IN}')")
                 ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Produit (nom) VALUES\n('{_PRODUIT}')")
@@ -1662,6 +1628,49 @@ class Inventaire(GridLayout):
                 ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Lien (url) VALUES\n('{_LIEN}')")
                 ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Approbations (produit_id, organisme, date_approbation) VALUES\n('{_APPROBATIONS}')")
             
+
+
+        envoi = []
+        self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
+        self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
+
+        dictio = ry.lireJSON(fichier=fichier_configuration)
+        if option_envoi is None :
+            option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
+        
+        if sett == 'all' :
+            if self.csv_cv is not None :
+                try:
+                    self.nbre_changee_a_l_affichage()
+                    self.affichage_special_boutons(sett='auto')
+                    save_sql()
+                    
+                    if option_envoi == 'py' or option_envoi == 'python':     
+                        if initM.os.path.exists(fichier_credentials):                    
+                            mongoHEAD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='SRV', sett='valeurcles')
+                            DB_USER = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_USER', sett='valeurcles')
+                            DB_PASSWORD = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_PASSWORD', sett='valeurcles')
+                            mongoEND = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='API_KEY', sett='valeurcles')
+                            mongoDB = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='DB_IN', sett='valeurcles')
+                            mongoCOL = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Credentials", cle2='COL_IN', sett='valeurcles')
+                            
+                            mongoLIEN = f"{mongoHEAD}//{DB_USER}:{DB_PASSWORD}@{mongoEND}/?retryWrites=true&w=majority"
+                            ry.envoi_BD_MONGO(lien=mongoLIEN, BD=mongoDB, collection=mongoCOL, 
+                                            fichier=LETTREFichierIN)
+                    elif option_envoi == 'psh' or option_envoi.lower() == 'powershell':
+                        psh.run([
+                            "Powershell.exe",
+                            "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass",
+                            "-File", rf"{initM.librairie}/envoi_vers_BD.ps1"
+                        ])
+                                            
+                except Exception as arr:
+                    pass; # err(tabErreur=initM.traceback.extract_tb(initM.sys.exc_info()[2]), NomErreur='save', ValeurErreur=arr)
+            
+            else :
+                colorer(self, bouton=self.Lien, couleur=ROUGE)
+                colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=ROUGE)
+
 
         elif sett == 'espace' :
                 self.espacer(5)
