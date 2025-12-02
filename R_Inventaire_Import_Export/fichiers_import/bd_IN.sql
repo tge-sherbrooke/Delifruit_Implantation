@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS BD_IN; 
-CREATE DATABASE BD_IN CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE BD_IN;
+DROP DATABASE IF EXISTS DB_INVENTAIRE; 
+CREATE DATABASE DB_INVENTAIRE CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE DB_INVENTAIRE;
 
 -- ================================
 -- 1) Tables de référence simples
@@ -108,4 +108,5 @@ CREATE TABLE Produits (
 -- ================================
 -- (Insertion de données ensuite)
 -- ================================
+
 

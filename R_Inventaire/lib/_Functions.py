@@ -579,9 +579,16 @@ def lireJSON(fichier, cible='', sett=0, code='utf-8'):
     if code != 'utf-8' :
         encodage_UTF(fichier)
     try:
-        with open(fichier, 'r', encoding='utf-8') as dictio :
-            if sett == 0:
-                return json.load(dictio)
+        if os.path.getsize(fichier) > 0:
+            with open(fichier, "r", encoding="utf-8") as f:
+                contenu = f.read().strip()
+
+            if contenu:  # non vide
+                with open(fichier, 'r', encoding='utf-8') as dictio :
+                    if sett == 0:
+                        return json.load(dictio)
+        else:
+            return None
     except UnicodeDecodeError : 
         encodage_UTF(fichier)
         lireJSON(fichier=fichier, cible='', set=sett, code=code)
@@ -1408,7 +1415,7 @@ def comparer_contenu_fichiers(fichier1, fichier2, sett='txt', option='return'):
         if not list(diff):
             return False
         else :
-            True
+            return True
                 
     if option == 'test' or option == 'afficher' :
         if not list(diff):

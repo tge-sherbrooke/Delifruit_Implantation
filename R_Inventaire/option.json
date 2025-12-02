@@ -1,14 +1,14 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 427,
-    "y": 194,
+    "x": 329,
+    "y": 97,
     "Nombres_Utilisateurs": [
         {
             "nbreEntreeTotal": 40
         },
         {
-            "nbreEntreeJour": 41
+            "nbreEntreeJour": 40
         }
     ],
     "Methode_D_Envoi": [
@@ -58,10 +58,10 @@
             "FormulaireIN": "Sortie/formulaireIN.json"
         },
         {
-            "SauvegardeRH": "archives/sauvegardeRH.json"
+            "SauvegardeRH": "archives/sauvegardeRH.txt"
         },
         {
-            "SauvegardeIN": "archives/sauvegardeIN.json"
+            "SauvegardeIN": "archives/sauvegardeIN.txt"
         },
         {
             "Sauvegarde_sqlRH": "archives/sauvegarde_sqlRH.json"
@@ -164,6 +164,12 @@
         },
         {
             "Lien Inventaire": "lib/Blocnotes/Infos_inventaire.txt"
+        },
+        {
+            "DB_RH": "BD_RH"
+        },
+        {
+            "DB_IN": "BD_IN"
         }
     ],
     "Liste_Dossiers": [

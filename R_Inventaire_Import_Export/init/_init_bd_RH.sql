@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS BD_RH; 
-CREATE DATABASE BD_RH CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE BD_RH;
+DROP DATABASE IF EXISTS bb_rh; 
+CREATE DATABASE bb_rh CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE bb_rh;
 
 -- ================================
 -- 1) Tables de référence simples

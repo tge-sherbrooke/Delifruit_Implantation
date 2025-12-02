@@ -1,1 +1,14 @@
-﻿
+﻿SELECT employe.id, prenom.prenom, nom.nom, age.valeur, phone.phone, courriel.courriel, entreprise.nom, adresse.adresses, departement.departement, date_de_creation.date_creation, editeur.nom, fonctions.fonctions, privilege.privilege
+FROM `employe`
+JOIN prenom ON employe.prenom_id = prenom.ID
+JOIN nom ON employe.nom_id = nom.ID
+JOIN age ON employe.age_id = age.ID
+JOIN phone ON employe.phone_id = phone.ID
+JOIN courriel ON employe.courriel_id = courriel.ID
+JOIN entreprise ON employe.entreprise_id = entreprise.ID
+JOIN adresse ON employe.adresse_id = adresse.ID
+JOIN departement ON employe.departement_id = departement.ID
+JOIN date_de_creation ON employe.date_creation_id = date_de_creation.ID
+JOIN editeur ON employe.editeur_id = editeur.ID
+JOIN fonctions ON employe.fonctions_id = fonctions.ID
+JOIN privilege ON employe.privilege_id = privilege.ID;

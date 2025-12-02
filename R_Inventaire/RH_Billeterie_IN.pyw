@@ -8,18 +8,28 @@ if platform.system() == 'Linux' :
     psh.check_call(['sudo', 'bash', '/d/Stockage/Scripts/venv/bin/activate'])
 try :
     import kivy
+    import mysql.connector
 except ModuleNotFoundError as m :
     print ('Pas de module associee')
     import traceback
     print("\033[1;31m", traceback.extract_tb(sys.exc_info()[2]), 'FileNotFoundError', m, "\033[0m")
-    cible = 'kivy'
-    if cible in f"{m}":
+    
+    def installeur(cible):
         
         print("----------->", f"{cible} en manque...")
         
-        packages = {
-            "kivy": "kivy[base,media,tuio,full,dev,gstreamer,angle,sdl2,glew]",
-        }
+        if cible == "kivy":            
+            packages = {
+                "kivy": "kivy[base,media,tuio,full,dev,gstreamer,angle,sdl2,glew]",
+            }
+        elif cible == "mysql-connector-python":
+            packages = {
+                "mysql-connector-python": "mysql-connector-python",
+            }
+        else :
+            packages = {
+                f"{cible}":f"{cible}"
+            }
         
         DossierPrincipal = initM.Repertoire
         
@@ -49,6 +59,12 @@ except ModuleNotFoundError as m :
                     print(f"Échec de l'installation de {package}.")
                     print("Erreur :", e)
                     exit(1)
+    
+    if 'kivy' in f"{m}":
+        installeur(cible='kivy')
+    elif 'mysql-connector-python' in f"{m}":
+        installeur(cible='mysql-connector-python')
+
 
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -119,7 +135,7 @@ file_git_send = f"{Repertoire}/lib/git_send.bat"
 DOSSIER = initM.chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, cle1="Liste_Dossiers", cle2='Liste_ouverture', sett='{-[]-{}-[]'))
 # ___________________________________________________________________________________________________________________
 
-BLEUFONCE = initM.BLEUFONCE ; BLEUPALE = initM.BLEUPALE ; GRISCLAIR = initM.GRISCLAIR
+BLEUFONCE = initM.BLEUFONCE ; BLEUPALE = initM.BLEUPALE ; GRISCLAIR = initM.GRISCLAIR; GRISFONCE = initM.GRISFONCE
 NOIR = initM.NOIR; WHITE = initM.WHITE
 VERT = initM.VERT
 VIOLET = initM.VIOLET
@@ -171,7 +187,6 @@ _PROVENANCE = LETTRE_IN['Provenance']
 _PRIX = LETTRE_IN['Prix']
 _EDITEUR_IN = LETTRE_IN['Editeur']
 _DESTINATION = LETTRE_IN['Destination']
-_SIMILAIRES = LETTRE_IN['Similaires']
 _QUANTITE = LETTRE_IN['Quantite']
 _LIEN = LETTRE_IN['Lien']
 _APPROBATIONS = LETTRE_IN['Approbations']
@@ -193,13 +208,12 @@ cle_JOUR = 'Jour'
 
 cle_PRODUIT = 'Produit'
 cle_TYPE = 'Types'
-cle_ANNEE = 'Année'
+cle_ANNEE = 'Annee'
 cle_FABRICANT = 'Fabricant'
 cle_PROVENANCE = 'Provenance'
 cle_EDITEUR = 'Editeur'
 cle_DESTINATION = 'Destination'
-cle_SIMILAIRES = 'Similaires'
-cle_QUANTITE = 'Quantité'
+cle_QUANTITE = 'Quantite'
 cle_APPROBATIONS = 'Approbations'
 cle_PRIX = 'Prix'
 
@@ -230,12 +244,11 @@ _utilitaires_ = "Important :"
 
 _produit_ = "Produit "
 _type_ = "Type "
-_annee_ = "Année "
+_annee_ = "Annee "
 _fabricant_ = "Fabricant "
 _provenance_ = "Provenance"
 _destination_ = "Destination "
-_similaires_ = "Similaires"
-_quantite_ = "Quantité"
+_quantite_ = "Quantite"
 _prix_ = "Prix"
 _approbation_ = "Approbations"
 
@@ -645,6 +658,7 @@ class Home(GridLayout):
                 self.Departements,
                 self.Fonctions,
                 self.Age,
+                self.Confirme
         ]
         
         self.cellules_non_remplies = len(self.tableau_insertion)
@@ -652,7 +666,6 @@ class Home(GridLayout):
         # COULEUR d'ecran
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nombre_postulee}"], couleur=NOIR)
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], couleur=NOIR)
-
         # Detection des entrees 
         self.initiateur_compteur()
         
@@ -713,7 +726,7 @@ class Home(GridLayout):
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Courriel.text}", tag=cle_COURRIEL, sett='all'))
             # CSV : adresse courriel
-            self.Departements = remplisseur(self, objet=self.cadreIV, texte=_departements_)
+            self.Departements = remplisseur(self, objet=self.cadreIV, texte=_departements_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Departements.text}", tag=cle_DEPARTEMENTS, sett='all'))
     
@@ -727,29 +740,31 @@ class Home(GridLayout):
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.AutreLien.text}", tag=cle_LIEN, sett='all'))
             
             # CSV _______________________________________________________________________________
-            self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_)
+            self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_, couleur=GRISCLAIR)
             self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.csv())
             # LETTRE ________________________________________________________________________________________
             
-            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_)
+            self.Entreprise = remplisseur(self, objet=self.cadreIV, texte=_entreprise_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Entreprise.text}", tag=cle_ENTREPRISE, sett='all'))  
             
             
             # AUTOMATIQUE ______________________________________________________________________________________
-            self.Fonctions = remplisseur(self, objet=self.cadreIV, texte=_fonctions_, couleur=GRISCLAIR)
+            
+            
+            self.Privileges = remplisseur(self, objet=self.cadreIV, texte=_privileges_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS,  sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all'))
 
             self.Jour = remplisseur(self, objet=self.cadreIV, texte=_jour_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.ciblerEnvoyer(tag=cle_DATE, tagII=cle_DATE, cible=f"{self.Jour.text}", sett='all'))
 
-            self.Privileges = remplisseur(self, objet=self.cadreIV, texte=_privileges_, couleur=GRISCLAIR)
+            self.Fonctions = remplisseur(self, objet=self.cadreIV, texte=_fonctions_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Privileges.text}", tag=cle_PRIVILEGES, sett='all'))
-            
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Fonctions.text}", tag=cle_FONCTIONS,  sett='all'))
+
             self.Editeur = remplisseur(self, objet=self.cadreIV, texte=_editeur_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, sett='all'))
@@ -761,15 +776,15 @@ class Home(GridLayout):
             
             self.Notes.text = ry.lireFichier(initM.chemin_ressource(notess))
 
+            # Confirmeur d'envoi
+            self.Confirme = remplisseur(self=self, objet=self.cadreII, texte='', width=2)
+            colorer(self, self.Confirme, couleur=NOIR)
+
             self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE_RH, sett='manuel')
             self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR_RH, sett='manuel')
             self.affichage_boutons(tagger=self.Fonctions, text=_fonctions_, tag=_FONCTIONS, sett='manuel')
             self.affichage_boutons(tagger=self.Entreprise, text=_entreprise_, tag=_ENTREPRISE, sett='manuel')
             self.affichage_boutons(tagger=self.Departements, text=_departements_, tag=_DEPARTEMENTS, sett='manuel')
-
-            # for jobssite_ in self.liste_rapide:
-            #     commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
-            #                         commande=lambda instance, jobssite_=jobssite_, objet=self.Site: self.remplir_input(text=jobssite_, objet=objet))
 
     def affichage_boutons(self, tagger=None, text='vide', tag='', sett='default'):
         
@@ -867,6 +882,50 @@ class Home(GridLayout):
                                         cle2='nbreEntreeTotal', sett='valeurcles')
 
     def save(self, instance, sett='all', option_envoi=None):
+        
+        def save_sql():
+            dictio_form_RH = ry.lireJSON(fichier=LETTREFichierRH)
+            db_name = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='DB_RH', sett='valeurcles')
+            sql_file = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Fichiers_Configurations', cle2='_INIT_SQL_RH', sett='valeurcles')
+            
+            if dictio_form_RH is not None :
+                
+                _ADRESSE = dictio_form_RH['Adresse']
+                _PRENOM = dictio_form_RH['Prenom']
+                _NOM = dictio_form_RH['Nom']
+                _AGE = dictio_form_RH['Age']
+                _PHONE = dictio_form_RH['Telephone']
+                _COURRIEL = dictio_form_RH['Courriel']
+                _ENTREPRISE = dictio_form_RH['Entreprise']
+                _EDITEUR_RH = dictio_form_RH['Editeur']
+                _DEPARTEMENTS = dictio_form_RH['Departements']
+                _FONCTIONS = dictio_form_RH['Fonctions']
+                _LIEN = dictio_form_RH['Lien']
+                _PRIVILEGES = dictio_form_RH['Privileges']                
+                _DATE_RH = dictio_form_RH['Date_de_creation']
+        
+                self.mysql_save(f"{db_name}", "INSERT INTO Date_de_creation (date_creation) VALUES (%s)", (f"{_DATE_RH}",), sql_file, message_debut='Actif')
+                self.mysql_save(f"{db_name}", "INSERT INTO Prenom (prenom) VALUES (%s)", (f"{_PRENOM}",))
+                inserted_id = self.mysql_save(f"{db_name}", "INSERT INTO Nom (nom) VALUES (%s)", (f"{_NOM}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Age (valeur) VALUES (%s)", (_AGE,))
+                self.mysql_save(f"{db_name}", "INSERT INTO Phone (phone) VALUES (%s)", (f"{_PHONE}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Courriel (courriel) VALUES (%s)", (f"{_COURRIEL}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Entreprise (nom) VALUES (%s)", (f"{_ENTREPRISE}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Editeur (nom) VALUES (%s)", (f"{_EDITEUR_RH}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Departement (departement) VALUES (%s)", (f"{_DEPARTEMENTS}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Fonctions (fonctions) VALUES (%s)", (f"{_FONCTIONS}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Lien (url) VALUES (%s)", (f"{_LIEN}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Adresse (adresses) VALUES (%s)", (f"{_ADRESSE}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Privilege (privilege) VALUES (%s)", (f"{_PRIVILEGES}",))
+                
+                self.mysql_save(f"{db_name}", "INSERT INTO Employe (prenom_id, nom_id, age_id, phone_id, courriel_id, entreprise_id, adresse_id, \
+                    departement_id, date_creation_id, editeur_id, fonctions_id, privilege_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
+                    (inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id),
+                    message_fin='Actif')
+                
+                self.Confirme.text = f"{inserted_id}e envoyé !"
+                colorer(self, self.Confirme, couleur=VERT)
+                
         envoi = []
         self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
         self.nbreEntreeTotal = self.afficher_nbre_postulee('nbreEntreeTotal')
@@ -879,7 +938,7 @@ class Home(GridLayout):
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
-                    self.save(instance=instance, sett='sql', option_envoi=option_envoi)
+                    save_sql()
                     # self.ouvrir_fichier(self.INITfileRH, sett='lire')
                     # self.renommer_fichier(fichier=self.INITfileRH, objet=self.cadreV)
                     if option_envoi == 'py' or option_envoi == 'python':      
@@ -908,40 +967,7 @@ class Home(GridLayout):
             else :
                 colorer(self, bouton=self.Lien, couleur=ROUGE)
                 colorer(self, self.dictionnaire_bouton_menu['Save'], couleur=ROUGE)
-                
-        elif sett == 'sql':
-            dictio_form_RH = ry.lireJSON(fichier=LETTREFichierRH)
-            if option_envoi is None :
-                option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio_form_RH, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
-            if dictio_form_RH is not None :
-                _DATE_IN = LETTRE_IN['Date_de_creation']
-                _PRODUIT = LETTRE_IN['Produit']
-                _TYPE = LETTRE_IN['Types']
-                _ANNEE = LETTRE_IN['Annee']
-                _FABRICANT = LETTRE_IN['Fabricant']
-                _PROVENANCE = LETTRE_IN['Provenance']
-                _PRIX = LETTRE_IN['Prix']
-                _EDITEUR_IN = LETTRE_IN['Editeur']
-                _DESTINATION = LETTRE_IN['Destination']
-                _SIMILAIRES = LETTRE_IN['Similaires']
-                _QUANTITE = LETTRE_IN['Spécificités']
-                _LIEN = LETTRE_IN['Lien']
-                _APPROBATIONS = LETTRE_IN['Approbations']
-                
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Date_de_creation (date_production) VALUES\n('{_DATE_IN}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Produit (nom) VALUES\n('{_PRODUIT}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Type (nom) VALUES\n('{_TYPE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Annee (valeur) VALUES\n('{_ANNEE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Fabricant (nom) VALUES\n('{_FABRICANT}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Provenance (pays) VALUES\n('{_PROVENANCE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Prix (montant, devise) VALUES\n('{_PRIX}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Editeur (nom) VALUES\n('{_EDITEUR_IN}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Destination (pays) VALUES\n('{_DESTINATION}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Similaires (produit_id, similaire_id) VALUES\n('{_SIMILAIRES}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Specificites (description) VALUES\n('{_QUANTITE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Lien (url) VALUES\n('{_LIEN}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlRH, contenu=f"INSERT INTO Approbations (produit_id, organisme, date_approbation) VALUES\n('{_APPROBATIONS}')")
-            
+                            
         elif sett == 'espace' :
                 self.espacer(5)
         else :
@@ -955,6 +981,110 @@ class Home(GridLayout):
             bouton.bind(on_release=lambda btn, valeur=valeur: self.apresclic(btn, f"{valeur}"))
         elif sett == 'message':
             bouton.text = str(valeur)
+
+    def mysql_save(self, bd, query, values=None, sql_file=None, message_debut=None, message_fin=None, message_confirmation=None):
+        
+        MYSQL_ = MariaDB(bd_name=bd, sql_file=sql_file)
+        if message_debut:
+            MYSQL_.log("=== LANCEMENT DU SCRIPT AUTOMATISÉ ===")
+
+        # Étape 1 : vérifier si base existe
+        if MYSQL_.database_exists() :
+            if message_confirmation is None:
+                message_confirmation = f"Base '{MYSQL_.DB_NAME}' déjà existante."           
+                MYSQL_.log(message_confirmation)
+        else:
+            MYSQL_.log(f"Base '{MYSQL_.DB_NAME}' inexistante, création en cours...")
+            MYSQL_.create_database()
+
+        # Étape 2 : Import SQL
+        if sql_file and message_confirmation is None:
+            MYSQL_.import_sql_file(sql_file)
+            
+        # Étape 3 : Insertion de données
+        inserted_id = MYSQL_.insert_after_import(query, values)   
+               
+        if isinstance(inserted_id, int):    
+            if message_fin:
+                rcp(ry.Green, f"{inserted_id}e ligne insérée avec succès !")
+                MYSQL_.log("=== FIN DU SCRIPT AUTOMATISÉ ===")
+            
+            return inserted_id
+        else :
+            self.Lien.text = f"{inserted_id}"
+            colorer(self, self.Lien, couleur=ROUGE)
+
+
+    def clear(self, instance):        
+        for element in self.tableau_insertion:
+            element.text = ""
+        colorer(self, self.Confirme, couleur=NOIR)
+        self.csv_bouton.text = 'Go'
+        colorer(self, self.csv_bouton, couleur=GRISFONCE)
+        colorer(self, self.Lien, couleur=GRISFONCE)
+        generer_fichier(self.INITfileRH, LETTREFichierRH)
+            
+    def supprimerTout(self, instance):
+        def recycler_word(self, source, destination, extension) :
+            if os.path.exists(source):
+                dossier_de_travail = os.listdir(source)
+                if dossier_de_travail is not None :
+                    fichier_trouvees = [i for i in dossier_de_travail if extension in i]
+                    if fichier_trouvees != []:
+                        for fichier in fichier_trouvees:
+                            fichier_trouvee = f'{source}/{fichier}'
+                            try :
+                                initM.shutil.move(fichier_trouvee, destination)
+                            except PermissionError as p:
+                                pass; # err('PermissionError', 'recycler_word', p)                                 
+                            except initM.shutil.Error:
+                                fichier_restant = f'{source}/{fichier}'
+                                fichier = fichier.replace('.', '_0.')   
+                                destination = f'{destination}/{fichier}'                             
+                                try :
+                                    initM.shutil.move(fichier_restant, destination)
+                                except PermissionError as p:
+                                    pass; # err('PermissionError', 'recycler_word', p) 
+            else :
+                self.show_input_dialog()  
+                if os.path.exists(self.valeur_stockee):  
+                    source = self.valeur_stockee        
+                    if os.path.exists():
+                        recycler_word(self, source, destination, extension)
+                    else :
+                        self.show_input_dialog()
+                        destination = self.valeur_stockee  
+                        recycler_word(self, source, destination, extension)
+                
+        dossier_de_travail = os.listdir(initM.DossierMarkdown)
+        fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
+        fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
+        if fichier_inutiles != []:
+            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
+            for fichier in fichier_inutiles:
+                if fichier != fichier_exclus:
+                    chemin = os.path.join(initM.DossierMarkdown, fichier)
+                    os.remove(chemin)
+                    if self.colorationunique == False:                
+                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
+                        self.colorationunique = True
+        if fichier_restants != []:
+            for fichier in fichier_restants:
+                fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
+                try :
+                    initM.shutil.move(fichier_restant, ARCHIVES)
+                except PermissionError as p:
+                    pass; # err('PermissionError', 'recycler_word', p) 
+                except initM.shutil.Error:
+                    fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
+                    try :
+                        initM.shutil.move(fichier_restant, ARCHIVES)
+                    except PermissionError as p:
+                        pass; # err('PermissionError', 'recycler_word', p) 
+                
+        recycler_word(self, DossierSORTIE, DossierDOC, '.docx')
+        
+
 
     def csv(self):
 
@@ -1128,72 +1258,7 @@ class Home(GridLayout):
     def espacer(self, nombre): # 
         with open(self.INITfileRH, 'a') as write :
             write.write("\n" * nombre)
-
-    def clear(self, instance):        
-        for element in self.tableau_insertion:
-            element.text = ""            
-        generer_fichier(INITfileRH, LETTREFichierRH)
           
-    def supprimerTout(self, instance):
-        def recycler_word(self, source, destination, extension) :
-            if os.path.exists(source):
-                dossier_de_travail = os.listdir(source)
-                if dossier_de_travail is not None :
-                    fichier_trouvees = [i for i in dossier_de_travail if extension in i]
-                    if fichier_trouvees != []:
-                        for fichier in fichier_trouvees:
-                            fichier_trouvee = f'{source}/{fichier}'
-                            try :
-                                initM.shutil.move(fichier_trouvee, destination)
-                            except PermissionError as p:
-                                pass; # err('PermissionError', 'recycler_word', p)                                 
-                            except initM.shutil.Error:
-                                fichier_restant = f'{source}/{fichier}'
-                                fichier = fichier.replace('.', '_0.')   
-                                destination = f'{destination}/{fichier}'                             
-                                try :
-                                    initM.shutil.move(fichier_restant, destination)
-                                except PermissionError as p:
-                                    pass; # err('PermissionError', 'recycler_word', p) 
-            else :
-                self.show_input_dialog()  
-                if os.path.exists(self.valeur_stockee):  
-                    source = self.valeur_stockee        
-                    if os.path.exists():
-                        recycler_word(self, source, destination, extension)
-                    else :
-                        self.show_input_dialog()
-                        destination = self.valeur_stockee  
-                        recycler_word(self, source, destination, extension)
-                
-        dossier_de_travail = os.listdir(initM.DossierMarkdown)
-        fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
-        fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
-        if fichier_inutiles != []:
-            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
-            for fichier in fichier_inutiles:
-                if fichier != fichier_exclus:
-                    chemin = os.path.join(initM.DossierMarkdown, fichier)
-                    os.remove(chemin)
-                    if self.colorationunique == False:                
-                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
-                        self.colorationunique = True
-        if fichier_restants != []:
-            for fichier in fichier_restants:
-                fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
-                try :
-                    initM.shutil.move(fichier_restant, ARCHIVES)
-                except PermissionError as p:
-                    pass; # err('PermissionError', 'recycler_word', p) 
-                except initM.shutil.Error:
-                    fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
-                    try :
-                        initM.shutil.move(fichier_restant, ARCHIVES)
-                    except PermissionError as p:
-                        pass; # err('PermissionError', 'recycler_word', p) 
-                
-        recycler_word(self, DossierSORTIE, DossierDOC, '.docx')
-            
     def _resize_label(self, instance, size):
         self.label.height = size[1]
 
@@ -1377,8 +1442,8 @@ class Inventaire(GridLayout):
                 self.Fabricant,
                 self.Destination,
                 self.Provenance,
-                self.Similaires,
-                self.Specificites,
+                self.Approbation,
+                self.Quantite,
                 self.Editeur,
         ]
         
@@ -1387,7 +1452,6 @@ class Inventaire(GridLayout):
         # COULEUR d'ecran
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nombre_postulee}"], couleur=NOIR)
         colorer(self, self.dictionnaire_bouton_menu[f"{self.nbreEntreeTotal}"], couleur=NOIR)
-
         # Detection des entrees 
         self.initiateur_compteur()
         
@@ -1419,11 +1483,11 @@ class Inventaire(GridLayout):
             self.ciblerEnvoyer(cible=f"{self.Jour.text}", tag=cle_DATE, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Prix.text}", tag=cle_PRIX, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Destination.text}", tag=cle_DESTINATION, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Similaires.text}", tag=cle_SIMILAIRES, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Approbation.text}", tag=cle_APPROBATIONS, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Provenance.text}", tag=cle_PROVENANCE, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Lien.text}", tag=cle_LIEN, sett='all')
             self.ciblerEnvoyer(cible=f"{self.Editeur.text}", tag=cle_EDITEUR, sett='all')
-            self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_QUANTITE, sett='all')
+            self.ciblerEnvoyer(cible=f"{self.Quantite.text}", tag=cle_QUANTITE, sett='all')
                         
         elif sett == 'others':
             self.Produit = remplisseur(self, objet=self.cadreIV, texte=_produit_)
@@ -1439,30 +1503,30 @@ class Inventaire(GridLayout):
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Type.text}", tag=cle_TYPE, sett='all'))
 
             # CSV : numero de phone____________________________________________________________________
-            self.Provenance = remplisseur(self, objet=self.cadreIV, texte=_provenance_)
+            self.Provenance = remplisseur(self, objet=self.cadreIV, texte=_provenance_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Provenance.text}", tag=cle_PROVENANCE, sett='all'))
             # CSV : adresse courriel
-            self.Destination = remplisseur(self, objet=self.cadreIV, texte=_destination_)
+            self.Destination = remplisseur(self, objet=self.cadreIV, texte=_destination_, couleur=GRISCLAIR)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Destination.text}", tag=cle_DESTINATION, sett='all'))
     
-            self.Similaires = remplisseur(self, objet=self.cadreIV, texte=_similaires_)
+            self.Approbation = remplisseur(self, objet=self.cadreIV, texte=_approbation_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Similaires.text}", tag=cle_SIMILAIRES, sett='all')) 
+                              commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Approbation.text}", tag=cle_APPROBATIONS, sett='all')) 
             
             self.Prix = remplisseur(self, objet=self.cadreIV, texte=_prix_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Prix.text}", tag=cle_PRIX, sett='all')) 
 
             # CSV _______________________________________________________________________________
-            self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_)
+            self.Lien = remplisseur(self, objet=self.cadreIV, texte=_lien_, couleur=GRISCLAIR)
             self.csv_bouton = commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50, 
                                 commande=lambda *args: self.csv())
             # LETTRE ________________________________________________________________________________________
-            self.Specificites = remplisseur(self, objet=self.cadreIV, texte=_quantite_)
+            self.Quantite = remplisseur(self, objet=self.cadreIV, texte=_quantite_)
             commandes_bouton(self, objet=self.cadreIV, text="Go", police=20, hauteur=70, largeur=50,
-                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Specificites.text}", tag=cle_QUANTITE,  sett='all'))
+                                commande=lambda *args: self.ciblerEnvoyer(cible=f"{self.Quantite.text}", tag=cle_QUANTITE,  sett='all'))
             
             
             # AUTOMATIQUE ______________________________________________________________________________________
@@ -1485,17 +1549,16 @@ class Inventaire(GridLayout):
             
             self.Notes.text = ry.lireFichier(initM.chemin_ressource(notess))
 
+            # Confirmeur d'envoi
+            self.Confirme = remplisseur(self=self, objet=self.cadreII, texte='', width=2)
+            colorer(self, self.Confirme, couleur=NOIR)
+
             self.affichage_boutons(tagger=self.Provenance, text=_provenance_, tag=_PROVENANCE, sett='manuel')
             self.affichage_boutons(tagger=self.Jour, text=_jour_, tag=_DATE_IN, sett='manuel')
             self.affichage_boutons(tagger=self.Editeur, text=_editeur_, tag=_EDITEUR_IN, sett='manuel')
             self.affichage_boutons(tagger=self.Fabricant, text=_fabricant_, tag=_FABRICANT, sett='manuel')
-            self.affichage_boutons(tagger=self.Similaires, text=_similaires_, tag=_SIMILAIRES, sett='manuel')
             self.affichage_boutons(tagger=self.Destination, text=_destination_, tag=_DESTINATION, sett='manuel')
-
-            # for jobssite_ in self.liste_rapide:
-            #     commandes_bouton(self, objet=self.cadreIII, text=jobssite_, police=17, hauteur=50, 
-            #                         commande=lambda instance, jobssite_=jobssite_, objet=self.Site: self.remplir_input(text=jobssite_, objet=objet))
-
+            
     def affichage_boutons(self, tagger=None, text='vide', tag='', sett='default'):
         
         if valideur_cocheur :
@@ -1594,41 +1657,46 @@ class Inventaire(GridLayout):
                                         cle2='nbreEntreeTotal', sett='valeurcles')
 
     def save(self, instance, sett='all', option_envoi='py'):
-
+        
         def save_sql():
-            dictio_form_RH = ry.lireJSON(fichier=LETTREFichierRH)
-            if option_envoi is None :
-                option_envoi = ry.chercher_ds_JSON(dictionnaire=dictio_form_RH, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
-            if dictio_form_RH is not None :
-                _DATE_IN = dictio_form_RH['Date_de_creation']
-                _PRODUIT = dictio_form_RH['Produit']
-                _TYPE = dictio_form_RH['Types']
-                _ANNEE = dictio_form_RH['Annee']
-                _FABRICANT = dictio_form_RH['Fabricant']
-                _PROVENANCE = dictio_form_RH['Provenance']
-                _PRIX = dictio_form_RH['Prix']
-                _EDITEUR_IN = dictio_form_RH['Editeur']
-                _DESTINATION = dictio_form_RH['Destination']
-                _SIMILAIRES = dictio_form_RH['Similaires']
-                _QUANTITE = dictio_form_RH['Spécificités']
-                _LIEN = dictio_form_RH['Lien']
-                _APPROBATIONS = dictio_form_RH['Approbations']
-                print(_APPROBATIONS)
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Date_de_creation (date_production) VALUES\n('{_DATE_IN}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Produit (nom) VALUES\n('{_PRODUIT}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Type (nom) VALUES\n('{_TYPE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Annee (valeur) VALUES\n('{_ANNEE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Fabricant (nom) VALUES\n('{_FABRICANT}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Provenance (pays) VALUES\n('{_PROVENANCE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Prix (montant, devise) VALUES\n('{_PRIX}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Editeur (nom) VALUES\n('{_EDITEUR_IN}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Destination (pays) VALUES\n('{_DESTINATION}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Similaires (produit_id, similaire_id) VALUES\n('{_SIMILAIRES}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Specificites (description) VALUES\n('{_QUANTITE}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Lien (url) VALUES\n('{_LIEN}')")
-                ry.rajouter_ds_fichier(fichier=LETTREFichier_sqlIN, contenu=f"INSERT INTO Approbations (produit_id, organisme, date_approbation) VALUES\n('{_APPROBATIONS}')")
+            dictio_form_IN = ry.lireJSON(fichier=LETTREFichierIN)
+            db_name = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Profil', cle2='DB_IN', sett='valeurcles')
+            sql_file = ry.chercher_ds_JSON(dictionnaire=dictio, cle1='Fichiers_Configurations', cle2='_INIT_SQL_IN', sett='valeurcles')
             
+            if dictio_form_IN is not None :
+                
+                _PRODUIT = dictio_form_IN['Produit']
+                _TYPE = dictio_form_IN['Types']
+                _ANNEE = dictio_form_IN['Annee']
+                _DESTINATION = dictio_form_IN['Destination']
+                _QUANTITE = dictio_form_IN['Quantite']
+                _EDITEUR_IN = dictio_form_IN['Editeur']
+                _PROVENANCE = dictio_form_IN['Provenance']
+                _FABRICANT = dictio_form_IN['Fabricant']
+                _LIEN = dictio_form_IN['Lien']
+                _APPROBATIONS = dictio_form_IN['Approbations']                
+                _DATE_IN = dictio_form_IN['Date_de_creation']
+        
+                self.mysql_save(f"{db_name}", "INSERT INTO Date_de_creation (date_production) VALUES (%s)", (f"{_DATE_IN}",), sql_file, message_debut='Actif')
+                self.mysql_save(f"{db_name}", "INSERT INTO Types (nom) VALUES (%s)", (f"{_TYPE}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Annee (valeur) VALUES (%s)", (_ANNEE,))
+                self.mysql_save(f"{db_name}", "INSERT INTO Destination (pays) VALUES (%s)", (f"{_DESTINATION}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Prix (montant) VALUES (%s)", (f"{_PRIX}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Quantite (valeur) VALUES (%s)", (_QUANTITE,))
+                self.mysql_save(f"{db_name}", "INSERT INTO Editeur (nom) VALUES (%s)", (f"{_EDITEUR_IN}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Provenance (pays) VALUES (%s)", (f"{_PROVENANCE}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Fabricant (nom) VALUES (%s)", (f"{_FABRICANT}",))
+                self.mysql_save(f"{db_name}", "INSERT INTO Lien (url) VALUES (%s)", (f"{_LIEN}",))
+                inserted_id = self.mysql_save(f"{db_name}", "INSERT INTO Produit (nom) VALUES (%s)", (f"{_PRODUIT}",))
 
+                self.mysql_save(f"{db_name}", "INSERT INTO Approbations (organisme) VALUES (%s)", (f"{_APPROBATIONS}",))
+                
+                self.mysql_save(f"{db_name}", "INSERT INTO Produits (produit_id, types_id, annee_id, fabricant_id, provenance_id, destination_id, date_de_creation_id, lien_id, quantite_id, prix_id, editeur_id, approbations_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
+                    (inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,),
+                    message_fin='Actif')
+                
+                self.Confirme.text = f"{inserted_id}e envoyé !"
+                colorer(self, self.Confirme, couleur=VERT)
 
         envoi = []
         self.nombre_postulee = self.afficher_nbre_postulee('nbreEntreeJour')
@@ -1643,6 +1711,7 @@ class Inventaire(GridLayout):
                 try:
                     self.nbre_changee_a_l_affichage()
                     self.affichage_special_boutons(sett='auto')
+                    initM.sauvegarder_donnees()
                     save_sql()
                     
                     if option_envoi == 'py' or option_envoi == 'python':     
@@ -1665,6 +1734,7 @@ class Inventaire(GridLayout):
                         ])
                                             
                 except Exception as arr:
+                    colorer(self, self.Confirme, couleur=ROUGE)
                     pass; # err(tabErreur=initM.traceback.extract_tb(initM.sys.exc_info()[2]), NomErreur='save', ValeurErreur=arr)
             
             else :
@@ -1686,6 +1756,108 @@ class Inventaire(GridLayout):
             bouton.bind(on_release=lambda btn, valeur=valeur: self.apresclic(btn, f"{valeur}"))
         elif sett == 'message':
             bouton.text = str(valeur)
+
+    def mysql_save(self, bd, query, values=None, sql_file=None, message_debut=None, message_fin=None, message_confirmation=None):
+        
+        MYSQL_ = MariaDB(bd_name=bd, sql_file=sql_file)
+        if message_debut:
+            MYSQL_.log("=== LANCEMENT DU SCRIPT AUTOMATISÉ ===")
+
+        # Étape 1 : vérifier si base existe
+        if MYSQL_.database_exists() :
+            if message_confirmation is None:
+                message_confirmation = f"Base '{MYSQL_.DB_NAME}' déjà existante."           
+                MYSQL_.log(message_confirmation)
+        else:
+            MYSQL_.log(f"Base '{MYSQL_.DB_NAME}' inexistante, création en cours...")
+            MYSQL_.create_database()
+
+        # Étape 2 : Import SQL
+        if sql_file and message_confirmation is None:
+            MYSQL_.import_sql_file(sql_file)
+
+        # Étape 3 : Insertion de données
+        inserted_id = MYSQL_.insert_after_import(query, values)   
+               
+        if isinstance(inserted_id, int):    
+            if message_fin:
+                rcp(ry.Green, f"{inserted_id}e ligne insérée avec succès !")
+                MYSQL_.log("=== FIN DU SCRIPT AUTOMATISÉ ===")
+            
+            return inserted_id
+        else :
+            self.Lien.text = f"{inserted_id}"
+            colorer(self, self.Lien, couleur=ROUGE)
+
+    def clear(self, instance):        
+        for element in self.tableau_insertion:
+            element.text = ""
+        colorer(self, self.Confirme, couleur=NOIR)
+        self.csv_bouton.text = 'Go'
+        colorer(self, self.csv_bouton, couleur=GRISFONCE)
+        colorer(self, self.Lien, couleur=GRISFONCE)
+        generer_fichier(INITfileIN, LETTREFichierIN)
+            
+    def supprimerTout(self, instance):
+        def recycler_word(self, source, destination, extension) :
+            if os.path.exists(source):
+                dossier_de_travail = os.listdir(source)
+                if dossier_de_travail is not None :
+                    fichier_trouvees = [i for i in dossier_de_travail if extension in i]
+                    if fichier_trouvees != []:
+                        for fichier in fichier_trouvees:
+                            fichier_trouvee = f'{source}/{fichier}'
+                            try :
+                                initM.shutil.move(fichier_trouvee, destination)
+                            except PermissionError as p:
+                                pass; # err('PermissionError', 'recycler_word', p)                                 
+                            except initM.shutil.Error:
+                                fichier_restant = f'{source}/{fichier}'
+                                fichier = fichier.replace('.', '_0.')   
+                                destination = f'{destination}/{fichier}'                             
+                                try :
+                                    initM.shutil.move(fichier_restant, destination)
+                                except PermissionError as p:
+                                    pass; # err('PermissionError', 'recycler_word', p) 
+            else :
+                self.show_input_dialog()  
+                if os.path.exists(self.valeur_stockee):  
+                    source = self.valeur_stockee        
+                    if os.path.exists():
+                        recycler_word(self, source, destination, extension)
+                    else :
+                        self.show_input_dialog()
+                        destination = self.valeur_stockee  
+                        recycler_word(self, source, destination, extension)
+                
+        dossier_de_travail = os.listdir(initM.DossierMarkdown)
+        fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
+        fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
+        if fichier_inutiles != []:
+            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
+            for fichier in fichier_inutiles:
+                if fichier != fichier_exclus:
+                    chemin = os.path.join(initM.DossierMarkdown, fichier)
+                    os.remove(chemin)
+                    if self.colorationunique == False:                
+                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
+                        self.colorationunique = True
+        if fichier_restants != []:
+            for fichier in fichier_restants:
+                fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
+                try :
+                    initM.shutil.move(fichier_restant, ARCHIVES)
+                except PermissionError as p:
+                    pass; # err('PermissionError', 'recycler_word', p) 
+                except initM.shutil.Error:
+                    fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
+                    try :
+                        initM.shutil.move(fichier_restant, ARCHIVES)
+                    except PermissionError as p:
+                        pass; # err('PermissionError', 'recycler_word', p) 
+                
+        recycler_word(self, DossierSORTIE, DossierDOC, '.docx')
+        
 
     def csv(self):
 
@@ -1718,7 +1890,7 @@ class Inventaire(GridLayout):
                 # "Nom du contact": self.NomD.text,
                 "Numéro de téléphone": self.Destination.text,
                 "Adresse courriel": self.Type.text,
-                "Réponse/Relance/informations supplémentaires": self.Similaires.text,
+                "Réponse/Relance/informations supplémentaires": self.Approbation.text,
                 "Autres liens sites": self.Fabricant.text
             }
         ]
@@ -1858,72 +2030,7 @@ class Inventaire(GridLayout):
     def espacer(self, nombre): # 
         with open(self.INITfileRH, 'a') as write :
             write.write("\n" * nombre)
-
-    def clear(self, instance):        
-        for element in self.tableau_insertion:
-            element.text = ""
-        generer_fichier(self.INITfileIN, self.LETTREFichierIN)
-            
-    def supprimerTout(self, instance):
-        def recycler_word(self, source, destination, extension) :
-            if os.path.exists(source):
-                dossier_de_travail = os.listdir(source)
-                if dossier_de_travail is not None :
-                    fichier_trouvees = [i for i in dossier_de_travail if extension in i]
-                    if fichier_trouvees != []:
-                        for fichier in fichier_trouvees:
-                            fichier_trouvee = f'{source}/{fichier}'
-                            try :
-                                initM.shutil.move(fichier_trouvee, destination)
-                            except PermissionError as p:
-                                pass; # err('PermissionError', 'recycler_word', p)                                 
-                            except initM.shutil.Error:
-                                fichier_restant = f'{source}/{fichier}'
-                                fichier = fichier.replace('.', '_0.')   
-                                destination = f'{destination}/{fichier}'                             
-                                try :
-                                    initM.shutil.move(fichier_restant, destination)
-                                except PermissionError as p:
-                                    pass; # err('PermissionError', 'recycler_word', p) 
-            else :
-                self.show_input_dialog()  
-                if os.path.exists(self.valeur_stockee):  
-                    source = self.valeur_stockee        
-                    if os.path.exists():
-                        recycler_word(self, source, destination, extension)
-                    else :
-                        self.show_input_dialog()
-                        destination = self.valeur_stockee  
-                        recycler_word(self, source, destination, extension)
-                
-        dossier_de_travail = os.listdir(initM.DossierMarkdown)
-        fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
-        fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
-        if fichier_inutiles != []:
-            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
-            for fichier in fichier_inutiles:
-                if fichier != fichier_exclus:
-                    chemin = os.path.join(initM.DossierMarkdown, fichier)
-                    os.remove(chemin)
-                    if self.colorationunique == False:                
-                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
-                        self.colorationunique = True
-        if fichier_restants != []:
-            for fichier in fichier_restants:
-                fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
-                try :
-                    initM.shutil.move(fichier_restant, ARCHIVES)
-                except PermissionError as p:
-                    pass; # err('PermissionError', 'recycler_word', p) 
-                except initM.shutil.Error:
-                    fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
-                    try :
-                        initM.shutil.move(fichier_restant, ARCHIVES)
-                    except PermissionError as p:
-                        pass; # err('PermissionError', 'recycler_word', p) 
-                
-        recycler_word(self, DossierSORTIE, DossierDOC, '.docx')
-            
+    
     def _resize_label(self, instance, size):
         self.label.height = size[1]
 
@@ -2241,22 +2348,24 @@ class BlocNotes(Screen):
 
     def createur_de_blocs(self, GRILLE):
         largeur = 320; longueur = 50
-        contenu_plan = self.lire_ecrire_json(fichier=self.plan)
-        self.plan_input = entry(self=GRILLE, texte=contenu_plan, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
-              txtColor=WHITE, width=largeur, height=10, sett='hauteur')
-        
-        contenu_liens = self.lire_ecrire_json(fichier=self.liensUtiles)
-        self.liens_input = entry(self=GRILLE, texte=contenu_liens, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
-              txtColor=WHITE, width=largeur, height=10, sett='hauteur')
         
         contenu_infos = self.lire_ecrire_json(fichier=self.infos)
-        self.infos_input = entry(self=GRILLE, texte=contenu_infos, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
-              txtColor=WHITE, width=largeur, height=10, sett='hauteur')
+        self.infos_input = entry(self=GRILLE, texte=contenu_infos, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
+              txtColor=WHITE, width=largeur, height=10, sett='hauteur')    
         
         contenu_dates = self.lire_ecrire_json(fichier=self.dates)
         self.dates_input = entry(self=GRILLE, texte=contenu_dates, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
+        
+        contenu_plan = self.lire_ecrire_json(fichier=self.plan)
+        self.plan_input = entry(self=GRILLE, texte=contenu_plan, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
+              txtColor=WHITE, width=largeur, height=10, sett='hauteur')     
 
+
+        contenu_liens = self.lire_ecrire_json(fichier=self.liensUtiles)
+        self.liens_input = entry(self=GRILLE, texte=contenu_liens, objet=self.cadreII, couleur=BLEUPALE, multiline=True,
+              txtColor=WHITE, width=largeur, height=10, sett='hauteur')
+        
     def envoi_donnees_ds_JSON(self):
         ry.ecrire_ds_json(fichier=fichier_configuration, dictionnaire=self.dictio, contenu=self.get_methode_envoi(), 
                             cle1='Methode_D_Envoi', cle2='langage', sett='remplacer')
@@ -2323,7 +2432,6 @@ class BlocNotes(Screen):
         bouton.text = valeur
         colorer(self, bouton, couleur)
 
-    
     def changer_valeur_a_l_ecran(self, cible, nbre=0):
         cible = nbre
         return cible
@@ -2352,6 +2460,8 @@ class BlocNotes(Screen):
             except Exception:
                 continue
 
+# --- Utilitaires ---
+# Boîte de dialogue pour entrer une valeur
 class InputDialog(Popup):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -2381,6 +2491,127 @@ class InputDialog(Popup):
         self.valeur = self.input_field.text
         print(f"Valeur entrée : {self.valeur}")
         self.dismiss()
+
+class MariaDB():
+    # ---------------------------------------------------------------------
+    # CONFIGURATION
+    # ---------------------------------------------------------------------
+    def __init__(self, bd_name, sql_file, **kwargs):
+        super().__init__(**kwargs)
+        self.HOST        = "localhost"
+        self.USER        = "ryan"
+        self.PASSWORD    = "Gl2v&di4su$PHP"
+        self.DB_NAME     = bd_name
+        self.SQL_FILE    = sql_file
+        self.LOG_FILE    = "import_log.txt"
+    # ---------------------------------------------------------------------
+    # FONCTIONS UTILITAIRES
+    # ---------------------------------------------------------------------
+
+    def log(self, message):
+        """Écrit dans un fichier de log avec un timestamp."""
+        with open(self.LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(f"[{datetime.datetime.now()}] {message}\n")
+        print(message)
+        return message
+
+    def connect(self, database=None):
+        """Connexion MySQL, optionnellement à une base donnée."""
+        return mysql.connector.connect(
+            host=self.HOST,
+            user=self.USER,
+            password=self.PASSWORD,
+            database=database,
+            autocommit=True
+        )
+
+    # ---------------------------------------------------------------------
+    # 1. VÉRIFIER SI LA BASE EXISTE
+    # ---------------------------------------------------------------------
+
+    def database_exists(self):
+        conn = self.connect()
+        cursor = conn.cursor()
+        cursor.execute("SHOW DATABASES;")
+        exists = self.DB_NAME.lower() in [db[0] for db in cursor.fetchall()]
+        conn.close()
+        return exists
+
+    # ---------------------------------------------------------------------
+    # 2. CRÉER LA BASE SI NÉCESSAIRE
+    # ---------------------------------------------------------------------
+
+    def create_database(self):
+        conn = self.connect()
+        cursor = conn.cursor()
+        cursor.execute(f"CREATE DATABASE `{self.DB_NAME}`;")
+        conn.close()
+        self.log(f"✔ Base de données '{self.DB_NAME}' créée.")
+
+    # ---------------------------------------------------------------------
+    # 3. IMPORT DU FICHIER SQL
+    # ---------------------------------------------------------------------
+
+    def import_sql_file(self, sql_file):
+        if not os.path.exists(sql_file):
+            self.log(f"❌ Fichier SQL introuvable : {sql_file}")
+            return
+
+        self.log(f"⌛ Import du fichier SQL : {sql_file}")
+        
+        conn = self.connect(self.DB_NAME)
+        cursor = conn.cursor()
+
+        with open(sql_file, "r", encoding="utf-8") as f:
+            sql_content = f.read()
+
+        commands = sql_content.split(";")
+
+        for cmd in commands:
+            cmd = cmd.strip()
+            if cmd:
+                try:
+                    cursor.execute(cmd)
+                except mysql.connector.Error as e:
+                    self.log(f"❌ ERREUR SQL : {e} | Commande : {cmd}")
+
+        conn.close()
+        self.log("✔ Import SQL terminé avec succès.")
+
+    # ---------------------------------------------------------------------
+    # 4. ENVOYER DES DONNÉES ENSUITE
+    # ---------------------------------------------------------------------
+
+    def insert_after_import(self, query, values, sett='insertion_mormale'):
+        conn = self.connect(self.DB_NAME)
+        cursor = conn.cursor()
+        
+        # # Exemple d'insertion adaptable
+        # query = "INSERT INTO utilisateurs (nom, age) VALUES (%s, %s)"
+        # values = ("Ryan", 30)
+
+        try:
+            if sett == 'insertion_mormale':
+                cursor.execute(query, values)
+                conn.commit()
+                inserted_id = cursor.lastrowid   # <-- essentiel           
+            elif sett == 'insertion_globale': 
+                cursor.execute(query, values)
+                conn.commit()
+                
+            self.log("✔ Donnée insérée après import.")
+            
+            # cursor.execute(commande_dernier_numero)            
+            # last_id = cursor.fetchone()[0]
+                    
+        except mysql.connector.Error as e:
+            return self.log(f"❌ Erreur d'insertion : {e}")
+
+        cursor.close()
+        conn.close()
+        
+        if inserted_id is not None and sett == 'insertion_mormale':
+            return inserted_id
 
 class MyApp(App):
     def build(self):

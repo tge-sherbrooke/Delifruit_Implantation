@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS BD_IN; 
-CREATE DATABASE BD_IN CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE BD_IN;
+DROP DATABASE IF EXISTS bb_inv; 
+CREATE DATABASE bb_inv CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE bb_inv;
 
 -- ================================
 -- 1) Tables de référence simples
@@ -13,7 +13,7 @@ CREATE TABLE Types (
 
 CREATE TABLE Annee (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    valeur YEAR NOT NULL
+    valeur INT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Fabricant (

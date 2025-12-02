@@ -1,0 +1,31 @@
+_PRODUIT,_TYPE,_ANNEE,_DESTINATION,_QUANTITE,_EDITEUR_IN,_PROVENANCE,_FABRICANT,_LIEN,_PRIX,_APPROBATIONS,_DATE_IN
+Produit0,Livre,2007,Londres,19,EditeurA,Japon,FabC,http://example.com/item0,41.1,Non,2025-01-01
+Produit1,Livre,2016,Paris,12,EditeurC,France,FabA,http://example.com/item1,54.02,Non,2025-01-02
+Produit2,Jeu,2007,Tokyo,43,EditeurB,Japon,FabA,http://example.com/item2,59.9,Non,2025-01-03
+Produit3,Film,2002,Tokyo,30,EditeurC,France,FabB,http://example.com/item3,145.51,Non,2025-01-04
+Produit4,Jeu,2014,Londres,3,EditeurA,Canada,FabB,http://example.com/item4,17.15,Oui,2025-01-05
+Produit5,Livre,2000,Londres,29,EditeurB,France,FabB,http://example.com/item5,31.41,Non,2025-01-06
+Produit6,Logiciel,2018,Londres,6,EditeurA,France,FabA,http://example.com/item6,170.04,Non,2025-01-07
+Produit7,Logiciel,2008,Tokyo,13,EditeurC,Canada,FabA,http://example.com/item7,43.4,Oui,2025-01-08
+Produit8,Livre,2004,Londres,31,EditeurC,France,FabC,http://example.com/item8,143.98,Oui,2025-01-09
+Produit9,Film,2010,Londres,11,EditeurC,France,FabC,http://example.com/item9,168.1,Non,2025-01-10
+Produit10,Jeu,2022,Tokyo,8,EditeurC,Japon,FabA,http://example.com/item10,41.89,Oui,2025-01-11
+Produit11,Jeu,2012,Paris,1,EditeurC,France,FabB,http://example.com/item11,26.59,Non,2025-01-12
+Produit12,Film,2025,Londres,27,EditeurA,France,FabC,http://example.com/item12,73.96,Oui,2025-01-13
+Produit13,Jeu,2016,Londres,41,EditeurC,France,FabA,http://example.com/item13,79.02,Oui,2025-01-14
+Produit14,Livre,2009,Londres,6,EditeurC,USA,FabC,http://example.com/item14,182.57,Non,2025-01-15
+Produit15,Film,2001,Paris,26,EditeurA,Japon,FabC,http://example.com/item15,71.26,Oui,2025-01-16
+Produit16,Jeu,2017,New York,37,EditeurB,USA,FabC,http://example.com/item16,38.59,Oui,2025-01-17
+Produit17,Jeu,2005,New York,29,EditeurA,Canada,FabC,http://example.com/item17,132.24,Non,2025-01-18
+Produit18,Logiciel,2024,Paris,22,EditeurB,France,FabA,http://example.com/item18,195.6,Oui,2025-01-19
+Produit19,Jeu,2006,Paris,20,EditeurC,Canada,FabC,http://example.com/item19,134.8,Non,2025-01-20
+Produit20,Jeu,2025,Tokyo,31,EditeurC,France,FabB,http://example.com/item20,176.93,Oui,2025-01-21
+Produit21,Logiciel,2015,Paris,6,EditeurB,France,FabC,http://example.com/item21,137.02,Non,2025-01-22
+Produit22,Logiciel,2008,Londres,4,EditeurB,France,FabC,http://example.com/item22,73.87,Non,2025-01-23
+Produit23,Logiciel,2001,Londres,33,EditeurC,Japon,FabB,http://example.com/item23,10.15,Oui,2025-01-24
+Produit24,Logiciel,2009,Tokyo,33,EditeurB,France,FabC,http://example.com/item24,66.97,Oui,2025-01-25
+Produit25,Film,2017,New York,30,EditeurA,Canada,FabA,http://example.com/item25,59.6,Non,2025-01-26
+Produit26,Jeu,2017,Paris,49,EditeurA,Japon,FabA,http://example.com/item26,189.06,Non,2025-01-27
+Produit27,Film,2007,Londres,31,EditeurA,Japon,FabA,http://example.com/item27,90.96,Non,2025-01-28
+Produit28,Livre,2024,Londres,49,EditeurB,Japon,FabC,http://example.com/item28,57.68,Non,2025-01-29
+Produit29,Film,2007,Paris,19,EditeurB,France,FabC,http://example.com/item29,132.57,Non,2025-01-30

@@ -109,59 +109,78 @@ fichier_form_sqlIN = chemin_ressource(ry.chercher_ds_JSON(dictionnaire=dictio, c
 # _________________C_O_M_P_A_R_A_I_S_O_N___F_I_C_H_I_E_R_S______________________________
 # RH  
 contenu_formulaireRH = ry.lireJSON(fichier_form_RH)
-reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_RH, fichier2=fichier_form_RH,
+reponse_formRH = ry.comparer_contenu_fichiers(fichier1=fichier_initial_RH, fichier2=fichier_form_RH,
                              sett='json', option='return')
 # IN
 contenu_formulaireIN = ry.lireJSON(fichier_form_IN)
-reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_IN, fichier2=fichier_form_IN,
+reponse_formIN = ry.comparer_contenu_fichiers(fichier1=fichier_initial_IN, fichier2=fichier_form_IN,
                              sett='json', option='return')
 # SQL RH  
 contenu_formulaire_sqlRH = ry.lireFichier(fichier_form_sqlRH)
-reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlRH, fichier2=fichier_form_sqlRH,
+reponse_formSQLRH = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlRH, fichier2=fichier_form_sqlRH,
                              sett='txt', option='return')
 # SQL IN
 contenu_formulaire_sqlIN = ry.lireFichier(fichier_form_sqlIN)
-reponse = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlIN, fichier2=fichier_form_sqlIN,
+reponse_formSQLIN = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlIN, fichier2=fichier_form_sqlIN,
                              sett='txt', option='return')
 
 #
-# ______________S_A_U_V_E_G_A_R_D_E___R_H_____________________________________
-if reponse == True:   
-    lecture_validante = ry.lireJSON(fichier_sauvegarde_json_RH)
-    if lecture_validante is not None and lecture_validante != '':
-        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_RH, dictionnaire=f",{contenu_init_RH}, {contenu_formulaireRH}", sett=4)
-    else :
-        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_RH, dictionnaire=f"{contenu_init_RH}, {contenu_formulaireRH}", sett=4)
+def sauvegarder_donnees():
+    
+    # _________________C_O_M_P_A_R_A_I_S_O_N___F_I_C_H_I_E_R_S______________________________
+    # RH  
+    contenu_formulaireRH = ry.lireJSON(fichier_form_RH)
+    reponse_formRH = ry.comparer_contenu_fichiers(fichier1=fichier_initial_RH, fichier2=fichier_form_RH,
+                                sett='json', option='return')
+    # IN
+    contenu_formulaireIN = ry.lireJSON(fichier_form_IN)
+    reponse_formIN = ry.comparer_contenu_fichiers(fichier1=fichier_initial_IN, fichier2=fichier_form_IN,
+                                sett='json', option='return')
+    # SQL RH  
+    contenu_formulaire_sqlRH = ry.lireFichier(fichier_form_sqlRH)
+    reponse_formSQLRH = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlRH, fichier2=fichier_form_sqlRH,
+                                sett='txt', option='return')
+    # SQL IN
+    contenu_formulaire_sqlIN = ry.lireFichier(fichier_form_sqlIN)
+    reponse_formSQLIN = ry.comparer_contenu_fichiers(fichier1=fichier_initial_sqlIN, fichier2=fichier_form_sqlIN,
+                                sett='txt', option='return')
 
-ry.ecrire_ds_json(fichier=fichier_form_RH, dictionnaire=contenu_init_RH, sett=4)
-# ______________S_A_U_V_E_G_A_R_D_E___I_N_____________________________________
-if reponse == True:   
-    lecture_validante = ry.lireJSON(fichier_sauvegarde_json_IN)
-    if lecture_validante is not None and lecture_validante != '':
-        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_IN, dictionnaire=f",{contenu_init_IN}, {contenu_formulaireIN}", sett=4)
-    else :
-        ry.rajouter_ds_json(fichier=fichier_sauvegarde_json_IN, dictionnaire=f"{contenu_init_IN}, {contenu_formulaireIN}", sett=4)
+    # ______________S_A_U_V_E_G_A_R_D_E___R_H_____________________________________
+    if reponse_formRH :
+        lecture_validante = ry.lireJSON(fichier_sauvegarde_json_RH)
+        contenu_formulaireRH = ry.lireJSON(fichier_form_RH)
+        if lecture_validante is not None and lecture_validante != '':
+            ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_json_RH, contenu=f"{contenu_init_RH}, {contenu_formulaireRH}\n")
+        else :
+            ry.ecrire_ds_fichier(fichier=fichier_sauvegarde_json_RH, contenu=f"{contenu_init_RH}, {contenu_formulaireRH}\n")
 
-ry.ecrire_ds_json(fichier=fichier_form_IN, dictionnaire=contenu_init_IN, sett=4)
-#       S Q L
-# ______________S_A_U_V_E_G_A_R_D_E___R_H____S_Q_L_______________________________
-if reponse == True:   
-    lecture_validante = ry.lireFichier(fichier_sauvegarde_sql_RH)
-    if lecture_validante is not None and lecture_validante != '':
-        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_RH, contenu=f"{contenu_formulaire_sqlRH}")
-    else :
-        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_RH, contenu=f"{contenu_formulaire_sqlRH}")
+    # ______________S_A_U_V_E_G_A_R_D_E___I_N_____________________________________
+    if reponse_formIN :
+        lecture_validante = ry.lireJSON(fichier_sauvegarde_json_IN)
+        contenu_init_IN = ry.lireJSON(fichier_form_IN)
+        if lecture_validante is not None and lecture_validante != '':
+            ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_json_IN, contenu=f"{contenu_init_IN}, {contenu_formulaireIN}\n")
+        else :
+            ry.ecrire_ds_fichier(fichier=fichier_sauvegarde_json_IN, contenu=f"{contenu_init_IN}, {contenu_formulaireIN}\n")
 
-ry.ecrire_ds_fichier(fichier=fichier_form_sqlRH, contenu=contenu_init_sqlRH)
-# ______________S_A_U_V_E_G_A_R_D_E___I_N____S_Q_L_______________________________
-if reponse == True:   
-    lecture_validante = ry.lireFichier(fichier_sauvegarde_sql_IN)
-    if lecture_validante is not None and lecture_validante != '':
-        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_IN, contenu=f"{contenu_formulaire_sqlIN}")
-    else :
-        ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_IN, contenu=f"{contenu_formulaire_sqlIN}")
+    #       S Q L
+    # ______________S_A_U_V_E_G_A_R_D_E___R_H____S_Q_L_______________________________
+    if reponse_formSQLRH :
+        lecture_validante = ry.lireFichier(fichier_sauvegarde_sql_RH)
+        contenu_formulaire_sqlRH = ry.lireFichier(fichier_form_sqlRH)
+        if lecture_validante is not None and lecture_validante != '':
+            ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_RH, contenu=f"{contenu_formulaire_sqlRH}")
+        else :
+            ry.ecrire_ds_fichier(fichier=fichier_sauvegarde_sql_RH, contenu=f"{contenu_formulaire_sqlRH}")
 
-ry.ecrire_ds_fichier(fichier=fichier_form_sqlIN, contenu=contenu_init_sqlIN)
+    # ______________S_A_U_V_E_G_A_R_D_E___I_N____S_Q_L_______________________________
+    if reponse_formSQLIN :
+        lecture_validante = ry.lireFichier(fichier_sauvegarde_sql_IN)
+        contenu_formulaire_sqlIN = ry.lireFichier(fichier_form_sqlIN)
+        if lecture_validante is not None and lecture_validante != '':
+            ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_sql_IN, contenu=f"{contenu_formulaire_sqlIN}")
+        else :
+            ry.ecrire_ds_fichier(fichier=fichier_sauvegarde_sql_IN, contenu=f"{contenu_formulaire_sqlIN}")
 
 #
 ARCHIVES = f"{Repertoire}/archives"
@@ -173,7 +192,7 @@ def date(sett='') :
     if sett == 'archive':
         return date_ajourdhui.strftime("%Y-%m-%d-%H-%M-%S")
     elif sett == 'date_pour_BD':
-        date_formatee = date_ajourdhui.strftime("%d %B %Y")
+        date_formatee = date_ajourdhui.strftime("%Y-%m-%d")
         return date_formatee.lower()
     elif sett == '':
         return date_ajourdhui
