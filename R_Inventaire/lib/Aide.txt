@@ -1,3 +1,9 @@
+sudo docker swarm init --advertise-addr 10.0.0.51
+Swarm initialized: current node (q08o4o58zzg9fm4j6sz178tjg) is now a manager.
+
+docker swarm join --token SWMTKN-1-5g2r23tt3ysmw8wegv8lax46rbvh0i1c51554vu6l3r2iif219-ezzuogffwv7ya7slx9rayafo4 10.0.0.51:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
 # Installer le fichier .exe
 

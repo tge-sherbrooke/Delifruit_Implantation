@@ -1,75 +1,10 @@
-DROP DATABASE IF EXISTS BD_RH; 
-CREATE DATABASE BD_RH CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE BD_RH;
+DROP DATABASE IF EXISTS bd_rh; 
+CREATE DATABASE bd_rh CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE bd_rh;
 
 -- ================================
 -- 1) Tables de référence simples
 -- ================================
-
-CREATE TABLE Prenom (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    prenom VARCHAR(50) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Nom (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(100) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Age (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    valeur INT NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Entreprise (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(150) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Adresse (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    adresses VARCHAR(200) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Departement (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    departement VARCHAR(100) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Date_de_creation (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    date_creation DATE NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Lien (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    url VARCHAR(500) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Courriel (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    courriel VARCHAR(200) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Phone (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    phone VARCHAR(20) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Editeur (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(150) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Fonctions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fonctions VARCHAR(200) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE Privilege (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    privilege VARCHAR(200) NOT NULL
-) ENGINE=InnoDB;
 
 -- ================================
 -- 2) Table finale : Employe
@@ -77,31 +12,19 @@ CREATE TABLE Privilege (
 
 CREATE TABLE Employe (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    prenom_id INT,
-    nom_id INT,
-    age_id INT,
-    phone_id INT,
-    courriel_id INT,
-    entreprise_id INT,
-    adresse_id INT,
-    departement_id INT,
-    date_creation_id INT,
-    editeur_id INT,
-    fonctions_id INT,
-    privilege_id INT,
-    
-    FOREIGN KEY (prenom_id) REFERENCES Prenom(id),
-    FOREIGN KEY (nom_id) REFERENCES Nom(id),
-    FOREIGN KEY (age_id) REFERENCES Age(id),
-    FOREIGN KEY (phone_id) REFERENCES Phone(id),
-    FOREIGN KEY (courriel_id) REFERENCES Courriel(id),
-    FOREIGN KEY (entreprise_id) REFERENCES Entreprise(id),
-    FOREIGN KEY (adresse_id) REFERENCES Adresse(id),
-    FOREIGN KEY (departement_id) REFERENCES Departement(id),
-    FOREIGN KEY (date_creation_id) REFERENCES Date_de_creation(id),
-    FOREIGN KEY (editeur_id) REFERENCES Editeur(id),
-    FOREIGN KEY (fonctions_id) REFERENCES Fonctions(id),
-    FOREIGN KEY (privilege_id) REFERENCES Privilege(id)
+    fonctions VARCHAR(200) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
+    departement VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    courriel VARCHAR(200) NOT NULL,
+    privilege VARCHAR(200) NOT NULL,
+    age DATE NOT NULL,
+    entreprise VARCHAR(150) NOT NULL,
+    adresses VARCHAR(200) NOT NULL,
+    date_creation DATE NOT NULL,
+    editeur VARCHAR(150) NOT NULL,
+    liens VARCHAR(500) NOT NULL
 ) ENGINE=InnoDB;
 
 

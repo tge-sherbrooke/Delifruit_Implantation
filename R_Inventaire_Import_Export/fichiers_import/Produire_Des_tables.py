@@ -7,8 +7,8 @@ def appel(fichier):
     # Définir l'en-tête
     if 'rh_' in fichier or '_RH'.lower() in fichier or '_RH' in fichier:
         header = [
-            '_NOM', '_PRENOM', '_ADRESSE', '_AGE', '_COURRIEL', '_EDITEUR_RH', '_DEPARTEMENT',
-            '_FONCTION', '_LIEN', '_PHONE', '_PRIVILEGE', '_DATE_RH', '_ENTREPRISE'
+            '_FONCTION', '_PRENOM', '_NOM', '_DEPARTEMENT', '_PHONE', '_COURRIEL', '_PRIVILEGE',
+            '_AGE','_ENTREPRISE', '_ADRESSE', '_DATE_RH', '_EDITEUR_RH', '_LIEN' 
         ]
         
         # Générer 30 lignes de données factices
@@ -17,20 +17,19 @@ def appel(fichier):
 
         for i in range(30):
             row = {
-                "_NOM": f"Nom{i}",
-                "_PRENOM": f"Prenom{i}",
-                "_ADRESSE": f"{random.randint(1, 200)} Rue Exemple, Ville{i}",
-                "_AGE": random.randint(20, 65),
-                "_COURRIEL": f"user{i}@example.com",
-                "_EDITEUR_RH": random.choice(["RH_A", "RH_B", "RH_C"]),
-                "_DEPARTEMENT": random.choice(["Finance", "IT", "Marketing", "RH"]),
                 "_FONCTION": random.choice(["Analyste", "Manager", "Développeur", "Assistant"]),
-                "_LIEN": f"http://intranet.example.com/profil{i}",
+                "_PRENOM": f"Prenom{i}",
+                "_NOM": f"Nom{i}",
+                "_DEPARTEMENT": random.choice(["Finance", "IT", "Marketing", "RH"]),
                 "_PHONE": f"+33{random.randint(600000000, 699999999)}",
+                "_COURRIEL": f"user{i}@example.com",
                 "_PRIVILEGE": random.choice(["Admin", "User", "Guest"]),
+                "_AGE": f"{random.randint(1945, 2025)}-{random.randint(1,12)}-{random.randint(1, 29)}",
+                "_ENTREPRISE": "Delifruit",
+                "_ADRESSE": f"{random.randint(1, 200)} Rue Exemple, Ville{i}",
                 "_DATE_RH": (base_date + timedelta(days=i)).isoformat(),
-                "_ENTREPRISE": "Delifruit"
-
+                "_EDITEUR_RH": random.choice(["RH_A", "RH_B", "RH_C"]),
+                "_LIEN": f"http://intranet.example.com/profil{i}",
             }
             rows.append(row)
             
@@ -76,4 +75,4 @@ def appel(fichier):
         print('fichier non valide !')
 
 
-appel(fichier="fichiers_import/donnees_rh.csv")
+appel(fichier="fichiers_import/donnees_in.csv")

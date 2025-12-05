@@ -28333,3 +28333,2577 @@ CREATE TABLE Employe (
 [2025-12-02 00:35:31.993240] Base 'bb_inv' déjà existante.
 [2025-12-02 00:35:32.045657] ✔ Donnée insérée après import.
 [2025-12-02 00:35:32.046671] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:47:49.751823] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:47:49.823417] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 17:47:49.830736] ✔ Base de données 'bb_rh' créée.
+[2025-12-02 17:47:49.831480] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-02 17:48:11.585179] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:48:11.600380] Base 'bb_rh' déjà existante.
+[2025-12-02 17:48:11.610647] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.Date_de_creation' doesn't exist
+[2025-12-02 17:48:11.620891] Base 'bb_rh' déjà existante.
+[2025-12-02 17:48:58.431176] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:48:58.451105] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 17:48:58.460173] ✔ Base de données 'bb_rh' créée.
+[2025-12-02 17:48:58.460942] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-02 17:52:11.398501] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:52:11.415037] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 17:52:11.423755] ✔ Base de données 'bb_rh' créée.
+[2025-12-02 17:52:11.424409] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-02 17:54:04.896613] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:54:36.656050] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 17:54:56.171368] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 17:54:59.662833] ✔ Base de données 'bb_rh' créée.
+[2025-12-02 17:56:15.468324] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-02 17:58:09.018077] ✔ Import SQL terminé avec succès.
+[2025-12-02 17:59:19.816875] ✔ Donnée insérée après import.
+[2025-12-02 18:00:11.897157] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:00:18.059750] Base 'bb_rh' déjà existante.
+[2025-12-02 18:00:18.095910] ✔ Donnée insérée après import.
+[2025-12-02 18:00:57.066427] Base 'bb_rh' déjà existante.
+[2025-12-02 18:01:10.324081] ✔ Donnée insérée après import.
+[2025-12-02 18:01:47.132828] Base 'bb_rh' déjà existante.
+[2025-12-02 18:02:31.292839] ✔ Donnée insérée après import.
+[2025-12-02 18:07:09.455359] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:08:11.611990] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:08:11.625226] Base 'bb_rh' déjà existante.
+[2025-12-02 18:08:11.637430] ✔ Donnée insérée après import.
+[2025-12-02 18:15:23.799395] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:15:23.830825] Base 'bb_rh' déjà existante.
+[2025-12-02 18:15:23.856881] ✔ Donnée insérée après import.
+[2025-12-02 18:15:23.887529] ✔ Donnée insérée après import.
+[2025-12-02 18:18:39.087944] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:18:39.126868] Base 'bb_rh' déjà existante.
+[2025-12-02 18:18:39.165786] ✔ Donnée insérée après import.
+[2025-12-02 18:19:44.805334] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:19:44.820232] Base 'bb_rh' déjà existante.
+[2025-12-02 18:19:44.832328] ✔ Donnée insérée après import.
+[2025-12-02 18:20:41.230157] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:20:41.290836] Base 'bb_rh' déjà existante.
+[2025-12-02 18:25:51.432801] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:25:51.463897] Base 'bb_rh' déjà existante.
+[2025-12-02 18:28:36.409855] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:33:31.358581] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:33:31.372440] Base 'bb_rh' déjà existante.
+[2025-12-02 18:33:31.387286] ✔ Donnée insérée après import.
+[2025-12-02 18:34:12.083659] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:34:12.099932] Base 'bb_rh' déjà existante.
+[2025-12-02 18:34:12.112356] ✔ Donnée insérée après import.
+[2025-12-02 18:34:30.827981] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:35:02.338840] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 18:35:02.370694] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 18:43:01.452458] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:05:38.877045] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:11:57.720610] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:11:57.978001] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 20:11:58.035700] ✔ Base de données 'bb_rh' créée.
+[2025-12-02 20:11:58.037301] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-02 20:11:59.194830] ✔ Import SQL terminé avec succès.
+[2025-12-02 20:11:59.293080] ✔ Donnée insérée après import.
+[2025-12-02 20:12:29.555232] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:13:20.242177] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:13:25.399307] Base 'bb_rh' inexistante, création en cours...
+[2025-12-02 20:13:25.528572] ✔ Base de données 'bb_rh' créée.
+[2025-12-02 20:13:25.530809] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-02 20:13:26.167069] ✔ Import SQL terminé avec succès.
+[2025-12-02 20:13:26.285773] ✔ Donnée insérée après import.
+[2025-12-02 20:14:24.064193] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:14:24.209824] Base 'bb_rh' déjà existante.
+[2025-12-02 20:14:24.338389] ✔ Donnée insérée après import.
+[2025-12-02 20:16:18.978749] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:17:13.787526] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:17:13.952993] Base 'bb_rh' déjà existante.
+[2025-12-02 20:17:14.060075] ✔ Donnée insérée après import.
+[2025-12-02 20:17:59.465476] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:17:59.571182] Base 'bb_rh' déjà existante.
+[2025-12-02 20:17:59.692741] ✔ Donnée insérée après import.
+[2025-12-02 20:17:59.830354] ✔ Donnée insérée après import.
+[2025-12-02 20:17:59.970767] ✔ Donnée insérée après import.
+[2025-12-02 20:18:00.120373] ✔ Donnée insérée après import.
+[2025-12-02 20:18:00.249352] ✔ Donnée insérée après import.
+[2025-12-02 20:18:00.370794] ✔ Donnée insérée après import.
+[2025-12-02 20:18:52.847565] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:18:52.993837] Base 'bb_rh' déjà existante.
+[2025-12-02 20:18:53.110560] ✔ Donnée insérée après import.
+[2025-12-02 20:19:35.015490] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:19:35.154019] Base 'bb_rh' déjà existante.
+[2025-12-02 20:19:35.302598] ✔ Donnée insérée après import.
+[2025-12-02 20:19:35.460532] ✔ Donnée insérée après import.
+[2025-12-02 20:38:32.124565] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:38:32.363892] Base 'bb_rh' déjà existante.
+[2025-12-02 20:38:54.018026] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:39:15.875904] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-02 20:39:16.007285] Base 'bb_rh' déjà existante.
+[2025-12-02 20:39:16.126066] ✔ Donnée insérée après import.
+[2025-12-03 00:52:47.577312] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:09.801995] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:09.816457] Base 'bb_rh' inexistante, création en cours...
+[2025-12-03 00:53:09.820924] ✔ Base de données 'bb_rh' créée.
+[2025-12-03 00:53:09.821761] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-03 00:53:10.019994] ✔ Import SQL terminé avec succès.
+[2025-12-03 00:53:10.031087] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.486849] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:50.505909] Base 'bb_rh' inexistante, création en cours...
+[2025-12-03 00:53:50.510623] ✔ Base de données 'bb_rh' créée.
+[2025-12-03 00:53:50.511540] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-03 00:53:50.697963] ✔ Import SQL terminé avec succès.
+[2025-12-03 00:53:50.706877] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.711817] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.718461] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.724303] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.735697] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.740781] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.747307] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.752582] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.759357] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.764086] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.771963] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.777127] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.784168] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.789632] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.796650] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.801654] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.809334] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.814390] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.823239] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.831649] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.841414] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.850125] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.860603] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.869055] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.880087] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.887969] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.898964] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.900527] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:50.901436] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:50.909174] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.917885] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.926459] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.935332] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.944040] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.952896] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.961391] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.969690] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.977875] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:50.986651] ✔ Donnée insérée après import.
+[2025-12-03 00:53:50.994502] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.002640] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.010775] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.019715] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.028030] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.036893] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.044935] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.053589] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.062045] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.071014] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.079490] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.089095] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.098170] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.107369] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.115343] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.122672] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.129903] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.137314] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.138599] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.139834] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.146457] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.153363] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.160085] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.166627] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.173017] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.180227] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.185824] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.191528] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.197198] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.202995] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.208632] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.215331] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.220508] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.226828] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.232335] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.238145] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.244170] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.250314] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.255519] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.262179] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.267338] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.273587] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.279085] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.285815] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.291270] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.297794] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.303147] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.309799] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.311174] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.312020] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.317223] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.323575] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.329346] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.335668] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.340995] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.347238] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.352477] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.358696] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.364170] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.370714] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.376641] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.383108] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.388517] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.394995] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.400000] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.406210] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.411826] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.418958] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.427051] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.435907] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.444125] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.452677] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.461060] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.469875] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.478025] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.487039] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.495523] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.504329] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.505691] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.506875] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.515098] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.523407] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.531748] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.539798] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.548367] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.556963] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.565336] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.573805] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.581775] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.590047] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.598062] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.606415] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.614695] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.623291] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.631842] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.640211] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.648676] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.656803] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.664813] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.673224] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.681784] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.690137] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.698637] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.706390] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.715433] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.723459] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.732344] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.786279] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.787759] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.788956] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:51.796645] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.804874] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.813705] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.822628] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.831108] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.839980] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.848052] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.856644] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.864977] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.873161] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.881619] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.889804] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.897747] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.906336] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.914225] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.922069] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.930313] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.939216] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.947633] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.956422] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.964705] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.973339] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.981538] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:51.989846] ✔ Donnée insérée après import.
+[2025-12-03 00:53:51.998007] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.006652] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.016029] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.024339] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.026205] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.027943] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.035138] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.043859] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.051404] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.059758] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.068385] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.076834] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.084652] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.093210] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.101305] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.109937] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.117844] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.126343] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.134472] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.142372] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.150782] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.158928] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.167182] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.175201] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.183426] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.191739] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.199882] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.208023] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.216355] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.224461] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.233508] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.241962] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.250657] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.259460] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.261639] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.262652] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.270182] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.278986] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.286488] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.294956] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.302421] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.311302] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.319248] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.328477] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.336212] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.344855] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.352678] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.361212] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.368859] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.377799] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.385514] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.393890] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.401885] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.410394] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.418019] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.426388] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.434183] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.442764] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.451165] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.459175] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.467287] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.475845] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.483757] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.492326] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.494335] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.495493] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.502614] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.511528] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.518987] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.527804] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.535407] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.544038] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.551688] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.559977] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.568186] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.576662] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.584880] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.593281] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.601034] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.609386] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.617299] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.625444] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.633588] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.641424] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.649464] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.658306] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.666588] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.674972] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.683621] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.692159] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.700447] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.708376] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.717040] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.725349] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.727342] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.728587] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.735767] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.744372] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.752248] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.760892] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.768548] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.777039] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.785001] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.793202] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.801044] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.809720] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.818310] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.826567] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.834630] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.842859] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.850811] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.859312] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.867757] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.875888] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.883746] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.891825] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.899741] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.907950] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.916417] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.924718] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.932715] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.940881] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.949387] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.957809] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.959541] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.960854] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:52.968624] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.977217] ✔ Donnée insérée après import.
+[2025-12-03 00:53:52.984455] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:52.992694] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.000944] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.009286] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.017182] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.025259] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.033037] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.041205] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.049148] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.057395] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.065111] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.073362] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.081781] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.090137] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.098542] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.106787] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.115120] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.123279] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.131735] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.139972] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.147941] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.156111] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.163959] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.172374] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.180203] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.189188] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.190812] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.192016] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.199807] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.208038] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.215954] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.224942] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.233405] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.241505] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.250115] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.258392] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.266283] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.274503] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.282467] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.291030] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.298865] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.307178] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.315750] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.324346] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.332710] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.341094] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.349320] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.357501] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.365778] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.374260] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.382204] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.390990] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.398954] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.407308] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.415566] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.424082] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.426077] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.427271] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.434615] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.442932] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.450583] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.458861] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.467040] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.475299] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.482982] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.491349] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.499305] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.507428] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.515981] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.524617] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.532235] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.540338] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.548817] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.556803] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.565219] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.573555] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.582184] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.590189] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.598467] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.606576] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.614992] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.622899] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.630827] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.639190] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.647986] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.656532] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.658397] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.659584] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.667102] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.675191] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.683280] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.691412] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.699476] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.707719] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.716267] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.724278] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.732968] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.741567] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.749423] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.757326] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.765680] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.773439] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.781566] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.789538] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.797837] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.809007] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.818739] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.831825] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.839790] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.849198] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.856982] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.866678] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.874586] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.883807] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.891405] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.907104] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.908898] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.910345] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:53.917617] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.927365] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.935104] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.944517] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.951908] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.961360] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.969301] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.978256] ✔ Donnée insérée après import.
+[2025-12-03 00:53:53.985828] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:53.994733] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.002173] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.010895] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.018716] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.027748] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.035269] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.044022] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.051492] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.060490] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.068592] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.077296] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.085042] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.093838] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.101747] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.110220] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.118131] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.127127] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.134923] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.143614] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.144981] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.145941] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.153919] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.163119] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.170976] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.179830] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.186949] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.196178] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.203795] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.212719] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.220371] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.229467] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.237259] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.245984] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.254379] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.263431] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.270915] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.279995] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.287699] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.296640] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.304469] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.313385] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.320646] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.329764] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.337386] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.346321] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.353448] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.362294] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.369671] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.379201] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.380930] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.381892] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.390069] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.399064] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.407048] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.416462] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.425044] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.433658] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.441415] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.450127] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.458142] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.467162] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.475278] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.483917] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.492021] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.501112] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.509120] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.518010] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.526493] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.535330] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.543982] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.552711] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.561268] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.570179] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.578157] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.586785] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.595552] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.603938] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.612402] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.621630] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.623478] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.624579] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.632311] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.641207] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.649249] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.657570] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.665788] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.674083] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.681995] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.689814] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.698051] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.705942] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.713915] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.722115] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.730142] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.737788] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.746970] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.755101] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.763411] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.771930] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.779753] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.788440] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.796475] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.806071] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.815244] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.823521] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.832292] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.840258] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.848777] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.857403] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.858983] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.860554] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:54.867837] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.876515] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.884369] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.893043] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.900422] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.909190] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.916913] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.925956] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.933736] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.943008] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.950546] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.958998] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.966665] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.975120] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.982828] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:54.991463] ✔ Donnée insérée après import.
+[2025-12-03 00:53:54.999268] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.007983] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.016031] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.024508] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.032962] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.041149] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.049466] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.057593] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.065296] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.073906] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.081755] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.090305] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.091952] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.093289] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.100815] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.109526] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.117393] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.125149] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.132633] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.140944] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.148864] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.157134] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.165417] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.173329] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.181771] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.189301] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.197626] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.205819] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.214461] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.222692] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.230816] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.239307] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.248212] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.256074] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.264352] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.272660] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.281373] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.289205] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.297824] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.305891] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.314071] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.322539] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.324356] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.325562] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.333447] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.341672] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.349322] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.357624] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.365889] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.374275] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.382130] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.390722] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.398829] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.407388] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.415458] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.423633] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.432155] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.440327] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.448499] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.456490] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.464867] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.472697] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.480839] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.489179] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.497488] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.505701] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.514112] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.522591] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.531230] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.539231] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.547235] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.555666] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.557444] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.560168] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.567871] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.576433] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.583850] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.592768] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.600230] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.608643] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.616285] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.624575] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.632259] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.640527] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.648945] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.657133] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.664933] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.673561] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.681372] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.689293] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.697635] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.705882] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.714281] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.722293] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.730565] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.738762] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.746915] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.755028] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.763808] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.771638] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.780444] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.788487] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.790259] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.791572] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:55.798916] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.807426] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.815502] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.823868] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.832373] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.840651] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.849224] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.860624] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.868515] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.880072] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.888225] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.897467] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.905792] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.915659] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.923915] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.933230] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.941401] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.951213] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.959204] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.968683] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.977009] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:55.986423] ✔ Donnée insérée après import.
+[2025-12-03 00:53:55.994198] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.003674] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.012123] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.021377] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.029900] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.042818] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.044213] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.045554] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.052548] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.061680] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.069926] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.079045] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.086390] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.095398] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.102643] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.111563] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.119467] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.128837] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.136532] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.145758] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.152978] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.162456] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.169868] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.178641] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.186221] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.194856] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.202302] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.212321] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.219828] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.229097] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.237252] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.246313] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.255411] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.264421] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.272866] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.281880] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.283223] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.284392] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.292636] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.301166] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.309275] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.318431] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.327278] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.336012] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.343953] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.353086] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.361343] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.369925] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.378111] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.386764] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.395257] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.403902] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.412140] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.420796] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.428746] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.437533] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.446136] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.454582] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.462984] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.471347] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.478953] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.487704] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.496198] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.504466] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.512630] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.521391] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.523051] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.524182] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.531848] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.540532] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.548242] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.557042] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.564991] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.573654] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.581517] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.589722] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.597645] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.606040] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.614233] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.622620] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.630375] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.638869] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.646935] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.655209] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.663360] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.672015] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.680016] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.688150] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.696938] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.736398] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.773718] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.783358] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.788885] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.795330] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.804695] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.814617] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.815452] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.816013] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:56.820686] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.832422] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.837675] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.843991] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.848377] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.854180] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.859419] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.865332] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.869759] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.875110] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.881091] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.893591] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.901425] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.910151] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.917477] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.926247] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.934235] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.942319] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.950357] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.958913] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.967082] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.975882] ✔ Donnée insérée après import.
+[2025-12-03 00:53:56.983724] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:56.992406] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.000217] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.008985] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.017499] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.027331] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.028977] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:57.030204] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:57.037380] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.045673] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.053234] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.061811] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.069701] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.077945] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.085876] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.094517] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.102037] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.110657] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.118936] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.127645] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.135444] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.143705] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.151381] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.160050] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.167751] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.176822] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.184689] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.193080] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.201006] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.209184] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.217066] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.226582] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.234572] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.242993] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.251561] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.260735] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.262521] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:57.263748] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:57.271250] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.280482] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.288755] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.296841] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.305071] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.314502] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.322377] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.331335] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.339391] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.348610] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.356387] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.365405] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.373883] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.382500] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.390860] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.399544] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.407480] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.415834] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.423899] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.432922] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.441520] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.450600] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.458893] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.467772] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.476125] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.484815] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.493391] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.502721] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.504434] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:57.505470] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 00:53:57.513550] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.521643] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.529837] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.538239] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.546319] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.554629] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.562612] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.571075] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.579158] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.587342] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.595326] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.603973] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.612172] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.620082] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.628090] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.636516] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.644853] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.654082] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.662509] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.671242] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.678840] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.687323] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.694988] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.703578] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.711897] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.720066] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.727947] Base 'bb_rh' déjà existante.
+[2025-12-03 00:53:57.736871] ✔ Donnée insérée après import.
+[2025-12-03 00:53:57.738646] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:38:10.258296] Base 'bb_rh' inexistante, création en cours...
+[2025-12-03 15:38:10.262322] ✔ Base de données 'bb_rh' créée.
+[2025-12-03 15:38:10.265371] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.270272] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.274609] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.278817] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.282480] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.286915] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.290104] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.294493] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.297980] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.302406] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.305576] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.310003] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.313417] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.317011] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.320563] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.324588] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.328569] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.332277] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.335462] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.339584] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.342866] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.347073] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.350251] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.354519] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.357568] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.361898] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.364911] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.369218] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.372118] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.376586] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.379318] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.383117] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.386352] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.389982] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.393739] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.397354] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.400339] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.404556] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.408451] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.412780] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.415867] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.419815] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.423171] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.426898] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.429796] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.433173] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.436220] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.440541] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.443577] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.446933] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.449827] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.453890] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.457160] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.460910] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.463874] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.467317] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.470692] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:10.477498] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:10.480561] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.589531] Base 'bb_rh' inexistante, création en cours...
+[2025-12-03 15:38:43.593882] ✔ Base de données 'bb_rh' créée.
+[2025-12-03 15:38:43.597244] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.602329] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.605976] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.610634] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.613607] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.617635] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.620721] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.624947] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.628390] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.631703] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.635081] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.638722] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.642251] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.646027] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.648858] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.652723] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.655648] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.659970] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.662908] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.666744] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.669951] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.673865] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.677704] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.681339] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.684871] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.688373] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.692000] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.695397] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.698248] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.702863] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.705886] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.709555] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.712319] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.715593] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.719372] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.723608] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.726518] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.730391] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.733173] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.737080] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.740683] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.744164] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.747094] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.750883] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.753712] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.758224] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.761076] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.764900] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.768036] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.772255] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.775521] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.778981] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.781957] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.785859] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.789118] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.793067] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.795767] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:38:43.799612] Base 'bb_rh' déjà existante.
+[2025-12-03 15:38:43.802966] ❌ Erreur d'insertion : 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INT AUTO_INCREMENT PRIMARY KEY,    fonctions,    prenom,    nom,    departeme...' at line 1
+[2025-12-03 15:39:26.337302] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.341038] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.345208] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.349486] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.353061] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.356251] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.359931] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.363584] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.367220] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.370051] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.373499] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.376822] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.380700] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.383931] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.387286] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.390018] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.394358] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.398009] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.401773] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.404874] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.408408] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.412669] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.416739] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.420247] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.423540] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.427234] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.431489] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.434470] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.438057] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.441209] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.445640] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.449220] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.452743] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.455811] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.459223] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.463345] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.467234] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.470126] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.473755] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.477386] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.481346] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.484683] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.488143] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.491110] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.495543] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.498655] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.502420] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.505260] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.508563] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.512931] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.516704] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.519834] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.523523] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.527222] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.531635] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.534826] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.538430] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.541534] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:39:26.545876] Base 'bb_rh' déjà existante.
+[2025-12-03 15:39:26.548977] ❌ Erreur d'insertion : 1146 (42S02): Table 'bb_rh.employe' doesn't exist
+[2025-12-03 15:41:07.373955] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.386742] Base 'bb_rh' inexistante, création en cours...
+[2025-12-03 15:41:07.391532] ✔ Base de données 'bb_rh' créée.
+[2025-12-03 15:41:07.392364] ⌛ Import du fichier SQL : init\_init_bd_RH.sql
+[2025-12-03 15:41:07.409574] ✔ Import SQL terminé avec succès.
+[2025-12-03 15:41:07.414265] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.414825] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.420010] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.424477] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.425133] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.428960] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.431919] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.432996] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.436466] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.440260] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.440909] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.444492] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.447710] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.448599] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.452704] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.455887] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.456714] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.460924] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.464373] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.465133] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.468678] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.471940] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.472732] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.476616] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.479962] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.480662] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.484032] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.487034] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.489201] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.494058] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.497458] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.498140] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.501435] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.504785] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.506213] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.510494] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.513837] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.514531] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.517827] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.520788] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.522378] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.526293] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.529328] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.530177] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.533640] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.536476] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.537157] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.542667] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.545916] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.546667] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.550197] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.553062] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.553747] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.559160] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.561919] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.562594] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.566125] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.568903] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.569660] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.573985] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.576901] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.577574] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.580795] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.583283] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.583933] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.589185] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.592207] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.592902] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.596335] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.598921] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.599605] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.604007] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.608726] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.609488] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.613400] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.616158] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.616871] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.620414] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.623582] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.624333] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.627504] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.630423] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.631049] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.634133] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.636908] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:07.638622] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:07.642632] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:07.645639] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.634495] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.649939] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.653451] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.654308] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.660543] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.665221] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.666191] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.670042] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.673842] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.674702] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.679828] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.682470] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.683181] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.686436] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.688997] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.689699] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.694657] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.697446] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.698153] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.701577] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.704414] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.705169] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.709082] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.712246] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.712978] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.716320] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.719078] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.719765] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.723422] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.726612] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.727461] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.731751] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.734507] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.735193] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.738556] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.741169] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.741949] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.746462] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.750003] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.750784] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.754287] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.756884] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.757571] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.761378] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.764854] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.765529] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.768792] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.771399] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.772114] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.775309] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.778180] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.779353] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.782780] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.785484] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.786143] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.789357] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.791951] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.792739] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.796240] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.799271] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.800014] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.803667] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.806179] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.806851] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.810398] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.812853] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.813602] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.817052] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.820092] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.820791] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.824065] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.826842] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.827538] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.831102] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.833945] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.834780] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.837992] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.840518] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.841218] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.844845] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.847366] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.848072] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.851773] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.854546] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.855256] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.858735] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.861570] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:41:59.862250] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:41:59.865947] Base 'bb_rh' déjà existante.
+[2025-12-03 15:41:59.868658] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.213079] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.225060] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.228225] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.228917] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.232788] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.236640] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.237369] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.241402] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.244574] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.245218] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.249286] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.252366] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.252980] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.256732] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.260002] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.260725] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.264474] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.267967] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.268640] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.272217] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.275310] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.276029] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.279817] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.283401] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.284037] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.287808] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.290959] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.291647] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.295336] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.298631] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.299579] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.303096] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.306112] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.306838] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.310534] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.313437] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.314198] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.318916] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.321929] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.322669] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.326318] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.329257] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.330041] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.336345] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.339316] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.340102] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.343697] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.346661] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.347615] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.351220] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.353915] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.354591] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.358556] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.361245] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.361906] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.365215] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.368444] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.369177] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.372716] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.375695] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.376362] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.379750] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.383343] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.384266] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.388072] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.391484] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.392230] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.395609] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.398384] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.399202] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.403610] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.406257] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.406996] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.411710] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.415450] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.416241] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.419588] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.422244] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.422883] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.426583] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.429929] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.430715] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.433998] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.436460] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.437119] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.440975] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.444569] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:42:33.445296] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:42:33.448537] Base 'bb_rh' déjà existante.
+[2025-12-03 15:42:33.451276] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:43:55.175570] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.215499] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.227326] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.234497] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.239108] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.243110] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.243800] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.252160] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.255875] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.258062] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.262782] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.265830] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.266538] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.271073] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.274088] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.274876] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.278792] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.281969] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.282681] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.286779] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.289480] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.290106] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.292989] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.295585] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.296287] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.299636] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.302083] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.302706] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.306462] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.308841] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.309438] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.313074] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.315479] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.316161] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.319294] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.322391] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.323079] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.326341] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.328899] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.329689] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.332855] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.335288] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.336141] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.340102] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.342553] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.343174] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.346856] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.349167] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.349847] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.353442] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.355927] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.356562] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.359820] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.362274] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.363031] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.366793] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.369556] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.370791] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.374515] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.377145] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.377833] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.381488] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.383956] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.384588] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.388379] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.390960] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.391613] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.394852] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.397752] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.398411] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.401518] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.403968] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.404827] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.408847] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.411045] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.411668] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.415540] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.417849] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.418528] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.423443] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.426308] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.427053] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.431218] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.433822] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.434569] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.438542] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.441320] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:43:55.442021] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:43:55.445496] Base 'bb_rh' déjà existante.
+[2025-12-03 15:43:55.448085] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:41.222818] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.233943] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.237202] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.238115] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.242252] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.245702] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.246404] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.249959] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.253571] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.254541] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.258513] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.261290] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.261981] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.265904] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.268768] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.269494] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.273686] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.276586] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.277271] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.280886] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.283897] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.284597] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.288776] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.292231] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.293001] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.296621] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.299652] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.300317] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.304340] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.307854] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.308621] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.312168] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.315042] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.315723] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.319190] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.322448] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.323212] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.326589] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.329621] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.330308] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.334147] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.337176] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.338725] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.342267] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.345195] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.345837] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.349617] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.352512] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.353144] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.358176] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.361288] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.362015] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.365789] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.368442] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.369054] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.373669] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.376427] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.377084] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.380758] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.383602] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.384297] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.388946] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.391957] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.392674] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.396275] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.399088] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.399775] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.404318] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.407571] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.408277] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.411812] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.414771] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.415402] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.418517] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.421709] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.422626] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.426249] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.429445] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.430097] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.433495] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.436150] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.436837] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.441759] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.444599] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.445259] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.448449] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.451195] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:41.451923] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:41.456023] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:41.459079] ❌ Erreur d'insertion : 1136 (21S01): Column count doesn't match value count at row 1
+[2025-12-03 15:44:53.905711] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.919097] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.922186] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.922868] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.926646] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.929687] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.930620] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.935193] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.938144] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.938887] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.942613] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.945838] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.946839] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.951382] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.954099] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.954789] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.958542] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.961863] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.962818] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.967276] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.969930] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.970634] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.974389] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.977295] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.978225] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.982397] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.985253] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.985901] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.989580] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:53.992523] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:53.993246] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:53.997482] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.000419] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.001045] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.004338] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.006942] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.007554] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.011688] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.014668] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.015378] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.018750] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.021345] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.021985] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.025662] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.029435] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.030479] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.034312] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.036860] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.037504] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.041243] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.044943] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.045767] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.049658] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.052244] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.052945] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.056460] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.059336] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.060065] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.063615] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.066281] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.066961] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.070344] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.073168] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.074029] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.077511] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.080144] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.080993] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.084808] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.087099] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.087737] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.092021] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.094487] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.095162] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.098755] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.101352] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.102009] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.105670] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.108479] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.109127] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.112636] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.115779] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.116452] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.119546] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.122535] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.123464] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.126744] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.129146] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:44:54.129832] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:44:54.134211] Base 'bb_rh' déjà existante.
+[2025-12-03 15:44:54.136604] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.055033] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.066707] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.069775] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.070456] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.074448] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.077884] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.078580] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.082057] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.084983] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.085935] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.089578] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.092565] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.093236] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.096643] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.099133] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.099796] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.104159] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.106767] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.107413] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.110939] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.113693] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.114370] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.118902] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.122040] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.122701] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.126655] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.129689] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.130408] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.134627] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.138092] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.138802] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.142496] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.145133] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.145853] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.149917] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.153260] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.154229] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.157877] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.160772] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.161398] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.164849] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.167558] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.168526] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.172394] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.175136] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.175863] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.179734] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.182533] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.183195] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.187352] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.190001] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.190627] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.194206] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.196967] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.197630] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.201653] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.205340] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.206030] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.209829] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.212570] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.213257] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.216707] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.220335] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.221297] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.224543] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.227348] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.228089] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.231703] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.234589] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.235668] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.239355] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.242167] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.242877] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.246669] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.249393] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.250062] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.254682] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.257532] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.258341] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.261849] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.264686] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.265390] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.270241] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.273151] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.273875] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.277456] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.280279] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:46:18.280936] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:46:18.284626] Base 'bb_rh' déjà existante.
+[2025-12-03 15:46:18.287840] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.370383] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.383980] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.388473] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.389415] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.393007] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.395793] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.396324] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.401573] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.404662] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.405361] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.408910] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.411687] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.412257] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.417002] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.420468] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.421142] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.425093] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.427830] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.428473] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.433367] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.437088] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.437630] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.441764] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.444326] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.444817] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.449915] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.453005] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.453719] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.457710] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.460650] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.461210] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.465353] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.468628] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.469156] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.473026] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.475911] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.476471] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.480760] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.484406] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.485028] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.488705] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.491724] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.492344] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.495725] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.499346] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.500108] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.503346] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.506510] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.507131] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.510221] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.512581] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.513066] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.517724] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.520199] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.520895] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.523861] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.526262] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.526708] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.529937] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.533503] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.534149] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.537687] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.540987] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.541584] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.544989] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.548057] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.549414] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.553311] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.556287] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.556789] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.560546] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.563734] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.565731] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.570300] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.573831] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.574708] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.578376] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.582047] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.583213] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.587263] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.590435] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.591032] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.594662] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.598132] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.599435] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.603283] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.606107] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:50:27.607557] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:50:27.611654] Base 'bb_rh' déjà existante.
+[2025-12-03 15:50:27.615014] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:51:52.133887] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:51:59.214923] Base 'bb_rh' déjà existante.
+[2025-12-03 15:52:52.159436] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:52:52.179337] Base 'bb_rh' déjà existante.
+[2025-12-03 15:52:52.182874] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-03 15:53:02.845873] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:53:05.807402] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.883698] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.896183] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.904058] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.905824] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.906403] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.910039] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.915905] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.917477] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.918210] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.922686] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.928460] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.929163] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.929665] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.933718] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.939423] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.940224] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.940996] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.944513] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.950163] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.951017] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.951630] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.954993] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.961103] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.961791] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.962431] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.967359] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.973386] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.974388] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.974956] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.978866] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.984920] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.985630] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.986229] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.989957] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:30.994711] ✔ Donnée insérée après import.
+[2025-12-03 15:55:30.995379] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:30.996182] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.000305] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.004961] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.005723] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.006305] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.009793] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.015138] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.017023] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.017691] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.021178] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.026097] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.026820] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.027579] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.031142] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.037587] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.038381] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.039017] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.042307] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.047028] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.048887] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.049847] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.053946] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.058797] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.059623] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.060168] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.063793] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.069339] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.070285] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.070943] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.074616] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.079463] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.080185] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.080926] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.085567] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.090633] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.091494] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.092416] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.097459] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.104953] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.105969] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.106575] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.110670] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.116886] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.117820] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.118423] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.122386] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.127555] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.128268] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.128894] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.133219] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.138624] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.139329] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.139872] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.143425] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.149789] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.150704] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.151472] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.155937] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.160949] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.161666] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.162170] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.166725] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.172132] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.172966] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.173545] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.177986] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.183733] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.184644] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.185517] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.189734] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.194542] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.195368] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.195899] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.200275] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.205643] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.206450] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.206955] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.210867] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.216382] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.217580] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.218413] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 15:55:31.222614] Base 'bb_rh' déjà existante.
+[2025-12-03 15:55:31.227078] ✔ Donnée insérée après import.
+[2025-12-03 15:55:31.227792] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.687463] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.699240] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.706126] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.706890] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.707418] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.711208] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.717494] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.718190] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.718818] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.722989] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.729256] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.730095] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.730772] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.734577] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.740423] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.741283] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.741945] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.745341] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.750871] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.751629] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.752333] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.756473] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.762420] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.763277] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.764056] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.767663] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.773796] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.774701] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.775393] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.779140] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.784208] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.784860] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.785299] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.788541] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.794296] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.794977] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.795481] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.799088] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.804508] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.810081] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.811847] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.818448] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.824976] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.826330] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.827190] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.831358] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.836468] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.837152] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.837898] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.841847] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.846095] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.846770] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.847333] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.850615] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.854890] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.856462] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.857321] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.860769] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.865169] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.865962] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.866492] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.869746] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.875047] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.875797] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.876354] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.879774] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.884243] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.884958] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.885507] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.888858] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.894418] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.895099] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.895594] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.899377] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.904319] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.905083] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.905949] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.910270] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.915053] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.915821] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.916320] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.919356] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.924285] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.925210] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.925767] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.929604] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.934261] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.934985] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.935787] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.939190] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.944642] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.945337] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.945992] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.949129] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.953534] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.954154] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.954724] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.958690] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.964528] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.967258] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.969404] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.978270] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.985227] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.986314] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.987062] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.992269] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:54.997898] ✔ Donnée insérée après import.
+[2025-12-03 16:04:54.998698] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:54.999251] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:55.002729] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:55.007325] ✔ Donnée insérée après import.
+[2025-12-03 16:04:55.008106] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:55.008735] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:55.012100] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:55.016718] ✔ Donnée insérée après import.
+[2025-12-03 16:04:55.017391] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:55.017928] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:04:55.020902] Base 'bb_rh' déjà existante.
+[2025-12-03 16:04:55.026420] ✔ Donnée insérée après import.
+[2025-12-03 16:04:55.027104] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.027563] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.041568] Base 'bb_inv' inexistante, création en cours...
+[2025-12-03 16:05:38.045257] ✔ Base de données 'bb_inv' créée.
+[2025-12-03 16:05:38.045875] ⌛ Import du fichier SQL : init\_init_bd_IN.sql
+[2025-12-03 16:05:38.071774] ✔ Import SQL terminé avec succès.
+[2025-12-03 16:05:38.075933] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.076855] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.080389] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.084267] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.084977] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.088699] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.091855] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.092545] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.096314] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.099562] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.100327] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.104219] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.107448] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.108202] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.112232] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.115713] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.117200] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.121164] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.124019] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.124661] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.128316] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.131094] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.131948] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.136536] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.139165] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.139801] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.143294] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.145965] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.146673] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.150757] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.153641] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.154359] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.157689] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.160645] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.161344] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.164665] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.168170] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.168854] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.172418] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.175273] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.175941] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.179421] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.182000] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.183088] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.186959] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.189881] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.190497] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.194185] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.197322] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.198087] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.203114] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.206098] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.206756] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.210306] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.212879] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.213569] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.217879] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.220786] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.221414] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.224955] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.227970] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.228678] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.232272] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.235599] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.236287] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.239352] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.242302] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.242962] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.246548] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.249490] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.250516] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.254196] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.256756] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.257459] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.260930] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.263692] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.264289] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.268569] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.271814] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.272490] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.275912] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.278920] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.279680] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.283226] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.286235] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:05:38.286928] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:05:38.290377] Base 'bb_inv' déjà existante.
+[2025-12-03 16:05:38.292984] ❌ Erreur d'insertion : 1054 (42S22): Unknown column 'fonctions' in 'field list'
+[2025-12-03 16:07:36.207957] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.219926] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.226851] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.227755] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.228287] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.231763] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.237440] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.238212] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.238786] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.242454] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.248781] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.249480] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.250068] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.253776] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.259288] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.260126] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.260584] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.263938] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.269638] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.270337] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.271144] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.275179] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.280961] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.281638] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.282253] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.286116] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.291879] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.292873] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.293578] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.297258] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.303115] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.303868] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.304549] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.308368] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.314080] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.314784] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.315381] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.319196] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.324789] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.325854] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.326574] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.329948] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.335242] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.335943] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.336476] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.339692] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.344978] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.345718] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.346263] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.349553] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.354469] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.355178] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.355726] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.359564] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.364212] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.364919] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.365478] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.369176] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.374210] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.375373] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.375956] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.379560] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.384502] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.385352] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.386079] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.389428] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.394600] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.395283] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.395721] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.398938] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.403863] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.404545] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.405053] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.408904] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.414187] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.414898] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.415327] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.418919] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.424315] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.425026] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.425428] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.428848] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.433591] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.434501] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.435142] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.438727] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.443940] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.444584] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.445328] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.448579] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.453681] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.454460] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.455502] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.459491] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.464337] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.465056] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.465587] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.469873] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.475066] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.475754] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.476320] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.479398] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.484101] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.484819] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.485424] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.489459] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.494583] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.495207] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.495710] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.498917] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.504209] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.504967] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.505494] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.509467] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.513963] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.514613] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.515056] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:07:36.519360] Base 'bb_inv' déjà existante.
+[2025-12-03 16:07:36.524777] ✔ Donnée insérée après import.
+[2025-12-03 16:07:36.525485] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:08:59.115695] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 16:09:43.046072] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:15:42.433537] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:20:56.868104] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:20:56.974311] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 17:20:56.994333] ✔ Base de données 'bd_inv' créée.
+[2025-12-03 17:20:56.995145] ⌛ Import du fichier SQL : init\_init_bd_IN.sql
+[2025-12-03 17:20:57.150366] ✔ Import SQL terminé avec succès.
+[2025-12-03 17:20:57.220773] ✔ Donnée insérée après import.
+[2025-12-03 17:20:57.223643] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:20:57.226202] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:20:57.242342] Base 'bd_inv' déjà existante.
+[2025-12-03 17:24:13.074049] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:24:13.092915] Base 'bd_inv' déjà existante.
+[2025-12-03 17:24:13.122077] ✔ Donnée insérée après import.
+[2025-12-03 17:24:13.123845] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:24:13.125095] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:53:55.952333] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:53:55.980073] Base 'bd_inv' déjà existante.
+[2025-12-03 17:54:12.585963] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:54:12.615414] Base 'bd_inv' déjà existante.
+[2025-12-03 17:54:12.648578] ✔ Donnée insérée après import.
+[2025-12-03 17:54:12.649892] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:54:12.650800] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:54:12.670005] Base 'bd_inv' déjà existante.
+[2025-12-03 17:55:33.920549] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 17:55:33.968476] Base 'bd_inv' déjà existante.
+[2025-12-03 18:03:19.109966] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:03:19.140137] Base 'bd_inv' déjà existante.
+[2025-12-03 18:03:19.169809] ✔ Donnée insérée après import.
+[2025-12-03 18:03:19.171732] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:03:19.173784] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:09:25.441750] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:13:37.517460] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:13:37.548390] Base 'bd_inv' déjà existante.
+[2025-12-03 18:13:37.586643] ✔ Donnée insérée après import.
+[2025-12-03 18:13:37.587895] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:13:37.588995] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:14:18.705891] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:14:18.740739] Base 'bd_inv' déjà existante.
+[2025-12-03 18:14:18.764235] ✔ Donnée insérée après import.
+[2025-12-03 18:14:18.765695] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:14:18.766718] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:15:58.027624] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:15:58.062174] Base 'bd_inv' déjà existante.
+[2025-12-03 18:15:58.088038] ✔ Donnée insérée après import.
+[2025-12-03 18:15:58.094527] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:16:35.501477] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:16:35.633912] Base 'bd_inv' déjà existante.
+[2025-12-03 18:16:35.699003] ✔ Donnée insérée après import.
+[2025-12-03 18:16:35.722201] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:16:35.742387] Base 'bd_inv' déjà existante.
+[2025-12-03 18:17:10.718429] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:17:10.764139] Base 'bd_inv' déjà existante.
+[2025-12-03 18:17:10.803179] ✔ Donnée insérée après import.
+[2025-12-03 18:24:40.671051] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:24:40.699488] Base 'bd_inv' déjà existante.
+[2025-12-03 18:29:40.501593] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:30:20.172236] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:33:18.010170] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:38:32.077630] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:38:32.118965] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:40:18.224890] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:40:18.254610] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:41:50.549952] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:41:50.588482] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:42:30.227526] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:42:44.694315] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:47:22.196391] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:47:22.231479] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:47:22.236119] ✔ Base de données 'bd_inv' créée.
+[2025-12-03 18:47:22.237401] ⌛ Import du fichier SQL : init\_init_bd_IN.sql
+[2025-12-03 18:47:22.284270] ✔ Import SQL terminé avec succès.
+[2025-12-03 18:47:22.293110] ❌ Erreur d'insertion : 1292 (22007): Incorrect date value: 'Canada' for column `bd_inv`.`Produits`.`date_production` at row 1
+[2025-12-03 18:47:22.294394] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:48:07.759129] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:48:07.799104] Base 'bd_inv' déjà existante.
+[2025-12-03 18:48:07.806198] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 18:48:07.807360] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:48:47.977256] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:49:03.457142] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:49:22.878977] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:49:22.906380] Base 'bd_inv' déjà existante.
+[2025-12-03 18:49:22.915794] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 18:49:22.916999] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:50:31.817132] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:51:29.089246] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:51:42.021992] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:51:46.491295] ✔ Base de données 'bd_inv' créée.
+[2025-12-03 18:51:53.551211] ⌛ Import du fichier SQL : init\_init_bd_IN.sql
+[2025-12-03 18:52:14.209720] ✔ Import SQL terminé avec succès.
+[2025-12-03 18:52:14.219252] ❌ Erreur d'insertion : 1292 (22007): Incorrect date value: 'Canada' for column `bd_inv`.`Produits`.`date_production` at row 1
+[2025-12-03 18:52:14.221267] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:54:42.771879] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 18:54:42.815513] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 18:54:42.821388] ✔ Base de données 'bd_inv' créée.
+[2025-12-03 18:54:42.822599] ⌛ Import du fichier SQL : init\_init_bd_IN.sql
+[2025-12-03 18:54:42.878777] ✔ Import SQL terminé avec succès.
+[2025-12-03 19:00:22.611499] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:00:22.630526] Base 'bd_inv' déjà existante.
+[2025-12-03 19:00:25.276113] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:00:25.277747] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:00:25.293033] Base 'bd_inv' déjà existante.
+[2025-12-03 19:00:39.783930] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:00:39.801992] Base 'bd_inv' inexistante, création en cours...
+[2025-12-03 19:00:39.806949] ✔ Base de données 'bd_inv' créée.
+[2025-12-03 19:00:39.808651] ⌛ Import du fichier SQL : init\_init_bd_IN.sql
+[2025-12-03 19:00:39.844081] ✔ Import SQL terminé avec succès.
+[2025-12-03 19:01:38.661745] ✔ Donnée insérée après import.
+[2025-12-03 19:03:36.553193] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:03:36.568998] Base 'bd_inv' déjà existante.
+[2025-12-03 19:03:36.576998] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:03:36.578173] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:04:22.524886] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:04:22.554854] Base 'bd_inv' déjà existante.
+[2025-12-03 19:04:22.559736] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:04:22.560771] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:04:22.575335] Base 'bd_inv' déjà existante.
+[2025-12-03 19:04:22.581941] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:04:22.583667] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:10.105258] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:10.140762] Base 'bd_inv' déjà existante.
+[2025-12-03 19:05:10.145211] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:05:10.146070] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:10.157011] Base 'bd_inv' déjà existante.
+[2025-12-03 19:05:10.161342] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:05:10.162105] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:37.966795] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:37.992149] Base 'bd_inv' déjà existante.
+[2025-12-03 19:05:37.998755] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:05:37.999751] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:38.026298] Base 'bd_inv' déjà existante.
+[2025-12-03 19:05:38.030690] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:05:38.032170] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:05:38.064040] Base 'bd_inv' déjà existante.
+[2025-12-03 19:05:38.068359] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:05:38.069557] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:07:52.057487] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:07:52.091892] Base 'bd_inv' déjà existante.
+[2025-12-03 19:07:52.099038] ❌ Erreur d'insertion : 1046 (3D000): No database selected
+[2025-12-03 19:08:03.448322] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:08:33.399493] Base 'bd_inv' déjà existante.
+[2025-12-03 19:13:13.512147] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:13:13.528981] Base 'bd_inv' déjà existante.
+[2025-12-03 19:13:13.553223] ✔ Donnée insérée après import.
+[2025-12-03 19:14:15.284752] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:14:15.318891] Base 'bd_inv' déjà existante.
+[2025-12-03 19:14:15.331871] ✔ Donnée insérée après import.
+[2025-12-03 19:14:59.112237] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:14:59.135534] Base 'bd_inv' déjà existante.
+[2025-12-03 19:15:33.589622] ✔ Donnée insérée après import.
+[2025-12-03 19:16:29.771994] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:16:29.814760] Base 'bd_inv' déjà existante.
+[2025-12-03 19:16:29.829265] ✔ Donnée insérée après import.
+[2025-12-03 19:16:46.820412] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:16:46.856502] Base 'bd_inv' déjà existante.
+[2025-12-03 19:16:46.898214] ✔ Donnée insérée après import.
+[2025-12-03 19:16:46.918521] ✔ Donnée insérée après import.
+[2025-12-03 19:17:07.850454] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:17:07.885450] Base 'bd_inv' déjà existante.
+[2025-12-03 19:17:07.917341] ✔ Donnée insérée après import.
+[2025-12-03 19:17:07.932684] ✔ Donnée insérée après import.
+[2025-12-03 19:17:07.957091] ✔ Donnée insérée après import.
+[2025-12-03 19:18:02.457334] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:18:12.889190] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:18:12.905943] Base 'bd_inv' déjà existante.
+[2025-12-03 19:18:12.919557] ✔ Donnée insérée après import.
+[2025-12-03 19:18:12.932286] ✔ Donnée insérée après import.
+[2025-12-03 19:20:12.733008] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:21:18.043095] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:21:18.077636] Base 'bd_inv' déjà existante.
+[2025-12-03 19:21:18.092941] ✔ Donnée insérée après import.
+[2025-12-03 19:25:58.132093] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:25:58.162694] Base 'bd_inv' déjà existante.
+[2025-12-03 19:25:58.182724] ✔ Donnée insérée après import.
+[2025-12-03 19:26:10.036693] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:26:30.403411] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:26:30.462113] Base 'bd_inv' déjà existante.
+[2025-12-03 19:28:54.819813] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:28:54.861542] Base 'bd_inv' déjà existante.
+[2025-12-03 19:28:54.896342] ✔ Donnée insérée après import.
+[2025-12-03 19:29:11.397569] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:29:18.912652] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:29:18.952180] Base 'bd_inv' déjà existante.
+[2025-12-03 19:29:18.967571] ✔ Donnée insérée après import.
+[2025-12-03 19:29:19.003382] ✔ Donnée insérée après import.
+[2025-12-03 19:32:34.263995] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:32:41.584931] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:32:41.620956] Base 'bd_inv' déjà existante.
+[2025-12-03 19:37:26.194462] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:37:26.237161] Base 'bd_inv' déjà existante.
+[2025-12-03 19:38:29.395733] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:38:29.421265] Base 'bd_inv' déjà existante.
+[2025-12-03 19:38:29.458152] ✔ Donnée insérée après import.
+[2025-12-03 19:38:45.193883] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:39:00.481233] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-03 19:39:00.503348] Base 'bd_inv' déjà existante.
+[2025-12-03 19:39:12.650721] ✔ Donnée insérée après import.

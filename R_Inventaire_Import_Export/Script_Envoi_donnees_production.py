@@ -89,6 +89,7 @@ dossier_import = dict_cred['IMPORT']
 dossier_init= dict_cred['INIT']
 DB_NAME = CSV_FILE_RH = CSV_FILE_IN = SQL_FILE_RH = SQL_FILE_IN = None
 Confirmation_IN = Confirmation_RH = False
+processus_deja_enclenchee = []
 
 # ---------------------------------------------------------------------
 # BOUCLES FOR
@@ -146,6 +147,7 @@ class MariaDB():
             user=self.USER,
             password=self.PASSWORD,
             database=database,
+            connection_timeout=5,
             autocommit=True
         )
 
@@ -154,27 +156,22 @@ class MariaDB():
     # ---------------------------------------------------------------------
 
     def database_exists(self):
-        conn = self.connect()
-        cursor = conn.cursor()
+        self.conn = self.connect()
+        cursor = self.conn.cursor()
         cursor.execute("SHOW DATABASES;")
         exists = self.DB_NAME.lower() in [db[0] for db in cursor.fetchall()]
-        conn.close()
+        # conn.close()
         return exists
 
     # ---------------------------------------------------------------------
     # 2. CRÉER LA BASE SI NÉCESSAIRE
     # ---------------------------------------------------------------------
 
-    def create_database(self, argument=None):
-        conn = self.connect()
-        cursor = conn.cursor()
-        if argument is None :
-            cursor.execute(f"CREATE DATABASE `{self.DB_NAME}`;")
-        else :
-            cursor.execute(argument)
-            cursor.execute(f"CREATE DATABASE `{self.DB_NAME}`;")
-        conn.close()
-        self.log(f"✔ Base de données '{self.DB_NAME}' créée.")
+    def create_database(self, argument):
+        cursor = self.conn.cursor()
+        cursor.execute(f"CREATE DATABASE `{argument}`;")
+        # self.conn.close()
+        self.log(f"✔ Base de données '{argument}' créée.")
 
     # ---------------------------------------------------------------------
     # 3. IMPORT DU FICHIER SQL
@@ -186,9 +183,8 @@ class MariaDB():
             return
 
         self.log(f"⌛ Import du fichier SQL : {sql_file}")
-        
-        conn = self.connect(self.DB_NAME)
-        cursor = conn.cursor()
+        self.conn = self.connect(self.DB_NAME)
+        cursor = self.conn.cursor()
 
         with open(sql_file, "r", encoding="utf-8") as f:
             sql_content = f.read()
@@ -203,17 +199,22 @@ class MariaDB():
                 except mysql.connector.Error as e:
                     self.log(f"❌ ERREUR SQL : {e} | Commande : {cmd}")
 
-        conn.close()
+        # self.conn.close()
         self.log("✔ Import SQL terminé avec succès.")
 
     # ---------------------------------------------------------------------
     # 4. ENVOYER DES DONNÉES ENSUITE
     # ---------------------------------------------------------------------
 
-    def insert_after_import(self, query, values, sett='insertion_mormale'):
-        conn = self.connect(self.DB_NAME)
-        cursor = conn.cursor()
-        
+    def insert_after_import(self, query, values, bd=None, valideur=[], sett='insertion_mormale'):
+        if bd is None or len(valideur) > 1 :
+            cursor = self.conn.cursor()
+        elif bd is not None and len(valideur) < 1:
+            print(valideur)
+            self.conn = self.connect(bd)
+            cursor = self.conn.cursor()
+            valideur.append('Connexion ajoutee')
+
         # # Exemple d'insertion adaptable
         # query = "INSERT INTO utilisateurs (nom, age) VALUES (%s, %s)"
         # values = ("Ryan", 30)
@@ -221,11 +222,11 @@ class MariaDB():
         try:
             if sett == 'insertion_mormale':
                 cursor.execute(query, values)
-                conn.commit()
+                # self.conn.commit()
                 inserted_id = cursor.lastrowid   # <-- essentiel           
             elif sett == 'insertion_globale': 
                 cursor.execute(query, values)
-                conn.commit()
+                self.conn.commit()
                 
             self.log("✔ Donnée insérée après import.")
                     
@@ -233,10 +234,11 @@ class MariaDB():
             return self.log(f"❌ Erreur d'insertion : {e}")
 
         cursor.close()
-        conn.close()
         
         if inserted_id is not None and sett == 'insertion_mormale':
             return inserted_id
+        else :
+            self.conn.close()
         
      
 
@@ -244,36 +246,42 @@ class MariaDB():
 # PROGRAMME PRINCIPAL
 # ---------------------------------------------------------------------
 
-def mysql_save(bd, IP, user, password, query, values=None, sql_file=None, log_file=None, 
+def mysql_save(MYSQL_, query, values=None, sql_file=None, log_file=None, confirmation=None,
                message_debut=None, message_fin=None, message_confirmation=None):
-    
-    MYSQL_ = MariaDB(IP=IP, user=user, password=password, bd_name=bd, sql_file=sql_file, log_file=log_file)
-    if message_debut:
-        MYSQL_.log("=== LANCEMENT DU SCRIPT AUTOMATISÉ ===")
-    # Étape 1 : vérifier si base existe
-    if MYSQL_.database_exists() :
-        if message_confirmation is None:
-            message_confirmation = f"Base '{MYSQL_.DB_NAME}' déjà existante."           
-            MYSQL_.log(message_confirmation)
-    else:
-        MYSQL_.log(f"Base '{MYSQL_.DB_NAME}' inexistante, création en cours...")
-        MYSQL_.create_database()            
-    # Étape 2 : Import SQL
-    if sql_file and message_confirmation is None:
-        MYSQL_.import_sql_file(sql_file)
+           
+    if processus_deja_enclenchee == []:
+        if message_debut:
+            MYSQL_.log("=== LANCEMENT DU SCRIPT AUTOMATISÉ ===")
+        # Étape 1 : vérifier si base existe
+        if MYSQL_.database_exists() :
+            if message_confirmation is None:
+                message_confirmation = f"Base '{MYSQL_.DB_NAME}' déjà existante."           
+                MYSQL_.log(message_confirmation)
+        else:
+            MYSQL_.log(f"Base '{MYSQL_.DB_NAME}' inexistante, création en cours...")
+            MYSQL_.create_database(MYSQL_.DB_NAME)            
+        # Étape 2 : Import SQL
+        if sql_file and message_confirmation is None:
+            MYSQL_.import_sql_file(sql_file)
+    else :
+        message_confirmation = True
+            
     # Étape 3 : Insertion de données
-    inserted_id = MYSQL_.insert_after_import(query, values)   
+    if message_confirmation is None:
+        inserted_id = MYSQL_.insert_after_import(query=query, values=values)  
+    else : 
+        inserted_id = MYSQL_.insert_after_import(query=query, values=values, bd=MYSQL_.DB_NAME, valideur=processus_deja_enclenchee)   
            
     if isinstance(inserted_id, int):    
         if message_fin:
             print(f"{inserted_id}e ligne insérée avec succès !")
-            MYSQL_.log("=== FIN DU SCRIPT AUTOMATISÉ ===")
+            processus_deja_enclenchee.append(True)
         
         return inserted_id
     else :
         Lien = f"{inserted_id}"  
 
-def appel_CSV(sql_fichier, a, b , c , d, e, f, g, h, i, j, k, l, m=None):
+def appel_CSV(sql_fichier, a, b , c , d, e, f, g, h, i, j, k, l, m=None, confirmation=None):
     
     _A = a;      _B = b;         _M = m
     _C = c;      _D = d
@@ -281,47 +289,77 @@ def appel_CSV(sql_fichier, a, b , c , d, e, f, g, h, i, j, k, l, m=None):
     _G = g;      _H = h
     _I = i;      _J = j
     _K = k;      _L = l
-    
+    # print(
+    #     _A, _B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M
+    # )
+
     if sql_fichier.endswith('_IN.sql'):
         DB_NAME = dict_cred['DB_IN']
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Date_de_creation (date_production) VALUES (%s)", values=(f"{_L}",), sql_file=sql_fichier, message_debut='Actif')
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Types (nom) VALUES (%s)", values=(f"{_B}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Annee (valeur) VALUES (%s)", values=(_C,))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Destination (pays) VALUES (%s)", values=(f"{_D}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Prix (montant) VALUES (%s)", values=(f"{_J}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Quantite (valeur) VALUES (%s)", values=(_E,))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Editeur (nom) VALUES (%s)", values=(f"{_F}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Provenance (pays) VALUES (%s)", values=(f"{_G}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Fabricant (nom) VALUES (%s)", values=(f"{_H}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Lien (url) VALUES (%s)", values=(f"{_I}",))
-        inserted_id = mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Produit (nom) VALUES (%s)", values=(f"{_A}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Approbations (organisme) VALUES (%s)", values=(f"{_K}",))
-        
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Produits (produit_id, types_id, annee_id, fabricant_id, provenance_id, destination_id, date_de_creation_id, lien_id, quantite_id, prix_id, editeur_id, approbations_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
-            values=(inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,),
+        MYSQL_ = MariaDB(sql_file=sql_fichier, log_file=LOG_FILE, bd_name=DB_NAME, IP=HOST, user=USER, password=PASSWORD)
+        mysql_save(MYSQL_=MYSQL_, query="INSERT INTO Produits (\
+                                                                                                    produit,\
+                                                                                                    types,\
+                                                                                                    annee,\
+                                                                                                    fabricant,\
+                                                                                                    provenance,\
+                                                                                                    destination,\
+                                                                                                    date_production,\
+                                                                                                    liens,\
+                                                                                                    quantite,\
+                                                                                                    prix,\
+                                                                                                    approbations,\
+                                                                                                    editeur) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",  
+            values=(f"{_A}",
+                    f"{_B}",
+                    f"{_C}",
+                    f"{_D}",
+                    f"{_E}",
+                    f"{_F}",
+                    f"{_G}",
+                    f"{_H}",
+                    f"{_I}",
+                    f"{_J}",
+                    f"{_K}",
+                    f"{_L}",), sql_file=sql_fichier, message_debut='Actif', confirmation=confirmation,
             message_fin='Actif')
+
+
 
     elif sql_fichier.endswith('_RH.sql'):
         DB_NAME = dict_cred['DB_RH']
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Date_de_creation (date_creation) VALUES (%s)", values=(f"{_L}",), sql_file=sql_fichier, message_debut='Actif')
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Prenom (prenom) VALUES (%s)", values=(f"{_B}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Adresse (adresses) VALUES (%s)", values=(_C,))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Age (valeur) VALUES (%s)", values=(f"{_D}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Phone (phone) VALUES (%s)", values=(f"{_J}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Courriel (courriel)  VALUES (%s)", values=(_E,))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Editeur (nom) VALUES (%s)", values=(f"{_F}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Departement (departement) VALUES (%s)", values=(f"{_G}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Entreprise (nom) VALUES (%s)", values=(f"{_M}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Fonctions (fonctions) VALUES (%s)", values=(f"{_H}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Lien (url) VALUES (%s)", values=(f"{_I}",))
-        inserted_id = mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Nom (nom) VALUES (%s)", values=(f"{_A}",))
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Privilege (privilege) VALUES (%s)", values=(f"{_K}",))
+        MYSQL_ = MariaDB(sql_file=sql_fichier, log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD)
+
         
-        mysql_save(log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD, query="INSERT INTO Employe (prenom_id, nom_id, age_id, phone_id, courriel_id, entreprise_id, adresse_id, departement_id, date_creation_id, editeur_id, fonctions_id, privilege_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
-            values=(inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,),
+        mysql_save(MYSQL_=MYSQL_, query="INSERT INTO Employe (\
+                                                                                                    fonctions,\
+                                                                                                    prenom,\
+                                                                                                    nom,\
+                                                                                                    departement,\
+                                                                                                    phone,\
+                                                                                                    courriel,\
+                                                                                                    privilege,\
+                                                                                                    age,\
+                                                                                                    entreprise,\
+                                                                                                    adresses,\
+                                                                                                    date_creation,\
+                                                                                                    editeur,\
+                                                                                                    liens) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",  
+            values=(f"{_A}",
+                    f"{_B}",
+                    f"{_C}",
+                    f"{_D}",
+                    f"{_E}",
+                    f"{_F}",
+                    f"{_G}",
+                    f"{_H}",
+                    f"{_I}",
+                    f"{_J}",
+                    f"{_K}",
+                    f"{_L}", f"{_M}"), sql_file=sql_fichier, message_debut='Actif', confirmation=confirmation,
             message_fin='Actif')
-        
-def enregistrement_des_fichiers(CSV_FILE, sql_fichier, a, b , c, d, e, f, g, h, i, j, k, l, m=None):
+                
+    return MYSQL_
+def enregistrement_des_fichiers(CSV_FILE, sql_fichier, a, b , c, d, e, f, g, h, i, j, k, l, m=None, confirmation=None):
     if CSV_FILE:
         if os.path.exists(CSV_FILE):
             with open(CSV_FILE, newline='', encoding='utf-8') as fre:
@@ -329,14 +367,17 @@ def enregistrement_des_fichiers(CSV_FILE, sql_fichier, a, b , c, d, e, f, g, h, 
 
                 if dict is not None:
                     for dict_json in dict_:
-                        if m is not None:
-                            appel_CSV(sql_fichier, dict_json[a], dict_json[b], dict_json[c], dict_json[d], dict_json[e], 
+                        if m is not None: # BD_RH
+                            MYSQL_ = appel_CSV(sql_fichier, dict_json[a], dict_json[b], dict_json[c], dict_json[d], dict_json[e], 
                                     dict_json[f], dict_json[g], dict_json[h], dict_json[i], dict_json[j],
-                                    dict_json[k], dict_json[l], dict_json[m])
-                        else:
-                            appel_CSV(sql_fichier, dict_json[a], dict_json[b], dict_json[c], dict_json[d], dict_json[e], 
+                                    dict_json[k], dict_json[l], dict_json[m], confirmation=confirmation)
+                        else: # BD_INV
+                            MYSQL_ = appel_CSV(sql_fichier, dict_json[a], dict_json[b], dict_json[c], dict_json[d], dict_json[e], 
                                     dict_json[f], dict_json[g], dict_json[h], dict_json[i], dict_json[j],
-                                    dict_json[k], dict_json[l])
+                                    dict_json[k], dict_json[l], confirmation=confirmation)
+                    MYSQL_.log("=== FIN DU SCRIPT AUTOMATISÉ ===")
+                    MYSQL_.conn.close()
+                    
                 else :
                     print(f"Le fichier {CSV_FILE} est vide !")
         else:
@@ -349,11 +390,11 @@ def main():
     print(f"\n\n{CSV_FILE_RH} + {SQL_FILE_RH} + {CSV_FILE_IN} + {SQL_FILE_IN}\n\n")
     # exit()
     if CSV_FILE_RH and SQL_FILE_RH:
-        enregistrement_des_fichiers(CSV_FILE_RH, SQL_FILE_RH, '_NOM', '_PRENOM', '_ADRESSE', '_AGE', '_COURRIEL', '_EDITEUR_RH', '_DEPARTEMENT',
-                                    '_FONCTION', '_LIEN', '_PHONE', '_PRIVILEGE', '_DATE_RH', '_ENTREPRISE')
+        enregistrement_des_fichiers(CSV_FILE_RH, SQL_FILE_RH, '_FONCTION', '_PRENOM', '_NOM', '_DEPARTEMENT', '_PHONE', '_COURRIEL', '_PRIVILEGE', 
+                                    '_AGE', '_ENTREPRISE', '_ADRESSE', '_DATE_RH', '_EDITEUR_RH', '_LIEN', confirmation=Confirmation_RH)
     if CSV_FILE_IN and SQL_FILE_IN:
-        enregistrement_des_fichiers(CSV_FILE_IN, SQL_FILE_IN, '_PRODUIT', '_TYPE', '_ANNEE', '_DESTINATION', '_QUANTITE', '_EDITEUR_IN', '_PROVENANCE',
-                                '_FABRICANT', '_LIEN', '_PRIX', '_APPROBATIONS', '_DATE_IN')
+        enregistrement_des_fichiers(CSV_FILE_IN, SQL_FILE_IN, '_PRODUIT', '_TYPE', '_ANNEE', '_FABRICANT', '_PROVENANCE', '_DESTINATION', '_DATE_IN',
+                            '_LIEN', '_QUANTITE', '_PRIX', '_APPROBATIONS', '_EDITEUR_IN', confirmation=Confirmation_IN)
        
 # LANCEMENT
 if __name__ == "__main__":

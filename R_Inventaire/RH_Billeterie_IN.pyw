@@ -1,4 +1,5 @@
 # pyinstaller --noconsole --onefile RH_Billeterie_IN.pyw --add-data "option.json;." --add-data "lib/_init_IN.json;lib" --add-data "lib/cred.json;lib"  --add-data "lib/csv_cv_rh.csv;lib" --add-data "lib/envoi_vers_BD.ps1;lib" --add-data "lib/git_send.bat;lib" --add-data "lib/requirements.txt;lib" --add-data "lib/credentials.env;lib" --add-data "lib/Blocnotes/Dates.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos_RH.txt;lib/Blocnotes" --add-data "lib/Blocnotes/LiensUtiles.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Plan.txt;lib/Blocnotes"  --add-data "lib;lib" --add-data "assets;assets" --add-data "Sortie/formulaireIN.json;Sortie" --add-data "Sortie/formulaireRH.json;Sortie" --add-data "lib/Blocnotes;lib/Blocnotes" --add-data "lib/erreurs.txt;lib" --add-data "archives;archives" --add-data "archives/sauvegardeIN.json;archives" --add-data "archives/sauvegardeRH.json;archives" --add-data "lib/_init_RH.json;lib" --add-data "lib/csv_cv_inventaire.csv;lib" --add-data "lib/Blocnotes/Infos_RH.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos_inventaire.txt;lib/Blocnotes" --add-data "Sortie;Sortie" --add-data "lib/Aide.txt;lib" 
+# ssh -i "D:\UCDownloads\OneDrive\A2025\Implantation_reseau\ESP\ssh\id_ed25519_delifruit" administrateur@192.168.90.32
 
 import subprocess as psh
 import os, sys, platform
@@ -904,24 +905,33 @@ class Home(GridLayout):
                 _PRIVILEGES = dictio_form_RH['Privileges']                
                 _DATE_RH = dictio_form_RH['Date_de_creation']
         
-                self.mysql_save(f"{db_name}", "INSERT INTO Date_de_creation (date_creation) VALUES (%s)", (f"{_DATE_RH}",), sql_file, message_debut='Actif')
-                self.mysql_save(f"{db_name}", "INSERT INTO Prenom (prenom) VALUES (%s)", (f"{_PRENOM}",))
-                inserted_id = self.mysql_save(f"{db_name}", "INSERT INTO Nom (nom) VALUES (%s)", (f"{_NOM}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Age (valeur) VALUES (%s)", (_AGE,))
-                self.mysql_save(f"{db_name}", "INSERT INTO Phone (phone) VALUES (%s)", (f"{_PHONE}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Courriel (courriel) VALUES (%s)", (f"{_COURRIEL}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Entreprise (nom) VALUES (%s)", (f"{_ENTREPRISE}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Editeur (nom) VALUES (%s)", (f"{_EDITEUR_RH}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Departement (departement) VALUES (%s)", (f"{_DEPARTEMENTS}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Fonctions (fonctions) VALUES (%s)", (f"{_FONCTIONS}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Lien (url) VALUES (%s)", (f"{_LIEN}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Adresse (adresses) VALUES (%s)", (f"{_ADRESSE}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Privilege (privilege) VALUES (%s)", (f"{_PRIVILEGES}",))
-                
-                self.mysql_save(f"{db_name}", "INSERT INTO Employe (prenom_id, nom_id, age_id, phone_id, courriel_id, entreprise_id, adresse_id, \
-                    departement_id, date_creation_id, editeur_id, fonctions_id, privilege_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
-                    (inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id),
-                    message_fin='Actif')
+                inserted_id = self.mysql_save(f"{db_name}","INSERT INTO Employe (\
+                                                                                                    fonctions,\
+                                                                                                    prenom,\
+                                                                                                    nom,\
+                                                                                                    departement,\
+                                                                                                    phone,\
+                                                                                                    courriel,\
+                                                                                                    privilege,\
+                                                                                                    age,\
+                                                                                                    entreprise,\
+                                                                                                    adresses,\
+                                                                                                    date_creation,\
+                                                                                                    editeur,\
+                                                                                                    liens) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",  
+            values=(f"{_FONCTIONS}",
+                    f"{_PRENOM}",
+                    f"{_NOM}",
+                    f"{_DEPARTEMENTS}",
+                    f"{_PHONE}",
+                    f"{_COURRIEL}",
+                    f"{_PRIVILEGES}",
+                    f"{_AGE}",
+                    f"{_ENTREPRISE}",
+                    f"{_ADRESSE}",
+                    f"{_DATE_RH}",
+                    f"{_EDITEUR_RH}", f"{_LIEN}"), sql_file=sql_file, message_debut='Actif',
+            message_fin='Actif')
                 
                 self.Confirme.text = f"{inserted_id}e envoyé !"
                 colorer(self, self.Confirme, couleur=VERT)
@@ -1677,22 +1687,30 @@ class Inventaire(GridLayout):
                 _APPROBATIONS = dictio_form_IN['Approbations']                
                 _DATE_IN = dictio_form_IN['Date_de_creation']
         
-                self.mysql_save(f"{db_name}", "INSERT INTO Date_de_creation (date_production) VALUES (%s)", (f"{_DATE_IN}",), sql_file, message_debut='Actif')
-                self.mysql_save(f"{db_name}", "INSERT INTO Types (nom) VALUES (%s)", (f"{_TYPE}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Annee (valeur) VALUES (%s)", (_ANNEE,))
-                self.mysql_save(f"{db_name}", "INSERT INTO Destination (pays) VALUES (%s)", (f"{_DESTINATION}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Prix (montant) VALUES (%s)", (f"{_PRIX}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Quantite (valeur) VALUES (%s)", (_QUANTITE,))
-                self.mysql_save(f"{db_name}", "INSERT INTO Editeur (nom) VALUES (%s)", (f"{_EDITEUR_IN}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Provenance (pays) VALUES (%s)", (f"{_PROVENANCE}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Fabricant (nom) VALUES (%s)", (f"{_FABRICANT}",))
-                self.mysql_save(f"{db_name}", "INSERT INTO Lien (url) VALUES (%s)", (f"{_LIEN}",))
-                inserted_id = self.mysql_save(f"{db_name}", "INSERT INTO Produit (nom) VALUES (%s)", (f"{_PRODUIT}",))
-
-                self.mysql_save(f"{db_name}", "INSERT INTO Approbations (organisme) VALUES (%s)", (f"{_APPROBATIONS}",))
-                
-                self.mysql_save(f"{db_name}", "INSERT INTO Produits (produit_id, types_id, annee_id, fabricant_id, provenance_id, destination_id, date_de_creation_id, lien_id, quantite_id, prix_id, editeur_id, approbations_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
-                    (inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,inserted_id,),
+                inserted_id = self.mysql_save(f"{db_name}", "INSERT INTO Produits (\
+                                                                                                            produit,\
+                                                                                                            types,\
+                                                                                                            annee,\
+                                                                                                            fabricant,\
+                                                                                                            provenance,\
+                                                                                                            destination,\
+                                                                                                            date_production,\
+                                                                                                            liens,\
+                                                                                                            quantite,\
+                                                                                                            prix,\
+                                                                                                            approbations,\
+                                                                                                            editeur) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",  
+                    values=(f"{_PRODUIT}",
+                            f"{_TYPE}",
+                            f"{_ANNEE}",
+                            f"{_DESTINATION}",
+                            f"{_QUANTITE}",
+                            f"{_EDITEUR_IN}",
+                            f"{_PROVENANCE}",
+                            f"{_FABRICANT}",
+                            f"{_LIEN}",
+                            f"{_APPROBATIONS}",
+                            f"{_DATE_IN}",), sql_file=sql_file, message_debut='Actif',
                     message_fin='Actif')
                 
                 self.Confirme.text = f"{inserted_id}e envoyé !"
@@ -2499,11 +2517,12 @@ class MariaDB():
     def __init__(self, bd_name, sql_file, **kwargs):
         super().__init__(**kwargs)
         self.HOST        = "localhost"
-        self.USER        = "ryan"
-        self.PASSWORD    = "Gl2v&di4su$PHP"
+        self.USER        = "delifruit_mysql"
+        self.PASSWORD    = "d3l1fru1t!"
         self.DB_NAME     = bd_name
         self.SQL_FILE    = sql_file
         self.LOG_FILE    = "import_log.txt"
+        # ryan <-> Gl2v&di4su$PHP <-> localhost
     # ---------------------------------------------------------------------
     # FONCTIONS UTILITAIRES
     # ---------------------------------------------------------------------

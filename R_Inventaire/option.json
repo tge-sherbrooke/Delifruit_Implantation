@@ -1,14 +1,14 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 329,
-    "y": 97,
+    "x": 961,
+    "y": 31,
     "Nombres_Utilisateurs": [
         {
-            "nbreEntreeTotal": 40
+            "nbreEntreeTotal": 52
         },
         {
-            "nbreEntreeJour": 40
+            "nbreEntreeJour": 52
         }
     ],
     "Methode_D_Envoi": [
@@ -166,10 +166,10 @@
             "Lien Inventaire": "lib/Blocnotes/Infos_inventaire.txt"
         },
         {
-            "DB_RH": "BD_RH"
+            "DB_RH": "bd_rh"
         },
         {
-            "DB_IN": "BD_IN"
+            "DB_IN": "bd_inv"
         }
     ],
     "Liste_Dossiers": [
