@@ -1,0 +1,183 @@
+{
+    "largeur": 200,
+    "hauteur": 1800,
+    "x": 961,
+    "y": 31,
+    "Nombres_Utilisateurs": [
+        {
+            "nbreEntreeTotal": 52
+        },
+        {
+            "nbreEntreeJour": 52
+        }
+    ],
+    "Methode_D_Envoi": [
+        {
+            "langage": "psh"
+        }
+    ],
+    "all_check": null,
+    "checkbox": "cochee",
+    "Repertoires": [
+        {
+            "DossierSortie": "Sortie"
+        },
+        {
+            "DossierDoc": "lib/DOC"
+        },
+        {
+            "DossierRH": "Sortie/RH"
+        },
+        {
+            "DossierProd": "Sortie/Production"
+        },
+        {
+            "librairie": "lib"
+        },
+        {
+            "BlocNotesLib": "lib/Blocnotes"
+        },
+        {
+            "DossierESP": "E:"
+        }
+    ],
+    "Fichiers_Configurations": [
+        {
+            "Cache": "lib/cache.txt"
+        },
+        {
+            "INIT_RH": "lib/_init_RH.json"
+        },
+        {
+            "INIT_IN": "lib/_init_IN.json"
+        },
+        {
+            "FormulaireRH": "Sortie/formulaireRH.json"
+        },
+        {
+            "FormulaireIN": "Sortie/formulaireIN.json"
+        },
+        {
+            "SauvegardeRH": "archives/sauvegardeRH.txt"
+        },
+        {
+            "SauvegardeIN": "archives/sauvegardeIN.txt"
+        },
+        {
+            "Sauvegarde_sqlRH": "archives/sauvegarde_sqlRH.json"
+        },
+        {
+            "Sauvegarde_sqlIN": "archives/sauvegarde_sqlIN.json"
+        },
+        {
+            "texte_support": "lib/Aide.txt"
+        },
+        {
+            "_INIT_SQL_RH": "lib/DOC/_init_bd_RH.sql"
+        },
+        {
+            "_INIT_SQL_IN": "lib/DOC/_init_bd_IN.sql"
+        },
+        {
+            "SQL_RH": "Sortie/bd_RH.sql"
+        },
+        {
+            "SQL_IN": "Sortie/bd_IN.sql"
+        }
+    ],
+    "images": [
+        {
+            "image_1": "assets/balise.ico"
+        }
+    ],
+    "variables": [
+        {
+            "dater": "__DATE__"
+        },
+        {
+            "mmemr": "__MMEMR__"
+        },
+        {
+            "mmemrII": "__MMEMRII__"
+        },
+        {
+            "entreprise": "__ENTREPRISE__"
+        },
+        {
+            "bureau": "__BUREAU__"
+        },
+        {
+            "adresse": "__ADRESSEII__"
+        },
+        {
+            "poste": "__POSTE__"
+        },
+        {
+            "site": "__SITE__"
+        },
+        {
+            "reseau": "__RESEAU__"
+        },
+        {
+            "firewall": "__FIREWALL__"
+        },
+        {
+            "parefeu": "__FIREWALL__"
+        },
+        {
+            "data": "__DATA__"
+        },
+        {
+            "virtuel": "__VIRTUEL__"
+        },
+        {
+            "scripts": "__SCRIPTS__"
+        },
+        {
+            "script": "__SCRIPTS__"
+        },
+        {
+            "sign": "__SIGNATURE__"
+        },
+        {
+            "signature": "__SIGNATURE__"
+        },
+        {
+            "pourquoi": "__PLUS__"
+        }
+    ],
+    "Liste_Rapide": [
+        "Jobillico",
+        "LinkedIn",
+        "Indeed",
+        "Jooble",
+        "Jobboom",
+        "Ziprecruiter",
+        "EmploiTI",
+        "Site officiel",
+        "Jobhunter",
+        "du cégep de Sherbrooke"
+    ],
+    "Profil": [
+        {
+            "Lien RH": "lib/Blocnotes/Infos_RH.txt"
+        },
+        {
+            "Lien Inventaire": "lib/Blocnotes/Infos_inventaire.txt"
+        },
+        {
+            "DB_RH": "bd_rh"
+        },
+        {
+            "DB_IN": "bd_inv"
+        }
+    ],
+    "Liste_Dossiers": [
+        {
+            "Liste_ouverture": [
+                "lib",
+                "Blocnotes"
+            ]
+        }
+    ]
+}
