@@ -1,14 +1,14 @@
 {
     "largeur": 200,
     "hauteur": 1800,
-    "x": 961,
-    "y": 31,
+    "x": 779,
+    "y": 100,
     "Nombres_Utilisateurs": [
         {
-            "nbreEntreeTotal": 52
+            "nbreEntreeTotal": 13
         },
         {
-            "nbreEntreeJour": 52
+            "nbreEntreeJour": 13
         }
     ],
     "Methode_D_Envoi": [
@@ -64,10 +64,10 @@
             "SauvegardeIN": "archives/sauvegardeIN.txt"
         },
         {
-            "Sauvegarde_sqlRH": "archives/sauvegarde_sqlRH.json"
+            "Sauvegarde_sqlRH": "archives/sauvegarde_sqlRH.sql"
         },
         {
-            "Sauvegarde_sqlIN": "archives/sauvegarde_sqlIN.json"
+            "Sauvegarde_sqlIN": "archives/sauvegarde_sqlIN.sql"
         },
         {
             "texte_support": "lib/Aide.txt"

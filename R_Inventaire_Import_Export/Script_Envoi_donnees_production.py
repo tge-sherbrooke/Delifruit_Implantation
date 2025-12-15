@@ -177,14 +177,18 @@ class MariaDB():
     # 3. IMPORT DU FICHIER SQL
     # ---------------------------------------------------------------------
 
-    def import_sql_file(self, sql_file):
+    def import_sql_file(self, sql_file, db_name=None):
         if not os.path.exists(sql_file):
             self.log(f"❌ Fichier SQL introuvable : {sql_file}")
             return
 
         self.log(f"⌛ Import du fichier SQL : {sql_file}")
-        self.conn = self.connect(self.DB_NAME)
-        cursor = self.conn.cursor()
+        if db_name:
+            conn = self.connect(db_name)
+            cursor = conn.cursor()
+        else :
+            self.conn = self.connect(self.DB_NAME)
+            cursor = self.conn.cursor()
 
         with open(sql_file, "r", encoding="utf-8") as f:
             sql_content = f.read()
@@ -207,13 +211,13 @@ class MariaDB():
     # ---------------------------------------------------------------------
 
     def insert_after_import(self, query, values, bd=None, valideur=[], sett='insertion_mormale'):
-        if bd is None or len(valideur) > 1 :
+        if bd is None:
             cursor = self.conn.cursor()
-        elif bd is not None and len(valideur) < 1:
+        elif bd is not None:
             print(valideur)
             self.conn = self.connect(bd)
             cursor = self.conn.cursor()
-            valideur.append('Connexion ajoutee')
+            # valideur.append('Connexion ajoutee')
 
         # # Exemple d'insertion adaptable
         # query = "INSERT INTO utilisateurs (nom, age) VALUES (%s, %s)"
@@ -276,6 +280,8 @@ def mysql_save(MYSQL_, query, values=None, sql_file=None, log_file=None, confirm
         if message_fin:
             print(f"{inserted_id}e ligne insérée avec succès !")
             processus_deja_enclenchee.append(True)
+            if len(processus_deja_enclenchee) > 1:
+                processus_deja_enclenchee.pop(-1)
         
         return inserted_id
     else :
@@ -327,36 +333,28 @@ def appel_CSV(sql_fichier, a, b , c , d, e, f, g, h, i, j, k, l, m=None, confirm
 
     elif sql_fichier.endswith('_RH.sql'):
         DB_NAME = dict_cred['DB_RH']
-        MYSQL_ = MariaDB(sql_file=sql_fichier, log_file=LOG_FILE, bd=DB_NAME, IP=HOST, user=USER, password=PASSWORD)
+        MYSQL_ = MariaDB(sql_file=sql_fichier, log_file=LOG_FILE, bd_name=DB_NAME, IP=HOST, user=USER, password=PASSWORD)
 
         
         mysql_save(MYSQL_=MYSQL_, query="INSERT INTO Employe (\
-                                                                                                    fonctions,\
-                                                                                                    prenom,\
-                                                                                                    nom,\
-                                                                                                    departement,\
-                                                                                                    phone,\
-                                                                                                    courriel,\
-                                                                                                    privilege,\
-                                                                                                    age,\
-                                                                                                    entreprise,\
-                                                                                                    adresses,\
-                                                                                                    date_creation,\
-                                                                                                    editeur,\
-                                                                                                    liens) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",  
-            values=(f"{_A}",
-                    f"{_B}",
-                    f"{_C}",
-                    f"{_D}",
-                    f"{_E}",
-                    f"{_F}",
-                    f"{_G}",
-                    f"{_H}",
-                    f"{_I}",
-                    f"{_J}",
-                    f"{_K}",
-                    f"{_L}", f"{_M}"), sql_file=sql_fichier, message_debut='Actif', confirmation=confirmation,
-            message_fin='Actif')
+                fonctions,\
+                prenom,\
+                nom,\
+                departement,\
+                phone,\
+                courriel,\
+                privilege,\
+                age,\
+                entreprise,\
+                adresses,\
+                date_creation,\
+                editeur,\
+                liens) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",  
+            values=(f"{_A}",                    f"{_B}",                    f"{_C}",                    
+                    f"{_D}",                    f"{_E}",
+                    f"{_F}",                    f"{_G}",                    f"{_H}",                    f"{_I}",
+                    f"{_J}",                    f"{_K}",                    f"{_L}", f"{_M}",), 
+            sql_file=sql_fichier, message_debut='Actif', confirmation=confirmation, message_fin='Actif')
                 
     return MYSQL_
 def enregistrement_des_fichiers(CSV_FILE, sql_fichier, a, b , c, d, e, f, g, h, i, j, k, l, m=None, confirmation=None):
@@ -366,6 +364,8 @@ def enregistrement_des_fichiers(CSV_FILE, sql_fichier, a, b , c, d, e, f, g, h, 
                 dict_ = csv.DictReader(fre)
 
                 if dict is not None:
+                    if len(processus_deja_enclenchee):
+                        processus_deja_enclenchee.clear()
                     for dict_json in dict_:
                         if m is not None: # BD_RH
                             MYSQL_ = appel_CSV(sql_fichier, dict_json[a], dict_json[b], dict_json[c], dict_json[d], dict_json[e], 
@@ -386,15 +386,140 @@ def enregistrement_des_fichiers(CSV_FILE, sql_fichier, a, b , c, d, e, f, g, h, 
         print(f"Nom du fichier CSV : {CSV_FILE}... Probleme rencontree : Ligne 330 a 334")
         
 def main():
+    # try:
+    #     print(f"\n\n{CSV_FILE_RH} + {SQL_FILE_RH} + {CSV_FILE_IN} + {SQL_FILE_IN}\n\n")
+    #     # exit()
+    #     if CSV_FILE_RH and SQL_FILE_RH:
+    #         enregistrement_des_fichiers(CSV_FILE_RH, SQL_FILE_RH, '_FONCTION', '_PRENOM', '_NOM', '_DEPARTEMENT', '_PHONE', '_COURRIEL', '_PRIVILEGE', 
+    #                                     '_AGE', '_ENTREPRISE', '_ADRESSE', '_DATE_RH', '_EDITEUR_RH', '_LIEN', confirmation=Confirmation_RH)
+    #     if CSV_FILE_IN and SQL_FILE_IN:
+    #         enregistrement_des_fichiers(CSV_FILE_IN, SQL_FILE_IN, '_PRODUIT', '_TYPE', '_ANNEE', '_FABRICANT', '_PROVENANCE', '_DESTINATION', '_DATE_IN',
+    #                             '_LIEN', '_QUANTITE', '_PRIX', '_APPROBATIONS', '_EDITEUR_IN', confirmation=Confirmation_IN)
+    # except Exception as e:
+    #     pass
+    # try:
+        if CSV_FILE_RH and SQL_FILE_RH:
+            pass
+        if CSV_FILE_IN and SQL_FILE_IN:
+            cursor = None
+            print(f"\n\n{CSV_FILE_RH} + {SQL_FILE_RH} + {CSV_FILE_IN} + {SQL_FILE_IN}\n\n")
+            if CSV_FILE_IN:
+                message_confirmation = None
+                if os.path.exists(CSV_FILE_IN):
+                    with open(CSV_FILE_IN, newline='', encoding='utf-8') as fre:
+                        dict_ = csv.DictReader(fre)
+
+                        if dict is not None:
+
+                                # BD_INV
+
+                                
+                                DB_NAME = dict_cred['DB_IN']
+                                MYSQL_ = MariaDB(sql_file=CSV_FILE_IN, log_file=LOG_FILE, bd_name=DB_NAME, IP=HOST, user=USER, password=PASSWORD)
+                                
+                                message_debut='Actif'; message_fin='Actif'
+                                if message_debut:
+                                    MYSQL_.log("=== LANCEMENT DU SCRIPT AUTOMATISÉ ===")
+                                # Étape 1 : vérifier si base existe
+                                conn = MYSQL_.connect(MYSQL_.DB_NAME)
+                                cursor = conn.cursor()
+
+                                with open(CSV_FILE_IN, "r", encoding="utf-8") as f:
+                                    sql_content = f.read()
+
+                                commands = sql_content.split(";")
+
+                                for cmd in commands:
+                                    cmd = cmd.strip()
+                                    if cmd:
+                                        try:
+                                            cursor.execute(cmd)
+                                        except mysql.connector.Error as e:
+                                            MYSQL_.log(f"❌ ERREUR SQL : {e} | Commande : {cmd}")
+
+                                # self.conn.close()
+                                MYSQL_.log("✔ Import SQL terminé avec succès.")          
+                                # Étape 2 : Import SQL
+                                # if CSV_FILE_IN and message_confirmation is None:
+                                #     MYSQL_.import_sql_file(CSV_FILE_IN, MYSQL_.DB_NAME)
+                                                                       
+
+                                # valideur.append('Connexion ajoutee')
+
+                                # # Exemple d'insertion adaptable
+                                # query = "INSERT INTO utilisateurs (nom, age) VALUES (%s, %s)"
+                                # values = ("Ryan", 30)
+
+                                try:
+                                    for dict_json in dict_:
+                                    
+                                        _A = dict_json['_PRODUIT'];      _B = dict_json['_TYPE'];         _M = dict_json['_PRODUIT']
+                                        _C = dict_json['_ANNEE'];      _D = dict_json['_FABRICANT']
+                                        _E = dict_json['_PROVENANCE'];      _F = dict_json['_DESTINATION']
+                                        _G = dict_json['_DATE_IN'];      _H = dict_json['_LIEN']
+                                        _I = dict_json['_QUANTITE'];      _J = dict_json['_PRIX']
+                                        _K = dict_json['_APPROBATIONS'];      _L = dict_json['_EDITEUR_IN']
+                                        
+                                        cursor.execute(
+                                            "INSERT INTO Produits (\
+                                                                                                                         produit,\
+                                                                                                                         types,\
+                                                                                                                         annee,\
+                                                                                                                         fabricant,\
+                                                                                                                         provenance,\
+                                                                                                                         destination,\
+                                                                                                                         date_production,\
+                                                                                                                         liens,\
+                                                                                                                         quantite,\
+                                                                                                                         prix,\
+                                                                                                                         approbations,\
+                                                                                                                            editeur) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                                            ,
+                                                                                    (f"{_A}",
+                                            f"{_B}",
+                                            f"{_C}",
+                                            f"{_D}",
+                                            f"{_E}",
+                                            f"{_F}",
+                                            f"{_G}",
+                                            f"{_H}",
+                                            f"{_I}",
+                                            f"{_J}",
+                                            f"{_K}",
+                                            f"{_L}",) )
+                                        
+                                        inserted_id = cursor.lastrowid   # <-- essentiel           
+
+                                            
+                                        MYSQL_.log("✔ Donnée insérée après import.")
+                                            
+                                except mysql.connector.Error as e:
+                                    return MYSQL_.log(f"❌ Erreur d'insertion : {e}")
+
+                                cursor.close()
+                                
+                                if inserted_id is not None:
+                                    return inserted_id
+                                else :
+                                    MYSQL_.conn.close() 
+                                    
+                                if isinstance(inserted_id, int):    
+                                    if message_fin:
+                                        print(f"{inserted_id}e ligne insérée avec succès !")
+                                        processus_deja_enclenchee.append(True)
+                                        if len(processus_deja_enclenchee) > 1:
+                                            processus_deja_enclenchee.pop(-1)
+                                    
+                                    return inserted_id
+                                else :
+                                    Lien = f"{inserted_id}"  
+
+
+                                MYSQL_.log("=== FIN DU SCRIPT AUTOMATISÉ ===")
+                                MYSQL_.conn.close()
     
-    print(f"\n\n{CSV_FILE_RH} + {SQL_FILE_RH} + {CSV_FILE_IN} + {SQL_FILE_IN}\n\n")
-    # exit()
-    if CSV_FILE_RH and SQL_FILE_RH:
-        enregistrement_des_fichiers(CSV_FILE_RH, SQL_FILE_RH, '_FONCTION', '_PRENOM', '_NOM', '_DEPARTEMENT', '_PHONE', '_COURRIEL', '_PRIVILEGE', 
-                                    '_AGE', '_ENTREPRISE', '_ADRESSE', '_DATE_RH', '_EDITEUR_RH', '_LIEN', confirmation=Confirmation_RH)
-    if CSV_FILE_IN and SQL_FILE_IN:
-        enregistrement_des_fichiers(CSV_FILE_IN, SQL_FILE_IN, '_PRODUIT', '_TYPE', '_ANNEE', '_FABRICANT', '_PROVENANCE', '_DESTINATION', '_DATE_IN',
-                            '_LIEN', '_QUANTITE', '_PRIX', '_APPROBATIONS', '_EDITEUR_IN', confirmation=Confirmation_IN)
+    # except Exception as e:
+    #     print(f"ERREUR : {e}")
        
 # LANCEMENT
 if __name__ == "__main__":

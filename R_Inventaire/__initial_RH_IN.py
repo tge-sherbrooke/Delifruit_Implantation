@@ -147,7 +147,7 @@ def sauvegarder_donnees():
 
     # ______________S_A_U_V_E_G_A_R_D_E___R_H_____________________________________
     if reponse_formRH :
-        lecture_validante = ry.lireJSON(fichier_sauvegarde_json_RH)
+        lecture_validante = ry.lireFichier(fichier_sauvegarde_json_RH)
         contenu_formulaireRH = ry.lireJSON(fichier_form_RH)
         if lecture_validante is not None and lecture_validante != '':
             ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_json_RH, contenu=f"{contenu_init_RH}, {contenu_formulaireRH}\n")
@@ -156,7 +156,7 @@ def sauvegarder_donnees():
 
     # ______________S_A_U_V_E_G_A_R_D_E___I_N_____________________________________
     if reponse_formIN :
-        lecture_validante = ry.lireJSON(fichier_sauvegarde_json_IN)
+        lecture_validante = ry.lireFichier(fichier_sauvegarde_json_IN)
         contenu_init_IN = ry.lireJSON(fichier_form_IN)
         if lecture_validante is not None and lecture_validante != '':
             ry.rajouter_ds_fichier(fichier=fichier_sauvegarde_json_IN, contenu=f"{contenu_init_IN}, {contenu_formulaireIN}\n")

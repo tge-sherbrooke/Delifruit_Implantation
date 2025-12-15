@@ -580,7 +580,7 @@ def entry(self, texte, objet=None, multiline=False, couleur=None, txtColor=None,
     if sett == 'hauteur' and height is not None and couleur is not None and txtColor is not None: 
         self.name = TextInput(multiline=multiline, size_hint=(None, None), height=dp(height), width=dp(width), background_color=couleur, foreground_color=txtColor)
         self.name.bind(minimum_height=self.name.setter("height"))
-        self.name.text = f"{texte}"
+        self.name.text = str(texte)
     else :
         self.name = TextInput(multiline=multiline)            
         self.name.bind(text=f"{texte}")
@@ -649,6 +649,7 @@ class Home(GridLayout):
         self.tableau_insertion = [
                 self.Jour,
                 self.Entreprise,
+                self.Privileges,
                 self.Adresse,
                 self.Lien,
                 self.AutreLien,
@@ -1035,64 +1036,65 @@ class Home(GridLayout):
         generer_fichier(self.INITfileRH, LETTREFichierRH)
             
     def supprimerTout(self, instance):
-        def recycler_word(self, source, destination, extension) :
-            if os.path.exists(source):
-                dossier_de_travail = os.listdir(source)
-                if dossier_de_travail is not None :
-                    fichier_trouvees = [i for i in dossier_de_travail if extension in i]
-                    if fichier_trouvees != []:
-                        for fichier in fichier_trouvees:
-                            fichier_trouvee = f'{source}/{fichier}'
-                            try :
-                                initM.shutil.move(fichier_trouvee, destination)
-                            except PermissionError as p:
-                                pass; # err('PermissionError', 'recycler_word', p)                                 
-                            except initM.shutil.Error:
-                                fichier_restant = f'{source}/{fichier}'
-                                fichier = fichier.replace('.', '_0.')   
-                                destination = f'{destination}/{fichier}'                             
-                                try :
-                                    initM.shutil.move(fichier_restant, destination)
-                                except PermissionError as p:
-                                    pass; # err('PermissionError', 'recycler_word', p) 
-            else :
-                self.show_input_dialog()  
-                if os.path.exists(self.valeur_stockee):  
-                    source = self.valeur_stockee        
-                    if os.path.exists():
-                        recycler_word(self, source, destination, extension)
-                    else :
-                        self.show_input_dialog()
-                        destination = self.valeur_stockee  
-                        recycler_word(self, source, destination, extension)
+        # def recycler_word(self, source, destination, extension) :
+        #     if os.path.exists(source):
+        #         dossier_de_travail = os.listdir(source)
+        #         if dossier_de_travail is not None :
+        #             fichier_trouvees = [i for i in dossier_de_travail if extension in i]
+        #             if fichier_trouvees != []:
+        #                 for fichier in fichier_trouvees:
+        #                     fichier_trouvee = f'{source}/{fichier}'
+        #                     try :
+        #                         initM.shutil.move(fichier_trouvee, destination)
+        #                     except PermissionError as p:
+        #                         pass; # err('PermissionError', 'recycler_word', p)                                 
+        #                     except initM.shutil.Error:
+        #                         fichier_restant = f'{source}/{fichier}'
+        #                         fichier = fichier.replace('.', '_0.')   
+        #                         destination = f'{destination}/{fichier}'                             
+        #                         try :
+        #                             initM.shutil.move(fichier_restant, destination)
+        #                         except PermissionError as p:
+        #                             pass; # err('PermissionError', 'recycler_word', p) 
+        #     else :
+        #         self.show_input_dialog()  
+        #         if os.path.exists(self.valeur_stockee):  
+        #             source = self.valeur_stockee        
+        #             if os.path.exists():
+        #                 recycler_word(self, source, destination, extension)
+        #             else :
+        #                 self.show_input_dialog()
+        #                 destination = self.valeur_stockee  
+        #                 recycler_word(self, source, destination, extension)
                 
-        dossier_de_travail = os.listdir(initM.DossierMarkdown)
-        fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
-        fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
-        if fichier_inutiles != []:
-            dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
-            for fichier in fichier_inutiles:
-                if fichier != fichier_exclus:
-                    chemin = os.path.join(initM.DossierMarkdown, fichier)
-                    os.remove(chemin)
-                    if self.colorationunique == False:                
-                        colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
-                        self.colorationunique = True
-        if fichier_restants != []:
-            for fichier in fichier_restants:
-                fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
-                try :
-                    initM.shutil.move(fichier_restant, ARCHIVES)
-                except PermissionError as p:
-                    pass; # err('PermissionError', 'recycler_word', p) 
-                except initM.shutil.Error:
-                    fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
-                    try :
-                        initM.shutil.move(fichier_restant, ARCHIVES)
-                    except PermissionError as p:
-                        pass; # err('PermissionError', 'recycler_word', p) 
+        # dossier_de_travail = os.listdir(initM.DossierMarkdown)
+        # fichier_inutiles = [i for i in dossier_de_travail if markdownobject in i and '.md' in i]
+        # fichier_restants = [i for i in dossier_de_travail if markdownobject not in i and '.md' in i]
+        # if fichier_inutiles != []:
+        #     dossier_exclus, fichier_exclus = os.path.split(INITfileRH)
+        #     for fichier in fichier_inutiles:
+        #         if fichier != fichier_exclus:
+        #             chemin = os.path.join(initM.DossierMarkdown, fichier)
+        #             os.remove(chemin)
+        #             if self.colorationunique == False:                
+        #                 colorer(self, bouton=self.dictionnaire_bouton_menu['Clean'], couleur=BLEUPALE) 
+        #                 self.colorationunique = True
+        # if fichier_restants != []:
+        #     for fichier in fichier_restants:
+        #         fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
+        #         try :
+        #             initM.shutil.move(fichier_restant, ARCHIVES)
+        #         except PermissionError as p:
+        #             pass; # err('PermissionError', 'recycler_word', p) 
+        #         except initM.shutil.Error:
+        #             fichier_restant = f'{initM.DossierMarkdown}/{fichier}'
+        #             try :
+        #                 initM.shutil.move(fichier_restant, ARCHIVES)
+        #             except PermissionError as p:
+        #                 pass; # err('PermissionError', 'recycler_word', p) 
                 
-        recycler_word(self, DossierSORTIE, DossierDOC, '.docx')
+        # recycler_word(self, DossierSORTIE, DossierDOC, '.docx')
+        pass
         
 
 
@@ -1686,6 +1688,11 @@ class Inventaire(GridLayout):
                 _LIEN = dictio_form_IN['Lien']
                 _APPROBATIONS = dictio_form_IN['Approbations']                
                 _DATE_IN = dictio_form_IN['Date_de_creation']
+                _PRIX = dictio_form_IN['Prix']
+                
+                if ';' in _PRIX or ',' in _PRIX :
+                    _PRIX = _PRIX.replace(',', '.')
+                    _PRIX = _PRIX.replace(';', '.')
         
                 inserted_id = self.mysql_save(f"{db_name}", "INSERT INTO Produits (\
                                                                                                             produit,\
@@ -1703,14 +1710,15 @@ class Inventaire(GridLayout):
                     values=(f"{_PRODUIT}",
                             f"{_TYPE}",
                             f"{_ANNEE}",
-                            f"{_DESTINATION}",
-                            f"{_QUANTITE}",
-                            f"{_EDITEUR_IN}",
-                            f"{_PROVENANCE}",
                             f"{_FABRICANT}",
+                            f"{_PROVENANCE}",
+                            f"{_DESTINATION}",
+                            f"{_DATE_IN}",
                             f"{_LIEN}",
+                            f"{_QUANTITE}",
+                            f"{_PRIX}",
                             f"{_APPROBATIONS}",
-                            f"{_DATE_IN}",), sql_file=sql_file, message_debut='Actif',
+                            f"{_EDITEUR_IN}",), sql_file=sql_file, message_debut='Actif',
                     message_fin='Actif')
                 
                 self.Confirme.text = f"{inserted_id}e envoyé !"
@@ -2256,7 +2264,7 @@ class Lettre(Screen):
 
     def lire_ecrire_json(self, fichier, sett='lire'):
         if sett == 'lire' or sett == 'r':
-            contenu = ry.lireFile(fichier, set=2)
+            contenu = ry.lireFichier(fichier)
         elif sett == 'ecrire' or sett == 'w':
             ry.ecrire_ds_fichier(fichier, contenu)
         elif sett == 'lireecrire' or sett == 'rw' or sett == 'wr':
@@ -2312,10 +2320,11 @@ class BlocNotes(Screen):
         self.dictio = ry.lireJSON(fichier=fichier_configuration)
         self.option_envoi = ry.chercher_ds_JSON(dictionnaire=self.dictio, cle1='Methode_D_Envoi', cle2='langage', sett='valeurcles')
             
-        self.plan = f"{blocnotes_dossier}/Plan.txt"
+        self.plan = f"{Repertoire}/lib/Cred.json"
         self.liensUtiles = f"{blocnotes_dossier}/Infos_inventaire.txt"
         self.infos = f"{blocnotes_dossier}/Infos_RH.txt"
         self.dates = f"{blocnotes_dossier}/Dates.txt"
+        
         GRILLE = GridLayout()
         # colorer
         self.INITfileRH = INITfileRH
@@ -2375,7 +2384,7 @@ class BlocNotes(Screen):
         self.dates_input = entry(self=GRILLE, texte=contenu_dates, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')
         
-        contenu_plan = self.lire_ecrire_json(fichier=self.plan)
+        contenu_plan = self.lire_ecrire_json(fichier=self.plan, sett='json')
         self.plan_input = entry(self=GRILLE, texte=contenu_plan, objet=self.cadreIII, couleur=BLEUPALE, multiline=True,
               txtColor=WHITE, width=largeur, height=10, sett='hauteur')     
 
@@ -2401,11 +2410,15 @@ class BlocNotes(Screen):
         return self.option_envoi
 
     def Save(self):    
-        dict_input = {self.plan: self.plan_input.text, self.liensUtiles: self.liens_input.text, 
+        dict_input = {self.liensUtiles: self.liens_input.text, 
                      self.infos: self.infos_input.text, self.dates: self.dates_input.text}
         for key, valeur in dict_input.items():
             contenu = str(valeur)
             ry.ecrire_ds_fichier(key, contenu)
+        
+        Plan = self.plan_input.text.replace("'", '"')
+        Plan_ = initM.json.loads(Plan)
+        ry.ecrire_ds_json(fichier=fichier_credentials, contenu=Plan_)
 
     def git_push(self, git=None, f_git=None, instance=None):
         
@@ -2435,6 +2448,8 @@ class BlocNotes(Screen):
         elif sett == 'lireecrire' or sett == 'rw' or sett == 'wr':
             contenu = ry.lireFile(fichier, set=2)
             ry.ecrire_ds_fichier(fichier, contenu)
+        elif sett == 'json':
+            contenu = ry.lireJSON(fichier)
         
         return contenu
                 
@@ -2516,9 +2531,9 @@ class MariaDB():
     # ---------------------------------------------------------------------
     def __init__(self, bd_name, sql_file, **kwargs):
         super().__init__(**kwargs)
-        self.HOST        = "localhost"
-        self.USER        = "delifruit_mysql"
-        self.PASSWORD    = "d3l1fru1t!"
+        self.HOST        = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Cred_Mariadb", cle2='HTTP', sett='valeurcles')
+        self.USER        = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Cred_Mariadb", cle2='USER', sett='valeurcles')
+        self.PASSWORD    = ry.chercher_ds_JSON(dictionnaire=credential, cle1="Cred_Mariadb", cle2='PASS', sett='valeurcles')
         self.DB_NAME     = bd_name
         self.SQL_FILE    = sql_file
         self.LOG_FILE    = "import_log.txt"
@@ -2612,7 +2627,6 @@ class MariaDB():
         try:
             if sett == 'insertion_mormale':
                 cursor.execute(query, values)
-                conn.commit()
                 inserted_id = cursor.lastrowid   # <-- essentiel           
             elif sett == 'insertion_globale': 
                 cursor.execute(query, values)

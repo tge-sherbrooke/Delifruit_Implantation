@@ -1,0 +1,241 @@
+[2025-12-04 21:37:36.829671] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-04 21:37:36.864228] Base 'bd_inv' déjà existante.
+[2025-12-04 21:37:36.872429] ❌ Erreur d'insertion : Not enough parameters for the SQL statement
+[2025-12-04 21:43:02.495507] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-04 21:43:02.504177] Base 'bd_inv' déjà existante.
+[2025-12-04 21:43:02.512335] ✔ Donnée insérée après import.
+[2025-12-04 21:43:02.513123] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-04 21:45:27.524998] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-04 21:45:27.530817] Base 'bd_rh' inexistante, création en cours...
+[2025-12-04 21:45:27.535490] ✔ Base de données 'bd_rh' créée.
+[2025-12-04 21:45:27.536075] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-04 21:45:27.559496] ✔ Import SQL terminé avec succès.
+[2025-12-04 21:45:27.567915] ✔ Donnée insérée après import.
+[2025-12-04 21:45:27.568687] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 12:44:56.669425] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 12:48:01.018803] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 12:48:01.151543] Base 'bd_rh' déjà existante.
+[2025-12-05 12:48:01.219882] ❌ Erreur d'insertion : 1292 (22007): Incorrect date value: '65' for column `bd_rh`.`Employe`.`age` at row 1
+[2025-12-05 12:50:01.531957] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 12:50:01.591209] Base 'bd_rh' déjà existante.
+[2025-12-05 12:50:01.642743] ✔ Donnée insérée après import.
+[2025-12-05 12:50:01.644041] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 13:17:15.301466] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 13:17:15.414645] Base 'bd_rh' déjà existante.
+[2025-12-05 13:17:15.479215] ✔ Donnée insérée après import.
+[2025-12-05 13:17:15.480758] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 14:02:23.976000] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-05 14:02:24.077535] Base 'bd_rh' déjà existante.
+[2025-12-05 14:02:24.143454] ✔ Donnée insérée après import.
+[2025-12-05 14:02:24.144881] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:36:56.881066] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:37:23.598252] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:39:02.470354] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:39:29.230826] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:39:29.242861] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:40:04.949769] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:40:49.622342] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:40:49.639107] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:40:49.649862] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 20:40:49.650633] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 20:41:17.211551] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:41:17.225222] Base 'bd_inv' déjà existante.
+[2025-12-10 20:42:14.356628] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:42:14.369877] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:42:14.379538] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 20:42:14.380577] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 20:49:54.236903] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:49:54.256366] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:50:21.309118] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:50:21.322851] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:50:46.566548] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:50:46.578091] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:52:50.729278] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:53:14.160636] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:53:14.168359] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:53:14.178804] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 20:53:14.179428] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 20:53:14.200322] ✔ Import SQL terminé avec succès.
+[2025-12-10 20:53:58.877946] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:53:58.903773] Base 'bd_inv' déjà existante.
+[2025-12-10 20:53:58.929731] ✔ Donnée insérée après import.
+[2025-12-10 20:53:58.930972] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:56:30.924469] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:56:30.934022] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:56:30.942909] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 20:56:30.943650] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 20:57:01.482836] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:57:01.496275] Base 'bd_inv' déjà existante.
+[2025-12-10 20:57:01.514045] ❌ Erreur d'insertion : 1146 (42S02): Table 'bd_inv.Produits' doesn't exist
+[2025-12-10 20:57:32.988914] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:57:56.441804] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:57:56.456286] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:58:40.605933] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:58:40.613571] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:58:40.622879] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 20:58:40.623507] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 20:58:40.651880] ✔ Import SQL terminé avec succès.
+[2025-12-10 20:59:16.598103] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 20:59:16.614583] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 20:59:16.623671] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 20:59:16.624560] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 20:59:16.665266] ✔ Import SQL terminé avec succès.
+[2025-12-10 20:59:16.679405] ✔ Donnée insérée après import.
+[2025-12-10 20:59:16.680080] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:00:35.191274] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:00:35.207670] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:00:35.217608] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:00:35.218451] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:00:59.883596] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:00:59.920269] Base 'bd_inv' déjà existante.
+[2025-12-10 21:00:59.931273] ❌ Erreur d'insertion : 1146 (42S02): Table 'bd_inv.Produits' doesn't exist
+[2025-12-10 21:02:19.322207] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:02:19.344767] Base 'bd_inv' déjà existante.
+[2025-12-10 21:03:10.048020] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:04:04.596319] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:04:04.610154] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:04:04.620073] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:04:04.620777] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:04:04.656169] ✔ Import SQL terminé avec succès.
+[2025-12-10 21:04:04.669898] ✔ Donnée insérée après import.
+[2025-12-10 21:04:04.670822] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:05:59.866426] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:05:59.888092] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:06:27.215842] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:06:27.231302] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:07:16.025290] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:07:16.040486] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:07:39.713027] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:07:39.725157] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:07:39.734852] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:07:39.735579] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:07:39.769314] ✔ Import SQL terminé avec succès.
+[2025-12-10 21:08:09.035715] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:08:09.050704] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:08:09.060615] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:08:09.061237] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:08:39.279143] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:08:39.294417] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:08:39.306884] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:08:39.307485] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:08:39.341197] ✔ Import SQL terminé avec succès.
+[2025-12-10 21:09:05.415182] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:09:05.428075] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:09:05.438146] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:09:05.438865] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:09:27.494013] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:09:27.511977] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:09:27.524261] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:09:27.525108] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:09:52.439370] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:09:52.454545] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:09:52.463262] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:09:52.463861] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:10:13.614258] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:10:34.729073] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:10:34.740915] Base 'bd_inv' inexistante, création en cours...
+[2025-12-10 21:10:34.751481] ✔ Base de données 'bd_inv' créée.
+[2025-12-10 21:10:34.752441] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-10 21:12:05.375170] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:12:05.387821] Base 'bd_rh' inexistante, création en cours...
+[2025-12-10 21:13:14.648056] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:13:14.663275] Base 'bd_inv' déjà existante.
+[2025-12-10 21:13:14.673892] ❌ Erreur d'insertion : 1146 (42S02): Table 'bd_inv.Produits' doesn't exist
+[2025-12-10 21:14:16.019648] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-10 21:14:16.033303] Base 'bd_inv' inexistante, création en cours...
+[2025-12-11 18:45:48.684737] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-11 18:45:48.699213] Base 'bd_inv' inexistante, création en cours...
+[2025-12-11 18:47:51.999279] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-11 18:47:52.014700] Base 'bd_inv' inexistante, création en cours...
+[2025-12-11 18:47:52.023893] ✔ Base de données 'bd_inv' créée.
+[2025-12-11 18:47:52.024714] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-11 18:48:56.774305] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-11 18:49:40.394474] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-11 18:49:40.404817] Base 'bd_inv' inexistante, création en cours...
+[2025-12-11 18:49:40.415875] ✔ Base de données 'bd_inv' créée.
+[2025-12-11 18:49:40.416513] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-12 04:11:06.318448] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 04:52:25.965608] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 04:52:25.992303] Base 'bd_rh' inexistante, création en cours...
+[2025-12-12 04:52:25.996730] ✔ Base de données 'bd_rh' créée.
+[2025-12-12 04:52:25.997689] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-12 04:52:26.014018] ✔ Import SQL terminé avec succès.
+[2025-12-12 04:52:26.020030] ❌ Erreur d'insertion : 1292 (22007): Incorrect date value: '12' for column `bd_rh`.`Employe`.`age` at row 1
+[2025-12-12 04:52:44.867436] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 04:52:44.873935] Base 'bd_rh' déjà existante.
+[2025-12-12 04:52:44.878942] ✔ Donnée insérée après import.
+[2025-12-12 04:52:44.879714] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 04:59:48.685281] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 04:59:48.695590] Base 'bd_rh' inexistante, création en cours...
+[2025-12-12 04:59:48.703835] ✔ Base de données 'bd_rh' créée.
+[2025-12-12 04:59:48.708468] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-12 04:59:48.732472] ✔ Import SQL terminé avec succès.
+[2025-12-12 04:59:48.741258] ✔ Donnée insérée après import.
+[2025-12-12 04:59:48.745084] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 05:02:03.213062] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-12 05:02:03.227693] Base 'bd_rh' inexistante, création en cours...
+[2025-12-12 05:02:03.235124] ✔ Base de données 'bd_rh' créée.
+[2025-12-12 05:02:03.236333] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-12 05:02:03.259200] ✔ Import SQL terminé avec succès.
+[2025-12-12 05:02:03.270396] ✔ Donnée insérée après import.
+[2025-12-12 05:02:03.271583] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 00:55:04.408685] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 00:55:04.468575] Base 'bd_rh' inexistante, création en cours...
+[2025-12-15 00:55:04.554451] ✔ Base de données 'bd_rh' créée.
+[2025-12-15 00:55:04.556123] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-15 00:55:04.769601] ✔ Import SQL terminé avec succès.
+[2025-12-15 00:55:04.867225] ✔ Donnée insérée après import.
+[2025-12-15 00:55:04.867933] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:01:32.404720] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:01:32.445187] Base 'bd_rh' inexistante, création en cours...
+[2025-12-15 01:01:32.481908] ✔ Base de données 'bd_rh' créée.
+[2025-12-15 01:01:32.482483] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-15 01:01:32.547779] ✔ Import SQL terminé avec succès.
+[2025-12-15 01:01:32.605416] ✔ Donnée insérée après import.
+[2025-12-15 01:01:32.606249] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:05:06.786415] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:05:06.835806] Base 'bd_inv' inexistante, création en cours...
+[2025-12-15 01:05:06.886990] ✔ Base de données 'bd_inv' créée.
+[2025-12-15 01:05:06.887629] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-15 01:05:06.965150] ✔ Import SQL terminé avec succès.
+[2025-12-15 01:05:07.002536] ❌ Erreur d'insertion : 1265 (01000): Data truncated for column 'prix' at row 1
+[2025-12-15 01:06:13.223957] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:06:13.280654] Base 'bd_inv' déjà existante.
+[2025-12-15 01:06:13.328059] ✔ Donnée insérée après import.
+[2025-12-15 01:06:13.328764] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:07:36.759742] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:07:36.804977] Base 'bd_inv' inexistante, création en cours...
+[2025-12-15 01:07:36.849479] ✔ Base de données 'bd_inv' créée.
+[2025-12-15 01:07:36.850099] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-15 01:07:36.952960] ✔ Import SQL terminé avec succès.
+[2025-12-15 01:07:37.011838] ✔ Donnée insérée après import.
+[2025-12-15 01:07:37.012504] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:08:04.600678] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:08:04.649590] Base 'bd_inv' déjà existante.
+[2025-12-15 01:08:04.711990] ✔ Donnée insérée après import.
+[2025-12-15 01:08:04.712674] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:09:31.601577] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:09:31.669255] Base 'bd_inv' inexistante, création en cours...
+[2025-12-15 01:09:31.727253] ✔ Base de données 'bd_inv' créée.
+[2025-12-15 01:09:31.727859] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-15 01:09:31.787497] ✔ Import SQL terminé avec succès.
+[2025-12-15 01:09:31.822201] ✔ Donnée insérée après import.
+[2025-12-15 01:09:31.823023] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:27:12.158460] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:27:12.206408] Base 'bd_rh' inexistante, création en cours...
+[2025-12-15 01:27:12.254629] ✔ Base de données 'bd_rh' créée.
+[2025-12-15 01:27:12.255436] ⌛ Import du fichier SQL : lib/DOC/_init_bd_RH.sql
+[2025-12-15 01:27:12.319560] ✔ Import SQL terminé avec succès.
+[2025-12-15 01:27:12.355878] ✔ Donnée insérée après import.
+[2025-12-15 01:27:12.356573] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:29:07.085618] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:29:07.130336] Base 'bd_inv' inexistante, création en cours...
+[2025-12-15 01:29:07.171094] ✔ Base de données 'bd_inv' créée.
+[2025-12-15 01:29:07.171734] ⌛ Import du fichier SQL : lib/DOC/_init_bd_IN.sql
+[2025-12-15 01:29:07.242190] ✔ Import SQL terminé avec succès.
+[2025-12-15 01:29:07.284186] ✔ Donnée insérée après import.
+[2025-12-15 01:29:07.286437] === FIN DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:29:56.782943] === LANCEMENT DU SCRIPT AUTOMATISÉ ===
+[2025-12-15 01:29:56.833741] Base 'bd_inv' déjà existante.
+[2025-12-15 01:29:56.871920] ✔ Donnée insérée après import.
+[2025-12-15 01:29:56.873339] === FIN DU SCRIPT AUTOMATISÉ ===
