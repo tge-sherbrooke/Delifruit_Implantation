@@ -1,0 +1,16 @@
+﻿SELECT employe.id, prenom.prenom, nom.nom, age.valeur, phone.phone, courriel.courriel, entreprise.nom, adresse.adresses, departement.departement, date_de_creation.date_creation, editeur.nom, fonctions.fonctions, privilege.privilege
+FROM `employe`
+JOIN prenom ON employe.prenom_id = prenom.ID
+JOIN nom ON employe.nom_id = nom.ID
+JOIN age ON employe.age_id = age.ID
+JOIN phone ON employe.phone_id = phone.ID
+JOIN courriel ON employe.courriel_id = courriel.ID
+JOIN entreprise ON employe.entreprise_id = entreprise.ID
+JOIN adresse ON employe.adresse_id = adresse.ID
+JOIN departement ON employe.departement_id = departement.ID
+JOIN date_de_creation ON employe.date_creation_id = date_de_creation.ID
+JOIN editeur ON employe.editeur_id = editeur.ID
+JOIN fonctions ON employe.fonctions_id = fonctions.ID
+JOIN privilege ON employe.privilege_id = privilege.ID;
+
+SELECT produits.id, produit.nom, types.nom, annee.valeur, fabricant.nom, provenance.pays, destination.pays, date_de_creation.date_production, lien.url, quantite.valeur, prix.montant, approbations.organisme, editeur.nom FROM `produits` JOIN produit ON produits.produit_id = produit.ID JOIN types ON produits.types_id = types.ID JOIN annee ON produits.annee_id = annee.ID JOIN fabricant ON produits.fabricant_id = fabricant.ID JOIN provenance ON produits.provenance_id = provenance.ID JOIN destination ON produits.destination_id = destination.ID JOIN date_de_creation ON produits.date_de_creation_id = date_de_creation.ID JOIN lien ON produits.lien_id = lien.ID JOIN quantite ON produits.quantite_id = quantite.ID JOIN prix ON produits.prix_id = prix.ID JOIN approbations ON produits.approbations_id = approbations.ID JOIN editeur ON produits.editeur_id = editeur.ID;

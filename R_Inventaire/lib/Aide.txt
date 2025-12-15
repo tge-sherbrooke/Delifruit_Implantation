@@ -1,0 +1,121 @@
+sudo docker swarm init --advertise-addr 10.0.0.51
+Swarm initialized: current node (q08o4o58zzg9fm4j6sz178tjg) is now a manager.
+
+docker swarm join --token SWMTKN-1-5g2r23tt3ysmw8wegv8lax46rbvh0i1c51554vu6l3r2iif219-ezzuogffwv7ya7slx9rayafo4 10.0.0.51:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+# Installer le fichier .exe
+
+pyinstaller --noconsole --onefile RH_Billeterie_IN.pyw --add-data "option.json;." --add-data "lib/_init_IN.json;lib" --add-data "lib/cred.json;lib"  --add-data "lib/csv_cv_rh.csv;lib" --add-data "lib/envoi_vers_BD.ps1;lib" --add-data "lib/git_send.bat;lib" --add-data "lib/requirements.txt;lib" --add-data "lib/credentials.env;lib" --add-data "lib/Blocnotes/Dates.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos_RH.txt;lib/Blocnotes" --add-data "lib/Blocnotes/LiensUtiles.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Plan.txt;lib/Blocnotes"  --add-data "lib;lib" --add-data "assets;assets" --add-data "Sortie/formulaireIN.json;Sortie" --add-data "Sortie/formulaireRH.json;Sortie" --add-data "lib/Blocnotes;lib/Blocnotes" --add-data "lib/erreurs.txt;lib" --add-data "archives;archives" --add-data "archives/sauvegardeIN.json;archives" --add-data "archives/sauvegardeRH.json;archives" --add-data "lib/_init_RH.json;lib" --add-data "lib/csv_cv_inventaire.csv;lib" --add-data "lib/Blocnotes/Infos_RH.txt;lib/Blocnotes" --add-data "lib/Blocnotes/Infos_inventaire.txt;lib/Blocnotes" --add-data "Sortie;Sortie" --add-data "lib/Aide.txt;lib" --add-data "lib/DOC;lib/DOC" --add-data "lib/DOC/_init_bd_RH.sql;lib/DOC" --add-data "lib/DOC/_init_bd_IN.sql;lib/DOC"
+
+
+
+
+
+# VALEURS INSERTION PAR EXEMPLE
+-- V A L E U R S    D E  R E F E R E N C E
+
+
+INSERT INTO Types (nom) VALUES
+('Électronique'),
+('Véhicule'),
+('Alimentaire'),
+('Logiciel'),
+('Mobilier');
+
+INSERT INTO Annee (valeur) VALUES
+(2019),
+(2020),
+(2021),
+(2022),
+(2023);
+
+INSERT INTO Fabricant (nom) VALUES
+('TechNova Industries'),
+('GreenMotors Corp'),
+('Delicia Foods'),
+('SoftLab Studio'),
+('Nordik Design');
+
+INSERT INTO Provenance (pays) VALUES
+('Canada'),
+('États-Unis'),
+('France'),
+('Allemagne'),
+('Japon');
+
+INSERT INTO Destination (pays) VALUES
+('Canada'),
+('Mexique'),
+('Royaume-Uni'),
+('Australie'),
+('Brésil');
+
+INSERT INTO Date_de_creation (date_production) VALUES
+('2019-03-22'),
+('2020-07-15'),
+('2021-11-08'),
+('2022-02-01'),
+('2023-09-27');
+
+INSERT INTO Lien (url) VALUES
+('https://www.technova.com/produit-a1'),
+('https://www.greenmotors.com/model-b'),
+('https://www.deliciafoods.com/choco-premium'),
+('https://www.softlabstudio.com/app-suite'),
+('https://www.nordikdesign.com/chair-xl');
+
+INSERT INTO Specificites (description) VALUES
+('Batterie longue durée, certification IP68'),
+('Moteur hybride, faible émission'),
+('Sans gluten, commerce équitable'),
+('Compatible Windows, macOS, Linux'),
+('Bois massif, recyclable à 98%');
+
+INSERT INTO Prix (montant, devise) VALUES
+(899.99, 'CAD'),
+(28999.00, 'USD'),
+(7.49, 'EUR'),
+(129.99, 'CAD'),
+(349.50, 'CAD');
+
+INSERT INTO Editeur (nom) VALUES
+('Nova Publishing'),
+('MotorWorld Media'),
+('Gourmet Editions'),
+('SoftLab Press'),
+('Nordik Creative');
+
+-- Fin du script de création et d'initialisation de la base de données BD_IN
+
+INSERT INTO Produit (
+    nom, types_id, annee_id, fabricant_id, provenance_id, destination_id,
+    date_de_creation_id, lien_id, specificites_id, prix_id, editeur_id
+) VALUES
+('SmartWatch Nova X', 1, 4, 1, 1, 3, 4, 1, 1, 1, 1),
+('EcoCar Horizon', 2, 3, 2, 4, 5, 3, 2, 2, 2, 2),
+('Chocolat Prime Cacao', 3, 2, 3, 3, 1, 2, 3, 3, 3, 3),
+('SuiteLogic Pro', 4, 1, 4, 2, 2, 1, 4, 4, 4, 4),
+('Chaise Nordik XL', 5, 5, 5, 5, 4, 5, 5, 5, 5, 5);
+
+-- Exemple d'insertion dans la table Approbations
+
+INSERT INTO Approbations (produit_id, organisme, date_approbation) VALUES
+(1, 'Bureau canadien de sécurité électronique', '2022-05-10'),
+(1, 'Certification Santé & Rayonnement', '2022-07-01'),
+(2, 'Agence européenne des transports propres', '2021-12-18'),
+(3, 'Label Qualité Alimentaire France', '2020-09-02'),
+(5, 'Programme Forêts Durables', '2023-11-03');
+
+
+-- Exemple d'insertion dans la table Similaires
+
+INSERT INTO Similaires (produit_id, similaire_id) VALUES
+(1, 4),
+(4, 1),
+(2, 5),
+(5, 2),
+(1, 3);
+
+-- SET FOREIGN_KEY_CHECKS = 1;
